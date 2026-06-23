@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ============================================
+       AIRA PAINTS — XML Sitemap
+       Brand: Aira Paints
+       Location: Tirupati, Andhra Pradesh, India
+       Generated: 2026-06-23
+       ============================================ -->
+
+  <!-- ── MAIN PAGE (Canonical Home) ── -->
+  <url>
+    <loc>https://www.airapaints.com/</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- ── SECTION 01: Hero / Home ── -->
+  <url>
+    <loc>https://www.airapaints.com/#hero</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── SECTION 02: Why Modern Homes Choose Us (Features) ── -->
+  <url>
+    <loc>https://www.airapaints.com/#why-us</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 03: Tirupati Story ── -->
+  <url>
+    <loc>https://www.airapaints.com/#story</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 04: Product Showcase ── -->
+  <url>
+    <loc>https://www.airapaints.com/#products</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── SECTION 04a: Interior Paints (Product Sub-category) ── -->
+  <url>
+    <loc>https://www.airapaints.com/#products</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 05: Competitor Comparison ── -->
+  <url>
+    <loc>https://www.airapaints.com/#compare</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── SECTION 06: Colour Inspiration Studio ── -->
+  <url>
+    <loc>https://www.airapaints.com/#inspiration</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 07: Sustainability Storytelling ── -->
+  <url>
+    <loc>https://www.airapaints.com/#sustainability</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── SECTION 08: Project Gallery ── -->
+  <url>
+    <loc>https://www.airapaints.com/#gallery</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 09: Customer Success Stories ── -->
+  <url>
+    <loc>https://www.airapaints.com/#testimonials</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ── SECTION 10: Dealer Network ── -->
+  <url>
+    <loc>https://www.airapaints.com/#dealer</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 11: Free Consultation CTA ── -->
+  <url>
+    <loc>https://www.airapaints.com/#consultation</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── SECTION 12: Contact + Footer ── -->
+  <url>
+    <loc>https://www.airapaints.com/#contact</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ── Legal Pages ── -->
+  <url>
+    <loc>https://www.airapaints.com/privacy-policy</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://www.airapaints.com/terms-of-service</loc>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
