@@ -1,22 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@700;800&display=swap');
 
 /* ============================================
-   AIRA PAINTS Ã¢â‚¬â€ Design System
+   AIRA PAINTS – Design System
    Premium Eco-Friendly Paint Brand
    Tirupati Edition
    ============================================ */
 
 :root {
-  /* Core Brand Colors â€” Emerald Edition */
+  /* Core Brand Colors — Deep Emerald & White */
   --forest:        #0F4D3A;
   --forest-mid:    #166b4f;
   --forest-light:  rgba(15, 77, 58, 0.08);
-  --terracotta:    #D4AF37;
-  --terracotta-lt: rgba(212, 175, 55, 0.12);
+  --terracotta:    #0F4D3A;
+  --terracotta-lt: rgba(15, 77, 58, 0.10);
   --sand:          #F5FAF8;
   --sand-dark:     #E8F0ED;
   --charcoal:      #000000;
-  --gold:          #D4AF37;
   --white:         #ffffff;
   --muted:         rgba(15, 77, 58, 0.5);
 
@@ -89,7 +88,7 @@ h1, h2, h3, h4 {
 .blob-1 {
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.28) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 77, 58, 0.28) 0%, transparent 70%);
   top: -150px;
   right: -100px;
   animation: driftA 22s infinite alternate ease-in-out;
@@ -107,7 +106,7 @@ h1, h2, h3, h4 {
 .blob-3 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 77, 58, 0.15) 0%, transparent 70%);
   top: 40%;
   right: 20%;
   animation: driftA 18s 5s infinite alternate ease-in-out;
@@ -285,7 +284,7 @@ nav a:hover::after {
 }
 
 /* ============================================
-   HERO SECTION Ã¢â‚¬â€ SCROLLYTELLING STAGE
+   HERO SECTION ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SCROLLYTELLING STAGE
    ============================================ */
 /* The hero section is the scroll container for the sticky stage */
 .hero-section {
@@ -294,7 +293,7 @@ nav a:hover::after {
 }
 
 /* ---- Hero Scroll Stage ---- */
-/* The hero is sticky Ã¢â‚¬â€ it pins and the page scrolls behind it */
+/* The hero is sticky ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â it pins and the page scrolls behind it */
 .hero-stage {
   position: sticky;
   top: 0;
@@ -864,7 +863,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 02 Ã¢â‚¬â€ WHY MODERN HOMES CHOOSE US
+   SECTION 02 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â WHY MODERN HOMES CHOOSE US
    ============================================================ */
 
 .why-section {
@@ -1000,7 +999,7 @@ nav a:hover::after {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(15, 77, 58, 0.06) 0%, rgba(212, 175, 55, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(15, 77, 58, 0.06) 0%, rgba(15, 77, 58, 0.08) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1174,7 +1173,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 03 Ã¢â‚¬â€ TIRUPATI STORY (Cinematic Full-Width)
+   SECTION 03 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â TIRUPATI STORY (Cinematic Full-Width)
    ============================================================ */
 
 .story-section {
@@ -1187,7 +1186,7 @@ nav a:hover::after {
   isolation: isolate;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Background Layer Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Background Layer ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-bg {
   position: absolute;
   inset: 0;
@@ -1205,7 +1204,7 @@ nav a:hover::after {
   z-index: 1;
 }
 
-/* Cinematic CSS gradient fallback Ã¢â‚¬â€ shows when no video */
+/* Cinematic CSS gradient fallback ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â shows when no video */
 .story-bg-cinematic {
   position: absolute;
   inset: 0;
@@ -1213,7 +1212,7 @@ nav a:hover::after {
   background:
     /* Tirupati-inspired: deep forest hills, dusk sky */
     radial-gradient(ellipse at 20% 60%, rgba(15, 77, 58, 0.9) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 30%, rgba(212, 175, 55, 0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(15, 77, 58, 0.4) 0%, transparent 50%),
     radial-gradient(ellipse at 50% 100%, rgba(14, 28, 22, 0.95) 0%, transparent 60%),
     linear-gradient(
       160deg,
@@ -1238,8 +1237,8 @@ nav a:hover::after {
   background: linear-gradient(
     120deg,
     transparent 0%,
-    rgba(212, 175, 55, 0.06) 40%,
-    rgba(212, 175, 55, 0.04) 50%,
+    rgba(15, 77, 58, 0.06) 40%,
+    rgba(15, 77, 58, 0.04) 50%,
     transparent 60%
   );
   animation: cinematicBeam 12s ease-in-out infinite alternate;
@@ -1251,7 +1250,7 @@ nav a:hover::after {
   to   { transform: translateX(30%) rotate(5deg);  opacity: 1; }
 }
 
-/* Gradient overlay Ã¢â‚¬â€ darkens top, fades left side for text readability */
+/* Gradient overlay ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â darkens top, fades left side for text readability */
 .story-overlay-gradient {
   position: absolute;
   inset: 0;
@@ -1270,7 +1269,7 @@ nav a:hover::after {
   pointer-events: none;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Location Pill Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Location Pill ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-location {
   position: absolute;
   top: 2.5rem;
@@ -1299,14 +1298,14 @@ nav a:hover::after {
   border-radius: 50%;
   flex-shrink: 0;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 0 3px rgba(15, 77, 58, 0.3);
 }
 
 .location-sep {
   opacity: 0.4;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Main Content Layout Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main Content Layout ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-content {
   position: relative;
   z-index: 10;
@@ -1317,7 +1316,7 @@ nav a:hover::after {
   padding: 10rem 7% 6rem;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Left: Story Text Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left: Story Text ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-text {
   display: flex;
   flex-direction: column;
@@ -1399,12 +1398,12 @@ nav a:hover::after {
 }
 
 .story-tag:hover {
-  background: rgba(212, 175, 55, 0.15);
-  border-color: rgba(212, 175, 55, 0.4);
+  background: rgba(15, 77, 58, 0.15);
+  border-color: rgba(15, 77, 58, 0.4);
   color: var(--terracotta);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Right: Counter Items Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right: Counter Items ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-counters {
   display: flex;
   flex-direction: column;
@@ -1432,7 +1431,7 @@ nav a:hover::after {
 }
 
 .story-counter-item:hover {
-  background: rgba(212, 175, 55, 0.07);
+  background: rgba(15, 77, 58, 0.07);
 }
 
 /* Left accent bar that fills on hover */
@@ -1511,7 +1510,7 @@ nav a:hover::after {
   text-transform: uppercase;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Reveal Fade (for story section elements) Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Reveal Fade (for story section elements) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .reveal-fade {
   opacity: 0;
   transform: translateY(30px);
@@ -1523,7 +1522,7 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Bottom scroll cue line Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Bottom scroll cue line ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .story-bottom-line {
   position: absolute;
   bottom: 0;
@@ -1534,7 +1533,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Responsive: Section 03 Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Responsive: Section 03 ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 @media (max-width: 900px) {
   .story-content {
     grid-template-columns: 1fr;
@@ -1578,29 +1577,29 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 04 Ã¢â‚¬â€ PRODUCT SHOWCASE (Apple Scroll Style)
+   SECTION 04 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â PRODUCT SHOWCASE (Apple Scroll Style)
    ============================================================ */
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Section wrapper Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Section wrapper ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .products-section {
   background-color: var(--sand);
   padding-top: 6rem;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Section header Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Section header ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .products-header {
   text-align: center;
   padding: 0 7%;
   margin-bottom: 4rem;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Sticky container: 400vh gives 4 products Ãƒâ€” 100vh each Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sticky container: 400vh gives 4 products ÃƒÆ’Ã¢â‚¬â€ 100vh each ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .products-sticky-wrap {
   height: 400vh;
   position: relative;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Sticky stage (pins while products scroll) Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sticky stage (pins while products scroll) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .products-stage {
   position: sticky;
   top: 0;
@@ -1622,7 +1621,7 @@ nav a:hover::after {
   z-index: 0;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Progress dots Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Progress dots ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .product-dots {
   position: absolute;
   right: 5%;
@@ -1650,7 +1649,7 @@ nav a:hover::after {
   transform: scale(1.4);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Slides container Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Slides container ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .product-slides {
   position: relative;
   width: 100%;
@@ -1658,7 +1657,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Individual slide Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Individual slide ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .product-slide {
   position: absolute;
   inset: 0;
@@ -1686,7 +1685,7 @@ nav a:hover::after {
   transform: translateY(-60px);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Left: Visual Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left: Visual ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .slide-visual {
   display: flex;
   justify-content: center;
@@ -1718,7 +1717,7 @@ nav a:hover::after {
   to   { transform: scale(1.1); opacity: 1;   }
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Showcase CSS Paint Can Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Showcase CSS Paint Can ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .showcase-can {
   position: relative;
   width: 220px;
@@ -1913,7 +1912,7 @@ nav a:hover::after {
 .showcase-can-handle::before { left: -6px; }
 .showcase-can-handle::after  { right: -6px; }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Right: Text Info Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right: Text Info ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .slide-info {
   display: flex;
   flex-direction: column;
@@ -1987,7 +1986,7 @@ nav a:hover::after {
   margin-top: 0.5rem;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Scroll progress bar at bottom Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Scroll progress bar at bottom ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .products-progress-bar {
   position: absolute;
   bottom: 0;
@@ -2005,7 +2004,7 @@ nav a:hover::after {
   transition: width 0.4s var(--ease-out-expo);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Responsive: Section 04 Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Responsive: Section 04 ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 @media (max-width: 900px) {
   .product-slide {
     grid-template-columns: 1fr;
@@ -2044,7 +2043,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 05 Ã¢â‚¬â€ COMPETITOR COMPARISON SECTION
+   SECTION 05 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COMPETITOR COMPARISON SECTION
    ============================================================ */
 
 .comparison-section {
@@ -2149,7 +2148,7 @@ nav a:hover::after {
 }
 
 .comp-card.aira-brand .card-glow-bg {
-  background: radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle at 90% 90%, rgba(15, 77, 58, 0.1) 0%, transparent 70%);
 }
 
 /* Card Header */
@@ -2326,7 +2325,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 06 Ã¢â‚¬â€ COLOR INSPIRATION EXPERIENCE
+   SECTION 06 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COLOR INSPIRATION EXPERIENCE
    ============================================================ */
 
 .inspiration-section {
@@ -2351,7 +2350,7 @@ nav a:hover::after {
   background-color: var(--sand);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Left Side: Room visualizer backdrop Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left Side: Room visualizer backdrop ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .room-preview-backdrop {
   position: relative;
   display: flex;
@@ -2491,7 +2490,7 @@ nav a:hover::after {
 .plant-pot {
   width: 28px;
   height: 28px;
-  background: #D4AF37;
+  background: #0F4D3A;
   border-radius: 4px 4px 12px 12px;
   margin: 0 auto;
   position: absolute;
@@ -2604,7 +2603,7 @@ nav a:hover::after {
   opacity: 0.8;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Right Side: Sticky/Interactive Details Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right Side: Sticky/Interactive Details ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .inspiration-content {
   display: flex;
   flex-direction: column;
@@ -2784,7 +2783,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 07 Ã¢â‚¬â€ SUSTAINABILITY STORYTELLING
+   SECTION 07 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SUSTAINABILITY STORYTELLING
    ============================================================ */
 
 .sustainability-section {
@@ -2815,7 +2814,7 @@ nav a:hover::after {
 .sustain-bg-shape.shape-2 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 77, 58, 0.15) 0%, transparent 70%);
   right: -150px;
   bottom: 10%;
 }
@@ -3090,7 +3089,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 08 Ã¢â‚¬â€ PROJECT GALLERY
+   SECTION 08 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â PROJECT GALLERY
    ============================================================ */
 
 .gallery-section {
@@ -3330,7 +3329,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 09 Ã¢â‚¬â€ CUSTOMER SUCCESS STORIES
+   SECTION 09 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CUSTOMER SUCCESS STORIES
    ============================================================ */
 
 .testimonials-section {
@@ -3756,7 +3755,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 10 Ã¢â‚¬â€ DEALER NETWORK
+   SECTION 10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â DEALER NETWORK
    ============================================================ */
 
 .dealer-section {
@@ -3823,7 +3822,7 @@ nav a:hover::after {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 4px 10px rgba(15, 77, 58, 0.1);
 }
 
 .perk-icon svg {
@@ -3987,7 +3986,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 11 Ã¢â‚¬â€ FREE CONSULTATION CTA
+   SECTION 11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â FREE CONSULTATION CTA
    ============================================================ */
 
 .consultation-section {
@@ -4034,7 +4033,7 @@ nav a:hover::after {
 .banner-glow-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(15, 77, 58, 0.35) 0%, transparent 70%);
   right: -100px;
   bottom: -100px;
 }
@@ -4167,7 +4166,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 Ã¢â‚¬â€ CONTACT STRIP
+   SECTION 12 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CONTACT STRIP
    ============================================================ */
 
 .contact-strip {
@@ -4308,7 +4307,7 @@ nav a:hover::after {
 .contact-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 20px 50px rgba(15, 77, 58, 0.1);
-  border-color: rgba(212, 175, 55, 0.2);
+  border-color: rgba(15, 77, 58, 0.2);
 }
 
 /* Card icon circle */
@@ -4465,7 +4464,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 Ã¢â‚¬â€ CONTACT + FOOTER
+   SECTION 12 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CONTACT + FOOTER
    ============================================================ */
 
 .site-footer {
@@ -4473,16 +4472,20 @@ nav a:hover::after {
   color: var(--white);
   position: relative;
   z-index: 10;
+  /* Override accent colors: on dark green bg, use white as the accent */
+  --terracotta:    #ffffff;
+  --terracotta-lt: rgba(255, 255, 255, 0.1);
+  --gold:          #ffffff;
 }
 
-/* Top fade from sand Ã¢â€ â€™ dark */
+/* Top fade from sand ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ dark */
 .footer-top-fade {
   height: 60px;
   background: linear-gradient(to bottom, var(--sand), #061c14);
   margin-top: -1px;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Newsletter Strip Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Newsletter Strip ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .footer-newsletter {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 4rem 7% 4rem;
@@ -4509,7 +4512,7 @@ nav a:hover::after {
 .newsletter-icon {
   width: 52px;
   height: 52px;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(15, 77, 58, 0.12);
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -4600,7 +4603,7 @@ nav a:hover::after {
   flex: 0 0 auto;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Main Footer Grid Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main Footer Grid ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .footer-main {
   padding: 5rem 7% 4rem;
 }
@@ -4697,7 +4700,7 @@ nav a:hover::after {
   border-color: var(--terracotta);
   color: var(--white);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 8px 20px rgba(15, 77, 58, 0.3);
 }
 
 /* Link columns */
@@ -4772,7 +4775,7 @@ nav a:hover::after {
 .footer-contact-icon {
   width: 28px;
   height: 28px;
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(15, 77, 58, 0.1);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -4850,7 +4853,7 @@ nav a:hover::after {
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Divider with Brand Stamp Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Divider with Brand Stamp ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .footer-divider {
   display: flex;
   align-items: center;
@@ -4877,7 +4880,7 @@ nav a:hover::after {
   opacity: 1;
 }
 
-/* Ã¢â€â‚¬Ã¢â€â‚¬ Bottom Bar Ã¢â€â‚¬Ã¢â€â‚¬ */
+/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Bottom Bar ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -5047,6 +5050,7 @@ nav a:hover::after {
     justify-content: center;
   }
 }
+
 
 
 
