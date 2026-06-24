@@ -309,10 +309,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Background colours per product (match can-color) */
   const stageBgs = [
-    '#eef6f3', /* Interior — light green tint */
-    '#fdf3ed', /* Exterior — warm terracotta tint */
-    '#f5f2fc', /* Primers  — soft purple tint */
-    '#eef4fb', /* Water    — pale blue tint */
+    '#eef6f3', /* Interior — light emerald tint */
+    '#f5faf8', /* Exterior — clean white-green tint */
+    '#f0f7f4', /* Primers  — soft emerald-white tint */
+    '#eaf2ee', /* Water    — pale emerald tint */
   ];
 
   let currentIndex = -1; // start invalid to force first paint
