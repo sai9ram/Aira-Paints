@@ -1,76 +1,64 @@
 /* ============================================================
-   AIRA PAINTS — Scroll Animation Controller
-   High-performance using requestAnimationFrame
+   AIRA PAINTS — Hero Scrollytelling Controller
+   Robust: caches offsetTop so sectionTop never drifts
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── DOM references ─────────────────────────── */
-  const heroSection  = document.getElementById('hero');
-  const heroTrack    = document.getElementById('hero-track');
-  const heroSlides   = document.querySelectorAll('.hero-slide');
-  const heroDots     = document.querySelectorAll('.hero-dot');
-  const header       = document.getElementById('site-header');
+  const heroSection = document.getElementById('hero');
+  const heroTrack   = document.getElementById('hero-track');
+  const heroSlides  = document.querySelectorAll('.hero-slide');
+  const heroDots    = document.querySelectorAll('.hero-dot');
+  const header      = document.getElementById('site-header');
+
+  if (!heroSection || !heroTrack) return;
 
   /* ── State ──────────────────────────────────── */
   let lastScrollY = window.scrollY;
   let ticking     = false;
 
-  /* ── Utility: clamp a value between min and max ── */
-  const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
-
   /* ── Colors matching each slide ────────────── */
   const slideColors = ['#0F4D3A', '#7a3b1e', '#4a3f6b', '#1b4f72'];
 
-  /* ── Main animation tick ─────────────────────── */
-  function animate(scrollY) {
-    if (!heroSection || !heroTrack) return;
+  /* ── Cache layout values (stable after paint) ── */
+  let sectionTop      = 0;
+  let scrollableRange = 0;
 
-    const rect = heroSection.getBoundingClientRect();
-    const sectionTop = scrollY + rect.top;
-    const heroHeight = heroSection.offsetHeight;
-    const scrollableRange = heroHeight - window.innerHeight;
-
-    // Calculate progress (0 to 1) of scroll through the 400vh container
-    const progress = clamp((scrollY - sectionTop) / scrollableRange, 0, 1);
-
-    // Translate the track horizontally (0% to -75% translation)
-    const translatePct = progress * 75;
-    heroTrack.style.transform = `translateX(-${translatePct}%)`;
-
-    // Determine the current active slide index (0 to 3)
-    const activeIndex = clamp(Math.floor(progress * 4.0), 0, 3);
-
-    // Update background color based on active index
-    heroSection.style.backgroundColor = slideColors[activeIndex];
-
-    // Update active slide class
-    heroSlides.forEach((slide, idx) => {
-      if (idx === activeIndex) {
-        slide.classList.add('active');
-      } else {
-        slide.classList.remove('active');
-      }
-    });
-
-    // Update active navigation dot
-    heroDots.forEach((dot, idx) => {
-      if (idx === activeIndex) {
-        dot.classList.add('active');
-      } else {
-        dot.classList.remove('active');
-      }
-    });
-
-    // Header styling based on scrolling
-    if (scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
+  function cacheLayout() {
+    /* offsetTop is relative to document — never changes on scroll */
+    sectionTop      = heroSection.offsetTop;
+    scrollableRange = heroSection.offsetHeight - window.innerHeight;
   }
 
-  /* ── Scroll listener using rAF for 60fps performance ── */
+  /* ── Clamp helper ────────────────────────────── */
+  const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
+
+  /* ── Main animation tick ─────────────────────── */
+  function animate(scrollY) {
+    if (scrollableRange <= 0) return;
+
+    /* progress: 0 when hero starts, 1 when hero ends */
+    const progress = clamp((scrollY - sectionTop) / scrollableRange, 0, 1);
+
+    /* Slide the track: 0% → −75% (3 full slides) */
+    heroTrack.style.transform = `translateX(-${progress * 75}%)`;
+
+    /* Active slide index 0–3 */
+    const idx = clamp(Math.floor(progress * 4), 0, 3);
+
+    /* Background colour */
+    heroSection.style.backgroundColor = slideColors[idx];
+
+    /* Active slide + dot classes */
+    heroSlides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    heroDots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+
+    /* Header compact style */
+    header.classList.toggle('scrolled', scrollY > 20);
+  }
+
+  /* ── Scroll listener (rAF-throttled, 60fps) ──── */
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
     if (!ticking) {
@@ -82,27 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  // Add click events to pagination dots
-  heroDots.forEach((dot, idx) => {
+  /* ── Dot click → jump to slide ──────────────── */
+  heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      if (!heroSection) return;
-      const rect = heroSection.getBoundingClientRect();
-      const sectionTop = window.scrollY + rect.top;
-      const heroHeight = heroSection.offsetHeight;
-      const scrollableRange = heroHeight - window.innerHeight;
-      const targetScroll = sectionTop + (idx / 3.0) * scrollableRange;
-
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth'
-      });
+      const target = sectionTop + (i / 3) * scrollableRange;
+      window.scrollTo({ top: target, behavior: 'smooth' });
     });
   });
 
-  /* ── Initial render ────────────────────────────── */
+  /* ── Recalculate on resize ───────────────────── */
+  window.addEventListener('resize', () => {
+    cacheLayout();
+    animate(window.scrollY);
+  });
+
+  /* ── Initial run ─────────────────────────────── */
+  cacheLayout();
   animate(window.scrollY);
 
 });
+
 
 /* ============================================================
    SECTION 02 — Scroll Reveal & Stats Counter
