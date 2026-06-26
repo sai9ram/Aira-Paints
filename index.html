@@ -869,132 +869,199 @@
     <!-- â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” -->
     <!-- â”‚  SECTION 06 â€” COLOR INSPIRATION            â”‚ -->
     <!-- â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ -->
-    <section id="inspiration" class="inspiration-section" aria-label="Color Inspiration Experience">
-      <div class="inspiration-sticky-track" id="inspiration-sticky-track">
+    <section id="visualizer" class="colour-studio-section" aria-label="Interactive Colour Studio">
+      <div class="colour-studio-container">
 
-        <div class="inspiration-stage" id="inspiration-stage">
+        <div class="studio-header">
+          <span class="section-eyebrow">
+            <span class="eyebrow-line" aria-hidden="true"></span>
+            Colour Studio
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </span>
+          <h2 class="section-title">Discover Colours That<br><em>Match Your Lifestyle</em></h2>
+          <p class="studio-intro">
+            Explore curated colour palettes inspired by modern architecture, South Indian heritage, and contemporary interior design trends.
+          </p>
+        </div>
 
-          <!-- Interactive Room Visualizer Backdrop -->
-          <div class="room-preview-backdrop">
-            <!-- Living room CSS illustration -->
-            <div class="room-canvas">
-              <div class="room-wall" id="room-wall">
-                <!-- Abstract shadow/highlight for depth -->
-                <div class="room-highlight" aria-hidden="true"></div>
-                <!-- Frame Art -->
-                <div class="room-art-frame">
-                  <div class="art-content"></div>
-                </div>
-              </div>
-              <div class="room-floor">
-                <!-- CSS Sofa -->
-                <div class="room-sofa">
-                  <div class="sofa-back"></div>
-                  <div class="sofa-seat"></div>
-                  <div class="sofa-pillows">
-                    <div class="pillow"></div>
-                    <div class="pillow"></div>
+        <div class="studio-layout">
+          <!-- Left: Sticky Room Preview -->
+          <div class="studio-preview-panel">
+            <div class="studio-room-wrap">
+              <div class="studio-room">
+                <!-- Wall -->
+                <div class="studio-wall" id="studio-wall">
+                  <div class="studio-wall-sheen"></div>
+                  <!-- Frame Art -->
+                  <div class="studio-art-frame">
+                    <div class="studio-art-fill" id="studio-art-fill"></div>
+                  </div>
+                  <!-- Window -->
+                  <div class="studio-window">
+                    <div class="studio-window-pane"></div>
+                    <div class="studio-window-pane"></div>
+                    <div class="studio-window-light"></div>
                   </div>
                 </div>
-                <!-- CSS Indoor Plant -->
-                <div class="room-plant">
-                  <div class="plant-pot"></div>
-                  <div class="plant-leaf leaf-1"></div>
-                  <div class="plant-leaf leaf-2"></div>
-                  <div class="plant-leaf leaf-3"></div>
+                <!-- Floor -->
+                <div class="studio-floor" id="studio-floor">
+                  <div class="studio-skirting"></div>
+                  <!-- Sofa -->
+                  <div class="studio-sofa">
+                    <div class="studio-sofa-back" id="studio-sofa-back"></div>
+                    <div class="studio-sofa-seat" id="studio-sofa-seat"></div>
+                    <div class="studio-cushions">
+                      <div class="studio-cushion" id="studio-cushion-a"></div>
+                      <div class="studio-cushion studio-cushion--sm" id="studio-cushion-b"></div>
+                    </div>
+                    <div class="studio-sofa-leg"></div>
+                    <div class="studio-sofa-leg studio-sofa-leg--r"></div>
+                  </div>
+                  <!-- Side Table with Vase -->
+                  <div class="studio-side-table">
+                    <div class="studio-vase">
+                      <div class="studio-vase-bloom"></div>
+                      <div class="studio-vase-stem"></div>
+                      <div class="studio-vase-body" id="studio-vase-body"></div>
+                    </div>
+                    <div class="studio-table-top"></div>
+                    <div class="studio-table-leg"></div>
+                  </div>
+                  <!-- Plant -->
+                  <div class="studio-plant">
+                    <div class="studio-pot"></div>
+                    <div class="studio-leaf studio-leaf--a"></div>
+                    <div class="studio-leaf studio-leaf--b"></div>
+                    <div class="studio-leaf studio-leaf--c"></div>
+                  </div>
+                  <!-- Rug -->
+                  <div class="studio-rug" id="studio-rug"></div>
                 </div>
               </div>
             </div>
 
-            <!-- Floating Active Palette Card -->
-            <div class="active-palette-card">
-              <span class="active-palette-eyebrow">Active Palette</span>
-              <h4 class="active-palette-name" id="active-palette-name">Modern Minimalist</h4>
-              <div class="active-palette-swatches" id="active-palette-swatches">
-                <!-- Dynamically populated by JS -->
+            <!-- Badge -->
+            <div class="studio-badge">
+              <div class="studio-badge-swatches" id="studio-badge-swatches"></div>
+              <div class="studio-badge-info">
+                <span class="studio-badge-label">Active Palette</span>
+                <span class="studio-badge-name" id="studio-badge-name">Modern Minimalist</span>
+              </div>
+              <div class="studio-hint">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span>Click any card to visualize</span>
               </div>
             </div>
           </div>
 
-          <!-- Sticky/Interactive Palette Details -->
-          <div class="inspiration-content">
+          <!-- Right: Selector Panel -->
+          <div class="studio-selector-panel">
+            <span class="studio-selector-heading">Curated Palettes</span>
+            <div class="studio-palette-grid" id="studio-palette-grid">
+              
+              <button class="studio-palette-card active" data-colors='["#3A3530", "#C8B195", "#EFEAE4"]' data-names='["Slate Charcoal", "Sandalwood Dusk", "Alabaster Cream"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #3A3530"></span>
+                  <span class="palette-swatch" style="background: #C8B195"></span>
+                  <span class="palette-swatch" style="background: #EFEAE4"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Modern Minimalist</strong>
+                  <span>Serene, clean, and warm hues designed for spacious modern living rooms.</span>
+                </div>
+              </button>
 
-            <div class="inspiration-header">
-              <span class="section-eyebrow">
-                <span class="eyebrow-line" aria-hidden="true"></span>
-                Interactive Studio
-                <span class="eyebrow-line" aria-hidden="true"></span>
-              </span>
-              <h2 class="section-title">Discover Colours That<br><em>Match Your Lifestyle</em></h2>
-              <p class="inspiration-intro">
-                Explore curated colour palettes inspired by modern architecture, South Indian heritage, and contemporary
-                interior design trends.
-              </p>
+              <button class="studio-palette-card" data-colors='["#1E352F", "#A25A38", "#F4EFEB"]' data-names='["Seshachalam Forest", "Terracotta Clay", "Divine Sand"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #1E352F"></span>
+                  <span class="palette-swatch" style="background: #A25A38"></span>
+                  <span class="palette-swatch" style="background: #F4EFEB"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Earthy Natural</strong>
+                  <span>Organic mineral-based tones rooted in the rich hills of Tirupati.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#8A5A16", "#E0A838", "#FDFBF7"]' data-names='["Heritage Bronze", "Saffron Gold", "Champagne Mist"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #8A5A16"></span>
+                  <span class="palette-swatch" style="background: #E0A838"></span>
+                  <span class="palette-swatch" style="background: #FDFBF7"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Luxury Gold</strong>
+                  <span>Regal metallic highlights inspired by heritage temples and temple architecture.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#4A5568", "#A0AEC0", "#F7FAFC"]' data-names='["Slate Stone", "Mist Silver", "Soft Ash"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #4A5568"></span>
+                  <span class="palette-swatch" style="background: #A0AEC0"></span>
+                  <span class="palette-swatch" style="background: #F7FAFC"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Contemporary Grey</strong>
+                  <span>Sleek, balanced monochrome scales for industrial chic spaces.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#A22B29", "#E3A857", "#FFFDF0"]' data-names='["Temple Vermilion", "Marigold Saffron", "Warm Turmeric"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #A22B29"></span>
+                  <span class="palette-swatch" style="background: #E3A857"></span>
+                  <span class="palette-swatch" style="background: #FFFDF0"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Traditional South Indian</strong>
+                  <span>Vibrant heritage-rich tones celebrating local festivals and traditional architecture.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#2A3B39", "#8E9A94", "#EAF0ED"]' data-names='["Deep Olive", "Sage Mist", "Pearl Alabaster"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #2A3B39"></span>
+                  <span class="palette-swatch" style="background: #8E9A94"></span>
+                  <span class="palette-swatch" style="background: #EAF0ED"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Premium Villa Collection</strong>
+                  <span>Lush, airy palettes tailored for high-end luxury villas and duplexes.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#1A365D", "#2B6CB0", "#EBF8FF"]' data-names='["Corporate Navy", "Architectural Blue", "Sky Tint"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #1A365D"></span>
+                  <span class="palette-swatch" style="background: #2B6CB0"></span>
+                  <span class="palette-swatch" style="background: #EBF8FF"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Commercial Spaces</strong>
+                  <span>Productive, high-durability color palettes designed for corporate environments.</span>
+                </div>
+              </button>
+
+              <button class="studio-palette-card" data-colors='["#4A2E35", "#A84C62", "#FAF5F5"]' data-names='["Velvet Plum", "Royal Orchid", "Warm Ivory"]'>
+                <div class="palette-card-swatches">
+                  <span class="palette-swatch" style="background: #4A2E35"></span>
+                  <span class="palette-swatch" style="background: #A84C62"></span>
+                  <span class="palette-swatch" style="background: #FAF5F5"></span>
+                </div>
+                <div class="palette-card-info">
+                  <strong>Hospitality Collection</strong>
+                  <span>Inviting, luxurious combinations crafted for hotels, cafes, and lounge walls.</span>
+                </div>
+              </button>
+
             </div>
-
-            <!-- Interactive Palette Categories Timeline -->
-            <div class="categories-list" id="categories-list">
-
-              <div class="category-item active" data-index="0" data-colors='["#EFEAE4", "#C8B195", "#3A3530"]'
-                data-names='["Alabaster Cream", "Sandalwood Dusk", "Slate Charcoal"]'>
-                <div class="category-indicator"></div>
-                <h3>Modern Minimalist</h3>
-                <p>Serene, clean, and warm hues designed for spacious modern living rooms.</p>
-              </div>
-
-              <div class="category-item" data-index="1" data-colors='["#1E352F", "#0F4D3A", "#F4EFEB"]'
-                data-names='["Seshachalam Forest", "Terracotta Clay", "Divine Sand"]'>
-                <div class="category-indicator"></div>
-                <h3>Earthy Natural</h3>
-                <p>Organic mineral-based tones rooted in the rich hills of Tirupati.</p>
-              </div>
-
-              <div class="category-item" data-index="2" data-colors='["#E0A838", "#8A5A16", "#FDFBF7"]'
-                data-names='["Saffron Gold", "Heritage Bronze", "Champagne Mist"]'>
-                <div class="category-indicator"></div>
-                <h3>Luxury Gold</h3>
-                <p>Regal metallic highlights inspired by heritage temples and temple architecture.</p>
-              </div>
-
-              <div class="category-item" data-index="3" data-colors='["#4A5568", "#A0AEC0", "#F7FAFC"]'
-                data-names='["Slate Stone", "Mist Silver", "Soft Ash"]'>
-                <div class="category-indicator"></div>
-                <h3>Contemporary Grey</h3>
-                <p>Sleek, balanced monochrome scales for industrial chic spaces.</p>
-              </div>
-
-              <div class="category-item" data-index="4" data-colors='["#A22B29", "#E3A857", "#FFFDF0"]'
-                data-names='["Temple Vermilion", "Marigold Saffron", "Warm Turmeric"]'>
-                <div class="category-indicator"></div>
-                <h3>Traditional South Indian</h3>
-                <p>Vibrant heritage-rich tones celebrating local festivals and traditional architecture.</p>
-              </div>
-
-              <div class="category-item" data-index="5" data-colors='["#2A3B39", "#8E9A94", "#EAF0ED"]'
-                data-names='["Deep Olive", "Sage Mist", "Pearl Alabaster"]'>
-                <div class="category-indicator"></div>
-                <h3>Premium Villa Collection</h3>
-                <p>Lush, airy palettes tailored for high-end luxury villas and duplexes.</p>
-              </div>
-
-              <div class="category-item" data-index="6" data-colors='["#1A365D", "#2B6CB0", "#EBF8FF"]'
-                data-names='["Corporate Navy", "Architectural Blue", "Sky Tint"]'>
-                <div class="category-indicator"></div>
-                <h3>Commercial Spaces</h3>
-                <p>Productive, high-durability color palettes designed for corporate environments.</p>
-              </div>
-
-              <div class="category-item" data-index="7" data-colors='["#4A2E35", "#A84C62", "#FAF5F5"]'
-                data-names='["Velvet Plum", "Royal Orchid", "Warm Ivory"]'>
-                <div class="category-indicator"></div>
-                <h3>Hospitality Collection</h3>
-                <p>Inviting, luxurious combinations crafted for hotels, cafes, and lounge walls.</p>
-              </div>
-
-            </div>
-
+            <a href="#consultation" class="btn btn-primary studio-cta-btn">Get Custom Colour Consultation</a>
           </div>
-
         </div>
 
       </div>
