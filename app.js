@@ -387,101 +387,71 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================
-   SECTION 06 — Color Inspiration Experience Controller
+   SECTION 06 — Colour Studio Controller
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const stickyTrack = document.getElementById('inspiration-sticky-track');
-  const items = document.querySelectorAll('#categories-list .category-item');
-  const wall = document.getElementById('room-wall');
-  const paletteName = document.getElementById('active-palette-name');
-  const swatchesContainer = document.getElementById('active-palette-swatches');
-  const stage = document.getElementById('inspiration-stage');
+  const cards    = document.querySelectorAll('#studio-palette-grid .studio-palette-card');
+  const wall     = document.getElementById('studio-wall');
+  const floor    = document.getElementById('studio-floor');
+  const artFill  = document.getElementById('studio-art-fill');
+  const sofaBack = document.getElementById('studio-sofa-back');
+  const sofaSeat = document.getElementById('studio-sofa-seat');
+  const cushionA = document.getElementById('studio-cushion-a');
+  const cushionB = document.getElementById('studio-cushion-b');
+  const vaseBody = document.getElementById('studio-vase-body');
+  const rug      = document.getElementById('studio-rug');
+  const badgeName    = document.getElementById('studio-badge-name');
+  const badgeSwatches = document.getElementById('studio-badge-swatches');
 
-  if (!stickyTrack || !items.length) return;
+  if (!cards.length) return;
 
-  const TOTAL_CATEGORIES = items.length; // 8
+  function applyPalette(card) {
+    const colors = JSON.parse(card.getAttribute('data-colors'));
+    const names  = JSON.parse(card.getAttribute('data-names'));
+    const title  = card.querySelector('strong').textContent;
 
-  let activeIndex = -1;
+    const [primary, secondary, light] = colors;
 
-  function updateActivePalette(index) {
-    if (index === activeIndex) return;
-    activeIndex = index;
+    // Lighten wall colour: use light shade (index 2)
+    if (wall)  wall.style.setProperty('--studio-wall', light);
+    // Floor: muted mid shade
+    if (floor) floor.style.setProperty('--studio-floor', secondary + '22');
 
-    // Update active category class
-    items.forEach((item, idx) => {
-      item.classList.toggle('active', idx === index);
-    });
+    // Room elements
+    const accent = primary;
+    if (artFill)  artFill.style.backgroundColor  = accent;
+    if (sofaBack) sofaBack.style.backgroundColor = primary;
+    if (sofaSeat) sofaSeat.style.backgroundColor = secondary;
+    if (cushionA) cushionA.style.backgroundColor = secondary;
+    if (cushionB) cushionB.style.backgroundColor = light;
+    if (vaseBody) vaseBody.style.backgroundColor = secondary;
+    if (rug)      rug.style.backgroundColor      = secondary;
 
-    const activeItem = items[index];
-    const colors = JSON.parse(activeItem.getAttribute('data-colors'));
-    const names = JSON.parse(activeItem.getAttribute('data-names'));
-
-    // Apply color variables
-    if (wall) {
-      wall.style.setProperty('--active-wall-color', colors[2]); // use light shade for wall
-      wall.style.setProperty('--active-accent-color', colors[0]); // use primary shade for pillow/art
-      wall.parentElement.style.setProperty('--active-accent-color', colors[0]);
-    }
-    
-    if (stage) {
-      // Use secondary or dominant color with low opacity for the backdrop container
-      stage.style.setProperty('--room-backdrop-color', colors[1] + '12'); 
-    }
-
-    // Set Palette Name
-    if (paletteName) {
-      paletteName.textContent = activeItem.querySelector('h3').textContent;
-    }
-
-    // Build Swatches
-    if (swatchesContainer) {
-      let swatchesHtml = '';
-      colors.forEach((color, i) => {
-        swatchesHtml += `
-          <div class="swatch-item">
-            <span class="swatch-dot" style="background-color: ${color}"></span>
-            <span class="swatch-name">${names[i]}</span>
-          </div>
-        `;
-      });
-      swatchesContainer.innerHTML = swatchesHtml;
+    // Badge
+    if (badgeName) badgeName.textContent = title;
+    if (badgeSwatches) {
+      badgeSwatches.innerHTML = colors.map((c, i) =>
+        `<span class="studio-badge-swatch" style="background:${c}" title="${names[i]}"></span>`
+      ).join('');
     }
   }
 
-  function handleScroll() {
-    const rect = stickyTrack.getBoundingClientRect();
-    const scrolled = -rect.top;
-    const scrollableH = stickyTrack.offsetHeight - window.innerHeight;
-
-    if (scrolled < 0) {
-      updateActivePalette(0);
-      return;
-    }
-
-    if (scrolled > scrollableH) {
-      updateActivePalette(TOTAL_CATEGORIES - 1);
-      return;
-    }
-
-    const pct = scrolled / scrollableH;
-    const index = Math.min(Math.floor(pct * TOTAL_CATEGORIES), TOTAL_CATEGORIES - 1);
-    updateActivePalette(index);
-  }
-
-  // Handle category clicks to scroll directly to the corresponding zone
-  items.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      const rect = stickyTrack.getBoundingClientRect();
-      const scrollableH = stickyTrack.offsetHeight - window.innerHeight;
-      const targetScroll = window.scrollY + rect.top + (scrollableH * (index / (TOTAL_CATEGORIES - 1)));
-      window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Deactivate all
+      cards.forEach(c => c.classList.remove('active'));
+      card.classList.add('active');
+      applyPalette(card);
     });
   });
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial load
+  // Init with the first (active) card
+  const first = document.querySelector('#studio-palette-grid .studio-palette-card.active');
+  if (first) applyPalette(first);
 });
+
+
 
 /* ============================================================
    SECTION 07 — Sustainability Storytelling Parallax Controller

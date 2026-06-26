@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@700;800&display=swap');
 
 /* ============================================
-   AIRA PAINTS – Design System
+   AIRA PAINTS â€“ Design System
    Premium Eco-Friendly Paint Brand
    Tirupati Edition
    ============================================ */
 
 :root {
-  /* Core Brand Colors — Deep Emerald & White */
+  /* Core Brand Colors â€” Deep Emerald & White */
   --forest:        #0F4D3A;
   --forest-mid:    #166b4f;
   --forest-light:  rgba(15, 77, 58, 0.08);
@@ -284,7 +284,7 @@ nav a:hover::after {
 }
 
 /* ============================================
-   HERO SECTION ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SCROLLYTELLING STAGE
+   HERO SECTION ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â SCROLLYTELLING STAGE
    ============================================ */
 /* The hero section is the scroll container for the sticky stage */
 .hero-section {
@@ -293,7 +293,7 @@ nav a:hover::after {
 }
 
 /* ---- Hero Scroll Stage ---- */
-/* The hero is sticky ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â it pins and the page scrolls behind it */
+/* The hero is sticky ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â it pins and the page scrolls behind it */
 .hero-stage {
   position: sticky;
   top: 0;
@@ -863,7 +863,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 02 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â WHY MODERN HOMES CHOOSE US
+   SECTION 02 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â WHY MODERN HOMES CHOOSE US
    ============================================================ */
 
 .why-section {
@@ -1173,7 +1173,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 03 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â TIRUPATI STORY (Cinematic Full-Width)
+   SECTION 03 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â TIRUPATI STORY (Cinematic Full-Width)
    ============================================================ */
 
 .story-section {
@@ -1186,7 +1186,7 @@ nav a:hover::after {
   isolation: isolate;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Background Layer ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Background Layer ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-bg {
   position: absolute;
   inset: 0;
@@ -1204,7 +1204,7 @@ nav a:hover::after {
   z-index: 1;
 }
 
-/* Cinematic CSS gradient fallback ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â shows when no video */
+/* Cinematic CSS gradient fallback ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â shows when no video */
 .story-bg-cinematic {
   position: absolute;
   inset: 0;
@@ -1250,7 +1250,7 @@ nav a:hover::after {
   to   { transform: translateX(30%) rotate(5deg);  opacity: 1; }
 }
 
-/* Gradient overlay ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â darkens top, fades left side for text readability */
+/* Gradient overlay ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â darkens top, fades left side for text readability */
 .story-overlay-gradient {
   position: absolute;
   inset: 0;
@@ -1269,7 +1269,7 @@ nav a:hover::after {
   pointer-events: none;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Location Pill ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Location Pill ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-location {
   position: absolute;
   top: 2.5rem;
@@ -1305,7 +1305,7 @@ nav a:hover::after {
   opacity: 0.4;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main Content Layout ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Main Content Layout ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-content {
   position: relative;
   z-index: 10;
@@ -1316,7 +1316,7 @@ nav a:hover::after {
   padding: 10rem 7% 6rem;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left: Story Text ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Left: Story Text ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-text {
   display: flex;
   flex-direction: column;
@@ -1403,7 +1403,7 @@ nav a:hover::after {
   color: var(--terracotta);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right: Counter Items ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Right: Counter Items ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-counters {
   display: flex;
   flex-direction: column;
@@ -1510,7 +1510,7 @@ nav a:hover::after {
   text-transform: uppercase;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Reveal Fade (for story section elements) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Reveal Fade (for story section elements) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .reveal-fade {
   opacity: 0;
   transform: translateY(30px);
@@ -1522,7 +1522,7 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Bottom scroll cue line ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Bottom scroll cue line ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .story-bottom-line {
   position: absolute;
   bottom: 0;
@@ -1533,7 +1533,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Responsive: Section 03 ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Responsive: Section 03 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 @media (max-width: 900px) {
   .story-content {
     grid-template-columns: 1fr;
@@ -1577,29 +1577,29 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 04 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â PRODUCT SHOWCASE (Apple Scroll Style)
+   SECTION 04 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â PRODUCT SHOWCASE (Apple Scroll Style)
    ============================================================ */
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Section wrapper ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Section wrapper ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .products-section {
   background-color: var(--sand);
   padding-top: 6rem;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Section header ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Section header ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .products-header {
   text-align: center;
   padding: 0 7%;
   margin-bottom: 4rem;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sticky container: 400vh gives 4 products ÃƒÆ’Ã¢â‚¬â€ 100vh each ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Sticky container: 400vh gives 4 products ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 100vh each ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .products-sticky-wrap {
   height: 400vh;
   position: relative;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sticky stage (pins while products scroll) ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Sticky stage (pins while products scroll) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .products-stage {
   position: sticky;
   top: 0;
@@ -1621,7 +1621,7 @@ nav a:hover::after {
   z-index: 0;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Progress dots ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Progress dots ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .product-dots {
   position: absolute;
   right: 5%;
@@ -1649,7 +1649,7 @@ nav a:hover::after {
   transform: scale(1.4);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Slides container ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Slides container ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .product-slides {
   position: relative;
   width: 100%;
@@ -1657,7 +1657,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Individual slide ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Individual slide ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .product-slide {
   position: absolute;
   inset: 0;
@@ -1685,7 +1685,7 @@ nav a:hover::after {
   transform: translateY(-60px);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left: Visual ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Left: Visual ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .slide-visual {
   display: flex;
   justify-content: center;
@@ -1717,7 +1717,7 @@ nav a:hover::after {
   to   { transform: scale(1.1); opacity: 1;   }
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Showcase CSS Paint Can ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Showcase CSS Paint Can ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .showcase-can {
   position: relative;
   width: 220px;
@@ -1912,7 +1912,7 @@ nav a:hover::after {
 .showcase-can-handle::before { left: -6px; }
 .showcase-can-handle::after  { right: -6px; }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right: Text Info ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Right: Text Info ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .slide-info {
   display: flex;
   flex-direction: column;
@@ -1986,7 +1986,7 @@ nav a:hover::after {
   margin-top: 0.5rem;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Scroll progress bar at bottom ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Scroll progress bar at bottom ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .products-progress-bar {
   position: absolute;
   bottom: 0;
@@ -2004,7 +2004,7 @@ nav a:hover::after {
   transition: width 0.4s var(--ease-out-expo);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Responsive: Section 04 ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Responsive: Section 04 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 @media (max-width: 900px) {
   .product-slide {
     grid-template-columns: 1fr;
@@ -2043,7 +2043,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 05 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COMPETITOR COMPARISON SECTION
+   SECTION 05 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â COMPETITOR COMPARISON SECTION
    ============================================================ */
 
 .comparison-section {
@@ -2325,465 +2325,478 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 06 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â COLOR INSPIRATION EXPERIENCE
+   SECTION 06 — COLOUR STUDIO
    ============================================================ */
 
-.inspiration-section {
+.colour-studio-section {
   background-color: var(--sand);
+  padding: 7rem 7% 8rem;
   position: relative;
   z-index: 10;
 }
 
-.inspiration-sticky-track {
-  height: 550vh;
-  position: relative;
+.colour-studio-container {
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-.inspiration-stage {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
+.studio-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.studio-intro {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  opacity: 0.65;
+  max-width: 600px;
+  margin: 1.2rem auto 0;
+  line-height: 1.75;
+}
+
+.studio-layout {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  overflow: hidden;
-  background-color: var(--sand);
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: start;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Left Side: Room visualizer backdrop ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
-.room-preview-backdrop {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  background: var(--room-backdrop-color, #ece6df);
-  overflow: hidden;
-  transition: background-color 0.8s var(--ease-out-expo);
-  padding: 0 4%;
-}
-
-.room-canvas {
-  position: relative;
-  width: 100%;
-  max-width: 580px;
-  height: 70%;
-  min-height: 400px;
+.studio-preview-panel {
+  position: sticky;
+  top: 100px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 40px 100px rgba(15, 77, 58, 0.12);
-  border-radius: 16px;
+  gap: 1.2rem;
+}
+
+.studio-room-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px rgba(15,77,58,0.1), 0 8px 24px rgba(15,77,58,0.06);
+}
+
+.studio-room {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 440px;
+  border-radius: 24px;
   overflow: hidden;
 }
 
-.room-wall {
+.studio-wall {
+  flex: 1 1 60%;
+  background-color: var(--studio-wall, #EFEAE4);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
   position: relative;
-  flex-grow: 1;
-  background-color: var(--active-wall-color, #EFEAE4);
-  transition: background-color 0.8s var(--ease-out-expo);
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 260px;
+  padding: 2rem;
+  gap: 3rem;
 }
 
-.room-highlight {
+.studio-wall-sheen {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.08) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%, rgba(0,0,0,0.06) 100%);
   pointer-events: none;
 }
 
-/* Art frame on wall */
-.room-art-frame {
-  width: 130px;
-  height: 170px;
-  border: 7px solid #ffffff;
-  background: #ffffff;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
-  transform: translateY(-20px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.studio-art-frame {
+  width: 100px;
+  height: 130px;
+  border: 6px solid #ffffff;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.art-content {
+.studio-art-fill {
   width: 100%;
   height: 100%;
-  background-color: var(--active-accent-color, #0a2e20);
-  transition: background-color 0.8s var(--ease-out-expo);
-  position: relative;
+  background-color: var(--studio-accent, #3A3530);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
 }
 
-/* Floor */
-.room-floor {
-  height: 32%;
-  background: #e8f0ed;
-  border-top: 8px solid #c8bba9;
+.studio-window {
+  position: absolute;
+  top: 2rem;
+  right: 3rem;
+  width: 70px;
+  height: 90px;
+  border: 5px solid rgba(255,255,255,0.5);
+  border-radius: 6px 6px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  background: rgba(255,255,255,0.25);
+  overflow: hidden;
+}
+
+.studio-window-pane {
+  background: rgba(200,230,255,0.3);
+  border-radius: 2px;
+}
+
+.studio-window-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4) 0%, transparent 80%);
+}
+
+.studio-floor {
+  flex: 0 0 40%;
+  background-color: var(--studio-floor, #e8f0ed);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
   position: relative;
   display: flex;
   align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 25px;
+  padding: 0 2.5rem 2rem;
+  gap: 1.5rem;
+  min-height: 180px;
 }
 
-/* Sofa CSS illustration */
-.room-sofa {
+.studio-skirting {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: rgba(0,0,0,0.08);
+}
+
+.studio-sofa {
   position: relative;
   width: 200px;
-  height: 70px;
-  z-index: 2;
-  margin-right: 40px;
+  height: 76px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
 }
 
-.sofa-back {
+.studio-sofa-back {
   position: absolute;
   bottom: 22px;
   left: 0;
   right: 0;
-  height: 48px;
-  background: #0a2e20;
-  border-radius: 12px 12px 0 0;
-  opacity: 0.95;
+  height: 54px;
+  background-color: var(--studio-primary, #3A3530);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 10px 10px 0 0;
 }
 
-.sofa-seat {
+.studio-sofa-seat {
   position: absolute;
   bottom: 0;
   left: -4px;
   right: -4px;
-  height: 28px;
-  background: #071c12;
-  border-radius: 6px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  height: 26px;
+  background-color: var(--studio-dark, #2a2520);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 5px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.14);
 }
 
-.sofa-pillows {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+.studio-cushions {
   position: absolute;
   bottom: 22px;
-  z-index: 3;
-  padding: 0 25px;
-}
-
-.pillow {
-  width: 32px;
-  height: 32px;
-  background-color: var(--active-accent-color, #C8B195);
-  border-radius: 6px;
-  transform: rotate(45deg);
-  transition: background-color 0.8s var(--ease-out-expo);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* Indoor plant CSS illustration */
-.room-plant {
-  position: absolute;
-  right: 50px;
-  bottom: 25px;
-  width: 45px;
-  height: 80px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px 0;
   z-index: 2;
 }
 
-.plant-pot {
+.studio-cushion {
+  width: 36px;
+  height: 36px;
+  background-color: var(--studio-accent, #C8B195);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 6px;
+  transform: rotate(45deg);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+}
+
+.studio-cushion--sm {
   width: 28px;
   height: 28px;
-  background: #0F4D3A;
-  border-radius: 4px 4px 12px 12px;
-  margin: 0 auto;
+}
+
+.studio-sofa-leg {
   position: absolute;
-  bottom: 0;
-  left: 8px;
+  bottom: -10px;
+  left: 14px;
+  width: 8px;
+  height: 12px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 0 0 3px 3px;
 }
 
-.plant-leaf {
-  position: absolute;
-  background: #0f4d3a;
-  border-radius: 50% 50% 0 50%;
-  transform-origin: bottom right;
-  transition: background-color 0.8s var(--ease-out-expo);
-}
+.studio-sofa-leg--r { left: auto; right: 14px; }
 
-.leaf-1 {
-  width: 14px;
-  height: 40px;
-  bottom: 24px;
-  left: 8px;
-  transform: rotate(-32deg);
-}
-
-.leaf-2 {
-  width: 12px;
-  height: 35px;
-  bottom: 24px;
-  left: 22px;
-  transform: rotate(15deg);
-  border-radius: 50% 50% 50% 0;
-  transform-origin: bottom left;
-}
-
-.leaf-3 {
-  width: 13px;
-  height: 45px;
-  bottom: 28px;
-  left: 15px;
-  transform: rotate(-8deg);
-}
-
-/* Floating Active Palette Card */
-.active-palette-card {
-  position: absolute;
-  bottom: 6%;
-  left: 8%;
-  right: 8%;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  padding: 1.2rem 1.6rem;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
-  box-shadow: 0 20px 40px rgba(15, 77, 58, 0.08);
+.studio-side-table {
+  position: relative;
+  width: 50px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.studio-table-top {
+  width: 52px;
+  height: 8px;
+  background: #8a7060;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+.studio-table-leg {
+  width: 4px;
+  height: 32px;
+  background: #7a6050;
+}
+
+.studio-vase {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.studio-vase-body {
+  width: 20px;
+  height: 28px;
+  background-color: var(--studio-accent, #C8B195);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 4px 4px 8px 8px;
+}
+
+.studio-vase-stem { width: 2px; height: 14px; background: #2d6a4f; }
+.studio-vase-bloom {
+  width: 14px; height: 10px;
+  background: #52b788;
+  border-radius: 50% 50% 0 0;
+  margin-top: -2px;
+}
+
+.studio-plant {
+  position: absolute;
+  right: 3rem;
+  bottom: 1.5rem;
+  width: 40px;
+  height: 75px;
+}
+
+.studio-pot {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: #0F4D3A;
+  border-radius: 3px 3px 8px 8px;
+}
+
+.studio-leaf {
+  position: absolute;
+  background: #0f4d3a;
+  border-radius: 50% 0 50% 0;
+  transform-origin: bottom center;
+}
+
+.studio-leaf--a { width:12px; height:38px; bottom:22px; left:6px; transform:rotate(-28deg); }
+.studio-leaf--b { width:11px; height:32px; bottom:22px; left:20px; border-radius:0 50% 0 50%; transform:rotate(20deg); }
+.studio-leaf--c { width:10px; height:42px; bottom:24px; left:13px; transform:rotate(-5deg); }
+
+.studio-rug {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 20%;
+  height: 14px;
+  background-color: var(--studio-accent, #C8B195);
+  transition: background-color 0.7s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 4px 4px 0 0;
+  opacity: 0.55;
+}
+
+.studio-badge {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 1.2rem;
+  right: 1.2rem;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 8px 24px rgba(15,77,58,0.1);
+  border-radius: 14px;
+  padding: 1rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
   z-index: 10;
 }
 
-.active-palette-eyebrow {
+.studio-badge-swatches { display:flex; gap:6px; flex-shrink:0; }
+
+.studio-badge-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.25s ease;
+}
+
+.studio-badge-swatch:hover { transform: scale(1.2); }
+
+.studio-badge-info { display:flex; flex-direction:column; gap:1px; }
+
+.studio-badge-label {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--terracotta);
-}
-
-.active-palette-name {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-weight: 700;
   color: var(--forest);
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-.active-palette-swatches {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 0.2rem;
-}
-
-.swatch-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.swatch-dot {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
-
-.swatch-item:hover .swatch-dot {
-  transform: scale(1.15);
-}
-
-.swatch-name {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--charcoal);
-  opacity: 0.8;
-}
-
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Right Side: Sticky/Interactive Details ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
-.inspiration-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 10% 0 8%;
-  height: 100vh;
-  position: relative;
-}
-
-.inspiration-desc {
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  color: var(--charcoal);
-  opacity: 0.7;
-  margin-top: 1rem;
-}
-
-/* Timeline scroll categories container */
-.categories-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
-  margin-top: 3.5rem;
-  position: relative;
-  max-height: 55vh;
-  overflow-y: visible;
-}
-
-.category-item {
-  position: relative;
-  padding-left: 2rem;
-  cursor: pointer;
-  opacity: 0.32;
-  transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth);
-}
-
-.category-item:hover {
   opacity: 0.6;
 }
 
-.category-item.active {
-  opacity: 1;
-  transform: translateX(8px);
-}
-
-.category-indicator {
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 4px;
-  height: 16px;
-  background: rgba(15, 77, 58, 0.12);
-  border-radius: 2px;
-  transition: background 0.4s ease, height 0.4s ease, top 0.4s ease;
-}
-
-.category-item.active .category-indicator {
-  background: var(--terracotta);
-  height: 28px;
-  top: 2px;
-}
-
-.category-item h3 {
+.studio-badge-name {
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--forest);
-  margin-bottom: 0.4rem;
   letter-spacing: -0.01em;
 }
 
-.category-item p {
+.studio-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--forest);
+  opacity: 0.55;
+  padding-left: 0.5rem;
+}
+
+.studio-selector-panel { display:flex; flex-direction:column; gap:1.6rem; }
+
+.studio-selector-heading {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--forest);
+  opacity: 0.5;
+}
+
+.studio-palette-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.studio-palette-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.1rem 1.2rem;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(15,77,58,0.04);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.25s var(--ease-out-expo), background 0.3s ease;
+  font-family: inherit;
+}
+
+.studio-palette-card:hover {
+  border-color: rgba(15,77,58,0.2);
+  box-shadow: 0 8px 28px rgba(15,77,58,0.1);
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.85);
+}
+
+.studio-palette-card.active {
+  border-color: var(--forest);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 10px 32px rgba(15,77,58,0.14);
+}
+
+.palette-card-swatches { display:flex; gap:5px; }
+
+.palette-swatch {
+  flex: 1;
+  height: 32px;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.studio-palette-card:hover .palette-swatch { transform: scaleY(1.06); }
+
+.palette-card-info { display:flex; flex-direction:column; gap:2px; }
+
+.palette-card-info strong {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--forest);
+  letter-spacing: -0.01em;
+  display: block;
+}
+
+.palette-card-info span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
   color: var(--charcoal);
-  opacity: 0.65;
-  line-height: 1.5;
+  opacity: 0.55;
+  display: block;
+}
+
+.studio-cta-btn { margin-top:0.5rem; width:100%; justify-content:center; }
+
+@media (max-width: 1024px) {
+  .studio-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .studio-preview-panel { position: static; }
+}
+
+@media (max-width: 640px) {
+  .colour-studio-section { padding: 5rem 5% 6rem; }
+  .studio-palette-grid { grid-template-columns: 1fr; }
+  .studio-room { min-height: 320px; }
+  .studio-sofa { width:140px; height:56px; }
+  .studio-sofa-back { height:38px; bottom:16px; }
+  .studio-sofa-seat { height:20px; }
+  .studio-cushion { width:26px; height:26px; }
+  .studio-cushion--sm { width:20px; height:20px; }
+}
+
 }
 
 /* ============================================================
-   RESPONSIVE: SECTION 06
-   ============================================================ */
-@media (max-width: 900px) {
-  .inspiration-stage {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1.1fr 0.9fr;
-  }
-
-  .inspiration-sticky-track {
-    height: 700vh; /* more scrolling space on mobile */
-  }
-
-  .room-preview-backdrop {
-    height: 100%;
-    padding: 2.5rem 5%;
-  }
-
-  .room-canvas {
-    height: 62%;
-    min-height: 280px;
-  }
-
-  .room-floor {
-    height: 28%;
-    padding-bottom: 15px;
-  }
-
-  .room-sofa {
-    width: 150px;
-    height: 52px;
-    margin-right: 25px;
-  }
-
-  .sofa-back {
-    height: 36px;
-    bottom: 16px;
-  }
-
-  .sofa-seat {
-    height: 20px;
-  }
-
-  .sofa-pillows {
-    bottom: 16px;
-    padding: 0 16px;
-  }
-
-  .pillow {
-    width: 22px;
-    height: 22px;
-  }
-
-  .room-plant {
-    right: 35px;
-    bottom: 15px;
-    width: 32px;
-    height: 60px;
-  }
-
-  .plant-pot {
-    width: 20px;
-    height: 20px;
-    left: 6px;
-  }
-
-  .plant-leaf {
-    transform: scale(0.7);
-  }
-
-  .active-palette-card {
-    bottom: 4%;
-    padding: 0.9rem 1.2rem;
-  }
-
-  .active-palette-name {
-    font-size: 1rem;
-  }
-
-  .swatch-name {
-    font-size: 0.75rem;
-  }
-
-  .inspiration-content {
-    height: 100%;
-    padding: 3rem 8% 4rem;
-    justify-content: flex-start;
-  }
-
-  .categories-list {
-    margin-top: 2rem;
-    gap: 1.5rem;
-  }
-
-  .category-item h3 {
-    font-size: 1.15rem;
-  }
-}
-
-/* ============================================================
-   SECTION 07 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SUSTAINABILITY STORYTELLING
+   SECTION 07 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â SUSTAINABILITY STORYTELLING
    ============================================================ */
 
 .sustainability-section {
@@ -3089,7 +3102,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 08 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â PROJECT GALLERY
+   SECTION 08 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â PROJECT GALLERY
    ============================================================ */
 
 .gallery-section {
@@ -3329,7 +3342,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 09 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CUSTOMER SUCCESS STORIES
+   SECTION 09 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CUSTOMER SUCCESS STORIES
    ============================================================ */
 
 .testimonials-section {
@@ -3762,7 +3775,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â DEALER NETWORK
+   SECTION 10 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â DEALER NETWORK
    ============================================================ */
 
 .dealer-section {
@@ -3993,7 +4006,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 11 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â FREE CONSULTATION CTA
+   SECTION 11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â FREE CONSULTATION CTA
    ============================================================ */
 
 .consultation-section {
@@ -4173,7 +4186,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CONTACT STRIP
+   SECTION 12 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CONTACT STRIP
    ============================================================ */
 
 .contact-strip {
@@ -4471,7 +4484,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CONTACT + FOOTER
+   SECTION 12 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CONTACT + FOOTER
    ============================================================ */
 
 .site-footer {
@@ -4485,14 +4498,14 @@ nav a:hover::after {
   --gold:          #ffffff;
 }
 
-/* Top fade from sand ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ dark */
+/* Top fade from sand ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ dark */
 .footer-top-fade {
   height: 60px;
   background: linear-gradient(to bottom, var(--sand), #061c14);
   margin-top: -1px;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Newsletter Strip ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Newsletter Strip ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-newsletter {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 4rem 7% 4rem;
@@ -4610,7 +4623,7 @@ nav a:hover::after {
   flex: 0 0 auto;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Main Footer Grid ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Main Footer Grid ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-main {
   padding: 5rem 7% 4rem;
 }
@@ -4860,7 +4873,7 @@ nav a:hover::after {
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Divider with Brand Stamp ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Divider with Brand Stamp ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-divider {
   display: flex;
   align-items: center;
@@ -4887,7 +4900,7 @@ nav a:hover::after {
   opacity: 1;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Bottom Bar ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Bottom Bar ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
 .footer-bottom {
   display: flex;
   align-items: center;
@@ -5057,7 +5070,6 @@ nav a:hover::after {
     justify-content: center;
   }
 }
-
 
 
 
