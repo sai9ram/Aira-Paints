@@ -42,135 +42,166 @@
   <!-- ===== MAIN ===== -->
   <main>
 
-    <!-- â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” -->
-    <!-- â”‚  SECTION 01 â€” HERO SCROLL      â”‚ -->
-    <!-- â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ -->
 
-    <!-- Scroll Spacer: page is min-height 250vh in CSS
-         so the sticky hero pins as user scrolls through 150vh of content -->
+    <!-- SECTION 01  HERO SCROLL    -->
 
+
+    <!-- ┌──────────────────────────────────────────┐ -->
+    <!-- │  SECTION 01 — HERO SCROLLYTELLING        │ -->
+    <!-- └──────────────────────────────────────────┘ -->
     <section id="hero" class="hero-section" aria-label="Hero Section">
-
-      <!-- Sticky Hero Stage -->
       <div class="hero-stage" id="hero-stage">
 
-        <!-- LEFT: Brand Content -->
-        <div class="hero-text" id="hero-text">
-          <span class="eyebrow">
-            <span class="eyebrow-dot" aria-hidden="true"></span>
-            Tirupati Edition Â· Est. 2024
-          </span>
+        <!-- Horizontal Slides Track -->
+        <div class="hero-track" id="hero-track">
 
-          <h1 id="hero-headline">
-            Premium Paints Crafted For<br>
-            <em>Beautiful Homes</em><br>
-            <span class="h1-thin">In India</span>
-          </h1>
-
-          <p>Experience the next generation of eco-friendly paints designed for modern interiors and exteriors. Superior
-            coverage, long-lasting protection, and healthier living spaces.</p>
-
-          <div class="cta-group">
-            <a href="#consultation" class="btn btn-primary" id="cta-primary">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-              Get Free Consultation
-            </a>
-            <a href="#products" class="btn btn-secondary" id="cta-secondary">
-              Explore Products
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Trust Badges -->
-          <div class="trust-badges" role="list" aria-label="Brand trust indicators">
-            <span class="badge" role="listitem">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              Low VOC Formula
-            </span>
-            <span class="badge" role="listitem">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              Eco-Friendly Mfg.
-            </span>
-            <span class="badge" role="listitem">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              Superior Coverage
-            </span>
-            <span class="badge" role="listitem">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              Long Lasting
-            </span>
-            <span class="badge" role="listitem">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M20 6L9 17l-5-5" />
-              </svg>
-              ðŸ‡®ðŸ‡³ Made In India
-            </span>
-          </div>
-        </div><!-- /hero-text -->
-
-        <!-- RIGHT: 3D CSS Paint Can -->
-        <div class="hero-visual" id="hero-visual">
-          <div class="can-scene" id="can-scene">
-            <div class="paint-can" id="paint-can" style="--can-rotate: -30deg;">
-
-              <!-- Carry Handle -->
-              <div class="can-handle" aria-hidden="true"></div>
-
-              <!-- Metal Lid -->
-              <div class="can-lid" aria-hidden="true"></div>
-
-              <!-- Can Body with Label -->
-              <div class="can-body" aria-label="Aira Paints premium paint can">
-                <div class="can-label">
-                  <span class="label-brand">Aira</span>
-                  <div class="label-divider" aria-hidden="true"></div>
-                  <span class="label-sub">Premium Eco</span>
-                  <span class="label-tag">Tirupati Ed.</span>
-                  <!-- Color swatches on label -->
-                  <div class="label-swatches" aria-hidden="true">
-                    <div class="swatch" style="background:#1E352F;"></div>
-                    <div class="swatch" style="background:#0F4D3A;"></div>
-                    <div class="swatch" style="background:#E0A838;"></div>
-                    <div class="swatch" style="background:#6d9b8f;"></div>
-                    <div class="swatch" style="background:#F4EFEB;"></div>
-                  </div>
+          <!-- SLIDE 01: Interior Paints -->
+          <div class="hero-slide active" data-color="#0F4D3A">
+            <div class="hero-slide-content">
+              <div class="hero-slide-info">
+                <span class="hero-slide-tagline">Tirupati Edition · Est. 2024</span>
+                <h1 class="hero-slide-title">Aira Interior Paints</h1>
+                <p class="hero-slide-desc">Premium Eco-Friendly emulsion designed for rich, breathable interior walls.
+                </p>
+                <div class="hero-slide-ctas">
+                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
+                  <a href="#products" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
+              <div class="hero-slide-visual">
+                <div class="product-can-wrap">
+                  <div class="showcase-can"
+                    style="--can-color:#0F4D3A; --can-label-color:#f0f7f4; --can-accent:#6ec6b0;">
+                    <div class="showcase-can-handle"></div>
+                    <div class="showcase-can-lid"></div>
+                    <div class="showcase-can-body">
+                      <div class="showcase-can-label">
+                        <span class="sc-brand">Aira</span>
+                        <span class="sc-range">Interior</span>
+                        <span class="sc-type">Premium Emulsion</span>
+                      </div>
+                    </div>
+                    <div class="showcase-can-rim"></div>
+                  </div>
+                  <div class="can-glow" style="--glow-color: rgba(15,77,58,0.4)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <!-- Bottom Rim -->
-              <div class="can-rim" aria-hidden="true"></div>
+          <!-- SLIDE 02: Exterior Paints -->
+          <div class="hero-slide" data-color="#7a3b1e">
+            <div class="hero-slide-content">
+              <div class="hero-slide-info">
+                <span class="hero-slide-tagline">Tirupati Edition · Est. 2024</span>
+                <h1 class="hero-slide-title">Aira Weather Shield</h1>
+                <p class="hero-slide-desc">Extreme weather protection against rain, heat, and algae for outdoor walls.
+                </p>
+                <div class="hero-slide-ctas">
+                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
+                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                </div>
+              </div>
+              <div class="hero-slide-visual">
+                <div class="product-can-wrap">
+                  <div class="showcase-can"
+                    style="--can-color:#7a3b1e; --can-label-color:#fff5f0; --can-accent:#e87a45;">
+                    <div class="showcase-can-handle"></div>
+                    <div class="showcase-can-lid"></div>
+                    <div class="showcase-can-body">
+                      <div class="showcase-can-label">
+                        <span class="sc-brand">Aira</span>
+                        <span class="sc-range">Exterior</span>
+                        <span class="sc-type">Weather Shield</span>
+                      </div>
+                    </div>
+                    <div class="showcase-can-rim"></div>
+                  </div>
+                  <div class="can-glow" style="--glow-color: rgba(122,59,30,0.4)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-            </div><!-- /paint-can -->
-          </div><!-- /can-scene -->
-        </div><!-- /hero-visual -->
+          <!-- SLIDE 03: Primers & Undercoats -->
+          <div class="hero-slide" data-color="#4a3f6b">
+            <div class="hero-slide-content">
+              <div class="hero-slide-info">
+                <span class="hero-slide-tagline">Tirupati Edition · Est. 2024</span>
+                <h1 class="hero-slide-title">Aira Pro Primers</h1>
+                <p class="hero-slide-desc">The ultimate foundation for high-adhesion, smooth, and long-lasting finishes.
+                </p>
+                <div class="hero-slide-ctas">
+                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
+                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                </div>
+              </div>
+              <div class="hero-slide-visual">
+                <div class="product-can-wrap">
+                  <div class="showcase-can"
+                    style="--can-color:#4a3f6b; --can-label-color:#f8f5ff; --can-accent:#a08cc8;">
+                    <div class="showcase-can-handle"></div>
+                    <div class="showcase-can-lid"></div>
+                    <div class="showcase-can-body">
+                      <div class="showcase-can-label">
+                        <span class="sc-brand">Aira</span>
+                        <span class="sc-range">Primer</span>
+                        <span class="sc-type">Pro Undercoat</span>
+                      </div>
+                    </div>
+                    <div class="showcase-can-rim"></div>
+                  </div>
+                  <div class="can-glow" style="--glow-color: rgba(74,63,107,0.4)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        <!-- SCROLLY REVEAL TEXT (fades in on scroll) -->
-        <div class="scrolly-reveal" id="scrolly-reveal" aria-hidden="true">
-          <h2>Beautiful Walls Begin With Better Paint.</h2>
-          <p>Crafted from nature. Perfected by science. Built for India.</p>
+          <!-- SLIDE 04: Waterproofing Solutions -->
+          <div class="hero-slide" data-color="#1b4f72">
+            <div class="hero-slide-content">
+              <div class="hero-slide-info">
+                <span class="hero-slide-tagline">Tirupati Edition · Est. 2024</span>
+                <h1 class="hero-slide-title">Aira Damp Protect</h1>
+                <p class="hero-slide-desc">Elite waterproofing technology protecting roofs and walls from moisture
+                  damage.</p>
+                <div class="hero-slide-ctas">
+                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
+                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                </div>
+              </div>
+              <div class="hero-slide-visual">
+                <div class="product-can-wrap">
+                  <div class="showcase-can"
+                    style="--can-color:#1b4f72; --can-label-color:#f4f9fd; --can-accent:#5dade2;">
+                    <div class="showcase-can-handle"></div>
+                    <div class="showcase-can-lid"></div>
+                    <div class="showcase-can-body">
+                      <div class="showcase-can-label">
+                        <span class="sc-brand">Aira</span>
+                        <span class="sc-range">DampShield</span>
+                        <span class="sc-type">Waterproofing</span>
+                      </div>
+                    </div>
+                    <div class="showcase-can-rim"></div>
+                  </div>
+                  <div class="can-glow" style="--glow-color: rgba(27,79,114,0.4)"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /hero-track -->
+
+        <!-- Scrollytelling Pagination indicators -->
+        <div class="hero-pagination">
+          <span class="hero-dot active" data-slide="0"></span>
+          <span class="hero-dot" data-slide="1"></span>
+          <span class="hero-dot" data-slide="2"></span>
+          <span class="hero-dot" data-slide="3"></span>
         </div>
 
       </div><!-- /hero-stage -->
-
     </section><!-- /hero -->
 
     <!-- â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” -->

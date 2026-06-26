@@ -6,14 +6,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── DOM references ─────────────────────────── */
-  const paintCan      = document.getElementById('paint-can');
-  const heroText      = document.getElementById('hero-text');
-  const heroVisual    = document.getElementById('hero-visual');
-  const scrollyReveal = document.getElementById('scrolly-reveal');
-  const bgCanvas      = document.getElementById('bg-canvas');
-  const scrollHint    = document.getElementById('scroll-hint');
-  const header        = document.getElementById('site-header');
-  const canScene      = document.getElementById('can-scene');
+  const heroSection  = document.getElementById('hero');
+  const heroTrack    = document.getElementById('hero-track');
+  const heroSlides   = document.querySelectorAll('.hero-slide');
+  const heroDots     = document.querySelectorAll('.hero-dot');
+  const header       = document.getElementById('site-header');
 
   /* ── State ──────────────────────────────────── */
   let lastScrollY = window.scrollY;
@@ -22,69 +19,50 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Utility: clamp a value between min and max ── */
   const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
 
-  /* ── Utility: linear interpolation ────────────── */
-  const lerp = (a, b, t) => a + (b - a) * clamp(t, 0, 1);
-
-  /* ── Map scroll to a 0–1 progress value ────────
-     The scrollable "hero zone" is 150vh (the spacer div height).
-     After 100vh, the sticky hero unpins and scrolls away.        */
-  function getScrollProgress() {
-    // Hero section is 200vh. The sticky animation runs over the first 100vh of scroll.
-    const maxScroll = window.innerHeight;
-    return clamp(window.scrollY / maxScroll, 0, 1);
-  }
+  /* ── Colors matching each slide ────────────── */
+  const slideColors = ['#0F4D3A', '#7a3b1e', '#4a3f6b', '#1b4f72'];
 
   /* ── Main animation tick ─────────────────────── */
   function animate(scrollY) {
-    const progress = getScrollProgress();
+    if (!heroSection || !heroTrack) return;
 
-    // ── 1. Pass scroll % to CSS for blob and shape transforms
-    document.documentElement.style.setProperty('--scroll-pct', progress);
+    const rect = heroSection.getBoundingClientRect();
+    const sectionTop = scrollY + rect.top;
+    const heroHeight = heroSection.offsetHeight;
+    const scrollableRange = heroHeight - window.innerHeight;
 
-    // ── 2. Paint can rotation: -30deg → +150deg as user scrolls
-    const canRotate = lerp(-30, 150, progress);
-    paintCan.style.setProperty('--can-rotate', `${canRotate}deg`);
+    // Calculate progress (0 to 1) of scroll through the 400vh container
+    const progress = clamp((scrollY - sectionTop) / scrollableRange, 0, 1);
 
-    // ── 3. Can scene floats upward slightly on scroll
-    const canLift = lerp(0, -40, progress);
-    canScene.style.transform = `translateY(${canLift}px)`;
+    // Translate the track horizontally (0% to -75% translation)
+    const translatePct = progress * 75;
+    heroTrack.style.transform = `translateX(-${translatePct}%)`;
 
-    // ── 4. Hero text: fade out and slide up
-    const textOpacity   = clamp(1 - progress * 2.2, 0, 1);
-    const textTranslate = lerp(0, -70, progress);
-    heroText.style.opacity   = textOpacity;
-    heroText.style.transform = `translateY(${textTranslate}px)`;
-    // Prevent interaction when invisible
-    heroText.style.pointerEvents = textOpacity < 0.05 ? 'none' : 'auto';
+    // Determine the current active slide index (0 to 3)
+    const activeIndex = clamp(Math.floor(progress * 4.0), 0, 3);
 
-    // ── 5. Hero visual: fade out slower
-    const visualOpacity = clamp(1 - progress * 1.6, 0, 1);
-    heroVisual.style.opacity = visualOpacity;
+    // Update background color based on active index
+    heroSection.style.backgroundColor = slideColors[activeIndex];
 
-    // ── 6. Background color transition
-    if (progress > 0.5) {
-      bgCanvas.classList.add('tinted');
-    } else {
-      bgCanvas.classList.remove('tinted');
-    }
+    // Update active slide class
+    heroSlides.forEach((slide, idx) => {
+      if (idx === activeIndex) {
+        slide.classList.add('active');
+      } else {
+        slide.classList.remove('active');
+      }
+    });
 
-    // ── 7. Scrolly reveal text: fade in after hero text fades
-    if (progress > 0.42) {
-      scrollyReveal.classList.add('active');
-      scrollyReveal.removeAttribute('aria-hidden');
-    } else {
-      scrollyReveal.classList.remove('active');
-      scrollyReveal.setAttribute('aria-hidden', 'true');
-    }
+    // Update active navigation dot
+    heroDots.forEach((dot, idx) => {
+      if (idx === activeIndex) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
 
-    // ── 8. Scroll hint: hide once user starts scrolling
-    if (scrollY > 40) {
-      scrollHint.classList.add('hidden');
-    } else {
-      scrollHint.classList.remove('hidden');
-    }
-
-    // ── 9. Header: add scrolled class for box shadow
+    // Header styling based on scrolling
     if (scrollY > 20) {
       header.classList.add('scrolled');
     } else {
@@ -104,20 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  /* ── Subtle mouse parallax on can ─────────────── */
-  document.addEventListener('mousemove', (e) => {
-    if (window.scrollY > window.innerHeight * 0.3) return; // only at top
+  // Add click events to pagination dots
+  heroDots.forEach((dot, idx) => {
+    dot.addEventListener('click', () => {
+      if (!heroSection) return;
+      const rect = heroSection.getBoundingClientRect();
+      const sectionTop = window.scrollY + rect.top;
+      const heroHeight = heroSection.offsetHeight;
+      const scrollableRange = heroHeight - window.innerHeight;
+      const targetScroll = sectionTop + (idx / 3.0) * scrollableRange;
 
-    const cx = window.innerWidth  / 2;
-    const cy = window.innerHeight / 2;
-    const dx = (e.clientX - cx) / cx; // -1 to 1
-    const dy = (e.clientY - cy) / cy; // -1 to 1
-
-    const rotX = lerp(-10, 10, (dy + 1) / 2);
-    const rotY = lerp(-30 + -15, -30 + 15, (dx + 1) / 2);
-
-    paintCan.style.setProperty('--can-rotate', `${rotY}deg`);
-    canScene.style.transform = `rotateX(${rotX * -0.3}deg) translateY(0px)`;
+      window.scrollTo({
+        top: targetScroll,
+        behavior: 'smooth'
+      });
+    });
   });
 
   /* ── Initial render ────────────────────────────── */
