@@ -7,10 +7,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── DOM ─────────────────────────────────────── */
-  const heroSection = document.getElementById('hero');
-  const heroSlides  = document.querySelectorAll('.hero-slide');
-  const heroDots    = document.querySelectorAll('.hero-dot');
-  const header      = document.getElementById('site-header');
+  const heroSection  = document.getElementById('hero');
+  const heroSlides   = document.querySelectorAll('.hero-slide');
+  const heroDots     = document.querySelectorAll('.hero-dot');
+  const header       = document.getElementById('site-header');
+  const scrollHint   = document.getElementById('hero-scroll-hint');
 
   if (!heroSection) return;
 
@@ -36,9 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     /* Which of the 4 slides should be visible (0–3) */
     const activeIdx = clamp(Math.floor(progress * 4), 0, 3);
 
-    /* Toggle .active — CSS handles the fade */
+    /* Toggle .active — CSS handles the fade + Match & Move */
     heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
     heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
+
+    /* Hide scroll hint once user has scrolled */
+    if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
 
     /* Compact header after first scroll */
     header.classList.toggle('scrolled', scrollY > 20);
