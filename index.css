@@ -341,47 +341,56 @@ nav a:hover::after {
 }
 
 /* ============================================
-   HERO SECTION — SCROLLYTELLING STAGE
+   HERO SECTION — SCROLLYTELLING (STACK + FADE)
+   No clipping needed — slides are stacked &
+   shown/hidden with opacity only.
    ============================================ */
 .hero-section {
-  height: 400vh; /* 4 product slides = 400vh */
+  height: 400vh;          /* 4 × 100vh scrollable distance */
   position: relative;
-  background-color: #0F4D3A;
-  transition: background-color 0.8s ease;
+  z-index: 1;
 }
 
-/* KEY FIX: overflow:hidden breaks position:sticky in browsers.
-   Use clip-path:inset(0) instead — it clips to bounds without
-   disrupting sticky scroll behaviour. */
+/* Sticky viewport that stays fixed while we scroll */
 .hero-stage {
   position: sticky;
   top: 0;
   height: 100vh;
   width: 100%;
-  /* overflow: hidden; ← REMOVED — breaks sticky */
-  clip-path: inset(0);          /* clips overflow without breaking sticky */
-  -webkit-clip-path: inset(0);  /* Safari */
   z-index: 10;
-  display: flex;
-  align-items: center;
+  /* NO overflow, NO clip-path — not needed */
 }
 
+/* Track is just a full-size container; slides stack inside it */
 .hero-track {
-  display: flex;
-  width: 400%;     /* 4 slides × 100vw each */
+  position: relative;
+  width: 100%;
   height: 100%;
-  will-change: transform;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Every slide fills the stage absolutely */
 .hero-slide {
-  width: 25%;
+  position: absolute;
+  inset: 0;                /* top:0 left:0 right:0 bottom:0 */
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
 }
+
+/* Only the active slide is visible */
+.hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+
 
 .hero-slide-content {
   width: 100%;

@@ -1,68 +1,57 @@
 /* ============================================================
    AIRA PAINTS — Hero Scrollytelling Controller
-   Robust: caches offsetTop so sectionTop never drifts
+   Stack + Fade approach: no translateX, no overflow clipping.
+   Scroll progress picks which slide is active → opacity change.
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ── DOM references ─────────────────────────── */
+  /* ── DOM ─────────────────────────────────────── */
   const heroSection = document.getElementById('hero');
-  const heroTrack   = document.getElementById('hero-track');
   const heroSlides  = document.querySelectorAll('.hero-slide');
   const heroDots    = document.querySelectorAll('.hero-dot');
   const header      = document.getElementById('site-header');
 
-  if (!heroSection || !heroTrack) return;
+  if (!heroSection) return;
 
-  /* ── State ──────────────────────────────────── */
-  let lastScrollY = window.scrollY;
-  let ticking     = false;
-
-  /* ── Colors matching each slide ────────────── */
-  const slideColors = ['#0F4D3A', '#7a3b1e', '#4a3f6b', '#1b4f72'];
-
-  /* ── Cache layout values (stable after paint) ── */
+  /* ── Layout cache (use offsetTop, never getBCR) ─ */
   let sectionTop      = 0;
   let scrollableRange = 0;
 
   function cacheLayout() {
-    /* offsetTop is relative to document — never changes on scroll */
     sectionTop      = heroSection.offsetTop;
     scrollableRange = heroSection.offsetHeight - window.innerHeight;
   }
 
-  /* ── Clamp helper ────────────────────────────── */
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
 
-  /* ── Main animation tick ─────────────────────── */
+  /* ── Tick ───────────────────────────────────── */
   function animate(scrollY) {
-    if (scrollableRange <= 0) return;
+    /* 0 → 1 through the 400 vh scroll range */
+    const progress = clamp(
+      scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
+      0, 1
+    );
 
-    /* progress: 0 when hero starts, 1 when hero ends */
-    const progress = clamp((scrollY - sectionTop) / scrollableRange, 0, 1);
+    /* Which of the 4 slides should be visible (0–3) */
+    const activeIdx = clamp(Math.floor(progress * 4), 0, 3);
 
-    /* Slide the track: 0% → −75% (3 full slides) */
-    heroTrack.style.transform = `translateX(-${progress * 75}%)`;
+    /* Toggle .active — CSS handles the fade */
+    heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
+    heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
 
-    /* Active slide index 0–3 */
-    const idx = clamp(Math.floor(progress * 4), 0, 3);
-
-    /* Background colour */
-    heroSection.style.backgroundColor = slideColors[idx];
-
-    /* Active slide + dot classes */
-    heroSlides.forEach((s, i) => s.classList.toggle('active', i === idx));
-    heroDots.forEach((d, i)   => d.classList.toggle('active', i === idx));
-
-    /* Header compact style */
+    /* Compact header after first scroll */
     header.classList.toggle('scrolled', scrollY > 20);
   }
 
-  /* ── Scroll listener (rAF-throttled, 60fps) ──── */
+  /* ── rAF-throttled scroll listener ─────────── */
+  let lastScrollY = window.scrollY;
+  let ticking     = false;
+
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
     if (!ticking) {
-      window.requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
         animate(lastScrollY);
         ticking = false;
       });
@@ -70,25 +59,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  /* ── Dot click → jump to slide ──────────────── */
+  /* ── Dot click → scroll to that slide ────────── */
   heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      const target = sectionTop + (i / 3) * scrollableRange;
-      window.scrollTo({ top: target, behavior: 'smooth' });
+      window.scrollTo({
+        top: sectionTop + (i / 3) * scrollableRange,
+        behavior: 'smooth'
+      });
     });
   });
 
   /* ── Recalculate on resize ───────────────────── */
-  window.addEventListener('resize', () => {
-    cacheLayout();
-    animate(window.scrollY);
-  });
+  window.addEventListener('resize', () => { cacheLayout(); animate(window.scrollY); });
 
-  /* ── Initial run ─────────────────────────────── */
+  /* ── Boot ───────────────────────────────────── */
   cacheLayout();
   animate(window.scrollY);
 
 });
+
+
 
 
 /* ============================================================
