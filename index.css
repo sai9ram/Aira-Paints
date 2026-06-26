@@ -475,6 +475,202 @@ nav a:hover::after {
   transform: scale(1.3);
 }
 
+/* ---- RIGHT PANEL: Product Can Visual ---- */
+.hero-slide-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Wrapper that holds can + glow */
+.product-can-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+  height: 420px;
+}
+
+/* ---- Showcase Paint Can ---- */
+.showcase-can {
+  position: relative;
+  width: 200px;
+  height: 280px;
+  animation: canFloat 5s ease-in-out infinite;
+}
+
+@keyframes canFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-16px); }
+}
+
+/* HANDLE — arch above the can */
+.showcase-can-handle {
+  position: absolute;
+  top: -52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 56px;
+  border: 5px solid rgba(255, 255, 255, 0.55);
+  border-bottom: none;
+  border-radius: 90px 90px 0 0;
+  z-index: 6;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+
+/* LID — metal oval on top */
+.showcase-can-lid {
+  position: absolute;
+  top: -12px;
+  left: -5px;
+  right: -5px;
+  height: 24px;
+  background: linear-gradient(to bottom, #e8e8e8 0%, #fff 30%, #c0c0c0 65%, #a0a0a0 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.22), inset 0 2px 4px rgba(255,255,255,0.5);
+  z-index: 5;
+}
+
+.showcase-can-lid::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  right: 15%;
+  height: 3px;
+  background: rgba(0,0,0,0.12);
+  border-radius: 2px;
+  transform: translateY(-50%);
+}
+
+/* BODY — main coloured cylinder */
+.showcase-can-body {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background-color: var(--can-color, #0F4D3A);
+  background-image: linear-gradient(160deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.04) 35%,
+    rgba(0,0,0,0.12) 65%,
+    rgba(0,0,0,0.25) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.28),
+    0 8px 24px rgba(0,0,0,0.16),
+    inset 0 2px 6px rgba(255,255,255,0.15),
+    inset 0 -4px 10px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Sheen streak */
+.showcase-can-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.03) 60%, transparent 100%);
+  border-radius: 0 0 8px 8px;
+  pointer-events: none;
+}
+
+/* Shadow fade at bottom */
+.showcase-can-body::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0; right: 0;
+  height: 32%;
+  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* RIM — metal ring at bottom */
+.showcase-can-rim {
+  position: absolute;
+  bottom: -10px;
+  left: -3px;
+  right: -3px;
+  height: 16px;
+  background: linear-gradient(to bottom, #aaa 0%, #d8d8d8 40%, #b0b0b0 100%);
+  border-radius: 50%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  z-index: 5;
+}
+
+/* LABEL panel inside the body */
+.showcase-can-label {
+  position: relative;
+  z-index: 2;
+  width: 78%;
+  height: 58%;
+  background: var(--can-label-color, #f0f7f4);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1rem 0.75rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.22), inset 0 1px 2px rgba(255,255,255,0.8);
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.sc-brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--can-color, #0F4D3A);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.sc-range {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--can-accent, #6ec6b0);
+}
+
+.sc-type {
+  font-family: var(--font-display);
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background-color: var(--can-color, #0F4D3A);
+  color: var(--can-label-color, #f0f7f4);
+  padding: 0.22rem 0.7rem;
+  border-radius: 20px;
+  margin-top: 0.2rem;
+}
+
+/* Ambient Glow under the can */
+.can-glow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, var(--glow-color, rgba(15,77,58,0.35)) 0%, transparent 75%);
+  filter: blur(18px);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
 @media (max-width: 960px) {
   .hero-slide-content {
     grid-template-columns: 1fr;
