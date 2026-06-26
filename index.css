@@ -2808,6 +2808,7 @@ nav a:hover::after {
 }
 
 .sustain-bg-shape {
+  display: none;
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
