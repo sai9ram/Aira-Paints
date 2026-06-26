@@ -3477,9 +3477,16 @@ nav a:hover::after {
 }
 
 .rating-stars {
-  font-size: 1.15rem;
-  color: var(--gold);
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rating-stars .fa-star {
+  color: var(--forest);
+  font-size: 0.95rem;
 }
 
 .client-quote {
