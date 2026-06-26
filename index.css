@@ -2800,7 +2800,10 @@ nav a:hover::after {
    ============================================================ */
 
 .sustainability-section {
-  padding: 9rem 7%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 10rem 7%;
   position: relative;
   background-color: var(--white);
   z-index: 10;
@@ -2985,7 +2988,7 @@ nav a:hover::after {
 .sustain-content {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .sustain-title {
@@ -3010,8 +3013,8 @@ nav a:hover::after {
 .sustain-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 1.5rem;
+  gap: 2.5rem;
+  margin-top: 2.2rem;
 }
 
 .sustain-card {
