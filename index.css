@@ -805,16 +805,32 @@ nav a:hover::after {
   filter: drop-shadow(0 45px 65px rgba(0, 0, 0, 0.55));
 }
 
+/* --- Our Products Section - Large & Prominent Cans --- */
+.product-slide .product-can-wrap {
+  width: 480px;
+  height: 560px;
+  transition: all 0.5s var(--ease-smooth);
+}
+
 .product-slide .product-can-img {
+  height: 480px;
+  filter: drop-shadow(0 35px 55px rgba(0, 0, 0, 0.4));
   animation: canFloat 5s ease-in-out infinite;
 }
 
-.product-can-img:hover {
-  transform: scale(1.05) translateY(-5px);
-  filter: drop-shadow(0 30px 45px rgba(0, 0, 0, 0.4));
+.product-slide .can-glow {
+  width: 360px;
+  height: 360px;
+  filter: blur(32px);
+  opacity: 0.8;
 }
 
-/* Responsive adjustment for Hero cans */
+.product-slide .product-can-img:hover {
+  transform: scale(1.06) translateY(-8px);
+  filter: drop-shadow(0 45px 65px rgba(0, 0, 0, 0.5));
+}
+
+/* Responsive adjustment for Hero & Product cans */
 @media (max-width: 960px) {
   .hero-slide .product-can-wrap {
     width: 360px;
@@ -822,6 +838,13 @@ nav a:hover::after {
   }
   .hero-slide .product-can-img {
     height: 360px;
+  }
+  .product-slide .product-can-wrap {
+    width: 340px;
+    height: 400px;
+  }
+  .product-slide .product-can-img {
+    height: 340px;
   }
 }
 
@@ -837,7 +860,15 @@ nav a:hover::after {
     width: 200px;
     height: 70px;
   }
+  .product-slide .product-can-wrap {
+    width: 250px;
+    height: 300px;
+  }
+  .product-slide .product-can-img {
+    height: 250px;
+  }
 }
+
 
 
 
