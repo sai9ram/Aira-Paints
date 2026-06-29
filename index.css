@@ -2524,10 +2524,20 @@ nav a:hover::after {
 .product-slide.active .slide-features li:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.34s; }
 
 .feat-icon {
-  font-size: 0.45rem;
-  color: var(--terracotta);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--forest);
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.feat-icon::before {
+  content: "✓";
+}
+
+
 
 .slide-cta {
   align-self: flex-start;
