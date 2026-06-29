@@ -780,24 +780,25 @@ nav a:hover::after {
 
 /* --- Hero Section - Extra Large & Prominent Cans --- */
 .hero-slide .product-can-wrap {
-  width: 440px;
-  height: 520px;
+  width: 500px;
+  height: 600px;
   transition: all 0.5s var(--ease-smooth);
 }
 
 .hero-slide .product-can-img {
-  height: 440px;
-  filter: drop-shadow(0 35px 55px rgba(0, 0, 0, 0.45));
+  height: 520px;
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.48));
   animation: canFloat 5s ease-in-out infinite;
 }
 
 .hero-slide .can-glow {
-  width: 340px;
-  height: 110px;
-  filter: blur(28px);
-  opacity: 0.8;
+  width: 400px;
+  height: 120px;
+  filter: blur(32px);
+  opacity: 0.85;
   transition: all 0.5s var(--ease-smooth);
 }
+
 
 .hero-slide .product-can-img:hover {
   transform: scale(1.06) translateY(-8px);
