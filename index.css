@@ -289,6 +289,7 @@ nav a:hover::after {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.9rem;
   border-radius: 50px;
