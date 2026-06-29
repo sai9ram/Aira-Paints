@@ -350,66 +350,189 @@ document.addEventListener('DOMContentLoaded', () => {
    SECTION 06 — Colour Studio Controller
    ============================================================ */
 
+/* ============================================================
+   SECTION 06 — Colour Studio Controller
+   ============================================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  const cards    = document.querySelectorAll('#studio-palette-grid .studio-palette-card');
-  const wall     = document.getElementById('studio-wall');
-  const floor    = document.getElementById('studio-floor');
-  const artFill  = document.getElementById('studio-art-fill');
-  const sofaBack = document.getElementById('studio-sofa-back');
-  const sofaSeat = document.getElementById('studio-sofa-seat');
-  const cushionA = document.getElementById('studio-cushion-a');
-  const cushionB = document.getElementById('studio-cushion-b');
-  const vaseBody = document.getElementById('studio-vase-body');
-  const rug      = document.getElementById('studio-rug');
-  const badgeName    = document.getElementById('studio-badge-name');
-  const badgeSwatches = document.getElementById('studio-badge-swatches');
+  // Elements
+  const stageFrame    = document.getElementById('studio-stage-frame');
+  const cards         = document.querySelectorAll('#studio-palette-grid .studio-palette-card');
+  const wall          = document.getElementById('arch-wall-primary');
+  const floor         = document.getElementById('arch-floor-plane');
+  const artGraphic    = document.getElementById('arch-art-graphic');
+  const sofaBody      = document.getElementById('lounge-sofa-body');
+  const cushion1      = document.getElementById('lounge-cushion-1');
+  const cushion2      = document.getElementById('lounge-cushion-2');
+  const rugLayer      = document.getElementById('arch-rug-layer');
+  const trimPillar    = document.getElementById('arch-trim-pillar');
+  
+  const inspectorName = document.getElementById('inspector-name');
+  const inspectorCode = document.getElementById('inspector-code');
+  const inspectorSwatches = document.getElementById('inspector-swatches');
+  const copyBtn       = document.getElementById('copy-code-btn');
+  
+  // Custom Mixer elements
+  const customPicker  = document.getElementById('custom-wall-picker');
+  const mixerValueText = document.getElementById('mixer-value-text');
+  const applyCustomBtn = document.getElementById('apply-custom-shade-btn');
+
+  // Control Selector Panels
+  const scenePills    = document.querySelectorAll('#studio-scene-selector .pill-btn');
+  const sheenPills    = document.querySelectorAll('#studio-sheen-selector .pill-btn');
+  const lightPills    = document.querySelectorAll('#studio-light-selector .pill-btn');
+  const categoryBtns  = document.querySelectorAll('#palette-category-filters .cat-filter-btn');
+
+  let activeColors = ["#3A3530", "#C8B195", "#EFEAE4"];
+  let activeNames  = ["Slate Charcoal", "Sandalwood Dusk", "Alabaster Cream"];
 
   if (!cards.length) return;
 
+  // Apply Palette colors dynamically
   function applyPalette(card) {
     const colors = JSON.parse(card.getAttribute('data-colors'));
     const names  = JSON.parse(card.getAttribute('data-names'));
     const title  = card.querySelector('strong').textContent;
 
-    const [primary, secondary, light] = colors;
+    activeColors = colors;
+    activeNames  = names;
 
-    // Lighten wall colour: use light shade (index 2)
-    if (wall)  wall.style.setProperty('--studio-wall', light);
-    // Floor: muted mid shade
-    if (floor) floor.style.setProperty('--studio-floor', secondary + '22');
+    const [accent, secondary, light] = colors;
 
-    // Room elements
-    const accent = primary;
-    if (artFill)  artFill.style.backgroundColor  = accent;
-    if (sofaBack) sofaBack.style.backgroundColor = primary;
-    if (sofaSeat) sofaSeat.style.backgroundColor = secondary;
-    if (cushionA) cushionA.style.backgroundColor = secondary;
-    if (cushionB) cushionB.style.backgroundColor = light;
-    if (vaseBody) vaseBody.style.backgroundColor = secondary;
-    if (rug)      rug.style.backgroundColor      = secondary;
+    // Apply colors using CSS custom properties for smooth transitions
+    if (wall) wall.style.setProperty('--studio-wall', light);
+    if (trimPillar) trimPillar.style.setProperty('--studio-trim', secondary);
+    if (artGraphic) artGraphic.style.setProperty('--studio-accent', accent);
+    if (sofaBody) sofaBody.style.setProperty('--studio-furniture', accent);
+    if (cushion1) cushion1.style.setProperty('--studio-accent', secondary);
+    if (cushion2) cushion2.style.setProperty('--studio-accent', light);
+    if (rugLayer) rugLayer.style.setProperty('--studio-accent', secondary);
 
-    // Badge
-    if (badgeName) badgeName.textContent = title;
-    if (badgeSwatches) {
-      badgeSwatches.innerHTML = colors.map((c, i) =>
-        `<span class="studio-badge-swatch" style="background:${c}" title="${names[i]}"></span>`
+    // Update inspector view
+    if (inspectorName) inspectorName.textContent = title;
+    if (inspectorCode) inspectorCode.textContent = `${colors[0]} · ${names[0]}`;
+    if (inspectorSwatches) {
+      inspectorSwatches.innerHTML = colors.map((color, idx) => 
+        `<span class="inspector-swatch" style="background: ${color}" title="${names[idx]}"></span>`
       ).join('');
+    }
+
+    // Sync custom color input
+    if (customPicker) {
+      customPicker.value = colors[0];
+      if (mixerValueText) mixerValueText.textContent = colors[0];
     }
   }
 
+  // Preset Card click handler
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      // Deactivate all
       cards.forEach(c => c.classList.remove('active'));
       card.classList.add('active');
       applyPalette(card);
     });
   });
 
-  // Init with the first (active) card
-  const first = document.querySelector('#studio-palette-grid .studio-palette-card.active');
-  if (first) applyPalette(first);
+  // Scene switcher
+  scenePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      scenePills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      
+      const scene = pill.getAttribute('data-scene');
+      // Living lounge theme setup
+      if (scene === 'living') {
+        if (trimPillar) trimPillar.style.display = 'block';
+        if (sofaBody) sofaBody.style.opacity = '1';
+      } else if (scene === 'exterior') {
+        // Mock facade setup
+        if (trimPillar) trimPillar.style.display = 'none';
+        if (sofaBody) sofaBody.style.opacity = '0.1'; // Hide furniture
+      } else if (scene === 'bedroom') {
+        // Bedroom suite setup
+        if (trimPillar) trimPillar.style.display = 'block';
+        if (sofaBody) sofaBody.style.opacity = '0.9';
+      }
+    });
+  });
+
+  // Sheen finish switcher
+  sheenPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      sheenPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const sheen = pill.getAttribute('data-sheen');
+      
+      // Clear sheen classes and add active sheen class
+      stageFrame.classList.remove('sheen-matt', 'sheen-satin', 'sheen-gloss');
+      stageFrame.classList.add(`sheen-${sheen}`);
+    });
+  });
+
+  // Light mood switcher
+  lightPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      lightPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const light = pill.getAttribute('data-light');
+
+      stageFrame.classList.remove('light-day', 'light-warm');
+      stageFrame.classList.add(`light-${light}`);
+    });
+  });
+
+  // Palette categories filter
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.getAttribute('data-cat');
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-cat');
+        if (cat === 'all' || cardCat === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Custom Color Lab Formulation
+  if (customPicker) {
+    customPicker.addEventListener('input', (e) => {
+      const col = e.target.value;
+      if (mixerValueText) mixerValueText.textContent = col;
+    });
+
+    applyCustomBtn.addEventListener('click', () => {
+      const col = customPicker.value;
+      if (wall) wall.style.setProperty('--studio-wall', col);
+      if (inspectorName) inspectorName.textContent = "Custom Palette Lab";
+      if (inspectorCode) inspectorCode.textContent = `${col} · Custom formulated shade`;
+    });
+  }
+
+  // Copy HEX code
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const hex = activeColors[0];
+      navigator.clipboard.writeText(hex).then(() => {
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = `<i class="fa-solid fa-check"></i> Copied!`;
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+        }, 1800);
+      });
+    });
+  }
+
+  // Init with first active preset
+  const firstActive = document.querySelector('#studio-palette-grid .studio-palette-card.active');
+  if (firstActive) applyPalette(firstActive);
 });
+
 
 
 

@@ -839,97 +839,111 @@
         <div class="studio-header">
           <span class="section-eyebrow">
             <span class="eyebrow-line" aria-hidden="true"></span>
-            Colour Studio
+            Colour Studio & Architectural Lab
             <span class="eyebrow-line" aria-hidden="true"></span>
           </span>
-          <h2 class="section-title">Discover Colours That<br><em>Match Your Lifestyle</em></h2>
+          <h2 class="section-title">Interactive Architectural<br><em>Colour Visualizer</em></h2>
           <p class="studio-intro">
-            Explore curated colour palettes inspired by modern architecture, South Indian heritage, and contemporary
-            interior design trends.
+            Simulate real-world light, textures, and curated color palettes on modern architectural spaces before painting.
           </p>
         </div>
 
-        <div class="studio-layout">
-          <!-- Left: Sticky Room Preview -->
-          <div class="studio-preview-panel">
-            <div class="studio-room-wrap">
-              <div class="studio-room">
-                <!-- Wall -->
-                <div class="studio-wall" id="studio-wall">
-                  <div class="studio-wall-sheen"></div>
-                  <!-- Frame Art -->
-                  <div class="studio-art-frame">
-                    <div class="studio-art-fill" id="studio-art-fill"></div>
-                  </div>
-                  <!-- Window -->
-                  <div class="studio-window">
-                    <div class="studio-window-pane"></div>
-                    <div class="studio-window-pane"></div>
-                    <div class="studio-window-light"></div>
-                  </div>
-                </div>
-                <!-- Floor -->
-                <div class="studio-floor" id="studio-floor">
-                  <div class="studio-skirting"></div>
-                  <!-- Sofa -->
-                  <div class="studio-sofa">
-                    <div class="studio-sofa-back" id="studio-sofa-back"></div>
-                    <div class="studio-sofa-seat" id="studio-sofa-seat"></div>
-                    <div class="studio-cushions">
-                      <div class="studio-cushion" id="studio-cushion-a"></div>
-                      <div class="studio-cushion studio-cushion--sm" id="studio-cushion-b"></div>
-                    </div>
-                    <div class="studio-sofa-leg"></div>
-                    <div class="studio-sofa-leg studio-sofa-leg--r"></div>
-                  </div>
-                  <!-- Side Table with Vase -->
-                  <div class="studio-side-table">
-                    <div class="studio-vase">
-                      <div class="studio-vase-bloom"></div>
-                      <div class="studio-vase-stem"></div>
-                      <div class="studio-vase-body" id="studio-vase-body"></div>
-                    </div>
-                    <div class="studio-table-top"></div>
-                    <div class="studio-table-leg"></div>
-                  </div>
-                  <!-- Plant -->
-                  <div class="studio-plant">
-                    <div class="studio-pot"></div>
-                    <div class="studio-leaf studio-leaf--a"></div>
-                    <div class="studio-leaf studio-leaf--b"></div>
-                    <div class="studio-leaf studio-leaf--c"></div>
-                  </div>
-                  <!-- Rug -->
-                  <div class="studio-rug" id="studio-rug"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Badge -->
-            <div class="studio-badge">
-              <div class="studio-badge-swatches" id="studio-badge-swatches"></div>
-              <div class="studio-badge-info">
-                <span class="studio-badge-label">Active Palette</span>
-                <span class="studio-badge-name" id="studio-badge-name">Modern Minimalist</span>
-              </div>
-              <div class="studio-hint">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="12" y1="16" x2="12" y2="12"></line>
-                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
-                </svg>
-                <span>Click any card to visualize</span>
-              </div>
+        <!-- Studio Control Bar: Mode, Sheen & Lighting controls -->
+        <div class="studio-control-bar">
+          <!-- Space View Selector -->
+          <div class="control-group">
+            <span class="control-label"><i class="fa-solid fa-cube"></i> Architectural View</span>
+            <div class="pill-selector" id="studio-scene-selector">
+              <button class="pill-btn active" data-scene="living"><i class="fa-solid fa-couch"></i> Modern Living</button>
+              <button class="pill-btn" data-scene="exterior"><i class="fa-solid fa-house-chimney"></i> Villa Exterior</button>
+              <button class="pill-btn" data-scene="bedroom"><i class="fa-solid fa-bed"></i> Luxury Suite</button>
             </div>
           </div>
 
-          <!-- Right: Selector Panel -->
+          <!-- Sheen Finish Selector -->
+          <div class="control-group">
+            <span class="control-label"><i class="fa-solid fa-wand-magic-sparkles"></i> Surface Finish Sheen</span>
+            <div class="pill-selector" id="studio-sheen-selector">
+              <button class="pill-btn active" data-sheen="matt">Matt Emulsion</button>
+              <button class="pill-btn" data-sheen="satin">Silk Satin</button>
+              <button class="pill-btn" data-sheen="gloss">High Gloss</button>
+            </div>
+          </div>
+
+          <!-- Lighting Mode Toggle -->
+          <div class="control-group">
+            <span class="control-label"><i class="fa-solid fa-sun"></i> Lighting Mood</span>
+            <div class="pill-selector" id="studio-light-selector">
+              <button class="pill-btn active" data-light="day"><i class="fa-solid fa-sun"></i> Daylight 6000K</button>
+              <button class="pill-btn" data-light="warm"><i class="fa-solid fa-moon"></i> Warm Sunset 3000K</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Studio Layout -->
+        <div class="studio-layout">
+          <!-- Left: Architectural Stage Showcase -->
+          <div class="studio-preview-panel">
+            <div class="studio-stage-frame" id="studio-stage-frame">
+              
+              <!-- Active Scene Background & Architectural Elements -->
+              <div class="studio-scene-view scene-living active" id="scene-living">
+                <!-- Primary Accent Wall Zone (Interactive) -->
+                <div class="arch-wall-primary" id="arch-wall-primary">
+                  <div class="arch-sheen-overlay" id="arch-sheen-overlay"></div>
+                  <div class="arch-light-ray" id="arch-light-ray"></div>
+                  <!-- Architectural Art Frame -->
+                  <div class="arch-artwork">
+                    <div class="art-graphic" id="arch-art-graphic"></div>
+                  </div>
+                </div>
+                <!-- Secondary Trim / Accent Zone -->
+                <div class="arch-trim-pillar" id="arch-trim-pillar"></div>
+                <!-- Designer Furniture Elements -->
+                <div class="arch-furniture-lounge">
+                  <div class="lounge-sofa-body" id="lounge-sofa-body"></div>
+                  <div class="lounge-cushion-pack">
+                    <span class="lounge-cushion cushion-1" id="lounge-cushion-1"></span>
+                    <span class="lounge-cushion cushion-2" id="lounge-cushion-2"></span>
+                  </div>
+                </div>
+                <!-- Floor Base -->
+                <div class="arch-floor-plane" id="arch-floor-plane">
+                  <div class="arch-rug-layer" id="arch-rug-layer"></div>
+                </div>
+              </div>
+
+              <!-- Live Color Inspector Badge Overlay -->
+              <div class="studio-inspector-card">
+                <div class="inspector-header">
+                  <span class="inspector-tag">ACTIVE PALETTE SELECTION</span>
+                  <strong class="inspector-name" id="inspector-name">Modern Minimalist</strong>
+                </div>
+                <div class="inspector-swatches" id="inspector-swatches"></div>
+                <div class="inspector-details">
+                  <span class="inspector-code" id="inspector-code">#3A3530 · Slate Charcoal</span>
+                  <button class="copy-code-btn" id="copy-code-btn" title="Copy HEX Code"><i class="fa-regular fa-copy"></i> Copy HEX</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right: Palette Selection Console & Custom Color Formulator -->
           <div class="studio-selector-panel">
-            <span class="studio-selector-heading">Curated Palettes</span>
+            
+            <!-- Category Filter Pills -->
+            <div class="palette-category-filters" id="palette-category-filters">
+              <button class="cat-filter-btn active" data-cat="all">All Styles</button>
+              <button class="cat-filter-btn" data-cat="heritage">Heritage South</button>
+              <button class="cat-filter-btn" data-cat="minimal">Minimal</button>
+              <button class="cat-filter-btn" data-cat="villa">Luxury Villa</button>
+            </div>
+
+            <!-- Palettes Grid -->
             <div class="studio-palette-grid" id="studio-palette-grid">
 
-              <button class="studio-palette-card active" data-colors='["#3A3530", "#C8B195", "#EFEAE4"]'
+              <button class="studio-palette-card active" data-cat="minimal" data-colors='["#3A3530", "#C8B195", "#EFEAE4"]'
                 data-names='["Slate Charcoal", "Sandalwood Dusk", "Alabaster Cream"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #3A3530"></span>
@@ -942,7 +956,7 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#1E352F", "#A25A38", "#F4EFEB"]'
+              <button class="studio-palette-card" data-cat="heritage" data-colors='["#1E352F", "#A25A38", "#F4EFEB"]'
                 data-names='["Seshachalam Forest", "Terracotta Clay", "Divine Sand"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #1E352F"></span>
@@ -955,7 +969,7 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#8A5A16", "#E0A838", "#FDFBF7"]'
+              <button class="studio-palette-card" data-cat="heritage" data-colors='["#8A5A16", "#E0A838", "#FDFBF7"]'
                 data-names='["Heritage Bronze", "Saffron Gold", "Champagne Mist"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #8A5A16"></span>
@@ -968,7 +982,7 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#4A5568", "#A0AEC0", "#F7FAFC"]'
+              <button class="studio-palette-card" data-cat="minimal" data-colors='["#4A5568", "#A0AEC0", "#F7FAFC"]'
                 data-names='["Slate Stone", "Mist Silver", "Soft Ash"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #4A5568"></span>
@@ -981,7 +995,7 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#A22B29", "#E3A857", "#FFFDF0"]'
+              <button class="studio-palette-card" data-cat="heritage" data-colors='["#A22B29", "#E3A857", "#FFFDF0"]'
                 data-names='["Temple Vermilion", "Marigold Saffron", "Warm Turmeric"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #A22B29"></span>
@@ -994,7 +1008,7 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#2A3B39", "#8E9A94", "#EAF0ED"]'
+              <button class="studio-palette-card" data-cat="villa" data-colors='["#2A3B39", "#8E9A94", "#EAF0ED"]'
                 data-names='["Deep Olive", "Sage Mist", "Pearl Alabaster"]'>
                 <div class="palette-card-swatches">
                   <span class="palette-swatch" style="background: #2A3B39"></span>
@@ -1007,39 +1021,31 @@
                 </div>
               </button>
 
-              <button class="studio-palette-card" data-colors='["#1A365D", "#2B6CB0", "#EBF8FF"]'
-                data-names='["Corporate Navy", "Architectural Blue", "Sky Tint"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #1A365D"></span>
-                  <span class="palette-swatch" style="background: #2B6CB0"></span>
-                  <span class="palette-swatch" style="background: #EBF8FF"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Commercial Spaces</strong>
-                  <span>Productive, high-durability color palettes designed for corporate environments.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-colors='["#4A2E35", "#A84C62", "#FAF5F5"]'
-                data-names='["Velvet Plum", "Royal Orchid", "Warm Ivory"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #4A2E35"></span>
-                  <span class="palette-swatch" style="background: #A84C62"></span>
-                  <span class="palette-swatch" style="background: #FAF5F5"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Hospitality Collection</strong>
-                  <span>Inviting, luxurious combinations crafted for hotels, cafes, and lounge walls.</span>
-                </div>
-              </button>
-
             </div>
+
+            <!-- Custom Colour Formulation Lab Box -->
+            <div class="custom-mixer-box">
+              <div class="mixer-header">
+                <i class="fa-solid fa-flask-vial"></i>
+                <div>
+                  <strong>Custom Shade Formulator</strong>
+                  <span>Mix your custom wall shade in real-time</span>
+                </div>
+              </div>
+              <div class="mixer-controls">
+                <input type="color" id="custom-wall-picker" value="#0F4D3A" title="Choose custom wall color">
+                <span class="mixer-value-text" id="mixer-value-text">#0F4D3A</span>
+                <button class="btn btn-secondary btn-sm" id="apply-custom-shade-btn">Apply Custom Shade</button>
+              </div>
+            </div>
+
             <a href="#consultation" class="btn btn-primary studio-cta-btn">Get Custom Colour Consultation</a>
           </div>
         </div>
 
       </div>
     </section>
+
 
     <!--SECTION 07  SUSTAINABILITY STORYTELLING -->
 
