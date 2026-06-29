@@ -3509,6 +3509,22 @@ nav a:hover::after {
   position: relative;
 }
 
+.sustain-showcase-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 25px 55px rgba(15, 77, 58, 0.18);
+  object-fit: cover;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.sustain-showcase-img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 35px 65px rgba(15, 77, 58, 0.25);
+}
+
+
 .sustain-can-showcase {
   position: relative;
   display: flex;

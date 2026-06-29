@@ -542,12 +542,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const sustainSection = document.getElementById('sustainability');
-  const leaf1          = document.getElementById('leaf-1');
-  const leaf2          = document.getElementById('leaf-2');
-  const leaf3          = document.getElementById('leaf-3');
+  const sustainImg     = document.querySelector('.sustain-showcase-img');
   const shape1         = document.getElementById('sustain-shape-1');
   const shape2         = document.getElementById('sustain-shape-2');
-  const seal           = document.getElementById('eco-badge-seal');
 
   if (!sustainSection) return;
 
@@ -560,14 +557,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress = 1 - (rect.bottom / (window.innerHeight + rect.height));
 
     // Parallax translations
-    if (leaf1) {
-      leaf1.style.transform = `translateY(${progress * -100}px) rotate(${15 + progress * 35}deg) scale(0.9)`;
-    }
-    if (leaf2) {
-      leaf2.style.transform = `translateY(${progress * 80}px) rotate(${-45 - progress * 40}deg) scale(1.15)`;
-    }
-    if (leaf3) {
-      leaf3.style.transform = `translateY(${progress * -140}px) rotate(${85 + progress * 55}deg) scale(1)`;
+    if (sustainImg) {
+      sustainImg.style.transform = `translateY(${progress * -25}px)`;
     }
     if (shape1) {
       shape1.style.transform = `translateY(${progress * 90}px)`;
@@ -575,14 +566,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (shape2) {
       shape2.style.transform = `translateY(${progress * -90}px)`;
     }
-    if (seal) {
-      seal.style.transform = `translateY(${progress * -50}px) rotate(${progress * -12}deg)`;
-    }
   }
 
   window.addEventListener('scroll', handleParallax, { passive: true });
   handleParallax(); // Initial check
 });
+
 
 /* ============================================================
    SECTION 08 — Project Gallery Filter Controller
