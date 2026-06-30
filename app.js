@@ -642,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const openModalBtn  = document.getElementById('open-dealer-modal-btn');
   const closeModalBtn = document.getElementById('close-dealer-modal');
   const dealerModal   = document.getElementById('dealer-popup-modal');
+  const dealerForm    = document.getElementById('dealer-modal-form');
 
   if (openModalBtn && closeModalBtn && dealerModal) {
     const showModal = () => {
@@ -674,6 +675,16 @@ document.addEventListener('DOMContentLoaded', () => {
         hideModal();
       }
     });
+
+    // Handle form submit in JS to properly restore page scrolling
+    if (dealerForm) {
+      dealerForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Agreement signed successfully! Our distribution team will review your application and contact you.');
+        hideModal();
+        dealerForm.reset();
+      });
+    }
   }
 });
 
