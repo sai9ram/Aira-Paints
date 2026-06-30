@@ -4749,7 +4749,9 @@ nav a:hover::after {
 .consultation-banner {
   position: relative;
   border-radius: 32px;
-  background: linear-gradient(135deg, var(--forest) 0%, #0a1311 100%);
+  background: linear-gradient(135deg, rgba(15, 77, 58, 0.9) 0%, rgba(10, 19, 17, 0.94) 100%), url('Grand Tirupati Regency.jpeg');
+  background-size: cover;
+  background-position: center;
   padding: 6.5rem 5rem;
   overflow: hidden;
   box-shadow: 0 40px 95px rgba(15, 77, 58, 0.16);
