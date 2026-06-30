@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Syne:wght@700;800&display=swap');
 
 /* ============================================
-   AIRA PAINTS â€“ Design System
+   AIRA PAINTS - Design System
    Premium Eco-Friendly Paint Brand
    Tirupati Edition
    ============================================ */
 
 :root {
-  /* Core Brand Colors â€” Deep Emerald & White */
+  /* Core Brand Colors - Deep Emerald & White */
   --forest:        #0F4D3A;
   --forest-mid:    #166b4f;
   --forest-light:  rgba(15, 77, 58, 0.08);
@@ -342,12 +342,12 @@ nav a:hover::after {
 }
 
 /* ============================================
-   HERO SECTION — SCROLLYTELLING (STACK + FADE)
-   No clipping needed — slides are stacked &
+   HERO SECTION - SCROLLYTELLING (STACK + FADE)
+   No clipping needed - slides are stacked &
    shown/hidden with opacity only.
    ============================================ */
 .hero-section {
-  height: 400vh;          /* 4 × 100vh scrollable distance */
+  height: 400vh;          /* 4 - 100vh scrollable distance */
   position: relative;
   z-index: 1;
 }
@@ -359,7 +359,7 @@ nav a:hover::after {
   height: 100vh;
   width: 100%;
   z-index: 10;
-  /* NO overflow, NO clip-path — not needed */
+  /* NO overflow, NO clip-path - not needed */
 }
 
 /* Track is just a full-size container; slides stack inside it */
@@ -391,13 +391,13 @@ nav a:hover::after {
   z-index: 2;
 }
 
-/* ═══════════════════════════════════════════════════
-   HERO — MATCH & MOVE ENTRANCE ANIMATIONS
+/* -
+   HERO - MATCH & MOVE ENTRANCE ANIMATIONS
    Content inside each slide starts hidden + offset.
    When slide becomes .active, transitions cascade in.
-   ═══════════════════════════════════════════════════ */
+   - */
 
-/* ── Default (hidden) state for slide children ── */
+/* - Default (hidden) state for slide children - */
 .hero-slide .hero-slide-tagline,
 .hero-slide .hero-slide-title,
 .hero-slide .hero-slide-desc,
@@ -417,7 +417,7 @@ nav a:hover::after {
     transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Active: staggered cascade in ── */
+/* - Active: staggered cascade in - */
 .hero-slide.active .hero-slide-tagline {
   opacity: 1; transform: none;
   transition-delay: 0.05s;
@@ -439,7 +439,7 @@ nav a:hover::after {
   transition-delay: 0.12s;
 }
 
-/* ── Ghost word: slides in from right as slide activates ── */
+/* - Ghost word: slides in from right as slide activates - */
 .hero-slide .slide-ghost-word {
   transform: translateX(60px);
   transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -448,14 +448,14 @@ nav a:hover::after {
   transform: translateX(0);
 }
 
-/* ── Orbs: scale in ── */
+/* - Orbs: scale in - */
 .hero-slide .slide-orb {
   transform: scale(0.7);
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .hero-slide.active .slide-orb { transform: scale(1); }
 
-/* ── Rings: expand in ── */
+/* - Rings: expand in - */
 .hero-slide .slide-ring {
   transform: scale(0.6);
   opacity: 0;
@@ -465,11 +465,11 @@ nav a:hover::after {
 .hero-slide.active .slide-ring { transform: scale(1); opacity: 1; }
 .hero-slide.active .ring-2     { transition-delay: 0.15s; }
 
-/* ═══════════════════════════════════════════════════
-   HERO — SLIDE BACKGROUND DESIGN ELEMENTS
-   ═══════════════════════════════════════════════════ */
+/* -
+   HERO - SLIDE BACKGROUND DESIGN ELEMENTS
+   - */
 
-/* ── Full-cover decorative layer ── */
+/* - Full-cover decorative layer - */
 .slide-bg-layer {
   position: absolute;
   inset: 0;
@@ -478,7 +478,7 @@ nav a:hover::after {
   z-index: 0;
 }
 
-/* ── Giant ghost category word ── */
+/* - Giant ghost category word - */
 .slide-ghost-word {
   position: absolute;
   bottom: -0.08em;
@@ -495,7 +495,7 @@ nav a:hover::after {
   will-change: transform;
 }
 
-/* ── Soft ambient orbs ── */
+/* - Soft ambient orbs - */
 .slide-orb {
   position: absolute;
   border-radius: 50%;
@@ -519,7 +519,7 @@ nav a:hover::after {
   to   { transform: translateY(-20px) translateX(15px); }
 }
 
-/* ── Concentric circle rings ── */
+/* - Concentric circle rings - */
 .slide-ring {
   position: absolute;
   border-radius: 50%;
@@ -538,7 +538,7 @@ nav a:hover::after {
   border-color: rgba(255,255,255,0.04);
 }
 
-/* ── Fine dot grid ── */
+/* - Fine dot grid - */
 .slide-dot-grid {
   position: absolute;
   inset: 0;
@@ -547,7 +547,7 @@ nav a:hover::after {
   opacity: 0.6;
 }
 
-/* ── Paint streak (slide 1) ── */
+/* - Paint streak (slide 1) - */
 .slide-paint-streak {
   position: absolute;
   border-radius: 50%;
@@ -561,7 +561,7 @@ nav a:hover::after {
   transform: rotate(-15deg);
 }
 
-/* ── Sun rays burst (slide 2) ── */
+/* - Sun rays burst (slide 2) - */
 .slide-sun-rays {
   position: absolute;
   top: 15%; right: 8%;
@@ -589,7 +589,7 @@ nav a:hover::after {
   to   { transform: rotate(360deg); }
 }
 
-/* ── Hexagon grid (slide 3) ── */
+/* - Hexagon grid (slide 3) - */
 .slide-hex-grid {
   position: absolute;
   inset: 0;
@@ -599,7 +599,7 @@ nav a:hover::after {
   opacity: 0.7;
 }
 
-/* ── Water waves (slide 4) ── */
+/* - Water waves (slide 4) - */
 .slide-wave {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -614,7 +614,7 @@ nav a:hover::after {
   to   { transform: scaleX(1.05) scaleY(1.12); }
 }
 
-/* ── Scroll hint at bottom of stage ── */
+/* - Scroll hint at bottom of stage - */
 .hero-scroll-hint {
   position: absolute;
   bottom: 2.2rem;
@@ -646,7 +646,7 @@ nav a:hover::after {
   50%       { transform: translateY(6px); }
 }
 
-/* ── Ensure slide content sits above bg layer ── */
+/* - Ensure slide content sits above bg layer - */
 .hero-slide-content {
   position: relative;
   z-index: 2;
@@ -886,7 +886,7 @@ nav a:hover::after {
   50%       { transform: translateY(-16px); }
 }
 
-/* HANDLE — arch above the can */
+/* HANDLE - arch above the can */
 .showcase-can-handle {
   position: absolute;
   top: -52px;
@@ -902,7 +902,7 @@ nav a:hover::after {
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-/* LID — metal oval on top */
+/* LID - metal oval on top */
 .showcase-can-lid {
   position: absolute;
   top: -12px;
@@ -927,7 +927,7 @@ nav a:hover::after {
   transform: translateY(-50%);
 }
 
-/* BODY — main coloured cylinder */
+/* BODY - main coloured cylinder */
 .showcase-can-body {
   position: absolute;
   inset: 0;
@@ -975,7 +975,7 @@ nav a:hover::after {
   pointer-events: none;
 }
 
-/* RIM — metal ring at bottom */
+/* RIM - metal ring at bottom */
 .showcase-can-rim {
   position: absolute;
   bottom: -10px;
@@ -1412,7 +1412,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 02 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â WHY MODERN HOMES CHOOSE US
+   SECTION 02 - WHY MODERN HOMES CHOOSE US
    ============================================================ */
 
 .why-section {
@@ -1722,7 +1722,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 03 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â TIRUPATI STORY (Cinematic Full-Width)
+   SECTION 03 - TIRUPATI STORY (Cinematic Full-Width)
    ============================================================ */
 
 .story-section {
@@ -1735,7 +1735,7 @@ nav a:hover::after {
   isolation: isolate;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Background Layer ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Background Layer - */
 .story-bg {
   position: absolute;
   inset: 0;
@@ -1753,7 +1753,7 @@ nav a:hover::after {
   z-index: 1;
 }
 
-/* Cinematic CSS gradient fallback ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â shows when no video */
+/* Cinematic CSS gradient fallback - shows when no video */
 .story-bg-cinematic {
   position: absolute;
   inset: 0;
@@ -1799,7 +1799,7 @@ nav a:hover::after {
   to   { transform: translateX(30%) rotate(5deg);  opacity: 1; }
 }
 
-/* Gradient overlay ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â darkens top, fades left side for text readability */
+/* Gradient overlay - darkens top, fades left side for text readability */
 .story-overlay-gradient {
   position: absolute;
   inset: 0;
@@ -1818,7 +1818,7 @@ nav a:hover::after {
   pointer-events: none;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Location Pill ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Location Pill - */
 .story-location {
   position: absolute;
   top: 2.5rem;
@@ -1854,7 +1854,7 @@ nav a:hover::after {
   opacity: 0.4;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Main Content Layout ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Main Content Layout - */
 .story-content {
   position: relative;
   z-index: 10;
@@ -1865,7 +1865,7 @@ nav a:hover::after {
   padding: 10rem 7% 6rem;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Left: Story Text ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Left: Story Text - */
 .story-text {
   display: flex;
   flex-direction: column;
@@ -1952,7 +1952,7 @@ nav a:hover::after {
   color: var(--terracotta);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Right: Counter Items ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Right: Counter Items - */
 .story-counters {
   display: flex;
   flex-direction: column;
@@ -2059,7 +2059,7 @@ nav a:hover::after {
   text-transform: uppercase;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Reveal Fade (for story section elements) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Reveal Fade (for story section elements) - */
 .reveal-fade {
   opacity: 0;
   transform: translateY(30px);
@@ -2071,7 +2071,7 @@ nav a:hover::after {
   transform: translateY(0);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Bottom scroll cue line ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Bottom scroll cue line - */
 .story-bottom-line {
   position: absolute;
   bottom: 0;
@@ -2082,7 +2082,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Responsive: Section 03 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Responsive: Section 03 - */
 @media (max-width: 900px) {
   .story-content {
     grid-template-columns: 1fr;
@@ -2126,29 +2126,29 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 04 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â PRODUCT SHOWCASE (Apple Scroll Style)
+   SECTION 04 - PRODUCT SHOWCASE (Apple Scroll Style)
    ============================================================ */
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Section wrapper ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Section wrapper - */
 .products-section {
   background-color: var(--sand);
   padding-top: 6rem;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Section header ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Section header - */
 .products-header {
   text-align: center;
   padding: 0 7%;
   margin-bottom: 4rem;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Sticky container: 400vh gives 4 products ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 100vh each ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Sticky container: 400vh gives 4 products - 100vh each - */
 .products-sticky-wrap {
   height: 400vh;
   position: relative;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Sticky stage (pins while products scroll) ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Sticky stage (pins while products scroll) - */
 .products-stage {
   position: sticky;
   top: 0;
@@ -2170,7 +2170,7 @@ nav a:hover::after {
   z-index: 0;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Progress dots ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Progress dots - */
 .product-dots {
   position: absolute;
   right: 5%;
@@ -2198,7 +2198,7 @@ nav a:hover::after {
   transform: scale(1.4);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Slides container ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Slides container - */
 .product-slides {
   position: relative;
   width: 100%;
@@ -2206,7 +2206,7 @@ nav a:hover::after {
   z-index: 10;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Individual slide ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Individual slide - */
 .product-slide {
   position: absolute;
   inset: 0;
@@ -2234,7 +2234,7 @@ nav a:hover::after {
   transform: translateY(-60px);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Left: Visual ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Left: Visual - */
 .slide-visual {
   display: flex;
   justify-content: center;
@@ -2266,7 +2266,7 @@ nav a:hover::after {
   to   { transform: scale(1.1); opacity: 1;   }
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Showcase CSS Paint Can ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Showcase CSS Paint Can - */
 .showcase-can {
   position: relative;
   width: 220px;
@@ -2461,7 +2461,7 @@ nav a:hover::after {
 .showcase-can-handle::before { left: -6px; }
 .showcase-can-handle::after  { right: -6px; }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Right: Text Info ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Right: Text Info - */
 .slide-info {
   display: flex;
   flex-direction: column;
@@ -2545,7 +2545,7 @@ nav a:hover::after {
   margin-top: 0.5rem;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Scroll progress bar at bottom ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Scroll progress bar at bottom - */
 .products-progress-bar {
   position: absolute;
   bottom: 0;
@@ -2563,7 +2563,7 @@ nav a:hover::after {
   transition: width 0.4s var(--ease-out-expo);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Responsive: Section 04 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Responsive: Section 04 - */
 @media (max-width: 900px) {
   .product-slide {
     grid-template-columns: 1fr;
@@ -2602,7 +2602,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 05 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â COMPETITOR COMPARISON SECTION
+   SECTION 05 - COMPETITOR COMPARISON SECTION
    ============================================================ */
 
 .comparison-section {
@@ -2884,7 +2884,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 06 — COLOUR STUDIO & ARCHITECTURAL LAB (REDESIGNED)
+   SECTION 06 - COLOUR STUDIO & ARCHITECTURAL LAB (REDESIGNED)
    ============================================================ */
 
 .colour-studio-section {
@@ -3450,7 +3450,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 07 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â SUSTAINABILITY STORYTELLING
+   SECTION 07 - SUSTAINABILITY STORYTELLING
    ============================================================ */
 
 .sustainability-section {
@@ -3776,7 +3776,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 08 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â PROJECT GALLERY
+   SECTION 08 - PROJECT GALLERY
    ============================================================ */
 
 .gallery-section {
@@ -4016,7 +4016,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 09 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CUSTOMER SUCCESS STORIES
+   SECTION 09 - CUSTOMER SUCCESS STORIES
    ============================================================ */
 
 .testimonials-section {
@@ -4449,7 +4449,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 10 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â DEALER NETWORK
+   SECTION 10 - DEALER NETWORK
    ============================================================ */
 
 .dealer-section {
@@ -4680,7 +4680,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 11 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â FREE CONSULTATION CTA
+   SECTION 11 - FREE CONSULTATION CTA
    ============================================================ */
 
 .consultation-section {
@@ -4860,7 +4860,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CONTACT STRIP
+   SECTION 12 - CONTACT STRIP
    ============================================================ */
 
 .contact-strip {
@@ -5158,7 +5158,7 @@ nav a:hover::after {
 }
 
 /* ============================================================
-   SECTION 12 ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â CONTACT + FOOTER
+   SECTION 12 - CONTACT + FOOTER
    ============================================================ */
 
 .site-footer {
@@ -5172,14 +5172,14 @@ nav a:hover::after {
   --gold:          #ffffff;
 }
 
-/* Top fade from sand ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ dark */
+/* Top fade from sand - dark */
 .footer-top-fade {
   height: 60px;
   background: linear-gradient(to bottom, var(--sand), #061c14);
   margin-top: -1px;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Newsletter Strip ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Newsletter Strip - */
 .footer-newsletter {
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   padding: 4rem 7% 4rem;
@@ -5297,7 +5297,7 @@ nav a:hover::after {
   flex: 0 0 auto;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Main Footer Grid ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Main Footer Grid - */
 .footer-main {
   padding: 5rem 7% 4rem;
 }
@@ -5547,7 +5547,7 @@ nav a:hover::after {
   box-shadow: 0 6px 18px rgba(37, 211, 102, 0.25);
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Divider with Brand Stamp ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Divider with Brand Stamp - */
 .footer-divider {
   display: flex;
   align-items: center;
@@ -5574,7 +5574,7 @@ nav a:hover::after {
   opacity: 1;
 }
 
-/* ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ Bottom Bar ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬ */
+/* - Bottom Bar - */
 .footer-bottom {
   display: flex;
   align-items: center;
