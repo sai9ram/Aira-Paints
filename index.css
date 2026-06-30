@@ -4386,7 +4386,7 @@ nav a:hover::after {
 }
 
 .before-state::before {
-  filter: grayscale(1) brightness(0.65) contrast(0.95);
+  /* Displays in original natural color */
 }
 
 .ba-label {
