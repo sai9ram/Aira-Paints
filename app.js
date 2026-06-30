@@ -637,6 +637,44 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial run
     updateEstimatorStats();
   }
+
+  // ── 5. Dealer Registration Popup Modal Controller ──
+  const openModalBtn  = document.getElementById('open-dealer-modal-btn');
+  const closeModalBtn = document.getElementById('close-dealer-modal');
+  const dealerModal   = document.getElementById('dealer-popup-modal');
+
+  if (openModalBtn && closeModalBtn && dealerModal) {
+    const showModal = () => {
+      dealerModal.removeAttribute('aria-hidden');
+      document.body.style.overflow = 'hidden'; // Stop page scroll
+    };
+
+    const hideModal = () => {
+      dealerModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // Restore page scroll
+    };
+
+    openModalBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      showModal();
+    });
+
+    closeModalBtn.addEventListener('click', hideModal);
+
+    // Close when clicking overlay backdrop
+    dealerModal.addEventListener('click', (e) => {
+      if (e.target === dealerModal) {
+        hideModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dealerModal.getAttribute('aria-hidden') !== 'true') {
+        hideModal();
+      }
+    });
+  }
 });
 
 

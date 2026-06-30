@@ -1519,7 +1519,7 @@
 
           <!-- CTAs -->
           <div class="dealer-ctas">
-            <a href="#partner-form" class="btn btn-primary">Become A Dealer</a>
+            <button class="btn btn-primary" id="open-dealer-modal-btn">Become A Dealer</button>
             <a href="aira-brochure.pdf" download class="btn btn-secondary cta-download">
               <span>Download Brochure</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1530,42 +1530,24 @@
           </div>
         </div>
 
-        <!-- Right: Partner Request Form -->
-        <div class="dealer-form-wrap reveal-card" data-delay="250" id="partner-form">
-          <div class="form-header">
-            <h3>Partner Inquiry</h3>
-            <p>Fill out the form below and our distribution team will contact you within 24 hours.</p>
+        <!-- Right: Partner Branding Cards Showcase -->
+        <div class="dealer-showcase-panel reveal-card" data-delay="250">
+          <div class="showcase-glow"></div>
+          <div class="showcase-content-wrap">
+            <span class="showcase-badge">Tirupati Logistics Hub</span>
+            <h3>Direct Supplies &<br>Fast Fulfillment</h3>
+            <p>We supply our dealers directly from our main manufacturing hub in Tirupati, ensuring 24-48 hour fulfillment times across the region.</p>
+            <div class="showcase-stats">
+              <div class="showcase-stat-item">
+                <strong>48h</strong>
+                <span>Max Delivery Time</span>
+              </div>
+              <div class="showcase-stat-item">
+                <strong>100%</strong>
+                <span>Fill Rate Accuracy</span>
+              </div>
+            </div>
           </div>
-          <form class="partner-request-form"
-            onsubmit="event.preventDefault(); alert('Thank you! Our distribution coordinator will contact you shortly.');">
-            <div class="form-group">
-              <label for="dealer-name">Full Name</label>
-              <input type="text" id="dealer-name" required placeholder="e.g. Ramesh Kumar">
-            </div>
-
-            <div class="form-group">
-              <label for="dealer-business">Business / Store Name</label>
-              <input type="text" id="dealer-business" required placeholder="e.g. Kumar Paints & Hardware">
-            </div>
-
-            <div class="form-group">
-              <label for="dealer-phone">Phone Number</label>
-              <input type="tel" id="dealer-phone" required placeholder="e.g. +91 98765 43210">
-            </div>
-
-            <div class="form-group">
-              <label for="dealer-city">Location (City & District)</label>
-              <input type="text" id="dealer-city" required placeholder="e.g. Tirupati, Chittoor District">
-            </div>
-
-            <button type="submit" class="btn btn-primary submit-partner-btn">
-              <span>Submit Request</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </button>
-          </form>
         </div>
 
       </div>
@@ -2116,6 +2098,62 @@
     <span>Scroll</span>
     <div class="scroll-mouse" aria-hidden="true">
       <div class="scroll-wheel"></div>
+    </div>
+  </div>
+
+  <!-- Dealer Registration Modal -->
+  <div id="dealer-popup-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="close-dealer-modal" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <h3 id="modal-title">Dealer Registration & Partnership Agreement</h3>
+        <p>Review the agreement terms and complete your merchant registration</p>
+      </div>
+
+      <!-- Agreement Scrollable Area -->
+      <div class="modal-agreement-box">
+        <h4>Aira Paints Authorized Dealer Agreement</h4>
+        <p><strong>1. Scope of Exclusivity:</strong> The dealer is authorized to promote and sell Aira Paints products (Economy, Premium, and Luxury series) within their designated city territory.</p>
+        <p><strong>2. Suggested Merchant Margins:</strong> Margin models are set dynamically to support growth: Economy Series (18% - 22%), Premium Series (22% - 25%), and Luxury Series (25% - 30%).</p>
+        <p><strong>3. Marketing & Support:</strong> Aira Paints agrees to supply retail branding, display racks, and product catalogs. The dealer agrees to allocate display space in-store.</p>
+        <p><strong>4. Environmental Quality Policy:</strong> The dealer agrees to represent and advertise Aira Paints as a premium, low-VOC, eco-friendly product line.</p>
+      </div>
+
+      <!-- Form inside Modal -->
+      <form class="modal-request-form" id="dealer-modal-form" onsubmit="event.preventDefault(); alert('Agreement signed successfully! Our distribution team will review your application and contact you.'); document.getElementById('dealer-popup-modal').setAttribute('aria-hidden', 'true');">
+        <div class="modal-form-grid">
+          <div class="form-group">
+            <label for="modal-dealer-name">Full Name</label>
+            <input type="text" id="modal-dealer-name" required placeholder="e.g. Ramesh Kumar">
+          </div>
+          <div class="form-group">
+            <label for="modal-dealer-business">Business Name</label>
+            <input type="text" id="modal-dealer-business" required placeholder="e.g. Kumar Paints & Hardware">
+          </div>
+          <div class="form-group">
+            <label for="modal-dealer-phone">Phone Number</label>
+            <input type="tel" id="modal-dealer-phone" required placeholder="e.g. +91 98765 43210">
+          </div>
+          <div class="form-group">
+            <label for="modal-dealer-city">Location (City & District)</label>
+            <input type="text" id="modal-dealer-city" required placeholder="e.g. Tirupati, Chittoor District">
+          </div>
+        </div>
+
+        <div class="form-agreement-checkbox">
+          <input type="checkbox" id="modal-agree-checkbox" required>
+          <label for="modal-agree-checkbox">I read, understand, and agree to the partnership agreement terms.</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary submit-partner-btn">
+          <span>Sign & Submit Application</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
     </div>
   </div>
 
