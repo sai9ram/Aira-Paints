@@ -3989,7 +3989,7 @@ nav a:hover::after {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--terracotta);
+  color: var(--white);
   margin-bottom: 0.4rem;
   transform: translateY(12px);
   transition: transform 0.5s var(--ease-out-expo);
