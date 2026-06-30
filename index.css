@@ -6147,44 +6147,48 @@ nav a:hover::after {
 
 /* Suggested Margin Cards */
 .margin-info-box {
-  margin: 2.5rem 0 3rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 2rem 0 2.5rem;
+  background: var(--white);
+  border: 1px solid rgba(15, 77, 58, 0.12);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.2rem 2rem;
+  box-shadow: 0 10px 30px rgba(15, 77, 58, 0.04);
 }
 
 .margin-box-title {
   display: block;
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--white);
+  color: var(--forest);
   margin-bottom: 1.5rem;
-  opacity: 0.85;
+  border-bottom: 2px solid rgba(15, 77, 58, 0.08);
+  padding-bottom: 0.6rem;
 }
 
 .margin-grid-layout {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .margin-card {
-  padding: 1rem 0.5rem;
-  border-radius: 12px;
+  padding: 1.2rem 0.8rem;
+  border-radius: 16px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  gap: 8px;
+  border-width: 2px;
+  border-style: solid;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .margin-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .margin-series {
@@ -6192,31 +6196,47 @@ nav a:hover::after {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--white);
-  opacity: 0.9;
+  letter-spacing: 0.5px;
 }
 
 .margin-range {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: var(--white);
 }
 
-/* Colors matching user series definitions */
+/* Colors matching user series definitions - high contrast for light backgrounds */
 .economy-margin {
-  background: rgba(15, 77, 58, 0.25);
-  border-color: rgba(15, 77, 58, 0.5);
+  background: rgba(15, 77, 58, 0.04);
+  border-color: var(--forest);
+}
+.economy-margin .margin-series {
+  color: var(--forest);
+}
+.economy-margin .margin-range {
+  color: var(--forest);
 }
 
 .premium-margin {
-  background: rgba(59, 130, 246, 0.15);
-  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.04);
+  border-color: #2563eb; /* Strong blue */
+}
+.premium-margin .margin-series {
+  color: #1d4ed8;
+}
+.premium-margin .margin-range {
+  color: #1d4ed8;
 }
 
 .luxury-margin {
-  background: rgba(139, 92, 246, 0.15);
-  border-color: rgba(139, 92, 246, 0.4);
+  background: rgba(139, 92, 246, 0.04);
+  border-color: #7c3aed; /* Strong purple */
+}
+.luxury-margin .margin-series {
+  color: #6d28d9;
+}
+.luxury-margin .margin-range {
+  color: #6d28d9;
 }
 
 @media (max-width: 560px) {
