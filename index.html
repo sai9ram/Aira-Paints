@@ -33,6 +33,7 @@
       <ul>
         <li><a href="#story">Our Story</a></li>
         <li><a href="#products">Products</a></li>
+        <li><a href="#pricing">Pricing</a></li>
         <li><a href="#visualizer">Visualizer</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -827,6 +828,145 @@
           </article>
 
         </div>
+      </div>
+    </section>
+
+    <!-- - -->
+    <!-- -  SECTION 05b - PRICING & VOLUME CALCULATOR - -->
+    <!-- - -->
+    <section id="pricing" class="pricing-section" aria-label="Aira Product Pricing">
+      <div class="pricing-container">
+        
+        <div class="pricing-header reveal-up">
+          <span class="section-eyebrow">
+            <span class="eyebrow-line" aria-hidden="true"></span>
+            Aira Price Catalog
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </span>
+          <h2 class="section-title">Premium Quality For<br><em>Every Budget</em></h2>
+          <p class="pricing-intro">
+            Compare sizing and pricing across our curated series, or estimate your total paint cost instantly.
+          </p>
+        </div>
+
+        <!-- Series Selector Tabs -->
+        <div class="pricing-tabs-bar">
+          <button class="price-tab-btn active" data-series="economy">Economy Series</button>
+          <button class="price-tab-btn" data-series="premium">Premium Series</button>
+          <button class="price-tab-btn" data-series="luxury">Luxury Series</button>
+        </div>
+
+        <!-- Sizing & Pricing Cards Grid -->
+        <div class="pricing-grid" id="pricing-grid">
+          
+          <!-- Size Card: 1 LTR -->
+          <div class="price-card" data-base-prices='{"economy": 249, "premium": 399, "luxury": 549}'>
+            <div class="price-card-glow"></div>
+            <div class="size-badge">1 LTR</div>
+            <h3 class="price-value" id="price-val-1">₹249</h3>
+            <p class="size-desc">Perfect for quick touchups, accents, or small window borders.</p>
+            <ul class="size-specs">
+              <li><i class="fa-solid fa-check"></i> Covers ~120 sq. ft.</li>
+              <li><i class="fa-solid fa-check"></i> 1 Coat coverage</li>
+              <li><i class="fa-solid fa-check"></i> Recyclable Pack</li>
+            </ul>
+          </div>
+
+          <!-- Size Card: 4 LTR -->
+          <div class="price-card" data-base-prices='{"economy": 949, "premium": 1499, "luxury": 2099}'>
+            <div class="price-card-glow"></div>
+            <div class="size-badge">4 LTR</div>
+            <h3 class="price-value" id="price-val-4">₹949</h3>
+            <p class="size-desc">Ideal for small rooms, single accent walls, or balconies.</p>
+            <ul class="size-specs">
+              <li><i class="fa-solid fa-check"></i> Covers ~480 sq. ft.</li>
+              <li><i class="fa-solid fa-check"></i> Mid-size convenience</li>
+              <li><i class="fa-solid fa-check"></i> Airtight seal lock</li>
+            </ul>
+          </div>
+
+          <!-- Size Card: 10 LTR -->
+          <div class="price-card highlight" data-base-prices='{"economy": 2199, "premium": 3499, "luxury": 4999}'>
+            <div class="price-card-glow"></div>
+            <div class="size-badge">10 LTR</div>
+            <h3 class="price-value" id="price-val-10">₹2,199</h3>
+            <p class="size-desc">Recommended for standard master suites or high-traffic halls.</p>
+            <ul class="size-specs">
+              <li><i class="fa-solid fa-check"></i> Covers ~1200 sq. ft.</li>
+              <li><i class="fa-solid fa-check"></i> Best Value size</li>
+              <li><i class="fa-solid fa-check"></i> Easy-carry bucket</li>
+            </ul>
+          </div>
+
+          <!-- Size Card: 20 LTR -->
+          <div class="price-card" data-base-prices='{"economy": 4299, "premium": 6899, "luxury": 9899}'>
+            <div class="price-card-glow"></div>
+            <div class="size-badge">20 LTR</div>
+            <h3 class="price-value" id="price-val-20">₹4,299</h3>
+            <p class="size-desc">Perfect for full-house painting or major commercial properties.</p>
+            <ul class="size-specs">
+              <li><i class="fa-solid fa-check"></i> Covers ~2400 sq. ft.</li>
+              <li><i class="fa-solid fa-check"></i> Bulk pricing savings</li>
+              <li><i class="fa-solid fa-check"></i> High capacity pack</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Interactive Cost & Volume Estimator Tool -->
+        <div class="estimator-tool-box">
+          <div class="estimator-header">
+            <i class="fa-solid fa-calculator"></i>
+            <div>
+              <h3>Smart Volume & Cost Calculator</h3>
+              <span>Estimate total litres and cost based on your carpet area</span>
+            </div>
+          </div>
+
+          <div class="estimator-layout">
+            <!-- Left: Inputs -->
+            <div class="estimator-inputs">
+              <div class="input-field-group">
+                <label for="carpet-area-input">Enter Carpet Area (Sq. Ft.)</label>
+                <div class="input-wrap">
+                  <input type="number" id="carpet-area-input" value="1000" min="50" max="10000" step="50">
+                  <span>Sq. Ft.</span>
+                </div>
+              </div>
+              <div class="input-field-group">
+                <label for="coating-coats-select">Number of Coats</label>
+                <select id="coating-coats-select">
+                  <option value="1">1 Coat (Refreshing)</option>
+                  <option value="2" selected>2 Coats (New Wall Protection)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Right: Dynamic Results -->
+            <div class="estimator-results">
+              <div class="result-stat">
+                <span class="stat-label">ESTIMATED PAINT REQUIRED</span>
+                <strong class="stat-value" id="calc-volume-needed">~16 Litres</strong>
+              </div>
+              
+              <div class="result-price-breakdown">
+                <div class="breakdown-row">
+                  <span>Economy Series:</span>
+                  <strong id="calc-price-economy">₹4,299</strong>
+                </div>
+                <div class="breakdown-row">
+                  <span>Premium Series:</span>
+                  <strong id="calc-price-premium">₹6,899</strong>
+                </div>
+                <div class="breakdown-row">
+                  <span>Luxury Series:</span>
+                  <strong id="calc-price-luxury">₹9,899</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 

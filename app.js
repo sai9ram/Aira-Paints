@@ -754,6 +754,109 @@ document.addEventListener('DOMContentLoaded', () => {
       sliderLine.style.left = `${val}%`;
     });
   }
+
+  // ── 3. Sizing & Pricing Tabs Selector ──
+  const priceTabBtns = document.querySelectorAll('.price-tab-btn');
+  const priceCards   = document.querySelectorAll('.price-card');
+
+  if (priceTabBtns.length && priceCards.length) {
+    priceTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active states for buttons
+        priceTabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Update pricing cards values
+        const selectedSeries = btn.getAttribute('data-series');
+        priceCards.forEach(card => {
+          const prices = JSON.parse(card.getAttribute('data-base-prices'));
+          const valueField = card.querySelector('.price-value');
+          if (valueField && prices && prices[selectedSeries] !== undefined) {
+            valueField.textContent = `₹${prices[selectedSeries].toLocaleString('en-IN')}`;
+          }
+        });
+      });
+    });
+  }
+
+  // ── 4. Volume & Cost Estimator Calculator ──
+  const carpetInput = document.getElementById('carpet-area-input');
+  const coatsSelect = document.getElementById('coating-coats-select');
+  const calcVolText = document.getElementById('calc-volume-needed');
+  const priceEconomyText = document.getElementById('calc-price-economy');
+  const pricePremiumText = document.getElementById('calc-price-premium');
+  const priceLuxuryText  = document.getElementById('calc-price-luxury');
+
+  function calculateCheapestBucketMix(litres, seriesPrices) {
+    let remaining = litres;
+    let cost = 0;
+    
+    if (remaining >= 20) {
+      const qty20 = Math.floor(remaining / 20);
+      cost += qty20 * seriesPrices[20];
+      remaining = remaining % 20;
+    }
+    
+    if (remaining > 0) {
+      let opt1 = seriesPrices[20]; // 20L option
+      let opt2 = 0; // Mix option
+      let rem2 = remaining;
+      
+      if (rem2 >= 10) {
+        opt2 += seriesPrices[10];
+        rem2 -= 10;
+      }
+      if (rem2 >= 4) {
+        const qty4 = Math.floor(rem2 / 4);
+        opt2 += qty4 * seriesPrices[4];
+        rem2 = rem2 % 4;
+      }
+      opt2 += rem2 * seriesPrices[1];
+      
+      let opt3 = remaining <= 10 ? seriesPrices[10] : Infinity;
+      let opt4 = remaining <= 4 ? seriesPrices[4] : Infinity;
+      
+      cost += Math.min(opt1, opt2, opt3, opt4);
+    }
+    return cost;
+  }
+
+  function updateEstimatorStats() {
+    if (!carpetInput || !coatsSelect || !calcVolText) return;
+    
+    const carpetArea = parseFloat(carpetInput.value) || 0;
+    const coats = parseInt(coatsSelect.value) || 2;
+    
+    // Coverage: ~120 sq. ft. per Litre per coat
+    const totalLitres = Math.ceil((carpetArea * coats) / 120);
+    calcVolText.textContent = `~${totalLitres} Litres`;
+    
+    const pricesDef = {
+      economy: { 20: 4299, 10: 2199, 4: 949, 1: 249 },
+      premium: { 20: 6899, 10: 3499, 4: 1499, 1: 399 },
+      luxury:  { 20: 9899, 10: 4999, 4: 2099, 1: 549 }
+    };
+    
+    if (priceEconomyText) {
+      const price = calculateCheapestBucketMix(totalLitres, pricesDef.economy);
+      priceEconomyText.textContent = `₹${price.toLocaleString('en-IN')}`;
+    }
+    if (pricePremiumText) {
+      const price = calculateCheapestBucketMix(totalLitres, pricesDef.premium);
+      pricePremiumText.textContent = `₹${price.toLocaleString('en-IN')}`;
+    }
+    if (priceLuxuryText) {
+      const price = calculateCheapestBucketMix(totalLitres, pricesDef.luxury);
+      priceLuxuryText.textContent = `₹${price.toLocaleString('en-IN')}`;
+    }
+  }
+
+  if (carpetInput && coatsSelect) {
+    carpetInput.addEventListener('input', updateEstimatorStats);
+    coatsSelect.addEventListener('change', updateEstimatorStats);
+    // Initial run
+    updateEstimatorStats();
+  }
 });
 
 
