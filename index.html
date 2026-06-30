@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -839,212 +839,176 @@
         <div class="studio-header">
           <span class="section-eyebrow">
             <span class="eyebrow-line" aria-hidden="true"></span>
-            Colour Studio & Architectural Lab
+            Aira Color Psychology Studio
             <span class="eyebrow-line" aria-hidden="true"></span>
           </span>
-          <h2 class="section-title">Interactive Architectural<br><em>Colour Visualizer</em></h2>
+          <h2 class="section-title">Harmonize Your Home<br><em>By Emotional Mood</em></h2>
           <p class="studio-intro">
-            Simulate real-world light, textures, and curated color palettes on modern architectural spaces before painting.
+            Explore color biology. Select an emotional theme below to simulate psychological mood palettes in real-time, or build your own custom room harmony.
           </p>
         </div>
 
-        <!-- Studio Control Bar: Mode, Sheen & Lighting controls -->
+        <!-- Mood Selector Toolbar -->
         <div class="studio-control-bar">
-          <!-- Space View Selector -->
           <div class="control-group">
-            <span class="control-label"><i class="fa-solid fa-cube"></i> Architectural View</span>
-            <div class="pill-selector" id="studio-scene-selector">
-              <button class="pill-btn active" data-scene="living"><i class="fa-solid fa-couch"></i> Modern Living</button>
-              <button class="pill-btn" data-scene="exterior"><i class="fa-solid fa-house-chimney"></i> Villa Exterior</button>
-              <button class="pill-btn" data-scene="bedroom"><i class="fa-solid fa-bed"></i> Luxury Suite</button>
-            </div>
-          </div>
-
-          <!-- Sheen Finish Selector -->
-          <div class="control-group">
-            <span class="control-label"><i class="fa-solid fa-wand-magic-sparkles"></i> Surface Finish Sheen</span>
-            <div class="pill-selector" id="studio-sheen-selector">
-              <button class="pill-btn active" data-sheen="matt">Matt Emulsion</button>
-              <button class="pill-btn" data-sheen="satin">Silk Satin</button>
-              <button class="pill-btn" data-sheen="gloss">High Gloss</button>
-            </div>
-          </div>
-
-          <!-- Lighting Mode Toggle -->
-          <div class="control-group">
-            <span class="control-label"><i class="fa-solid fa-sun"></i> Lighting Mood</span>
-            <div class="pill-selector" id="studio-light-selector">
-              <button class="pill-btn active" data-light="day"><i class="fa-solid fa-sun"></i> Daylight 6000K</button>
-              <button class="pill-btn" data-light="warm"><i class="fa-solid fa-moon"></i> Warm Sunset 3000K</button>
+            <span class="control-label"><i class="fa-solid fa-heart"></i> Select Your Desired Room Mood</span>
+            <div class="pill-selector" id="studio-mood-selector">
+              <button class="pill-btn active" data-mood="calm" data-colors='["#5F6F65", "#A3B19B", "#F1F3EE"]' data-names='["Sage Sanctuary", "Olive Fern", "Soft Alabaster"]' data-desc="Reduces stress and lowers heart rate. Perfect for bedrooms and study rooms.">
+                🧘‍♀️ Zen Calm
+              </button>
+              <button class="pill-btn" data-mood="energy" data-colors='["#B33925", "#E07A5F", "#F4F1DE"]' data-names='["Earthy Vermilion", "Saffron Clay", "Champagne Warmth"]' data-desc="Stimulates conversational flow and creative thinking. Ideal for living and dining spaces.">
+                ⚡ Energy Boost
+              </button>
+              <button class="pill-btn" data-mood="cozy" data-colors='["#9A7B56", "#D4A373", "#FEFAE0"]' data-names='["Toasted Hazelnut", "Warm Sand", "Honey Cream"]' data-desc="Creates a sense of security, safety, and nesting warmth. Excellent for family rooms.">
+                🍂 Cozy Nest
+              </button>
+              <button class="pill-btn" data-mood="prestige" data-colors='["#3B3355", "#907AD6", "#ECE8F1"]' data-names='["Royal Amethyst", "Soft Lavender", "Divine Pearl"]' data-desc="Inspires wisdom, dignity, and quiet luxury. Perfect for premium focal features.">
+                👑 Royal Lounge
+              </button>
+              <button class="pill-btn" data-mood="wellness" data-colors='["#1A3E2F", "#529F78", "#F5FDF9"]' data-names='["Bio Guard Forest", "Mint Therapy", "Clean Air Mist"]' data-desc="Promotes deep restorative breathing and organic purity. Fits wellness spaces.">
+                🌿 Bio Wellness
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Main Studio Layout -->
+        <!-- Main Mood Studio Layout -->
         <div class="studio-layout">
-          <!-- Left: Architectural Stage Showcase -->
+          <!-- Left: Immersive Room Preview with Ambient Glows -->
           <div class="studio-preview-panel">
             <div class="studio-stage-frame" id="studio-stage-frame">
               
-              <!-- Active Scene Background & Architectural Elements -->
-              <div class="studio-scene-view scene-living active" id="scene-living">
-                <!-- Primary Accent Wall Zone (Interactive) -->
-                <div class="arch-wall-primary" id="arch-wall-primary">
-                  <div class="arch-sheen-overlay" id="arch-sheen-overlay"></div>
+              <!-- 3D Room Stage -->
+              <div class="studio-scene-view">
+                <!-- Accent Wall Area -->
+                <div class="arch-wall-primary" id="arch-wall-primary" style="--studio-wall: #F1F3EE;">
+                  
+                  <!-- Ambient Light Beam Rays -->
                   <div class="arch-light-ray" id="arch-light-ray"></div>
-                  <!-- Architectural Art Frame -->
+                  <div class="arch-sheen-overlay"></div>
+
+                  <!-- Designer Hanging Lamp (Glows with mood light color) -->
+                  <div class="designer-lamp-cord"></div>
+                  <div class="designer-lamp-shade" id="designer-lamp-shade">
+                    <div class="lamp-glow-bulb" id="lamp-glow-bulb"></div>
+                  </div>
+
+                  <!-- Decorative Contemporary Artwork -->
                   <div class="arch-artwork">
-                    <div class="art-graphic" id="arch-art-graphic"></div>
+                    <div class="art-graphic" id="arch-art-graphic" style="--studio-accent: #5F6F65;"></div>
+                  </div>
+
+                </div>
+
+                <!-- Trim Board & Skirting -->
+                <div class="arch-trim-pillar" id="arch-trim-pillar" style="--studio-trim: #A3B19B;"></div>
+
+                <!-- Lounge Armchair & Floor Layer -->
+                <div class="arch-floor-plane">
+                  <div class="arch-rug-layer" id="arch-rug-layer" style="--studio-accent: #A3B19B;"></div>
+                  
+                  <!-- Armchair styling -->
+                  <div class="arch-furniture-lounge">
+                    <div class="lounge-sofa-body" id="lounge-sofa-body" style="--studio-furniture: #5F6F65;"></div>
+                    <div class="lounge-cushion-pack">
+                      <span class="lounge-cushion" id="lounge-cushion-1" style="--studio-accent: #A3B19B;"></span>
+                      <span class="lounge-cushion" id="lounge-cushion-2" style="--studio-accent: #F1F3EE;"></span>
+                    </div>
                   </div>
                 </div>
-                <!-- Secondary Trim / Accent Zone -->
-                <div class="arch-trim-pillar" id="arch-trim-pillar"></div>
-                <!-- Designer Furniture Elements -->
-                <div class="arch-furniture-lounge">
-                  <div class="lounge-sofa-body" id="lounge-sofa-body"></div>
-                  <div class="lounge-cushion-pack">
-                    <span class="lounge-cushion cushion-1" id="lounge-cushion-1"></span>
-                    <span class="lounge-cushion cushion-2" id="lounge-cushion-2"></span>
-                  </div>
-                </div>
-                <!-- Floor Base -->
-                <div class="arch-floor-plane" id="arch-floor-plane">
-                  <div class="arch-rug-layer" id="arch-rug-layer"></div>
-                </div>
+
               </div>
 
-              <!-- Live Color Inspector Badge Overlay -->
+              <!-- Color Inspector Panel -->
               <div class="studio-inspector-card">
                 <div class="inspector-header">
-                  <span class="inspector-tag">ACTIVE PALETTE SELECTION</span>
-                  <strong class="inspector-name" id="inspector-name">Modern Minimalist</strong>
+                  <span class="inspector-tag">ACTIVE MOOD SPECTRUM</span>
+                  <strong class="inspector-name" id="inspector-name">Zen Calm</strong>
                 </div>
-                <div class="inspector-swatches" id="inspector-swatches"></div>
+                <div class="inspector-swatches" id="inspector-swatches">
+                  <span class="inspector-swatch" style="background: #5F6F65" title="Sage Sanctuary"></span>
+                  <span class="inspector-swatch" style="background: #A3B19B" title="Olive Fern"></span>
+                  <span class="inspector-swatch" style="background: #F1F3EE" title="Soft Alabaster"></span>
+                </div>
                 <div class="inspector-details">
-                  <span class="inspector-code" id="inspector-code">#3A3530 - Slate Charcoal</span>
-                  <button class="copy-code-btn" id="copy-code-btn" title="Copy HEX Code"><i class="fa-regular fa-copy"></i> Copy HEX</button>
+                  <span class="inspector-code" id="inspector-code">#5F6F65 · Sage Sanctuary</span>
+                  <button class="copy-code-btn" id="copy-code-btn"><i class="fa-regular fa-copy"></i> Copy HEX</button>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <!-- Right: Palette Selection Console & Custom Color Formulator -->
+          <!-- Right: Mood Description, Dynamic Triad Generator, and Customizer -->
           <div class="studio-selector-panel">
             
-            <!-- Category Filter Pills -->
-            <div class="palette-category-filters" id="palette-category-filters">
-              <button class="cat-filter-btn active" data-cat="all">All Styles</button>
-              <button class="cat-filter-btn" data-cat="heritage">Heritage South</button>
-              <button class="cat-filter-btn" data-cat="minimal">Minimal</button>
-              <button class="cat-filter-btn" data-cat="villa">Luxury Villa</button>
+            <!-- Active Mood Psychology Card -->
+            <div class="custom-mixer-box" style="border-left: 4px solid var(--forest);">
+              <div class="mixer-header" style="color: var(--forest);">
+                <i class="fa-solid fa-brain" style="color: var(--forest);"></i>
+                <div>
+                  <strong>Psychological Impact</strong>
+                  <span id="mood-benefit-title">Calming and Restorative</span>
+                </div>
+              </div>
+              <p id="mood-benefit-text" style="font-size: 0.85rem; color: var(--charcoal); opacity: 0.85; line-height: 1.5; margin: 0;">
+                Reduces stress and lowers heart rate. Perfect for bedrooms and study rooms.
+              </p>
             </div>
 
-            <!-- Palettes Grid -->
-            <div class="studio-palette-grid" id="studio-palette-grid">
-
-              <button class="studio-palette-card active" data-cat="minimal" data-colors='["#3A3530", "#C8B195", "#EFEAE4"]'
-                data-names='["Slate Charcoal", "Sandalwood Dusk", "Alabaster Cream"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #3A3530"></span>
-                  <span class="palette-swatch" style="background: #C8B195"></span>
-                  <span class="palette-swatch" style="background: #EFEAE4"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Modern Minimalist</strong>
-                  <span>Serene, clean, and warm hues designed for spacious modern living rooms.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-cat="heritage" data-colors='["#1E352F", "#A25A38", "#F4EFEB"]'
-                data-names='["Seshachalam Forest", "Terracotta Clay", "Divine Sand"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #1E352F"></span>
-                  <span class="palette-swatch" style="background: #A25A38"></span>
-                  <span class="palette-swatch" style="background: #F4EFEB"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Earthy Natural</strong>
-                  <span>Organic mineral-based tones rooted in the rich hills of Tirupati.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-cat="heritage" data-colors='["#8A5A16", "#E0A838", "#FDFBF7"]'
-                data-names='["Heritage Bronze", "Saffron Gold", "Champagne Mist"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #8A5A16"></span>
-                  <span class="palette-swatch" style="background: #E0A838"></span>
-                  <span class="palette-swatch" style="background: #FDFBF7"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Luxury Gold</strong>
-                  <span>Regal metallic highlights inspired by heritage temples and temple architecture.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-cat="minimal" data-colors='["#4A5568", "#A0AEC0", "#F7FAFC"]'
-                data-names='["Slate Stone", "Mist Silver", "Soft Ash"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #4A5568"></span>
-                  <span class="palette-swatch" style="background: #A0AEC0"></span>
-                  <span class="palette-swatch" style="background: #F7FAFC"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Contemporary Grey</strong>
-                  <span>Sleek, balanced monochrome scales for industrial chic spaces.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-cat="heritage" data-colors='["#A22B29", "#E3A857", "#FFFDF0"]'
-                data-names='["Temple Vermilion", "Marigold Saffron", "Warm Turmeric"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #A22B29"></span>
-                  <span class="palette-swatch" style="background: #E3A857"></span>
-                  <span class="palette-swatch" style="background: #FFFDF0"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Traditional South Indian</strong>
-                  <span>Vibrant heritage-rich tones celebrating local festivals and traditional architecture.</span>
-                </div>
-              </button>
-
-              <button class="studio-palette-card" data-cat="villa" data-colors='["#2A3B39", "#8E9A94", "#EAF0ED"]'
-                data-names='["Deep Olive", "Sage Mist", "Pearl Alabaster"]'>
-                <div class="palette-card-swatches">
-                  <span class="palette-swatch" style="background: #2A3B39"></span>
-                  <span class="palette-swatch" style="background: #8E9A94"></span>
-                  <span class="palette-swatch" style="background: #EAF0ED"></span>
-                </div>
-                <div class="palette-card-info">
-                  <strong>Premium Villa Collection</strong>
-                  <span>Lush, airy palettes tailored for high-end luxury villas and duplexes.</span>
-                </div>
-              </button>
-
-            </div>
-
-            <!-- Custom Colour Formulation Lab Box -->
+            <!-- Dynamic Triad Shade Generator -->
             <div class="custom-mixer-box">
               <div class="mixer-header">
-                <i class="fa-solid fa-flask-vial"></i>
+                <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--terracotta);"></i>
                 <div>
-                  <strong>Custom Shade Formulator</strong>
-                  <span>Mix your custom wall shade in real-time</span>
+                  <strong>Dynamic Harmony Customizer</strong>
+                  <span>Tweak base shade to auto-generate a triad palette</span>
                 </div>
               </div>
+              
               <div class="mixer-controls">
-                <input type="color" id="custom-wall-picker" value="#0F4D3A" title="Choose custom wall color">
-                <span class="mixer-value-text" id="mixer-value-text">#0F4D3A</span>
-                <button class="btn btn-secondary btn-sm" id="apply-custom-shade-btn">Apply Custom Shade</button>
+                <input type="color" id="custom-wall-picker" value="#5F6F65" title="Pick your base tone">
+                <div style="display:flex; flex-direction:column; gap:2px;">
+                  <span class="mixer-value-text" id="mixer-value-text">#5F6F65</span>
+                  <span style="font-size:0.7rem; color:var(--charcoal); opacity:0.6;">Base Tone</span>
+                </div>
+                <button class="btn btn-secondary btn-sm" id="apply-custom-shade-btn" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;">Generate Triad</button>
+              </div>
+
+              <!-- Generated Triad Swatches -->
+              <div style="display:flex; gap:8px; margin-top:0.5rem;" id="generated-triad-row">
+                <div style="flex:1; text-align:center;">
+                  <div id="triad-swatch-1" style="height:32px; border-radius:8px; background:#5F6F65; box-shadow:0 3px 6px rgba(0,0,0,0.1);"></div>
+                  <span style="font-size:0.68rem; opacity:0.7;" id="triad-lbl-1">#5F6F65</span>
+                </div>
+                <div style="flex:1; text-align:center;">
+                  <div id="triad-swatch-2" style="height:32px; border-radius:8px; background:#7A8B7F; box-shadow:0 3px 6px rgba(0,0,0,0.1);"></div>
+                  <span style="font-size:0.68rem; opacity:0.7;" id="triad-lbl-2">#7A8B7F</span>
+                </div>
+                <div style="flex:1; text-align:center;">
+                  <div id="triad-swatch-3" style="height:32px; border-radius:8px; background:#D8E0DB; box-shadow:0 3px 6px rgba(0,0,0,0.1);"></div>
+                  <span style="font-size:0.68rem; opacity:0.7;" id="triad-lbl-3">#D8E0DB</span>
+                </div>
               </div>
             </div>
 
-            <a href="#consultation" class="btn btn-primary studio-cta-btn">Get Custom Colour Consultation</a>
+            <div class="custom-mixer-box" style="background: rgba(15, 77, 58, 0.04); border: 1px dashed rgba(15, 77, 58, 0.25);">
+              <div class="mixer-header" style="color: var(--forest);">
+                <i class="fa-solid fa-shield-halved" style="color: var(--forest);"></i>
+                <div>
+                  <strong>Aira EcoGuard Certified</strong>
+                  <span>Every shade formulated with zero VOC & anti-bacterial protection.</span>
+                </div>
+              </div>
+            </div>
+
+            <a href="#consultation" class="btn btn-primary studio-cta-btn">Book Free Mood Consult</a>
           </div>
         </div>
 
       </div>
     </section>
+
 
 
     <!--SECTION 07  SUSTAINABILITY STORYTELLING -->

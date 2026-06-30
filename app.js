@@ -351,55 +351,114 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================================ */
 
 /* ============================================================
-   SECTION 06 — Colour Studio Controller
+   SECTION 06 — Colour Studio Controller (Mood Psychology Redesign)
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Elements
   const stageFrame    = document.getElementById('studio-stage-frame');
-  const cards         = document.querySelectorAll('#studio-palette-grid .studio-palette-card');
+  const moodPills     = document.querySelectorAll('#studio-mood-selector .pill-btn');
   const wall          = document.getElementById('arch-wall-primary');
-  const floor         = document.getElementById('arch-floor-plane');
   const artGraphic    = document.getElementById('arch-art-graphic');
   const sofaBody      = document.getElementById('lounge-sofa-body');
   const cushion1      = document.getElementById('lounge-cushion-1');
   const cushion2      = document.getElementById('lounge-cushion-2');
   const rugLayer      = document.getElementById('arch-rug-layer');
   const trimPillar    = document.getElementById('arch-trim-pillar');
-  
+  const lampBulb      = document.getElementById('lamp-glow-bulb');
+
   const inspectorName = document.getElementById('inspector-name');
   const inspectorCode = document.getElementById('inspector-code');
   const inspectorSwatches = document.getElementById('inspector-swatches');
   const copyBtn       = document.getElementById('copy-code-btn');
-  
-  // Custom Mixer elements
+
+  // Psychology Texts
+  const benefitTitle  = document.getElementById('mood-benefit-title');
+  const benefitText   = document.getElementById('mood-benefit-text');
+
+  // Triad Mixer elements
   const customPicker  = document.getElementById('custom-wall-picker');
   const mixerValueText = document.getElementById('mixer-value-text');
   const applyCustomBtn = document.getElementById('apply-custom-shade-btn');
 
-  // Control Selector Panels
-  const scenePills    = document.querySelectorAll('#studio-scene-selector .pill-btn');
-  const sheenPills    = document.querySelectorAll('#studio-sheen-selector .pill-btn');
-  const lightPills    = document.querySelectorAll('#studio-light-selector .pill-btn');
-  const categoryBtns  = document.querySelectorAll('#palette-category-filters .cat-filter-btn');
+  // Triad swatch rows
+  const swatch1 = document.getElementById('triad-swatch-1');
+  const swatch2 = document.getElementById('triad-swatch-2');
+  const swatch3 = document.getElementById('triad-swatch-3');
+  const lbl1    = document.getElementById('triad-lbl-1');
+  const lbl2    = document.getElementById('triad-lbl-2');
+  const lbl3    = document.getElementById('triad-lbl-3');
 
-  let activeColors = ["#3A3530", "#C8B195", "#EFEAE4"];
-  let activeNames  = ["Slate Charcoal", "Sandalwood Dusk", "Alabaster Cream"];
+  let activeColors = ["#5F6F65", "#A3B19B", "#F1F3EE"];
+  let activeNames  = ["Sage Sanctuary", "Olive Fern", "Soft Alabaster"];
 
-  if (!cards.length) return;
+  if (!moodPills.length) return;
 
-  // Apply Palette colors dynamically
-  function applyPalette(card) {
-    const colors = JSON.parse(card.getAttribute('data-colors'));
-    const names  = JSON.parse(card.getAttribute('data-names'));
-    const title  = card.querySelector('strong').textContent;
+  // HSL Math utilities
+  function hexToRgb(hex) {
+    let c = hex.replace('#', '');
+    if (c.length === 3) {
+      c = c[0]+c[0]+c[1]+c[1]+c[2]+c[2];
+    }
+    const r = parseInt(c.substring(0, 2), 16);
+    const g = parseInt(c.substring(2, 4), 16);
+    const b = parseInt(c.substring(4, 6), 16);
+    return { r, g, b };
+  }
 
+  function rgbToHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    let h, s, l = (max + min) / 2;
+    if (max === min) {
+      h = s = 0;
+    } else {
+      const d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch (max) {
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        case b: h = (r - g) / d + 4; break;
+      }
+      h /= 6;
+    }
+    return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+  }
+
+  function hslToHex(h, s, l) {
+    h /= 360; s /= 100; l /= 100;
+    let r, g, b;
+    if (s === 0) {
+      r = g = b = l;
+    } else {
+      const hue2rgb = (p, q, t) => {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1/6) return p + (q - p) * 6 * t;
+        if (t < 1/2) return q;
+        if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+      };
+      const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      const p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1/3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1/3);
+    }
+    const toHex = x => {
+      const val = Math.round(x * 255).toString(16);
+      return val.length === 1 ? '0' + val : val;
+    };
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+  }
+
+  // Update Preview Scene colors
+  function applySpectrum(colors, names, moodTitle) {
     activeColors = colors;
     activeNames  = names;
-
     const [accent, secondary, light] = colors;
 
-    // Apply colors using CSS custom properties for smooth transitions
+    // Apply colors using CSS custom properties for smooth transition dynamics
     if (wall) wall.style.setProperty('--studio-wall', light);
     if (trimPillar) trimPillar.style.setProperty('--studio-trim', secondary);
     if (artGraphic) artGraphic.style.setProperty('--studio-accent', accent);
@@ -408,113 +467,88 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cushion2) cushion2.style.setProperty('--studio-accent', light);
     if (rugLayer) rugLayer.style.setProperty('--studio-accent', secondary);
 
+    // Apply lamp glowbulb color
+    if (lampBulb) {
+      lampBulb.style.setProperty('--studio-lamp-bulb', accent);
+    }
+
     // Update inspector view
-    if (inspectorName) inspectorName.textContent = title;
-    if (inspectorCode) inspectorCode.textContent = `${colors[0]} · ${names[0]}`;
+    if (inspectorName) inspectorName.textContent = moodTitle;
+    if (inspectorCode) inspectorCode.textContent = `${accent} · ${names[0]}`;
     if (inspectorSwatches) {
-      inspectorSwatches.innerHTML = colors.map((color, idx) => 
-        `<span class="inspector-swatch" style="background: ${color}" title="${names[idx]}"></span>`
+      inspectorSwatches.innerHTML = colors.map((col, idx) => 
+        `<span class="inspector-swatch" style="background: ${col}" title="${names[idx]}"></span>`
       ).join('');
     }
 
-    // Sync custom color input
+    // Sync input color picker
     if (customPicker) {
-      customPicker.value = colors[0];
-      if (mixerValueText) mixerValueText.textContent = colors[0];
+      customPicker.value = accent;
+      if (mixerValueText) mixerValueText.textContent = accent;
     }
   }
 
-  // Preset Card click handler
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      cards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
-      applyPalette(card);
-    });
-  });
-
-  // Scene switcher
-  scenePills.forEach(pill => {
+  // Mood Pill click triggers
+  moodPills.forEach(pill => {
     pill.addEventListener('click', () => {
-      scenePills.forEach(p => p.classList.remove('active'));
+      moodPills.forEach(p => p.classList.remove('active'));
       pill.classList.add('active');
-      
-      const scene = pill.getAttribute('data-scene');
-      // Living lounge theme setup
-      if (scene === 'living') {
-        if (trimPillar) trimPillar.style.display = 'block';
-        if (sofaBody) sofaBody.style.opacity = '1';
-      } else if (scene === 'exterior') {
-        // Mock facade setup
-        if (trimPillar) trimPillar.style.display = 'none';
-        if (sofaBody) sofaBody.style.opacity = '0.1'; // Hide furniture
-      } else if (scene === 'bedroom') {
-        // Bedroom suite setup
-        if (trimPillar) trimPillar.style.display = 'block';
-        if (sofaBody) sofaBody.style.opacity = '0.9';
+
+      const colors = JSON.parse(pill.getAttribute('data-colors'));
+      const names  = JSON.parse(pill.getAttribute('data-names'));
+      const desc   = pill.getAttribute('data-desc');
+      const title  = pill.textContent.trim().split(' ').slice(1).join(' '); // Strip emoji
+
+      // Update psychology card content
+      if (benefitTitle) {
+        benefitTitle.textContent = title === 'Zen Calm' ? 'Calming and Restorative' : 
+                                   title === 'Energy Boost' ? 'Stimulating and Vivid' :
+                                   title === 'Cozy Nest' ? 'Secure and Welcoming' :
+                                   title === 'Royal Lounge' ? 'Luxurious and Noble' : 'Healing and Purity';
       }
+      if (benefitText) benefitText.textContent = desc;
+
+      applySpectrum(colors, names, title);
     });
   });
 
-  // Sheen finish switcher
-  sheenPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      sheenPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const sheen = pill.getAttribute('data-sheen');
-      
-      // Clear sheen classes and add active sheen class
-      stageFrame.classList.remove('sheen-matt', 'sheen-satin', 'sheen-gloss');
-      stageFrame.classList.add(`sheen-${sheen}`);
-    });
-  });
-
-  // Light mood switcher
-  lightPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      lightPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      const light = pill.getAttribute('data-light');
-
-      stageFrame.classList.remove('light-day', 'light-warm');
-      stageFrame.classList.add(`light-${light}`);
-    });
-  });
-
-  // Palette categories filter
-  categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      categoryBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.getAttribute('data-cat');
-
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-cat');
-        if (cat === 'all' || cardCat === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // Custom Color Lab Formulation
-  if (customPicker) {
+  // Dynamic Triad Generator action
+  if (applyCustomBtn && customPicker) {
     customPicker.addEventListener('input', (e) => {
-      const col = e.target.value;
-      if (mixerValueText) mixerValueText.textContent = col;
+      if (mixerValueText) mixerValueText.textContent = e.target.value;
     });
 
     applyCustomBtn.addEventListener('click', () => {
-      const col = customPicker.value;
-      if (wall) wall.style.setProperty('--studio-wall', col);
-      if (inspectorName) inspectorName.textContent = "Custom Palette Lab";
-      if (inspectorCode) inspectorCode.textContent = `${col} · Custom formulated shade`;
+      const baseHex = customPicker.value;
+      const rgb = hexToRgb(baseHex);
+      const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+      // Rotate Hues by 120 and 240 degrees to calculate Triad Harmony colors
+      const triadHue1 = (hsl.h + 120) % 360;
+      const triadHue2 = (hsl.h + 240) % 360;
+
+      // Adjust saturation/lightness variations for visual harmony
+      const col1 = baseHex;
+      const col2 = hslToHex(triadHue1, Math.max(15, hsl.s - 10), Math.min(85, hsl.l + 10));
+      const col3 = hslToHex(triadHue2, Math.max(10, hsl.s - 20), Math.min(95, hsl.l + 20));
+
+      const generatedColors = [col1, col2, col3];
+      const generatedNames  = ["Custom Accent", "Custom Trim Harmony", "Custom Ambient Base"];
+
+      // Update swatches indicators
+      if (swatch1) swatch1.style.backgroundColor = col1;
+      if (swatch2) swatch2.style.backgroundColor = col2;
+      if (swatch3) swatch3.style.backgroundColor = col3;
+      if (lbl1) lbl1.textContent = col1;
+      if (lbl2) lbl2.textContent = col2;
+      if (lbl3) lbl3.textContent = col3;
+
+      // Apply the generated spectrum to the room mockup preview
+      applySpectrum(generatedColors, generatedNames, "Custom Triad Lab");
     });
   }
 
-  // Copy HEX code
+  // Copy HEX action
   if (copyBtn) {
     copyBtn.addEventListener('click', () => {
       const hex = activeColors[0];
@@ -528,10 +562,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Init with first active preset
-  const firstActive = document.querySelector('#studio-palette-grid .studio-palette-card.active');
-  if (firstActive) applyPalette(firstActive);
+  // Init with the first active mood
+  const firstActive = document.querySelector('#studio-mood-selector .pill-btn.active');
+  if (firstActive) {
+    const colors = JSON.parse(firstActive.getAttribute('data-colors'));
+    const names  = JSON.parse(firstActive.getAttribute('data-names'));
+    const title  = firstActive.textContent.trim().split(' ').slice(1).join(' ');
+    applySpectrum(colors, names, title);
+  }
 });
+
 
 
 
