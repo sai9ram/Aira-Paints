@@ -4361,47 +4361,32 @@ nav a:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.ba-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
   background-size: cover;
   background-position: center;
-  overflow: hidden;
+  z-index: 1;
 }
 
 .after-state {
   background-color: #e4deda;
-  background-image: radial-gradient(rgba(15, 77, 58, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-}
-
-.after-state .ba-art-frame {
-  width: 160px;
-  height: 220px;
-  border: 7px solid #ffffff;
-  background: var(--ba-accent);
-  box-shadow: 0 20px 40px rgba(15, 77, 58, 0.15);
-  position: relative;
 }
 
 .before-state {
-  background-color: #d1cbc5;
-  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-  background-size: 20px 20px;
-  z-index: 1;
+  z-index: 2;
   width: 50%; /* Control by range input value */
-  border-right: 1.5px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.before-state .ba-art-frame.grayed {
-  width: 160px;
-  height: 220px;
-  border: 7px solid #dfdedb;
-  background: #9fa1a3;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
-  filter: grayscale(1);
-  opacity: 0.95;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+.before-state::before {
+  filter: grayscale(1) brightness(0.65) contrast(0.95);
 }
 
 .ba-label {
@@ -4410,6 +4395,8 @@ nav a:hover::after {
   background: rgba(15, 77, 58, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  z-index: 5;
+
   color: var(--white);
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
