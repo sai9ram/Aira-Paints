@@ -4204,6 +4204,21 @@ nav a:hover::after {
   letter-spacing: 0.5px;
 }
 
+.testimonial-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-media-wrap.video-playing .play-btn,
+.card-media-wrap.video-playing .video-duration {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+
 /* Card Info Block */
 .card-info-wrap {
   display: flex;

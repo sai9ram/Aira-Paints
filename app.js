@@ -700,6 +700,48 @@ document.addEventListener('DOMContentLoaded', () => {
     if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
   }
 
+  // Video play trigger controller
+  const testimonialCards = document.querySelectorAll('.testimonial-card');
+  testimonialCards.forEach(card => {
+    const playBtn = card.querySelector('.play-btn');
+    const video   = card.querySelector('.testimonial-video');
+    const mediaWrap = card.querySelector('.card-media-wrap');
+
+    if (playBtn && video && mediaWrap) {
+      const togglePlay = () => {
+        if (video.paused) {
+          // Pause all other videos first
+          document.querySelectorAll('.testimonial-video').forEach(v => {
+            if (v !== video) {
+              v.pause();
+              const parentWrap = v.closest('.card-media-wrap');
+              if (parentWrap) parentWrap.classList.remove('video-playing');
+            }
+          });
+          video.play();
+          mediaWrap.classList.add('video-playing');
+          video.controls = true;
+        } else {
+          video.pause();
+          mediaWrap.classList.remove('video-playing');
+          video.controls = false;
+        }
+      };
+
+      playBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        togglePlay();
+      });
+
+      // Pause styling when video finishes
+      video.addEventListener('ended', () => {
+        mediaWrap.classList.remove('video-playing');
+        video.controls = false;
+        video.load(); // Reset poster
+      });
+    }
+  });
+
   // ── 2. Before / After Interactive Slider ──
   const slider      = document.getElementById('ba-range-slider');
   const beforeState = document.getElementById('before-state');
