@@ -27,13 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
       heroHeading.style.opacity = 1 - (progress * 0.9);
     }
 
-    // 3. Background and Theme transition
-    // Add dark-theme class when scrolled past 20% of first screen
-    if (progress > 0.2) {
-      bodyElement.classList.add('dark-theme');
-    } else {
-      bodyElement.classList.remove('dark-theme');
-    }
+
 
     // Header scrolled class addition
     if (header) {
