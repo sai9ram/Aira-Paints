@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Section 02: Timeline Scroll Handler ──
     handleTimelineScroll();
+
+    // ── Section 03: Values Reveal Scroll Handler ──
+    handleValuesReveal();
   });
 
   const journeySection = document.getElementById('story-journey');
@@ -80,7 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Initial trigger to position components correctly on load
+  const valueCards = document.querySelectorAll('.value-glass-card');
+
+  function handleValuesReveal() {
+    valueCards.forEach((card) => {
+      const cardRect = card.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      if (cardRect.top < viewportHeight * 0.88) {
+        card.classList.add('revealed');
+      } else {
+        card.classList.remove('revealed');
+      }
+    });
+  }
+
+  // Initial triggers to position components correctly on load
   handleTimelineScroll();
-  window.addEventListener('resize', handleTimelineScroll);
+  handleValuesReveal();
+  window.addEventListener('resize', () => {
+    handleTimelineScroll();
+    handleValuesReveal();
+  });
 });
