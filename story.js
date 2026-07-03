@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Section 03: Values Reveal Scroll Handler ──
     handleValuesReveal();
+
+    // ── Section 04: Choose Reveal Scroll Handler ──
+    handleChooseReveal();
   });
 
   const journeySection = document.getElementById('story-journey');
@@ -97,11 +100,62 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const statCards = document.querySelectorAll('.choose-stat-card');
+  const featuresWrap = document.querySelector('.choose-features-wrap');
+
+  function handleChooseReveal() {
+    const viewportHeight = window.innerHeight;
+
+    statCards.forEach((card) => {
+      const cardRect = card.getBoundingClientRect();
+      if (cardRect.top < viewportHeight * 0.88) {
+        card.classList.add('revealed');
+        // If it contains a counter element, trigger count-up
+        const numEl = card.querySelector('.stat-number');
+        if (numEl) {
+          animateCountUp(numEl);
+        }
+      } else {
+        card.classList.remove('revealed');
+      }
+    });
+
+    if (featuresWrap) {
+      const rect = featuresWrap.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.9) {
+        featuresWrap.classList.add('revealed');
+      } else {
+        featuresWrap.classList.remove('revealed');
+      }
+    }
+  }
+
+  function animateCountUp(element) {
+    if (element.classList.contains('counted')) return;
+    element.classList.add('counted');
+    
+    const target = parseInt(element.getAttribute('data-target'), 10) || 100;
+    let count = 0;
+    const duration = 1200; // 1.2 seconds count up duration
+    const stepTime = Math.max(Math.floor(duration / target), 10);
+    
+    const timer = setInterval(() => {
+      count += 1;
+      element.textContent = `${count}%`;
+      if (count >= target) {
+        element.textContent = `${target}%`;
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
+
   // Initial triggers to position components correctly on load
   handleTimelineScroll();
   handleValuesReveal();
+  handleChooseReveal();
   window.addEventListener('resize', () => {
     handleTimelineScroll();
     handleValuesReveal();
+    handleChooseReveal();
   });
 });

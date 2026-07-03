@@ -685,3 +685,229 @@ body.story-page.dark-theme .card-content p {
     gap: 1.5rem;
   }
 }
+
+/* ============================================================
+   SECTION 04 — WHY CHOOSE US
+   ============================================================ */
+.story-choose-section {
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--forest);
+  color: var(--white);
+  z-index: 10;
+}
+
+/* Ambient Slow Shifting Gradient */
+.choose-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0F4D3A 0%, #050B09 50%, #0c3327 100%);
+  background-size: 200% 200%;
+  animation: chooseBgAnimation 15s infinite ease-in-out;
+  z-index: -1;
+}
+
+@keyframes chooseBgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.choose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.choose-header {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.choose-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6ec6b0;
+  text-transform: uppercase;
+}
+
+.choose-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.choose-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Statistics Grid */
+.choose-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.choose-stat-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 3rem 2rem;
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.2rem;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.choose-stat-card.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.choose-stat-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.choose-stat-card:hover .stat-icon-wrap i {
+  transform: rotate(360deg);
+}
+
+.stat-icon-wrap {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #6ec6b0;
+}
+
+.stat-icon-wrap i {
+  transition: transform 0.8s ease-in-out;
+}
+
+.stat-number, .stat-number-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Feature guarantees checklist wrap */
+.choose-features-wrap {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.choose-features-wrap.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.features-grid-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.features-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 3rem;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features-checklist-grid li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.check-icon-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(110, 198, 176, 0.15);
+  color: #6ec6b0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .story-choose-section {
+    padding: 5rem 1.5rem;
+  }
+  
+  .choose-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .choose-features-wrap {
+    padding: 3rem 2rem;
+  }
+  
+  .features-checklist-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .choose-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
