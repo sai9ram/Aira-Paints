@@ -5871,29 +5871,30 @@ nav a:hover::after {
 }
 
 .price-card {
-  background: linear-gradient(135deg, rgba(15, 77, 58, 0.9) 0%, rgba(255, 255, 255, 0.25) 100%);
+  background: linear-gradient(135deg, rgba(15, 77, 58, 0.75) 0%, rgba(5, 11, 9, 0.92) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 24px;
   padding: 3rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
-  box-shadow: 0 20px 50px rgba(15, 77, 58, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  color: var(--white);
 }
 
 .price-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 35px 70px rgba(15, 77, 58, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .price-card.highlight {
-  background: linear-gradient(135deg, rgba(15, 77, 58, 0.95) 0%, rgba(255, 255, 255, 0.35) 100%);
-  border: 2px solid rgba(255, 255, 255, 0.45);
-  box-shadow: 0 30px 60px rgba(15, 77, 58, 0.15);
+  background: linear-gradient(135deg, rgba(15, 77, 58, 0.85) 0%, rgba(5, 11, 9, 0.95) 100%);
+  border: 2px solid rgba(110, 198, 176, 0.4);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
 }
 
 .price-card.highlight::after {
@@ -5901,29 +5902,26 @@ nav a:hover::after {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--white);
-  color: var(--forest);
+  background: var(--terracotta);
+  color: var(--white);
   font-family: var(--font-display);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 1px;
   padding: 0.3rem 0.7rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .size-badge {
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   display: inline-block;
   margin-bottom: 2rem;
-  backdrop-filter: blur(4px);
 }
 
 .price-value {
@@ -5933,14 +5931,12 @@ nav a:hover::after {
   color: var(--white);
   margin-bottom: 1.2rem;
   letter-spacing: -0.02em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .size-desc {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: var(--white);
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
   margin-bottom: 2.2rem;
   min-height: 54px;
@@ -5953,7 +5949,7 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-top: 2rem;
   text-align: left;
 }
@@ -5961,15 +5957,14 @@ nav a:hover::after {
 .size-specs li {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--white);
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.8);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .size-specs li i {
-  color: #a3e2cf;
+  color: #6ec6b0;
   font-size: 0.85rem;
 }
 
