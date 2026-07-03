@@ -5968,6 +5968,46 @@ nav a:hover::after {
   font-size: 0.85rem;
 }
 
+/* Price Card CTA Buttons */
+.price-card-btn {
+  margin-top: 2.2rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.9rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  border-radius: 14px;
+  background: var(--white);
+  color: var(--forest);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.price-card-btn:hover {
+  background: var(--forest);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(110, 198, 176, 0.25);
+}
+
+.price-card.highlight .price-card-btn {
+  background: var(--forest);
+  color: var(--white);
+  border: 1px solid rgba(110, 198, 176, 0.3);
+}
+
+.price-card.highlight .price-card-btn:hover {
+  background: var(--white);
+  color: var(--forest);
+  border-color: transparent;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+}
+
 /* Volume Estimator */
 .estimator-tool-box {
   background: rgba(15, 77, 58, 0.03);
