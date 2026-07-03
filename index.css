@@ -6514,6 +6514,150 @@ nav a:hover::after {
   }
 }
 
+/* Body lock when loading */
+body.loading {
+  overflow: hidden !important;
+}
+
+/* Splash Screen Overlay */
+.splash-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Split panels */
+.splash-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--forest);
+  z-index: 1;
+  transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.splash-panel-left {
+  left: 0;
+}
+
+.splash-panel-right {
+  right: 0;
+}
+
+/* Complete state: split and slide panels away */
+.splash-completed .splash-panel-left {
+  transform: translateX(-100%);
+}
+
+.splash-completed .splash-panel-right {
+  transform: translateX(100%);
+}
+
+/* Splash Content Container */
+.splash-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Fade content out right before splitting */
+.splash-fade-out .splash-content {
+  opacity: 0;
+  transform: scale(0.92);
+}
+
+/* Logo container & styling */
+.splash-logo-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: logoPulse 2.5s infinite ease-in-out;
+  padding: 1rem;
+}
+
+.splash-logo {
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+@keyframes logoPulse {
+  0% { transform: scale(1); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 25px 60px rgba(110, 198, 176, 0.35); }
+  100% { transform: scale(1); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2); }
+}
+
+/* Brand name typography */
+.splash-brand-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 4px;
+  margin-top: 0.5rem;
+}
+
+.splash-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--white);
+  opacity: 0.75;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Colored painting Theme Background Glow */
+.splash-paint-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 122, 95, 0.35) 0%,      /* Terracotta paint */
+    rgba(212, 163, 115, 0.25) 30%,    /* Warm Gold paint */
+    rgba(110, 198, 176, 0.3) 60%,     /* Emerald Sage paint */
+    transparent 80%
+  );
+  filter: blur(55px);
+  animation: rotateSplashGlow 9s infinite linear;
+  pointer-events: none;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotateSplashGlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+  }
+}
+
 
 
 

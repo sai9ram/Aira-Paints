@@ -686,6 +686,26 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // ── 6. Animated Splash Screen Controller ──
+  const splashScreen = document.getElementById('splash-screen');
+  if (splashScreen) {
+    // Phase 1: Fade out logo content slightly before split (2.0s)
+    setTimeout(() => {
+      splashScreen.classList.add('splash-fade-out');
+    }, 2000);
+
+    // Phase 2: Split panels left/right (2.5s)
+    setTimeout(() => {
+      splashScreen.classList.add('splash-completed');
+      document.body.classList.remove('loading');
+    }, 2500);
+
+    // Phase 3: Completely remove element from DOM after transition finishes (3.7s)
+    setTimeout(() => {
+      splashScreen.remove();
+    }, 3700);
+  }
 });
 
 
