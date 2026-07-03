@@ -1,0 +1,224 @@
+/* ============================================================
+   AIRA PAINTS — OUR STORY PAGE STYLESheet
+   ============================================================ */
+
+body.story-page {
+  background-color: var(--sand);
+  color: var(--charcoal);
+  transition: background-color 1s ease, color 1s ease;
+  overflow-x: hidden;
+}
+
+body.story-page.dark-theme {
+  background-color: var(--forest);
+  color: var(--white);
+}
+
+/* Header link override for active state */
+body.story-page header nav a.active {
+  color: var(--terracotta) !important;
+  opacity: 1;
+}
+
+body.story-page.dark-theme header {
+  background-color: rgba(15, 77, 58, 0.85);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.story-page.dark-theme header nav a {
+  color: var(--white);
+}
+
+/* Split Hero Section */
+.story-hero-section {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-left-col {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  padding: 6rem 4rem 4rem 5rem;
+  z-index: 10;
+  position: relative;
+}
+
+.hero-info-wrap {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.story-label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--forest);
+  transition: color 1s ease;
+  text-transform: uppercase;
+}
+
+body.story-page.dark-theme .story-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  transition: color 1s ease, transform 0.1s ease-out, opacity 0.1s ease-out;
+  will-change: transform, opacity;
+}
+
+body.story-page.dark-theme .hero-title {
+  color: var(--white);
+}
+
+.hero-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--charcoal);
+  opacity: 0.8;
+  transition: color 1s ease;
+}
+
+body.story-page.dark-theme .hero-desc {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero-actions {
+  margin-top: 1rem;
+}
+
+/* Right Column Visuals */
+.hero-right-col {
+  width: 60%;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.cinematic-backdrop-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cinematic-backdrop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.0);
+  transition: transform 0.1s ease-out;
+  will-change: transform;
+}
+
+.gradient-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(245, 250, 248, 1) 0%, rgba(245, 250, 248, 0.4) 35%, transparent 100%);
+  transition: background 1s ease;
+  z-index: 2;
+}
+
+body.story-page.dark-theme .gradient-overlay {
+  background: linear-gradient(to right, rgba(15, 77, 58, 1) 0%, rgba(15, 77, 58, 0.4) 35%, transparent 100%);
+}
+
+/* 3D Floating Paint Bucket */
+.floating-bucket-wrap {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.floating-bucket {
+  width: clamp(220px, 20vw, 320px);
+  height: auto;
+  animation: floatBucket 6s infinite ease-in-out;
+  filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.35));
+}
+
+.bucket-shadow {
+  width: 130px;
+  height: 14px;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: 50%;
+  filter: blur(6px);
+  margin-top: 15px;
+  animation: floatShadow 6s infinite ease-in-out;
+  transition: opacity 1s ease;
+}
+
+body.story-page.dark-theme .bucket-shadow {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes floatBucket {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-16px) rotate(3deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatShadow {
+  0% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(0.8); opacity: 0.25; }
+  100% { transform: scale(1); opacity: 0.6; }
+}
+
+/* Responsive Rules for Mobile-First Story Page */
+@media (max-width: 1024px) {
+  .story-hero-section {
+    flex-direction: column-reverse;
+    min-height: auto;
+  }
+  
+  .hero-left-col {
+    width: 100%;
+    padding: 3rem 2rem 5rem 2rem;
+    background: var(--sand);
+    transition: background 1s ease;
+  }
+
+  body.story-page.dark-theme .hero-left-col {
+    background: var(--forest);
+  }
+  
+  .hero-right-col {
+    width: 100%;
+    height: 55vh;
+  }
+  
+  .gradient-overlay {
+    background: linear-gradient(to top, rgba(245, 250, 248, 1) 0%, rgba(245, 250, 248, 0.1) 40%, transparent 100%);
+  }
+
+  body.story-page.dark-theme .gradient-overlay {
+    background: linear-gradient(to top, rgba(15, 77, 58, 1) 0%, rgba(15, 77, 58, 0.1) 40%, transparent 100%);
+  }
+  
+  .floating-bucket-wrap {
+    left: 50%;
+    top: 50%;
+  }
+
+  .floating-bucket {
+    width: 200px;
+  }
+}

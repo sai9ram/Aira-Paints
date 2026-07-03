@@ -1,56 +1,47 @@
+/* ============================================================
+   AIRA PAINTS — OUR STORY PAGE SCROLLYTELLING CONTROLLER
+   ============================================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
-  const body = document.getElementById('story-body');
-  const heroImg = document.getElementById('hero-zoom-img');
-  const floatingCan = document.getElementById('floating-can');
-  const sec1 = document.getElementById('story-sec-1');
+  const bodyElement = document.body;
+  const heroHeading = document.getElementById('hero-heading');
+  const backdropImg = document.getElementById('hero-backdrop-img');
+  const header      = document.getElementById('site-header');
 
-  // Scroll listener for smooth translations & zoom
+  // Simple scroll listener to drive Section 1 parallax & theme interpolations
   window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY;
-    const heroHeight = sec1 ? sec1.offsetHeight : window.innerHeight;
+    const scrollY = window.scrollY;
+    const winHeight = window.innerHeight || 800;
+    
+    // Calculate progress ratio (0 to 1) for the first screen viewport scroll
+    const progress = Math.min(scrollY / (winHeight * 0.85), 1);
 
-    // 1. Zoom hero image slightly on scroll (up to 1.18x)
-    if (heroImg && scrollPos < heroHeight) {
-      const zoom = 1 + (scrollPos / heroHeight) * 0.18;
-      heroImg.style.transform = `scale(${zoom})`;
+    // 1. Hero Image Zoom (scale from 1.0 to 1.12)
+    if (backdropImg) {
+      backdropImg.style.transform = `scale(${1 + (progress * 0.12)})`;
     }
 
-    // 2. Rotate floating paint bucket
-    if (floatingCan && scrollPos < heroHeight) {
-      const rotation = (scrollPos / heroHeight) * 55; // rotate up to 55 deg
-      floatingCan.style.transform = `rotate(${rotation}deg)`;
+    // 2. Headline fade up (translates up to -50px, fades to 0.1 opacity)
+    if (heroHeading) {
+      heroHeading.style.transform = `translateY(${progress * -50}px)`;
+      heroHeading.style.opacity = 1 - (progress * 0.9);
     }
 
-    // 3. Shift background from light cream to deep green
-    // Toggles the class when user scrolls past 30% of the first section
-    if (scrollPos > heroHeight * 0.3) {
-      body.classList.add('bg-deep-green');
+    // 3. Background and Theme transition
+    // Add dark-theme class when scrolled past 20% of first screen
+    if (progress > 0.2) {
+      bodyElement.classList.add('dark-theme');
     } else {
-      body.classList.remove('bg-deep-green');
+      bodyElement.classList.remove('dark-theme');
     }
-  });
 
-  // Fade-in scrollytelling elements using IntersectionObserver
-  const observerOptions = {
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
+    // Header scrolled class addition
+    if (header) {
+      if (scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
-    });
-  }, observerOptions);
-
-  // Track scroll sections and reveal text/visual blocks
-  const revealElements = document.querySelectorAll('.story-grid-text, .story-grid-visual');
-  revealElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 1.2s cubic-bezier(0.25, 0.8, 0.25, 1), transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1)';
-    observer.observe(el);
+    }
   });
 });
