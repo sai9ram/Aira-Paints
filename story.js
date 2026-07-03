@@ -43,5 +43,50 @@ document.addEventListener('DOMContentLoaded', () => {
         header.classList.remove('scrolled');
       }
     }
+
+    // ── Section 02: Timeline Scroll Handler ──
+    handleTimelineScroll();
   });
+
+  const journeySection = document.getElementById('story-journey');
+  const progressBar = document.getElementById('timeline-progress-bar');
+  const timelineCards = document.querySelectorAll('.timeline-card');
+
+  function handleTimelineScroll() {
+    if (!journeySection || !progressBar) return;
+
+    const rect = journeySection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    // Start filling when section top enters 80% viewport, finish when section bottom reaches 20% viewport
+    const startScroll = rect.top - viewportHeight * 0.8;
+    const scrollHeight = rect.height + viewportHeight * 0.6;
+    
+    let scrollPercent = -startScroll / scrollHeight;
+    scrollPercent = Math.max(0, Math.min(scrollPercent, 1));
+
+    // Update progress bar layout dynamically based on viewport layout width
+    const isMobile = window.innerWidth <= 1024;
+    if (isMobile) {
+      progressBar.style.height = `${scrollPercent * 100}%`;
+      progressBar.style.width = '100%';
+    } else {
+      progressBar.style.width = `${scrollPercent * 100}%`;
+      progressBar.style.height = '100%';
+    }
+
+    // Progressively reveal individual milestone cards on scroll entry
+    timelineCards.forEach((card) => {
+      const cardRect = card.getBoundingClientRect();
+      if (cardRect.top < viewportHeight * 0.85) {
+        card.classList.add('revealed');
+      } else {
+        card.classList.remove('revealed');
+      }
+    });
+  }
+
+  // Initial trigger to position components correctly on load
+  handleTimelineScroll();
+  window.addEventListener('resize', handleTimelineScroll);
 });
