@@ -5871,25 +5871,25 @@ nav a:hover::after {
 }
 
 .price-card {
-  background: var(--sand);
+  background: var(--forest);
   border-radius: 24px;
   padding: 3rem 2rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
-  border: 1px solid rgba(15, 77, 58, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .price-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(15, 77, 58, 0.08);
+  box-shadow: 0 30px 60px rgba(15, 77, 58, 0.25);
 }
 
 .price-card.highlight {
-  background: var(--white);
-  border: 2px solid var(--forest);
-  box-shadow: 0 20px 50px rgba(15, 77, 58, 0.06);
+  background: var(--forest);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 50px rgba(15, 77, 58, 0.3);
 }
 
 .price-card.highlight::after {
@@ -5897,7 +5897,7 @@ nav a:hover::after {
   position: absolute;
   top: 15px;
   right: 15px;
-  background: var(--terracotta);
+  background: rgba(255, 255, 255, 0.2);
   color: var(--white);
   font-family: var(--font-display);
   font-size: 0.65rem;
@@ -5911,8 +5911,8 @@ nav a:hover::after {
   font-family: var(--font-display);
   font-size: 0.8rem;
   font-weight: 700;
-  color: var(--forest);
-  background: rgba(15, 77, 58, 0.08);
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.15);
   padding: 0.4rem 1rem;
   border-radius: 20px;
   display: inline-block;
@@ -5923,7 +5923,7 @@ nav a:hover::after {
   font-family: var(--font-display);
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--forest);
+  color: var(--white);
   margin-bottom: 1.2rem;
   letter-spacing: -0.02em;
 }
@@ -5931,8 +5931,8 @@ nav a:hover::after {
 .size-desc {
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: var(--charcoal);
-  opacity: 0.8;
+  color: var(--white);
+  opacity: 0.9;
   line-height: 1.5;
   margin-bottom: 2.2rem;
   min-height: 54px;
@@ -5945,7 +5945,7 @@ nav a:hover::after {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 2rem;
   text-align: left;
 }
@@ -5953,14 +5953,14 @@ nav a:hover::after {
 .size-specs li {
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: var(--charcoal);
+  color: var(--white);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .size-specs li i {
-  color: var(--forest);
+  color: var(--white);
   font-size: 0.85rem;
 }
 
