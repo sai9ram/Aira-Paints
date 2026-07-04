@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryCards.forEach((card, idx) => {
       const rect = card.getBoundingClientRect();
       if (rect.top < viewportHeight * 0.88) {
-        card.style.transitionDelay = `${(idx % 3) * 0.15}s`;
+        card.style.transitionDelay = `${(idx % 4) * 0.15}s`; // Stagger up to 4 items in a row
         card.classList.add('revealed');
       } else {
         card.style.transitionDelay = '0s';
@@ -168,7 +168,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', handleCategoriesReveal);
+  // ── Scroll Reveal for Standout Section ──
+  const standoutWrapper = document.querySelector('.standout-image-wrapper');
+  const standoutCards = document.querySelectorAll('.standout-feature-card');
+
+  function handleStandoutReveal() {
+    const viewportHeight = window.innerHeight;
+    
+    if (standoutWrapper) {
+      const rect = standoutWrapper.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.85) {
+        standoutWrapper.classList.add('revealed');
+      } else {
+        standoutWrapper.classList.remove('revealed');
+      }
+    }
+
+    standoutCards.forEach((card, idx) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.88) {
+        card.style.transitionDelay = `${(idx % 2) * 0.15}s`; // Stagger in 2 columns
+        card.classList.add('revealed');
+      } else {
+        card.style.transitionDelay = '0s';
+        card.classList.remove('revealed');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    handleCategoriesReveal();
+    handleStandoutReveal();
+  });
   handleCategoriesReveal();
-  window.addEventListener('resize', handleCategoriesReveal);
+  handleStandoutReveal();
+  window.addEventListener('resize', () => {
+    handleCategoriesReveal();
+    handleStandoutReveal();
+  });
 });
