@@ -949,7 +949,7 @@ body.story-page.dark-theme .card-content p {
 .video-overlay-dark {
   position: absolute;
   inset: 0;
-  background: rgba(15, 77, 58, 0.88);
+  background: rgba(15, 77, 58, 0.94);
   z-index: 2;
 }
 
