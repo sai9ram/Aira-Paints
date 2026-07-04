@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Aira Paints</title>
+  <meta name="description"
+    content="Get in touch with Aira Paints for product consultation, dealership enquiries, colour guidance, and project support. Call, email, or visit our office.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="contact.css?v=1.0">
+  <link rel="icon" type="image/png" href="Aira_Favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Background organic canvas -->
+  <div class="bg-canvas" id="bg-canvas" aria-hidden="true">
+    <div class="organic-blob blob-1"></div>
+    <div class="organic-blob blob-2"></div>
+    <div class="organic-blob blob-3"></div>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header id="site-header">
+    <a href="index.html" class="logo" aria-label="Aira Paints Home">
+      <img src="Aira Logo.png" alt="Aira Paints">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- SECTION 01 — HERO INTRO -->
+    <section id="contact-hero" class="contact-hero-section">
+      <div class="contact-hero-overlay"></div>
+      <!-- Floating particles -->
+      <div class="hero-particles" aria-hidden="true">
+        <span class="particle p1"></span>
+        <span class="particle p2"></span>
+        <span class="particle p3"></span>
+        <span class="particle p4"></span>
+        <span class="particle p5"></span>
+        <span class="particle p6"></span>
+      </div>
+      <div class="contact-hero-container">
+        <div class="contact-hero-content">
+          <span class="contact-hero-label">CONTACT OUR TEAM</span>
+          <h1 class="contact-hero-title">Let's Start Your Next Painting Project</h1>
+          <p class="contact-hero-desc">
+            Whether you're planning a new home, renovating your office, or managing a large construction project, our team is here to help. Connect with us for expert product recommendations, colour consultation, dealership enquiries, or project support.
+          </p>
+          <div class="contact-hero-ctas">
+            <a href="#contact-form-section" class="btn btn-primary contact-hero-btn">
+              <span>Get a Free Quote</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="tel:+918122366191" class="btn btn-secondary contact-hero-btn call-btn">
+              <span>Call Our Team</span>
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02 — CONTACT OPTIONS -->
+    <section id="contact-options" class="contact-options-section">
+      <div class="options-container">
+        <div class="options-header">
+          <span class="options-eyebrow">REACH OUT</span>
+          <h2 class="options-title">Get in Touch, Your Way</h2>
+          <p class="options-desc">
+            Choose the most convenient way to connect with our team. We are committed to responding quickly and providing the right guidance for your project.
+          </p>
+        </div>
+
+        <div class="options-grid">
+          <!-- Call -->
+          <div class="option-card" data-reveal>
+            <div class="option-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+            <h3>Call Us</h3>
+            <p>Speak directly with our product specialists for instant assistance and project consultation.</p>
+            <a href="tel:+918122366191" class="btn btn-primary option-btn">Call Now</a>
+          </div>
+          <!-- Email -->
+          <div class="option-card" data-reveal>
+            <div class="option-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+            <h3>Email Us</h3>
+            <p>Share your project requirements, and our team will respond with detailed information and recommendations.</p>
+            <a href="mailto:Info@airapaints.com" class="btn btn-primary option-btn">Send Email</a>
+          </div>
+          <!-- Visit -->
+          <div class="option-card" data-reveal>
+            <div class="option-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Visit Our Office</h3>
+            <p>Meet our experts in person to discuss your painting needs and explore our product range.</p>
+            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer" class="btn btn-primary option-btn">Get Directions</a>
+          </div>
+          <!-- WhatsApp -->
+          <div class="option-card" data-reveal>
+            <div class="option-icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3>WhatsApp Support</h3>
+            <p>Need a quick response? Chat with our team on WhatsApp for faster communication.</p>
+            <a href="https://wa.me/918122366191?text=Hello!%20I%20am%20interested%20in%20Aira%20Paints" target="_blank" rel="noopener noreferrer" class="btn btn-primary option-btn">Start Chat</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03 — CONTACT FORM + MAP -->
+    <section id="contact-form-section" class="contact-form-section">
+      <div class="form-map-container">
+        <div class="form-map-header">
+          <span class="form-map-eyebrow">PROJECT ENQUIRY</span>
+          <h2 class="form-map-title">Tell Us About Your Project</h2>
+          <p class="form-map-desc">
+            Fill out the form below, and one of our specialists will get back to you with product recommendations, pricing information, and project assistance.
+          </p>
+        </div>
+
+        <div class="form-map-grid">
+          <!-- Left: Form -->
+          <div class="contact-form-card" data-reveal>
+            <form id="contact-enquiry-form" class="enquiry-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-name">Full Name *</label>
+                  <input type="text" id="cf-name" required placeholder="e.g. Ramesh Kumar">
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Email Address *</label>
+                  <input type="email" id="cf-email" required placeholder="e.g. ramesh@example.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-phone">Mobile Number *</label>
+                  <input type="tel" id="cf-phone" required placeholder="e.g. +91 98765 43210">
+                </div>
+                <div class="form-group">
+                  <label for="cf-company">Company Name (Optional)</label>
+                  <input type="text" id="cf-company" placeholder="e.g. Kumar Constructions">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-project-type">Project Type *</label>
+                  <select id="cf-project-type" required>
+                    <option value="" disabled selected>Select project type</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                    <option value="industrial">Industrial</option>
+                    <option value="builder">Builder</option>
+                    <option value="dealer">Dealer Enquiry</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="cf-city">City *</label>
+                  <input type="text" id="cf-city" required placeholder="e.g. Tirupati, AP">
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" rows="4" placeholder="Describe your project requirements..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary form-submit-btn">
+                <span>Send Enquiry</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+            <!-- Success state -->
+            <div class="form-success-msg" id="form-success" style="display:none;">
+              <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+              <h3>Thank You!</h3>
+              <p>Your enquiry has been submitted. Our team will contact you within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- Right: Map + Info -->
+          <div class="map-info-card" data-reveal>
+            <div class="map-embed-wrap">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.4!2d79.42!3d13.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDM3JzQ4LjAiTiA3OcKwMjUnMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
+                width="100%" height="280" style="border:0; border-radius:16px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" title="Aira Paints Office Location"></iframe>
+            </div>
+            <div class="map-info-details">
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <strong>Office Address</strong>
+                  <span>F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh - 517503</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <strong>Working Hours</strong>
+                  <span>Mon – Sat: 9:00 AM – 6:00 PM<br>Sunday: Closed</span>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div>
+                  <strong>Phone</strong>
+                  <a href="tel:+918122366191">+91 81223 66191</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04 — WHY CONNECT WITH US -->
+    <section id="why-connect" class="why-connect-section">
+      <div class="why-connect-container">
+        <div class="why-connect-header">
+          <span class="why-connect-eyebrow">OUR COMMITMENT</span>
+          <h2 class="why-connect-title">Why Customers Choose Our Team</h2>
+          <p class="why-connect-desc">
+            We believe every project deserves expert guidance. From selecting the right products to ensuring long-lasting results, our team supports you every step of the way.
+          </p>
+        </div>
+
+        <div class="why-connect-grid">
+          <div class="why-card" data-reveal>
+            <div class="why-card-icon"><i class="fa-solid fa-headset"></i></div>
+            <h3>Expert Product Consultation</h3>
+            <p>Receive professional recommendations tailored to your project requirements.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Fast Response</h3>
+            <p>Our support team is committed to responding quickly to every enquiry.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card-icon"><i class="fa-solid fa-handshake"></i></div>
+            <h3>Dealer & Builder Support</h3>
+            <p>Dedicated assistance for dealers, contractors, architects, and builders.</p>
+          </div>
+          <div class="why-card" data-reveal>
+            <div class="why-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Reliable Customer Care</h3>
+            <p>From product selection to after-sales support, we're here whenever you need us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05 — FINAL CTA -->
+    <section id="final-cta" class="final-cta-section">
+      <div class="cta-bg-particles" aria-hidden="true">
+        <span class="cta-particle cp1"></span>
+        <span class="cta-particle cp2"></span>
+        <span class="cta-particle cp3"></span>
+        <span class="cta-particle cp4"></span>
+      </div>
+      <div class="final-cta-container">
+        <h2 class="final-cta-title">Ready to Bring Your Vision to Life?</h2>
+        <p class="final-cta-desc">
+          Whether you're painting a single room or an entire commercial development, we're here to provide premium products, expert guidance, and exceptional service. Let's create spaces that inspire and last for years to come.
+        </p>
+        <div class="final-cta-buttons">
+          <a href="#contact-form-section" class="btn btn-primary final-btn">
+            <span>Request a Free Quote</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="product.html" class="btn btn-secondary final-btn">
+            <span>Explore Products</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- STICKY CONTACT BAR (Mobile) -->
+  <div class="sticky-contact-bar" id="sticky-contact-bar">
+    <a href="tel:+918122366191" class="sticky-item"><i class="fa-solid fa-phone"></i><span>Call</span></a>
+    <a href="https://wa.me/918122366191?text=Hello!%20I%20am%20interested%20in%20Aira%20Paints" target="_blank" rel="noopener noreferrer" class="sticky-item whatsapp"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+    <a href="mailto:Info@airapaints.com" class="sticky-item"><i class="fa-solid fa-envelope"></i><span>Email</span></a>
+    <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer" class="sticky-item"><i class="fa-solid fa-location-dot"></i><span>Directions</span></a>
+  </div>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/918122366191?text=Hello!%20I%20am%20interested%20in%20Aira%20Paints" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" id="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- - FOOTER - -->
+  <footer class="site-footer" id="site-footer" aria-label="Site footer">
+    <div class="footer-top-fade" aria-hidden="true"></div>
+    <div class="footer-newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <div class="newsletter-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3z" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+          </div>
+          <div>
+            <h3>Stay Ahead of Colour Trends</h3>
+            <p>Get product launches, seasonal palettes &amp; expert tips delivered to your inbox.</p>
+          </div>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); document.getElementById('nl-success').style.display='flex'; this.style.display='none';">
+          <div class="nl-input-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <input type="email" required placeholder="Your email address" aria-label="Email address for newsletter">
+          </div>
+          <button type="submit" class="btn btn-primary nl-btn"><span>Subscribe</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+          </button>
+        </form>
+        <div class="nl-success-msg" id="nl-success" style="display:none;" role="alert">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+          <span>You're subscribed! Welcome to the Aira Paints family.</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="Aira Paints Home"><img src="Aira Logo.png" alt="Aira Paints" class="footer-logo-image"></a>
+          <p class="brand-bio">Premium eco-friendly paint formulations crafted for beautiful modern Indian spaces - inspired by the heritage and spirit of all around Indian regions.</p>
+          <div class="footer-certs" aria-label="Brand certifications">
+            <div class="footer-cert-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg> ISO Certified</div>
+            <div class="footer-cert-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg> Low VOC</div>
+            <div class="footer-cert-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg> Eco-Safe</div>
+          </div>
+          <div class="social-links" aria-label="Social media">
+            <a href="#" aria-label="Facebook" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+            <a href="#" aria-label="Instagram" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg></a>
+            <a href="#" aria-label="LinkedIn" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg></a>
+            <a href="#" aria-label="YouTube" class="social-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" /><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Company links"><h4 class="footer-col-heading">Company</h4><ul class="footer-links"><li><a href="story.html">About Brand</a></li><li><a href="index.html#dealer">Careers</a></li><li><a href="story.html">News</a></li><li><a href="story.html">Blogs</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Product links"><h4 class="footer-col-heading">Products</h4><ul class="footer-links"><li><a href="product.html">Interior Paints</a></li><li><a href="product.html">Exterior Paints</a></li><li><a href="product.html">Primers</a></li><li><a href="product.html">Waterproofing</a></li><li><a href="product.html">Wood Finishes</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Resource links"><h4 class="footer-col-heading">Resources</h4><ul class="footer-links"><li><a href="index.html#inspiration">Colour Guide</a></li><li><a href="pricing.html">Paint Calculator</a></li><li><a href="index.html#faq">FAQs</a></li><li><a href="product.html">Technical Datasheets</a></li><li><a href="story.html">Warranty Info</a></li></ul></nav>
+        <div class="footer-col footer-contact-col" aria-label="Contact information">
+          <h4 class="footer-col-heading">Contact</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><div class="footer-contact-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg></div><div><span class="footer-contact-label">India Head Office</span><span class="footer-contact-val">F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh - 517503</span></div></li>
+            <li class="footer-contact-item"><div class="footer-contact-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" /></svg></div><div><span class="footer-contact-label">Phone</span><a href="tel:+918122366191" class="footer-contact-val footer-contact-link">+91 81223 66191</a></div></li>
+            <li class="footer-contact-item"><div class="footer-contact-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg></div><div><span class="footer-contact-label">Email</span><a href="mailto:Info@airapaints.com" class="footer-contact-val footer-contact-link">Info@airapaints.com</a></div></li>
+          </ul>
+          <div class="footer-quick-actions">
+            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer" class="footer-action-btn" id="btn-google-maps"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg> Google Maps</a>
+            <a href="https://wa.me/918122366191?text=Hello!%20I%20am%20interested%20in%20Aira%20Paints" target="_blank" rel="noopener noreferrer" class="footer-action-btn footer-action-btn--whatsapp" id="btn-whatsapp-footer"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" /></svg> WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-divider" aria-hidden="true"><div class="divider-line"></div><div class="footer-brand-stamp"><svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect width="40" height="40" rx="8" fill="rgba(15,77,58,0.12)" /><path d="M20 10L11 28h18L20 10z" fill="none" stroke="#0F4D3A" stroke-width="1.8" stroke-linejoin="round" /><circle cx="20" cy="23" r="2.5" fill="#0F4D3A" /></svg></div><div class="divider-line"></div></div>
+    <div class="footer-bottom">
+      <p class="copyright">&copy; 2026 <strong>Aira Paints</strong>. Serving all around Indian regions. All rights reserved.</p>
+      <div class="footer-legal"><a href="#privacy">Privacy Policy</a><span class="sep" aria-hidden="true"></span><a href="#terms">Terms of Service</a><span class="sep" aria-hidden="true"></span><a href="sitemap.xml" target="_blank">Sitemap</a></div>
+      <div class="footer-made-in"><span>Made with</span><svg width="12" height="12" viewBox="0 0 24 24" fill="#0F4D3A" stroke="none" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg><span>in India</span><span class="sep" aria-hidden="true"></span><span>Designed by <a href="https://www.theupliv.com" target="_blank" rel="noopener noreferrer">UPliv</a></span></div>
+    </div>
+  </footer>
+
+  <script src="contact.js"></script>
+</body>
+
+</html>
