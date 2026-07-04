@@ -735,7 +735,7 @@
   left: 0;
   right: 0;
   z-index: 999;
-  display: flex;
+  display: none;
   background: #0a2e22;
   border-top: 1px solid rgba(110, 198, 176, 0.15);
   transform: translateY(100%);
@@ -833,6 +833,12 @@
   .why-connect-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sticky-contact-bar {
+    display: flex;
   }
 }
 
