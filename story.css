@@ -941,6 +941,8 @@ body.story-page.dark-theme .card-content p {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
+  filter: blur(8px);
+  transform: scale(1.06); /* Prevent edge bleeding from blur */
 }
 
 .video-overlay-dark {
