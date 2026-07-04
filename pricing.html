@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing & Calculator | Aira Paints</title>
+  <meta name="description"
+    content="Estimate your paint requirements and costs instantly with our interactive calculator, and compare premium packages for your project.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="pricing.css?v=1.0">
+  <link rel="icon" type="image/png" href="Aira_Favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Background organic canvas glow -->
+  <div class="bg-canvas" id="bg-canvas" aria-hidden="true">
+    <div class="organic-blob blob-1"></div>
+    <div class="organic-blob blob-2"></div>
+    <div class="organic-blob blob-3"></div>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header id="site-header">
+    <a href="index.html" class="logo" aria-label="Aira Paints Home">
+      <img src="Aira Logo.png" alt="Aira Paints">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- SECTION 01 — HERO & INTERACTIVE CALCULATOR -->
+    <section id="pricing-hero" class="pricing-hero-section">
+      <div class="pricing-hero-container">
+        
+        <!-- Hero Header -->
+        <div class="pricing-hero-header">
+          <span class="pricing-eyebrow">TRANSPARENT ESTIMATES</span>
+          <h1 class="pricing-title">Find the Right Paint for Your Budget</h1>
+          <p class="pricing-desc">
+            Use our interactive estimator to calculate the exact quantity of paint you need and get an instant cost range for your home or project.
+          </p>
+        </div>
+
+        <!-- Calculator Split Grid -->
+        <div class="calculator-grid">
+          
+          <!-- Inputs Card -->
+          <div class="calculator-card-inputs">
+            <h2 class="card-subtitle"><i class="fa-solid fa-sliders"></i> Adjust Project Details</h2>
+            
+            <form id="calc-form" class="calc-form" onsubmit="event.preventDefault();">
+              
+              <!-- Category Selector -->
+              <div class="input-group">
+                <label for="paint-category">Paint Category</label>
+                <select id="paint-category" class="custom-select">
+                  <option value="interior" data-coverage="350">Interior Emulsion (350 sq.ft/gal)</option>
+                  <option value="exterior" data-coverage="280">Weather Shield Exterior (280 sq.ft/gal)</option>
+                  <option value="primer" data-coverage="400">Pro Primers (400 sq.ft/gal)</option>
+                  <option value="waterproofing" data-coverage="320">Damp Protect Waterproofing (320 sq.ft/gal)</option>
+                </select>
+              </div>
+
+              <!-- Quality Grade Selector -->
+              <div class="input-group">
+                <label>Quality Grade</label>
+                <div class="grade-radio-wrapper">
+                  <button type="button" class="grade-btn" data-factor="1.0" data-price="280">
+                    <span class="grade-name">Economy</span>
+                    <span class="grade-detail">Standard Finish (₹280/gal)</span>
+                  </button>
+                  <button type="button" class="grade-btn active" data-factor="1.4" data-price="420">
+                    <span class="grade-name">Premium</span>
+                    <span class="grade-detail">Rich Finish & Durability (₹420/gal)</span>
+                  </button>
+                  <button type="button" class="grade-btn" data-factor="1.8" data-price="650">
+                    <span class="grade-name">Luxury</span>
+                    <span class="grade-detail">Ultra Silk Washable (₹650/gal)</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Wall Area Range Slider -->
+              <div class="input-group">
+                <div class="slider-header-row">
+                  <label for="wall-area">Total Wall Area</label>
+                  <div class="slider-value-display"><span id="slider-area-val">1200</span> sq. ft.</div>
+                </div>
+                <input type="range" id="wall-area" min="100" max="5000" step="50" value="1200" class="custom-slider">
+                <div class="slider-labels">
+                  <span>100 sq.ft</span>
+                  <span>5,000 sq.ft</span>
+                </div>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Outputs Card -->
+          <div class="calculator-card-outputs">
+            <h2 class="card-subtitle"><i class="fa-solid fa-chart-pie"></i> Estimated Requirements</h2>
+            
+            <div class="outputs-display-box">
+              
+              <!-- Requirement Metric -->
+              <div class="output-metric-item">
+                <span class="metric-label">Liters Needed</span>
+                <span class="metric-value" id="out-liters">13.5 L</span>
+                <span class="metric-subtext">Estimated for 2 Coats</span>
+              </div>
+
+              <div class="output-divider"></div>
+
+              <!-- Cost Estimate Metric -->
+              <div class="output-metric-item highlight">
+                <span class="metric-label">Estimated Cost Range</span>
+                <span class="metric-value" id="out-cost">₹4,200 - ₹5,100</span>
+                <span class="metric-subtext">Material costs only</span>
+              </div>
+
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="outputs-detail-list">
+              <div class="detail-row">
+                <span>Coverage Rate</span>
+                <span id="detail-coverage" class="val">350 sq.ft/gal</span>
+              </div>
+              <div class="detail-row">
+                <span>Recommended Coats</span>
+                <span class="val">2 Coats</span>
+              </div>
+              <div class="detail-row">
+                <span>Paint Can Equivalent</span>
+                <span id="detail-cans" class="val">~4 Cans (3.6L each)</span>
+              </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <p class="calc-disclaimer">
+              *Calculations are estimates. Actual coverage may vary depending on surface porosity, application method, and environmental conditions.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 02 — PACKAGES COMPARE CARDS -->
+    <section id="pricing-packages" class="pricing-packages-section">
+      <div class="packages-container">
+        
+        <div class="packages-header">
+          <span class="packages-eyebrow">POPULAR PACKAGES</span>
+          <h2 class="packages-title">Choose Your Painting Plan</h2>
+          <p class="packages-desc">
+            Explore our curated service packages designed to match diverse requirements—from simple refreshes to ultimate weatherproofing.
+          </p>
+        </div>
+
+        <div class="packages-grid">
+          
+          <!-- Package 01 -->
+          <div class="package-card">
+            <div class="package-tag">BASIC</div>
+            <div class="package-card-header">
+              <h3>Standard Fresh</h3>
+              <div class="package-price">₹12 <span>/ sq.ft</span></div>
+              <p>Ideal for rental refreshes, quick touch-ups, or budget projects.</p>
+            </div>
+            <ul class="package-features">
+              <li><i class="fa-solid fa-circle-check"></i> Standard Matte Finish</li>
+              <li><i class="fa-solid fa-circle-check"></i> Economy Grade Emulsion</li>
+              <li><i class="fa-solid fa-circle-check"></i> 1 Coat Primer + 2 Coats Paint</li>
+              <li><i class="fa-solid fa-circle-check"></i> Basic Surface Cleaning</li>
+              <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> Scrub-Resistant Coating</li>
+              <li class="disabled"><i class="fa-solid fa-circle-xmark"></i> 5-Year Anti-Fade Warranty</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-secondary package-btn">Choose Standard</a>
+          </div>
+
+          <!-- Package 02 (Featured) -->
+          <div class="package-card featured">
+            <div class="package-tag featured-tag">MOST POPULAR</div>
+            <div class="package-card-header">
+              <h3>Luxury Silk</h3>
+              <div class="package-price">₹22 <span>/ sq.ft</span></div>
+              <p>Perfect for family homes desiring exceptional sheen and washability.</p>
+            </div>
+            <ul class="package-features">
+              <li><i class="fa-solid fa-circle-check"></i> Premium Silk Sheen Finish</li>
+              <li><i class="fa-solid fa-circle-check"></i> Luxury Low-VOC Emulsion</li>
+              <li><i class="fa-solid fa-circle-check"></i> Deep Binding Sealer + 2 Paint Coats</li>
+              <li><i class="fa-solid fa-circle-check"></i> Full Crack Filling & Sanding</li>
+              <li><i class="fa-solid fa-circle-check"></i> High Scrub-Resistant Coating</li>
+              <li><i class="fa-solid fa-circle-check"></i> 5-Year Anti-Fade Warranty</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-primary package-btn">Choose Luxury</a>
+          </div>
+
+          <!-- Package 03 -->
+          <div class="package-card">
+            <div class="package-tag">EXTERIOR SPECIAL</div>
+            <div class="package-card-header">
+              <h3>Weather Protection</h3>
+              <div class="package-price">₹28 <span>/ sq.ft</span></div>
+              <p>Complete weather shield protection guarding outer masonry surfaces.</p>
+            </div>
+            <ul class="package-features">
+              <li><i class="fa-solid fa-circle-check"></i> Elastic Protective Shield</li>
+              <li><i class="fa-solid fa-circle-check"></i> Extreme UV Guard & Rain Shield</li>
+              <li><i class="fa-solid fa-circle-check"></i> Anti-Algae Base Primer + 2 Coats</li>
+              <li><i class="fa-solid fa-circle-check"></i> Fungi-Resistant Wall Scraping</li>
+              <li><i class="fa-solid fa-circle-check"></i> Hairline Crack Bridging</li>
+              <li><i class="fa-solid fa-circle-check"></i> 7-Year Weather Shield Warranty</li>
+            </ul>
+            <a href="index.html#contact" class="btn btn-secondary package-btn">Choose Protection</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03 — COST DISTRIBUTION CHART -->
+    <section id="cost-distribution" class="cost-distribution-section">
+      <div class="distribution-container">
+        
+        <div class="distribution-header">
+          <span class="distribution-eyebrow">BUDGET ALLOCATION</span>
+          <h2 class="distribution-title">Painting Cost Distribution</h2>
+          <p class="distribution-desc">
+            Understand how your budget is spent to achieve professional results. High-quality paints ensure optimal value.
+          </p>
+        </div>
+
+        <div class="distribution-grid">
+          
+          <!-- Bar Graph Representation -->
+          <div class="bar-chart-card">
+            <div class="chart-bars-list">
+              <!-- Item 01 -->
+              <div class="chart-bar-item">
+                <div class="bar-label-row">
+                  <span>Premium Paint Materials</span>
+                  <span class="pct">55%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 55%; background: var(--forest);"></div>
+                </div>
+              </div>
+              <!-- Item 02 -->
+              <div class="chart-bar-item">
+                <div class="bar-label-row">
+                  <span>Professional Labor & Application</span>
+                  <span class="pct">25%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 25%; background: var(--terracotta);"></div>
+                </div>
+              </div>
+              <!-- Item 03 -->
+              <div class="chart-bar-item">
+                <div class="bar-label-row">
+                  <span>Surface Primers & Preparations</span>
+                  <span class="pct">20%</span>
+                </div>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 20%; background: #0E5E75;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explanation Text -->
+          <div class="distribution-text-card">
+            <h3>Maximize Your Return on Investment</h3>
+            <p>
+              Applying low-quality paint saves money initially but incurs higher long-term costs. High-quality paints require fewer coats, provide twice the durability, and save on repeat labor expenses.
+            </p>
+            <div class="tip-box">
+              <i class="fa-solid fa-lightbulb"></i>
+              <span><strong>Aira Tip:</strong> Proper surface preparation and primer application represent 20% of your budget but determine 80% of paint life.</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="site-footer" aria-label="Site footer">
+    <div class="footer-top-fade" aria-hidden="true"></div>
+
+    <!-- Newsletter Strip -->
+    <div class="footer-newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <div class="newsletter-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3z" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+          </div>
+          <div class="newsletter-text">
+            <h3>Subscribe to Our Newsletter</h3>
+            <p>Get painting tips, color design inspiration, and special catalogue promotions.</p>
+          </div>
+        </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
+          <input type="email" placeholder="Your email address" aria-label="Email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="footer-main">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <img src="Aira Logo.png" alt="Aira Paints logo" class="footer-logo">
+          <p>
+            Premium, high-performance paint solutions designed to bring long-lasting beauty and protection to modern
+            Indian homes and buildings.
+          </p>
+          <div class="social-links">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i
+                class="fa-brands fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i
+                class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col links-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="index.html#faq">FAQ Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h3>Contact Info</h3>
+          <ul>
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">India Head Office</span>
+                <span class="footer-contact-val">F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh
+                  - 517503</span>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">Call Support</span>
+                <span class="footer-contact-val">+91 99999 99999</span>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">Email Enquiries</span>
+                <span class="footer-contact-val">support@airapaints.com</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aira Paints. All rights reserved. Designed with premium standards.</p>
+        <div class="footer-quick-actions">
+          <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503"
+            target="_blank" rel="noopener noreferrer" class="footer-action-btn" id="btn-google-maps">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="pricing.js"></script>
+</body>
+
+</html>

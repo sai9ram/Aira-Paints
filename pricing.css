@@ -1,0 +1,695 @@
+/* ============================================================
+   PRICING & CALCULATOR PAGE CUSTOM STYLING
+   ============================================================ */
+
+/* SECTION 01 — HERO & INTERACTIVE ESTIMATOR */
+.pricing-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 4rem 6rem 4rem;
+  overflow: hidden;
+  background-color: #0F4D3A; /* Forest Green base code */
+  transition: background-color 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 10;
+  color: var(--white);
+}
+
+.pricing-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  gap: 3.5rem;
+}
+
+.pricing-hero-header {
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pricing-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6ec6b0;
+  text-transform: uppercase;
+}
+
+.pricing-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.pricing-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Calculator Columns Grid */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 3rem;
+  width: 100%;
+  text-align: left;
+}
+
+.calculator-card-inputs,
+.calculator-card-outputs {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 28px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+.card-subtitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.8rem;
+}
+
+.card-subtitle i {
+  color: #6ec6b0;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.input-group label {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+/* Custom Select Styling */
+.custom-select {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  color: var(--white);
+  width: 100%;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.custom-select:focus {
+  border-color: #6ec6b0;
+}
+
+.custom-select option {
+  background: #0F4D3A;
+  color: var(--white);
+}
+
+/* Grade selector buttons styling */
+.grade-radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.grade-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.9rem 1.2rem;
+  border-radius: 16px;
+  color: var(--white);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  outline: none;
+}
+
+.grade-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.grade-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.grade-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.grade-detail {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.grade-btn.active .grade-detail {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Slider Controls Styling */
+.slider-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-value-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: #6ec6b0;
+}
+
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  margin: 0.8rem 0;
+}
+
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #6ec6b0;
+  cursor: pointer;
+  border: 2px solid var(--white);
+  transition: transform 0.2s ease;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.18);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+/* Output values display */
+.outputs-display-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.output-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metric-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 1px;
+}
+
+.metric-value {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #6ec6b0;
+  transition: transform 0.3s ease;
+}
+
+.output-metric-item.highlight .metric-value {
+  color: var(--white);
+  font-size: 2.4rem;
+}
+
+.metric-subtext {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.output-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.outputs-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.detail-row .val {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--white);
+}
+
+.calc-disclaimer {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* SECTION 02 — POPULAR PLANS GRID */
+.pricing-packages-section {
+  padding: 8rem 2rem;
+  background: #fafbfc;
+  position: relative;
+  z-index: 10;
+  color: var(--charcoal);
+}
+
+.packages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.packages-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.packages-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--forest);
+  text-transform: uppercase;
+}
+
+.packages-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.packages-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(10, 11, 10, 0.65);
+}
+
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.package-card {
+  background: var(--white);
+  border: 1px solid rgba(15, 77, 58, 0.08);
+  border-radius: 28px;
+  padding: 3rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(15, 77, 58, 0.1);
+  border-color: rgba(15, 77, 58, 0.15);
+}
+
+.package-card.featured {
+  border-color: var(--forest);
+  box-shadow: 0 20px 45px rgba(15, 77, 58, 0.12);
+  transform: scale(1.03);
+  z-index: 5;
+}
+
+.package-card.featured:hover {
+  transform: translateY(-8px) scale(1.03);
+}
+
+.package-tag {
+  position: absolute;
+  top: 1.5rem;
+  right: 2.2rem;
+  background: rgba(15, 77, 58, 0.05);
+  color: var(--forest);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.68rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  letter-spacing: 1px;
+}
+
+.package-tag.featured-tag {
+  background: var(--forest);
+  color: var(--white);
+}
+
+.package-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.package-card-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+.package-price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--forest);
+  line-height: 1.1;
+}
+
+.package-price span {
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  color: rgba(10, 11, 10, 0.6);
+  font-weight: 400;
+}
+
+.package-card-header p {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(10, 11, 10, 0.65);
+}
+
+.package-features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  border-top: 1px solid rgba(10, 11, 10, 0.06);
+  padding-top: 1.5rem;
+  text-align: left;
+}
+
+.package-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--charcoal);
+  opacity: 0.85;
+}
+
+.package-features li.disabled {
+  opacity: 0.35;
+}
+
+.package-features li i {
+  color: var(--forest);
+  font-size: 0.9rem;
+}
+
+.package-features li.disabled i {
+  color: rgba(10, 11, 10, 0.4);
+}
+
+.package-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* SECTION 03 — BUDGET DISTRIBUTION CHART */
+.cost-distribution-section {
+  padding: 8rem 2rem;
+  background: #ffffff;
+  position: relative;
+  z-index: 10;
+  color: var(--charcoal);
+}
+
+.distribution-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.distribution-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.distribution-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--forest);
+  text-transform: uppercase;
+}
+
+.distribution-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.distribution-desc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(10, 11, 10, 0.65);
+}
+
+.distribution-grid {
+  display: grid;
+  grid-template-columns: 55% 45%;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.bar-chart-card {
+  background: #fafbfc;
+  border: 1px solid rgba(15, 77, 58, 0.08);
+  border-radius: 28px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.01);
+}
+
+.chart-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.chart-bar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bar-label-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: var(--charcoal);
+}
+
+.bar-label-row .pct {
+  color: var(--forest);
+  font-weight: 800;
+}
+
+.bar-track {
+  height: 10px;
+  width: 100%;
+  background: rgba(15, 77, 58, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  width: 0%; /* Will animate in JS */
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.distribution-text-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.distribution-text-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 750;
+  color: var(--charcoal);
+}
+
+.distribution-text-card p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(10, 11, 10, 0.7);
+}
+
+.tip-box {
+  background: rgba(15, 77, 58, 0.04);
+  border: 1px dashed rgba(15, 77, 58, 0.15);
+  padding: 1.2rem;
+  border-radius: 16px;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.tip-box i {
+  color: #e3a81e;
+  font-size: 1.15rem;
+  margin-top: 0.1rem;
+}
+
+.tip-box span {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--charcoal);
+  text-align: left;
+}
+
+/* Tablet & Mobile responsive overrides */
+@media (max-width: 1024px) {
+  .calculator-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .packages-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .package-card.featured {
+    transform: none;
+  }
+  
+  .package-card.featured:hover {
+    transform: translateY(-8px);
+  }
+
+  .distribution-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-hero-section {
+    padding: 7rem 1.5rem 5rem 1.5rem;
+  }
+
+  .calculator-card-inputs,
+  .calculator-card-outputs {
+    padding: 1.8rem;
+  }
+
+  .bar-chart-card {
+    padding: 2rem;
+  }
+}
