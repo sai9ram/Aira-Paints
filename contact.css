@@ -645,7 +645,8 @@
 .final-cta-section {
   position: relative;
   padding: 8rem 2rem;
-  background: linear-gradient(160deg, #0a2e22 0%, #0F4D3A 50%, #0a2e22 100%);
+  background: linear-gradient(160deg, rgba(10, 46, 34, 0.9) 0%, rgba(15, 77, 58, 0.85) 50%, rgba(10, 46, 34, 0.9) 100%),
+              url('cta-bg.png') center/cover no-repeat;
   overflow: hidden;
   text-align: center;
   border-radius: 32px;
