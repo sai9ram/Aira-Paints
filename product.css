@@ -471,3 +471,15 @@
     text-align: center;
   }
 }
+
+/* Ensure the Request Catalogue secondary CTA button has white text */
+.product-hero-section .cta-catalogue {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.product-hero-section .cta-catalogue:hover {
+  background: #ffffff !important;
+  color: #0F4D3A !important; /* Forest green color code */
+  border-color: #ffffff !important;
+}
