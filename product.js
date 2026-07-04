@@ -196,14 +196,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Comparison Table Tabs Switcher ──
+  const tabBtns = document.querySelectorAll('.comparison-tabs .tab-btn');
+  const tablePanels = document.querySelectorAll('.comparison-table .table-panel');
+
+  tabBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+
+      const targetId = btn.getAttribute('data-target');
+      tablePanels.forEach(panel => {
+        if (panel.id === targetId) {
+          panel.classList.add('active');
+        } else {
+          panel.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  // ── Timeline Progress Scroll Tracker ──
+  const timelineSteps = document.querySelectorAll('.timeline-step');
+  const timelineFill = document.getElementById('timeline-scroll-fill');
+  const timelineContainer = document.querySelector('.timeline-container');
+
+  function handleTimelineProgress() {
+    if (!timelineContainer) return;
+    const viewportHeight = window.innerHeight;
+    const rect = timelineContainer.getBoundingClientRect();
+    
+    const startThreshold = viewportHeight * 0.85;
+    const endThreshold = viewportHeight * 0.2;
+    const totalRange = startThreshold - endThreshold;
+    
+    let progress = 0;
+    if (rect.top <= startThreshold) {
+      const relativePosition = startThreshold - rect.top;
+      progress = Math.min(Math.max(relativePosition / totalRange, 0), 1);
+    }
+
+    if (timelineFill) {
+      if (window.innerWidth <= 900) {
+        timelineFill.style.width = '100%';
+        timelineFill.style.height = `${progress * 100}%`;
+      } else {
+        timelineFill.style.height = '100%';
+        timelineFill.style.width = `${progress * 100}%`;
+      }
+    }
+
+    timelineSteps.forEach((step, idx) => {
+      const stepThreshold = (idx + 0.25) / timelineSteps.length;
+      if (progress >= stepThreshold) {
+        step.classList.add('active');
+      } else {
+        step.classList.remove('active');
+      }
+    });
+  }
+
   window.addEventListener('scroll', () => {
     handleCategoriesReveal();
     handleStandoutReveal();
+    handleTimelineProgress();
   });
   handleCategoriesReveal();
   handleStandoutReveal();
+  handleTimelineProgress();
   window.addEventListener('resize', () => {
     handleCategoriesReveal();
     handleStandoutReveal();
+    handleTimelineProgress();
   });
 });
