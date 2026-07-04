@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Aira Paints</title>
+  <meta name="description"
+    content="Explore premium eco-friendly paints, exterior weather shield emulsions, primers, and coatings designed for modern Indian spaces.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="product.css?v=1.0">
+  <link rel="icon" type="image/png" href="Aira_Favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- ===== BACKGROUND CANVAS ===== -->
+  <div class="bg-canvas" id="bg-canvas" aria-hidden="true">
+    <div class="organic-blob blob-1"></div>
+    <div class="organic-blob blob-2"></div>
+    <div class="organic-blob blob-3"></div>
+  </div>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header id="site-header">
+    <a href="index.html" class="logo" aria-label="Aira Paints Home">
+      <img src="Aira Logo.png" alt="Aira Paints">
+    </a>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="product.html" class="active">Products</a></li>
+        <li><a href="index.html#pricing">Pricing</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main>
+
+    <!-- SECTION 01 – HERO SHOWCASE -->
+    <section id="product-hero" class="product-hero-section">
+      <!-- Cursor interaction paint ripple element -->
+      <div id="paint-ripple-tracker" class="paint-ripple-layer"></div>
+
+      <div class="product-hero-container">
+        
+        <!-- Left Side Column -->
+        <div class="product-hero-left">
+          <span class="hero-eyebrow">PREMIUM PAINT SOLUTIONS</span>
+          <h1 class="hero-title">Paint Solutions Designed for Every Space</h1>
+          <p class="hero-desc">
+            Whether you're refreshing a cozy home, protecting an exterior façade, or completing a large commercial project, our premium paint solutions are engineered to deliver exceptional beauty, durability, and long-lasting performance.
+          </p>
+          <p class="hero-desc">
+            Every product is crafted using advanced technology to ensure superior coverage, vibrant colors, and a flawless finish.
+          </p>
+          
+          <div class="hero-actions">
+            <a href="#categories" class="btn btn-primary">
+              <span>Explore Categories</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="aira-brochure.pdf" target="_blank" class="btn btn-secondary cta-catalogue">Request Product Catalogue</a>
+          </div>
+        </div>
+
+        <!-- Right Side Column -->
+        <div class="product-hero-right">
+          <!-- Soft Gradient Rotating Background Blob -->
+          <div class="hero-gradient-glow" id="hero-glow-bg"></div>
+          
+          <!-- 3D Rotating Paint Bucket Frame -->
+          <div class="bucket-showcase-wrap">
+            <img src="AirainteriorPaints.png" alt="Aira Premium Paint Can" class="rotating-paint-bucket" id="hero-bucket-img">
+            <div class="can-glow" id="hero-can-glow" style="--glow-color:rgba(110,198,176,0.4)"></div>
+          </div>
+
+          <!-- Floating Splash Elements -->
+          <div class="floating-splash splash-1" aria-hidden="true"></div>
+          <div class="floating-splash splash-2" aria-hidden="true"></div>
+          <div class="floating-splash splash-3" aria-hidden="true"></div>
+
+          <!-- Color Swatches Grid -->
+          <div class="hero-color-swatches" aria-label="Interactive color swatches">
+            <button class="color-swatch-btn active" data-color="#0F4D3A" data-glow="rgba(110,198,176,0.4)" data-image="AirainteriorPaints.png" style="background-color: #0F4D3A;" title="Forest Green"></button>
+            <button class="color-swatch-btn" data-color="#7a3b1e" data-glow="rgba(232,122,69,0.4)" data-image="AiraWeatherShield.png" style="background-color: #E87A45;" title="Terracotta Orange"></button>
+            <button class="color-swatch-btn" data-color="#4a3f6b" data-glow="rgba(141,123,209,0.4)" data-image="AiraProPrimers.png" style="background-color: #4A3F6B;" title="Royal Violet"></button>
+            <button class="color-swatch-btn" data-color="#0e5e75" data-glow="rgba(110,198,220,0.4)" data-image="AiraWeatherShield.png" style="background-color: #0E5E75;" title="Ocean Teal"></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- - FOOTER - -->
+  <footer class="site-footer" id="site-footer" aria-label="Site footer">
+
+    <!-- Decorative top fade -->
+    <div class="footer-top-fade" aria-hidden="true"></div>
+
+    <!-- - Newsletter Strip - -->
+    <div class="footer-newsletter">
+      <div class="newsletter-inner">
+        <div class="newsletter-content">
+          <div class="newsletter-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3z" />
+              <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+            </svg>
+          </div>
+          <div>
+            <h3>Stay Ahead of Colour Trends</h3>
+            <p>Get product launches, seasonal palettes &amp; expert tips delivered to your inbox.</p>
+          </div>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); 
+                        document.getElementById('nl-success').style.display='flex';
+                        this.style.display='none';">
+          <div class="nl-input-wrap">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            <input type="email" required placeholder="Your email address" aria-label="Email address for newsletter">
+          </div>
+          <button type="submit" class="btn btn-primary nl-btn">
+            <span>Subscribe</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </button>
+        </form>
+        <!-- Success Message -->
+        <div class="nl-success-msg" id="nl-success" style="display:none;" role="alert">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span>You're subscribed! Welcome to the Aira Paints family.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- - Main Footer Grid - -->
+    <div class="footer-main">
+      <div class="footer-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" aria-label="Aira Paints Home">
+            <img src="Aira Logo.png" alt="Aira Paints" class="footer-logo-image">
+          </a>
+          <p class="brand-bio">
+            Premium eco-friendly paint formulations crafted for beautiful modern Indian spaces - inspired by the
+            heritage and spirit of all around Indian regions.
+          </p>
+
+          <!-- Certification row -->
+          <div class="footer-certs" aria-label="Brand certifications">
+            <div class="footer-cert-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              ISO Certified
+            </div>
+            <div class="footer-cert-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Low VOC
+            </div>
+            <div class="footer-cert-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Eco-Safe
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="social-links" aria-label="Social media">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+              </svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+            <a href="#" aria-label="YouTube" class="social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+              </svg>
+            </a>
+          </div>
+        </div><!-- /footer-brand -->
+
+        <!-- Company Column -->
+        <nav class="footer-col" aria-label="Company links">
+          <h4 class="footer-col-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="story.html">About Brand</a></li>
+            <li><a href="index.html#dealer">Careers</a></li>
+            <li><a href="story.html">News</a></li>
+            <li><a href="story.html">Blogs</a></li>
+          </ul>
+        </nav>
+
+        <!-- Products Column -->
+        <nav class="footer-col" aria-label="Product links">
+          <h4 class="footer-col-heading">Products</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#products">Interior Paints</a></li>
+            <li><a href="index.html#products">Exterior Paints</a></li>
+            <li><a href="index.html#products">Primers</a></li>
+            <li><a href="index.html#products">Waterproofing</a></li>
+            <li><a href="index.html#products">Wood Finishes</a></li>
+          </ul>
+        </nav>
+
+        <!-- Resources Column -->
+        <nav class="footer-col" aria-label="Resource links">
+          <h4 class="footer-col-heading">Resources</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#inspiration">Colour Guide</a></li>
+            <li><a href="index.html#why-us">Paint Calculator</a></li>
+            <li><a href="index.html#why-us">FAQs</a></li>
+            <li><a href="index.html#products">Technical Datasheets</a></li>
+            <li><a href="story.html">Warranty Info</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact Column -->
+        <div class="footer-col footer-contact-col" aria-label="Contact information">
+          <h4 class="footer-col-heading">Contact</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">India Head Office</span>
+                <span class="footer-contact-val">F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh - 517503</span>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">Phone</span>
+                <a href="tel:+918122366191" class="footer-contact-val footer-contact-link">+91 81223 66191</a>
+              </div>
+            </li>
+            <li class="footer-contact-item">
+              <div class="footer-contact-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <span class="footer-contact-label">Email</span>
+                <a href="mailto:Info@airapaints.com"
+                  class="footer-contact-val footer-contact-link">Info@airapaints.com</a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Quick action buttons -->
+          <div class="footer-quick-actions">
+            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer"
+              class="footer-action-btn" id="btn-google-maps">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Google Maps
+            </a>
+            <a href="https://wa.me/918122366191?text=Hello!%20I%20am%20interested%20in%20Aira%20Paints" target="_blank"
+              rel="noopener noreferrer" class="footer-action-btn footer-action-btn--whatsapp" id="btn-whatsapp-footer">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /footer-grid -->
+    </div><!-- /footer-main -->
+
+    <!-- - Footer Divider with Brand Stamp - -->
+    <div class="footer-divider" aria-hidden="true">
+      <div class="divider-line"></div>
+      <div class="footer-brand-stamp">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect width="40" height="40" rx="8" fill="rgba(15,77,58,0.12)" />
+          <path d="M20 10L11 28h18L20 10z" fill="none" stroke="#0F4D3A" stroke-width="1.8" stroke-linejoin="round" />
+          <circle cx="20" cy="23" r="2.5" fill="#0F4D3A" />
+        </svg>
+      </div>
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- - Bottom Bar - -->
+    <div class="footer-bottom">
+      <p class="copyright">
+        &copy; 2026 <strong>Aira Paints</strong>. Serving all around Indian regions. All rights reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="#privacy" id="link-privacy">Privacy Policy</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="#terms" id="link-terms">Terms of Service</a>
+        <span class="sep" aria-hidden="true"></span>
+        <a href="sitemap.xml" id="link-sitemap" target="_blank">Sitemap</a>
+      </div>
+      <div class="footer-made-in">
+        <span>Made with</span>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#0F4D3A" stroke="none" aria-hidden="true">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span>in India</span>
+        <span class="sep" aria-hidden="true"></span>
+        <span>Designed by <a href="https://www.theupliv.com" target="_blank" rel="noopener noreferrer">UPliv</a></span>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="product.js?v=1.0"></script>
+</body>
+
+</html>
