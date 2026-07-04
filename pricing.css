@@ -11,10 +11,10 @@
   justify-content: center;
   padding: 8rem 4rem 6rem 4rem;
   overflow: hidden;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  background: radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.16) 0%, rgba(15, 77, 58, 0) 65%), #0F4D3A; /* White gradient into Deep Forest Green background */
   transition: background-color 1.2s cubic-bezier(0.25, 1, 0.5, 1);
   z-index: 10;
-  color: var(--charcoal);
+  color: var(--white);
 }
 
 .pricing-hero-container {
@@ -42,7 +42,7 @@
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--forest);
+  color: #6ec6b0;
   text-transform: uppercase;
 }
 
@@ -50,7 +50,7 @@
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 4.5vw, 3.4rem);
   font-weight: 800;
-  color: var(--charcoal);
+  color: var(--white);
   line-height: 1.2;
 }
 
@@ -58,7 +58,7 @@
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.6;
-  color: rgba(10, 11, 10, 0.7);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Calculator Columns Grid */
@@ -72,30 +72,32 @@
 
 .calculator-card-inputs,
 .calculator-card-outputs {
-  background: var(--white);
-  border: 1px solid rgba(15, 77, 58, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 28px;
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  box-shadow: 0 20px 45px rgba(15, 77, 58, 0.05);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
 }
 
 .card-subtitle {
   font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
-  color: var(--charcoal);
+  color: var(--white);
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  border-bottom: 1px solid rgba(15, 77, 58, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.8rem;
 }
 
 .card-subtitle i {
-  color: var(--forest);
+  color: #6ec6b0;
 }
 
 .calc-form {
@@ -115,17 +117,17 @@
   font-size: 0.82rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: rgba(10, 11, 10, 0.5);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 1px;
 }
 
 /* Custom Select Styling */
 .custom-select {
-  background: #fafbfc;
-  border: 1px solid rgba(15, 77, 58, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 1.2rem;
   border-radius: 16px;
-  color: var(--charcoal);
+  color: var(--white);
   width: 100%;
   outline: none;
   font-family: var(--font-body);
@@ -135,12 +137,12 @@
 }
 
 .custom-select:focus {
-  border-color: var(--forest);
+  border-color: #6ec6b0;
 }
 
 .custom-select option {
-  background: #ffffff;
-  color: var(--charcoal);
+  background: #0F4D3A;
+  color: var(--white);
 }
 
 /* Grade selector buttons styling */
@@ -151,11 +153,11 @@
 }
 
 .grade-btn {
-  background: #fafbfc;
-  border: 1px solid rgba(15, 77, 58, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.9rem 1.2rem;
   border-radius: 16px;
-  color: var(--charcoal);
+  color: var(--white);
   cursor: pointer;
   text-align: left;
   transition: all 0.3s ease;
@@ -166,14 +168,14 @@
 }
 
 .grade-btn.active {
-  background: rgba(15, 77, 58, 0.05);
-  border-color: var(--forest);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--white);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .grade-btn:hover:not(.active) {
-  background: rgba(15, 77, 58, 0.03);
-  border-color: rgba(15, 77, 58, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .grade-name {
@@ -185,11 +187,11 @@
 .grade-detail {
   font-family: var(--font-body);
   font-size: 0.76rem;
-  color: rgba(10, 11, 10, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .grade-btn.active .grade-detail {
-  color: rgba(10, 11, 10, 0.7);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Slider Controls Styling */
@@ -203,7 +205,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1rem;
-  color: var(--forest);
+  color: #6ec6b0;
 }
 
 .custom-slider {
@@ -212,7 +214,7 @@
   width: 100%;
   height: 6px;
   border-radius: 5px;
-  background: rgba(15, 77, 58, 0.08);
+  background: rgba(255, 255, 255, 0.15);
   outline: none;
   margin: 0.8rem 0;
 }
@@ -223,7 +225,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: var(--forest);
+  background: #6ec6b0;
   cursor: pointer;
   border: 2px solid var(--white);
   transition: transform 0.2s ease;
@@ -238,13 +240,13 @@
   justify-content: space-between;
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: rgba(10, 11, 10, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /* Output values display */
 .outputs-display-box {
-  background: rgba(15, 77, 58, 0.02);
-  border: 1px solid rgba(15, 77, 58, 0.05);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 20px;
   display: flex;
@@ -262,7 +264,7 @@
   font-family: var(--font-body);
   font-size: 0.78rem;
   text-transform: uppercase;
-  color: rgba(10, 11, 10, 0.5);
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 1px;
 }
 
@@ -270,24 +272,24 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 2.2rem;
-  color: var(--forest);
+  color: #6ec6b0;
   transition: transform 0.3s ease;
 }
 
 .output-metric-item.highlight .metric-value {
-  color: var(--forest);
+  color: var(--white);
   font-size: 2.4rem;
 }
 
 .metric-subtext {
   font-family: var(--font-body);
   font-size: 0.78rem;
-  color: rgba(10, 11, 10, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .output-divider {
   height: 1px;
-  background: rgba(15, 77, 58, 0.08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .outputs-detail-list {
@@ -301,20 +303,20 @@
   justify-content: space-between;
   font-family: var(--font-body);
   font-size: 0.88rem;
-  color: rgba(10, 11, 10, 0.7);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .detail-row .val {
   font-family: var(--font-display);
   font-weight: 700;
-  color: var(--forest);
+  color: var(--white);
 }
 
 .calc-disclaimer {
   font-family: var(--font-body);
   font-size: 0.72rem;
   line-height: 1.4;
-  color: rgba(10, 11, 10, 0.4);
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* SECTION 02 — POPULAR PLANS GRID */
