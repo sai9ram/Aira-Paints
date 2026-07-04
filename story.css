@@ -989,18 +989,20 @@ body.story-page.dark-theme .card-content p {
   font-weight: 700;
   color: var(--white);
   line-height: 1.15;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.85);
 }
 
 .vision-desc, .vision-desc-secondary {
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.95);
   max-width: 800px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .vision-desc-secondary {
-  opacity: 0.7;
+  opacity: 0.85;
   font-size: 1.05rem;
   margin-top: 0.5rem;
 }
