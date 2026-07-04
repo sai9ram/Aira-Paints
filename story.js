@@ -158,11 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleVisionReveal() {
     const viewportHeight = window.innerHeight;
-    const isAtBottom = (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 120);
 
     if (visionContent) {
       const rect = visionContent.getBoundingClientRect();
-      if (rect.top < viewportHeight * 0.85 || isAtBottom) {
+      if (rect.top < viewportHeight * 0.85) {
         visionContent.classList.add('revealed');
       } else {
         visionContent.classList.remove('revealed');
@@ -171,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (visionActions) {
       const rect = visionActions.getBoundingClientRect();
-      if (rect.top < viewportHeight * 0.85 || isAtBottom) {
+      if (rect.top < viewportHeight * 0.85) {
         visionActions.classList.add('revealed');
       } else {
         visionActions.classList.remove('revealed');
@@ -180,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (visionQuoteWrap) {
       const rect = visionQuoteWrap.getBoundingClientRect();
-      if (rect.top < viewportHeight * 0.85 || isAtBottom) {
+      if (rect.top < viewportHeight * 0.85) {
         visionQuoteWrap.classList.add('revealed');
       } else {
         visionQuoteWrap.classList.remove('revealed');
