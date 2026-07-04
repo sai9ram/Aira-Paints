@@ -260,6 +260,107 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ── Color Collection Switcher & Wall Rebuilder ──
+  const colorCollectionsData = {
+    'modern-neutrals': [
+      { name: 'Sand Silk', code: '#E3DEC3' },
+      { name: 'Stone Grey', code: '#A09C94' },
+      { name: 'Warm Taupe', code: '#82776A' },
+      { name: 'Soft Linen', code: '#F2EFE9' }
+    ],
+    'earthy-greens': [
+      { name: 'Forest Pine', code: '#1E3F20' },
+      { name: 'Soft Sage', code: '#9CA086' },
+      { name: 'Mossy Canopy', code: '#5A6B4F' },
+      { name: 'Olive Grove', code: '#7E805B' }
+    ],
+    'elegant-whites': [
+      { name: 'Pure Alabaster', code: '#F7F6F0' },
+      { name: 'Ivory Lace', code: '#FFFDF3' },
+      { name: 'Pearl Frost', code: '#ECECE6' },
+      { name: 'Chalk White', code: '#FBFBF9' }
+    ],
+    'royal-blues': [
+      { name: 'Majestic Navy', code: '#0B1E3F' },
+      { name: 'Classic Indigo', code: '#1E3B70' },
+      { name: 'Deep Cerulean', code: '#215580' },
+      { name: 'Sea Breeze', code: '#8AB8D0' }
+    ],
+    'luxury-golds': [
+      { name: 'Antique Ochre', code: '#C5A059' },
+      { name: 'Royal Marigold', code: '#E3A81E' },
+      { name: 'Amber Sunset', code: '#D18E36' },
+      { name: 'Gilded Bronze', code: '#8C6E3D' }
+    ],
+    'contemporary-greys': [
+      { name: 'Mineral Ash', code: '#D2D3D5' },
+      { name: 'Steel Shadow', code: '#767B80' },
+      { name: 'Charcoal Haze', code: '#3A3F42' },
+      { name: 'Industrial Iron', code: '#545759' }
+    ],
+    'warm-terracotta': [
+      { name: 'Baked Clay', code: '#B2533E' },
+      { name: 'Burnt Sienna', code: '#A03B26' },
+      { name: 'Copper Dust', code: '#D27E5B' },
+      { name: 'Rust Desert', code: '#8E3424' }
+    ],
+    'classic-pastels': [
+      { name: 'Blush Pink', code: '#F6DFDC' },
+      { name: 'Mint Cream', code: '#E1EFE6' },
+      { name: 'Soft Lavender', code: '#E6E1FA' },
+      { name: 'Lemon Souffle', code: '#FBF3D5' }
+    ]
+  };
+
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const chipsContainer = document.getElementById('color-chips-container');
+
+  filterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      if (chip.classList.contains('active')) return;
+
+      filterChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      const category = chip.getAttribute('data-category');
+      const colors = colorCollectionsData[category] || [];
+
+      // Fade out wall
+      if (chipsContainer) {
+        chipsContainer.style.opacity = '0';
+        chipsContainer.style.transform = 'translateY(10px) scale(0.98)';
+
+        setTimeout(() => {
+          // Rebuild chips HTML content
+          chipsContainer.innerHTML = colors.map((col, idx) => `
+            <div class="color-chip-card" data-category="${category}" style="--chip-color: ${col.code}; opacity: 0; transform: translateY(15px); transition: all 0.4s ease ${idx * 0.08}s;">
+              <div class="chip-preview"></div>
+              <div class="chip-info">
+                <span class="chip-name">${col.name}</span>
+                <span class="chip-code">${col.code}</span>
+              </div>
+            </div>
+          `).join('');
+
+          // Force reflow
+          chipsContainer.offsetHeight;
+
+          // Fade in wall container
+          chipsContainer.style.opacity = '1';
+          chipsContainer.style.transform = 'translateY(0) scale(1)';
+
+          // Trigger internal chip reveals
+          const newChips = chipsContainer.querySelectorAll('.color-chip-card');
+          newChips.forEach(ch => {
+            ch.style.opacity = '1';
+            ch.style.transform = 'translateY(0)';
+          });
+
+        }, 300);
+      }
+    });
+  });
+
   window.addEventListener('scroll', () => {
     handleCategoriesReveal();
     handleStandoutReveal();
