@@ -150,4 +150,25 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ── Section 02: Categories Scroll Reveal ──
+  const categoryCards = document.querySelectorAll('.category-card');
+
+  function handleCategoriesReveal() {
+    const viewportHeight = window.innerHeight;
+    categoryCards.forEach((card, index) => {
+      const cardRect = card.getBoundingClientRect();
+      if (cardRect.top < viewportHeight * 0.88) {
+        setTimeout(() => {
+          card.classList.add('revealed');
+        }, (index % 3) * 120);
+      } else {
+        card.classList.remove('revealed');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', handleCategoriesReveal);
+  handleCategoriesReveal(); // Trigger on load
+  window.addEventListener('resize', handleCategoriesReveal);
 });
