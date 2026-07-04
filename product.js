@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Paint can visual swap transition
       if (bucketImg) {
-        bucketImg.style.transform = 'scale(0.8) rotate(-15deg)';
+        bucketImg.style.transform = 'scale(0.8)';
         bucketImg.style.opacity = '0.3';
         bucketImg.style.filter = 'blur(10px)';
 
         setTimeout(() => {
           bucketImg.src = imgPath;
-          bucketImg.style.transform = 'scale(1) rotate(0deg)';
+          bucketImg.style.transform = 'scale(1)';
           bucketImg.style.opacity = '1';
           bucketImg.style.filter = 'drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35))';
         }, 300);
@@ -86,14 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         canGlow.style.setProperty('--glow-color', glowColor);
       }
     });
-  });
-
-  // ── Slow Rotate Paint Bucket on Scroll ──
-  window.addEventListener('scroll', () => {
-    if (!bucketImg) return;
-    const rotation = window.scrollY * 0.08; // 0.08 degrees per pixel
-    // Maintain scale while adding rotation
-    bucketImg.style.transform = `rotate(${rotation}deg)`;
   });
 
   // ── Cursor Ripple Follower Effect ──
