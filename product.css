@@ -133,19 +133,57 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 520px;
+}
+
+.hero-glass-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 36px;
+  padding: 4.5rem 3rem 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  animation: floatCard 6s infinite alternate ease-in-out;
+  z-index: 5;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+.card-border-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 36px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .hero-gradient-glow {
   position: absolute;
-  width: 480px;
-  height: 480px;
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 70%);
   filter: blur(35px);
   z-index: -1;
   animation: glowPulse 10s infinite alternate ease-in-out;
   transition: background 1.2s ease;
+  top: 5%;
 }
 
 @keyframes glowPulse {
@@ -169,7 +207,7 @@
 }
 
 .rotating-paint-bucket {
-  max-width: 310px;
+  max-width: 280px;
   width: 100%;
   height: auto;
   filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35));
