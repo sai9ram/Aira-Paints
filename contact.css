@@ -648,6 +648,8 @@
   background: linear-gradient(160deg, #0a2e22 0%, #0F4D3A 50%, #0a2e22 100%);
   overflow: hidden;
   text-align: center;
+  border-radius: 32px;
+  margin: 0 2rem 2rem;
 }
 
 /* CTA particles */
