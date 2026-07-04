@@ -941,14 +941,12 @@ body.story-page.dark-theme .card-content p {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
-  filter: blur(8px);
-  transform: scale(1.06); /* Prevent edge bleeding from blur */
 }
 
 .video-overlay-dark {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(15, 77, 58, 0.8) 0%, rgba(5, 11, 9, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(5, 26, 20, 0.88) 0%, rgba(0, 0, 0, 0.95) 100%);
   z-index: -1;
 }
 
