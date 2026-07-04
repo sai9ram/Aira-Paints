@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Section 04: Choose Reveal Scroll Handler ──
     handleChooseReveal();
+
+    // ── Section 05: Vision Reveal Scroll Handler ──
+    handleVisionReveal();
   });
 
   const journeySection = document.getElementById('story-journey');
@@ -149,13 +152,50 @@ document.addEventListener('DOMContentLoaded', () => {
     }, stepTime);
   }
 
+  const visionContent = document.querySelector('.vision-content');
+  const visionActions = document.querySelector('.vision-actions');
+  const visionQuoteWrap = document.querySelector('.vision-quote-wrap');
+
+  function handleVisionReveal() {
+    const viewportHeight = window.innerHeight;
+
+    if (visionContent) {
+      const rect = visionContent.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.85) {
+        visionContent.classList.add('revealed');
+      } else {
+        visionContent.classList.remove('revealed');
+      }
+    }
+
+    if (visionActions) {
+      const rect = visionActions.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.85) {
+        visionActions.classList.add('revealed');
+      } else {
+        visionActions.classList.remove('revealed');
+      }
+    }
+
+    if (visionQuoteWrap) {
+      const rect = visionQuoteWrap.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.85) {
+        visionQuoteWrap.classList.add('revealed');
+      } else {
+        visionQuoteWrap.classList.remove('revealed');
+      }
+    }
+  }
+
   // Initial triggers to position components correctly on load
   handleTimelineScroll();
   handleValuesReveal();
   handleChooseReveal();
+  handleVisionReveal();
   window.addEventListener('resize', () => {
     handleTimelineScroll();
     handleValuesReveal();
     handleChooseReveal();
+    handleVisionReveal();
   });
 });

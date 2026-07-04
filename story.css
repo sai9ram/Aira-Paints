@@ -911,3 +911,193 @@ body.story-page.dark-theme .card-content p {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   SECTION 05 — OUR VISION & CALL TO ACTION
+   ============================================================ */
+.story-vision-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem;
+  overflow: hidden;
+  color: var(--white);
+  text-align: center;
+  z-index: 10;
+}
+
+/* Background Cinematic Video Layer */
+.video-background-wrap {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.video-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.video-overlay-dark {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 77, 58, 0.8) 0%, rgba(5, 11, 9, 0.95) 100%);
+  z-index: -1;
+}
+
+.vision-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+.vision-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.vision-content.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vision-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6ec6b0;
+  text-transform: uppercase;
+}
+
+.vision-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.vision-desc, .vision-desc-secondary {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 800px;
+}
+
+.vision-desc-secondary {
+  opacity: 0.7;
+  font-size: 1.05rem;
+  margin-top: 0.5rem;
+}
+
+/* Call to Action Buttons */
+.vision-actions {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.vision-actions.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-explore {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.2rem;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.cta-explore:hover {
+  background: var(--white);
+  color: var(--forest);
+  border-color: var(--white);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.15);
+}
+
+/* Quote Block Wrapper */
+.vision-quote-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 720px;
+  padding: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.vision-quote-wrap.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.closing-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.95);
+  font-style: italic;
+  margin: 0;
+}
+
+.quote-signature {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6ec6b0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Mobile responsive layout overrides */
+@media (max-width: 768px) {
+  .story-vision-section {
+    padding: 6rem 1.5rem;
+  }
+  
+  .vision-container {
+    gap: 3rem;
+  }
+
+  .vision-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .vision-actions .btn, .vision-actions .cta-explore {
+    width: 100%;
+    text-align: center;
+  }
+}
