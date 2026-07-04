@@ -9,33 +9,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ── Color Swatches & Background Transitions ──
+  // ── Central Stage Interactive Product Swapping ──
   const heroSection = document.getElementById('product-hero');
   const bucketImg = document.getElementById('hero-bucket-img');
-  const glowBg = document.getElementById('hero-glow-bg');
   const canGlow = document.getElementById('hero-can-glow');
-  const swatchButtons = document.querySelectorAll('.color-swatch-btn');
+  const stageTitle = document.getElementById('stage-product-title');
+  const statCoverage = document.getElementById('stat-val-coverage');
+  const statFeatures = document.getElementById('stat-val-features');
+  const paletteItems = document.querySelectorAll('.palette-item');
 
-  swatchButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
+  paletteItems.forEach((item) => {
+    item.addEventListener('click', () => {
       // Toggle active states
-      swatchButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      paletteItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
 
-      // Extract details
-      const color = btn.getAttribute('data-color');
-      const imgPath = btn.getAttribute('data-image');
-      const glowColor = btn.getAttribute('data-glow');
+      // Extract metadata values
+      const color = item.getAttribute('data-color');
+      const imgPath = item.getAttribute('data-image');
+      const glowColor = item.getAttribute('data-glow');
+      const title = item.getAttribute('data-title');
+      const coverage = item.getAttribute('data-cov');
+      const features = item.getAttribute('data-res');
 
-      // Apply transition animations
+      // Smooth background color shift
       if (heroSection) {
         heroSection.style.backgroundColor = color;
       }
+
+      // Smooth text transitions (fade-out, swap, fade-in)
+      if (stageTitle) {
+        stageTitle.style.opacity = '0';
+        stageTitle.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          stageTitle.textContent = title;
+          stageTitle.style.opacity = '1';
+          stageTitle.style.transform = 'translateY(0)';
+        }, 300);
+      }
+
+      if (statCoverage) {
+        statCoverage.style.opacity = '0';
+        statCoverage.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          statCoverage.textContent = coverage;
+          statCoverage.style.opacity = '1';
+          statCoverage.style.transform = 'translateY(0)';
+        }, 300);
+      }
+
+      if (statFeatures) {
+        statFeatures.style.opacity = '0';
+        statFeatures.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          statFeatures.textContent = features;
+          statFeatures.style.opacity = '1';
+          statFeatures.style.transform = 'translateY(0)';
+        }, 300);
+      }
+
+      // Paint can visual swap transition
       if (bucketImg) {
-        bucketImg.style.transform = 'scale(0.85) rotate(-15deg)';
+        bucketImg.style.transform = 'scale(0.8) rotate(-15deg)';
         bucketImg.style.opacity = '0.3';
         bucketImg.style.filter = 'blur(10px)';
-        
+
         setTimeout(() => {
           bucketImg.src = imgPath;
           bucketImg.style.transform = 'scale(1) rotate(0deg)';
@@ -43,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
           bucketImg.style.filter = 'drop-shadow(0 25px 45px rgba(0, 0, 0, 0.35))';
         }, 300);
       }
+
       if (canGlow) {
         canGlow.style.setProperty('--glow-color', glowColor);
       }
@@ -52,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Slow Rotate Paint Bucket on Scroll ──
   window.addEventListener('scroll', () => {
     if (!bucketImg) return;
-    const rotation = window.scrollY * 0.08; // 0.08 degrees per pixel scrolled
-    // Base transform rotation
+    const rotation = window.scrollY * 0.08; // 0.08 degrees per pixel
+    // Maintain scale while adding rotation
     bucketImg.style.transform = `rotate(${rotation}deg)`;
   });
 
@@ -75,8 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ripple.classList.add('paint-ripple');
       
       // Get current active color to tint the ripple
-      const activeSwatch = document.querySelector('.color-swatch-btn.active');
-      const tint = activeSwatch ? activeSwatch.getAttribute('data-glow') : 'rgba(255, 255, 255, 0.22)';
+      const activePalette = document.querySelector('.palette-item.active');
+      const tint = activePalette ? activePalette.getAttribute('data-glow') : 'rgba(255, 255, 255, 0.22)';
       ripple.style.background = `radial-gradient(circle, ${tint} 0%, rgba(255, 255, 255, 0) 70%)`;
       
       ripple.style.left = `${x}px`;
@@ -91,19 +130,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Splashes Parallax Effect on Mouse Move ──
+  // ── Splashes & Benefit Badges Parallax Effect on Mouse Move ──
   const splashes = document.querySelectorAll('.floating-splash');
+  const benefitBadges = document.querySelectorAll('.benefit-badge');
+
   if (heroSection) {
     heroSection.addEventListener('mousemove', (e) => {
       const rect = heroSection.getBoundingClientRect();
       const xPercent = (e.clientX - rect.left) / rect.width - 0.5;
       const yPercent = (e.clientY - rect.top) / rect.height - 0.5;
 
+      // Parallax splashes
       splashes.forEach((splash, idx) => {
         const factor = (idx + 1) * 20; // Different depth weights
         const moveX = xPercent * factor;
         const moveY = yPercent * factor;
         splash.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+
+      // Parallax benefit badges
+      benefitBadges.forEach((badge, idx) => {
+        const factor = (idx + 1) * 15;
+        const moveX = xPercent * factor;
+        const moveY = yPercent * factor;
+        // Keep the floating float loop animation active while shifting position slightly
+        badge.style.transform = `translate(${moveX}px, ${moveY}px)`;
       });
     });
   }

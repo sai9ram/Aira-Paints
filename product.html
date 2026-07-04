@@ -41,66 +41,113 @@
   <!-- ===== MAIN ===== -->
   <main>
 
-    <!-- SECTION 01 – HERO SHOWCASE -->
+    <!-- SECTION 01 – HERO SHOWCASE (REDESIGNED CENTRAL STAGE MODEL) -->
     <section id="product-hero" class="product-hero-section">
       <!-- Cursor interaction paint ripple element -->
       <div id="paint-ripple-tracker" class="paint-ripple-layer"></div>
 
+      <!-- Left Sidebar: Palette Switcher -->
+      <aside class="hero-sidebar-left" aria-label="Product line selector">
+        <div class="sidebar-title">Categories</div>
+        <div class="sidebar-palette-list">
+          <button class="palette-item active" data-color="#0F4D3A" data-image="AirainteriorPaints.png" data-glow="rgba(110,198,176,0.4)" data-title="Interior Emulsion" data-cov="350 sq.ft/gal" data-res="High Breathability">
+            <span class="palette-dot" style="background-color: #0F4D3A;"></span>
+            <span class="palette-label">Interior Emulsion</span>
+          </button>
+          <button class="palette-item" data-color="#7a3b1e" data-image="AiraWeatherShield.png" data-glow="rgba(232,122,69,0.4)" data-title="Weather Shield" data-cov="280 sq.ft/gal" data-res="100% Water Resistant">
+            <span class="palette-dot" style="background-color: #E87A45;"></span>
+            <span class="palette-label">Weather Shield</span>
+          </button>
+          <button class="palette-item" data-color="#4a3f6b" data-image="AiraProPrimers.png" data-glow="rgba(141,123,209,0.4)" data-title="Aira Pro Primers" data-cov="400 sq.ft/gal" data-res="Deep Binding Power">
+            <span class="palette-dot" style="background-color: #4A3F6B;"></span>
+            <span class="palette-label">Pro Primers</span>
+          </button>
+          <button class="palette-item" data-color="#0e5e75" data-image="AiraDampProtect.png" data-glow="rgba(110,198,220,0.4)" data-title="Damp Protect" data-cov="320 sq.ft/gal" data-res="7-Year Anti-Dampness">
+            <span class="palette-dot" style="background-color: #0E5E75;"></span>
+            <span class="palette-label">Damp Protect</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Showcase Container -->
       <div class="product-hero-container">
         
-        <!-- Left Side Column -->
-        <div class="product-hero-left">
-          <span class="hero-eyebrow">PREMIUM PAINT SOLUTIONS</span>
-          <h1 class="hero-title">Paint Solutions Designed for Every Space</h1>
-          <p class="hero-desc">
-            Whether you're refreshing a cozy home, protecting an exterior façade, or completing a large commercial project, our premium paint solutions are engineered to deliver exceptional beauty, durability, and long-lasting performance.
-          </p>
-          <p class="hero-desc">
-            Every product is crafted using advanced technology to ensure superior coverage, vibrant colors, and a flawless finish.
-          </p>
-          
-          <div class="hero-actions">
-            <a href="#categories" class="btn btn-primary">
-              <span>Explore Categories</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
-            </a>
-            <a href="aira-brochure.pdf" target="_blank" class="btn btn-secondary cta-catalogue">Request Product Catalogue</a>
+        <!-- Central stage with rotating bucket and floating labels -->
+        <div class="central-showcase-stage">
+          <!-- Background Glow Spot -->
+          <div class="hero-gradient-glow" id="hero-glow-bg"></div>
+
+          <!-- Rotating Can Frame -->
+          <div class="bucket-showcase-wrap" id="stage-bucket-wrap">
+            <img src="AirainteriorPaints.png" alt="Aira Premium Paint Can" class="rotating-paint-bucket" id="hero-bucket-img">
+            <div class="can-glow" id="hero-can-glow" style="--glow-color:rgba(110,198,176,0.4)"></div>
+          </div>
+
+          <!-- Floating Splash Dots -->
+          <div class="floating-splash splash-1" aria-hidden="true"></div>
+          <div class="floating-splash splash-2" aria-hidden="true"></div>
+          <div class="floating-splash splash-3" aria-hidden="true"></div>
+
+          <!-- Floating Interactive Benefit Badges -->
+          <div class="benefit-badge badge-top-left" style="--angle: 0deg;">
+            <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
+            <span>Eco-Friendly</span>
+          </div>
+          <div class="benefit-badge badge-top-right" style="--angle: 90deg;">
+            <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <span>Long-Lasting</span>
+          </div>
+          <div class="benefit-badge badge-bottom-left" style="--angle: 180deg;">
+            <div class="badge-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <span>Flawless Finish</span>
+          </div>
+          <div class="benefit-badge badge-bottom-right" style="--angle: 270deg;">
+            <div class="badge-icon"><i class="fa-solid fa-droplet-slash"></i></div>
+            <span>Low VOC</span>
           </div>
         </div>
 
-        <!-- Right Side Column -->
-        <div class="product-hero-right">
-          <!-- Glassmorphism Card Frame -->
-          <div class="hero-glass-card">
-            <div class="card-border-gradient"></div>
-            
-            <!-- Soft Gradient Rotating Background Blob -->
-            <div class="hero-gradient-glow" id="hero-glow-bg"></div>
-            
-            <!-- 3D Rotating Paint Bucket Frame -->
-            <div class="bucket-showcase-wrap">
-              <img src="AirainteriorPaints.png" alt="Aira Premium Paint Can" class="rotating-paint-bucket" id="hero-bucket-img">
-              <div class="can-glow" id="hero-can-glow" style="--glow-color:rgba(110,198,176,0.4)"></div>
-            </div>
+        <!-- Central Titles & Description (Overlaid cleanly at the top-mid) -->
+        <div class="central-hero-content">
+          <span class="hero-eyebrow">PREMIUM PAINT SOLUTIONS</span>
+          <h1 class="hero-title" id="stage-product-title">Interior Emulsion</h1>
+          <p class="hero-desc">
+            Paint solutions engineered using advanced technology to deliver exceptional beauty, coverage, and long-lasting protection.
+          </p>
+        </div>
 
-            <!-- Floating Splash Elements -->
-            <div class="floating-splash splash-1" aria-hidden="true"></div>
-            <div class="floating-splash splash-2" aria-hidden="true"></div>
-            <div class="floating-splash splash-3" aria-hidden="true"></div>
-
-            <!-- Color Swatches Grid -->
-            <div class="hero-color-swatches" aria-label="Interactive color swatches">
-              <button class="color-swatch-btn active" data-color="#0F4D3A" data-glow="rgba(110,198,176,0.4)" data-image="AirainteriorPaints.png" style="background-color: #0F4D3A;" title="Forest Green"></button>
-              <button class="color-swatch-btn" data-color="#7a3b1e" data-glow="rgba(232,122,69,0.4)" data-image="AiraWeatherShield.png" style="background-color: #E87A45;" title="Terracotta Orange"></button>
-              <button class="color-swatch-btn" data-color="#4a3f6b" data-glow="rgba(141,123,209,0.4)" data-image="AiraProPrimers.png" style="background-color: #4A3F6B;" title="Royal Violet"></button>
-              <button class="color-swatch-btn" data-color="#0e5e75" data-glow="rgba(110,198,220,0.4)" data-image="AiraWeatherShield.png" style="background-color: #0E5E75;" title="Ocean Teal"></button>
-            </div>
-          </div>
+        <!-- Floating Glassmorphism Action Bar -->
+        <div class="hero-floating-actions-bar">
+          <a href="#categories" class="btn btn-primary">
+            <span>Explore Categories</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+          <a href="aira-brochure.pdf" target="_blank" class="btn btn-secondary cta-catalogue">Request Product Catalogue</a>
         </div>
 
       </div>
+
+      <!-- Right Sidebar: Quick Stats -->
+      <aside class="hero-sidebar-right" aria-label="Product performance metrics">
+        <div class="sidebar-title">Metrics</div>
+        <div class="sidebar-stats-list">
+          <div class="stat-sidebar-item">
+            <span class="stat-sidebar-label">Coverage</span>
+            <span class="stat-sidebar-value" id="stat-val-coverage">350 sq.ft/gal</span>
+          </div>
+          <div class="stat-sidebar-item">
+            <span class="stat-sidebar-label">Features</span>
+            <span class="stat-sidebar-value" id="stat-val-features">High Breathability</span>
+          </div>
+          <div class="stat-sidebar-item">
+            <span class="stat-sidebar-label">VOC Level</span>
+            <span class="stat-sidebar-value">&lt; 5 g/L</span>
+          </div>
+        </div>
+      </aside>
+
     </section>
 
   </main>
