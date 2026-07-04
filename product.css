@@ -489,9 +489,10 @@
    ============================================================ */
 .product-categories-section {
   padding: 8rem 2rem;
-  background-color: #fafafa;
+  background: #fafbfc;
   position: relative;
   z-index: 10;
+  color: var(--charcoal);
 }
 
 .categories-container {
@@ -503,9 +504,9 @@
 }
 
 .categories-header {
+  text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -522,42 +523,41 @@
 
 .categories-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: var(--charcoal);
-  line-height: 1.2;
 }
 
 .categories-desc {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(10, 11, 10, 0.7);
+  line-height: 1.65;
+  color: rgba(10, 11, 10, 0.65);
 }
 
-/* 3-Column Grid */
+/* Grid Wrapper with centered 4th card */
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: center;
+  width: 100%;
 }
 
-/* Category Card */
 .category-card {
-  position: relative;
+  flex: 1 1 calc(33.333% - 2rem);
+  max-width: calc(33.333% - 2rem);
+  min-width: 320px;
   background: var(--white);
-  border-radius: 24px;
+  border: 1px solid rgba(15, 77, 58, 0.08);
+  border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
-  height: 100%;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              border-color 0.5s ease;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
   opacity: 0;
   transform: translateY(40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
 .category-card.revealed {
@@ -566,177 +566,193 @@
 }
 
 .category-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(15, 77, 58, 0.12);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(15, 77, 58, 0.12);
   border-color: rgba(15, 77, 58, 0.15);
 }
 
-/* Image Showcase */
-.category-image-wrap {
-  position: relative;
-  width: 100%;
+.card-visual {
   height: 250px;
-  overflow: hidden;
+  background: #f0f3f1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle, rgba(15, 77, 58, 0.06) 0%, rgba(255, 255, 255, 1) 80%);
+  position: relative;
+  overflow: hidden;
 }
 
-.category-img {
-  max-height: 170px;
+.card-product-img {
+  max-height: 180px;
   width: auto;
-  object-fit: contain;
-  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.15));
+  z-index: 2;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.category-card:hover .category-img {
-  transform: scale(1.08) translateY(-6px);
+.category-card:hover .card-product-img {
+  transform: scale(1.08);
 }
 
-.category-overlay-tint {
+.card-glow-bg {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0.2) 100%);
-  pointer-events: none;
+  width: 140px;
+  height: 140px;
+  background: var(--glow-color);
+  border-radius: 50%;
+  filter: blur(35px);
+  z-index: 1;
 }
 
-/* Card Body Content */
-.category-content {
-  padding: 2rem 2.2rem;
+.card-content {
+  padding: 2.2rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
   flex-grow: 1;
 }
 
-.category-header-wrap {
+.card-header-row {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-}
-
-.category-icon-box {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(15, 77, 58, 0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: var(--forest);
-  transition: all 0.4s ease;
-}
-
-.category-card:hover .category-icon-box {
-  background: var(--forest);
-  color: var(--white);
 }
 
 .category-name {
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: var(--charcoal);
+  color: var(--forest);
 }
 
-.category-desc-text {
+.category-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(15, 77, 58, 0.05);
+  color: var(--forest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.category-card-desc {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--charcoal);
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
-/* Hover Revealed Feature Drawer */
-.category-features-drawer {
+/* Features box collapsible design */
+.category-features-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-top: 1px solid rgba(15, 77, 58, 0.08);
+  padding-top: 1.2rem;
+}
+
+.features-box-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--charcoal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.features-box-label::after {
+  content: 'Hover to reveal';
+  font-size: 0.7rem;
+  color: var(--forest);
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover .features-box-label::after {
+  content: 'Features loaded';
+  opacity: 0.5;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
   max-height: 0;
   opacity: 0;
   overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1), 
-              opacity 0.5s ease,
-              margin-top 0.4s ease;
+  transition: max-height 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
 }
 
-.category-card:hover .category-features-drawer {
-  max-height: 250px;
+.category-card:hover .features-list {
+  max-height: 200px;
   opacity: 1;
-  margin-top: 0.5rem;
 }
 
-.features-drawer-label {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: var(--forest);
-  letter-spacing: 1px;
-  display: block;
-}
-
-.features-drawer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0.6rem 0 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.features-drawer-list li {
+.features-list li {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   font-family: var(--font-body);
   font-size: 0.88rem;
   color: var(--charcoal);
   opacity: 0.85;
 }
 
-.features-drawer-list li i {
+.features-list li i {
   color: var(--forest);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
-.category-cta {
+.card-explore-btn {
+  width: 100%;
+  justify-content: center;
+  gap: 0.6rem;
   margin-top: auto;
-  align-self: flex-start;
-  padding: 0.8rem 1.6rem;
-  border-radius: 12px;
-  font-size: 0.88rem;
-  font-family: var(--font-display);
-  font-weight: 700;
-  background: var(--forest);
-  color: var(--white);
-  border: 1px solid var(--forest);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
 }
 
-.category-cta:hover {
-  background: transparent;
-  color: var(--forest);
-  box-shadow: 0 8px 20px rgba(15, 77, 58, 0.15);
-}
-
-/* Mobile responsive adjustments */
+/* Tablet & Mobile responsive overrides */
 @media (max-width: 1024px) {
-  .product-categories-section {
-    padding: 5rem 1.5rem;
-  }
-  
   .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+
+  .category-card {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+
+  /* Automatically expand features list on touch devices */
+  .features-list {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  .features-box-label::after {
+    display: none;
+  }
 }
 
-@media (max-width: 680px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 768px) {
+  .product-categories-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .categories-container {
+    gap: 3.5rem;
+  }
+
+  .category-card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }

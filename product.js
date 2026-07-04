@@ -151,24 +151,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Section 02: Categories Scroll Reveal ──
+  // ── Scroll Reveal for Category Cards ──
   const categoryCards = document.querySelectorAll('.category-card');
-
+  
   function handleCategoriesReveal() {
     const viewportHeight = window.innerHeight;
-    categoryCards.forEach((card, index) => {
-      const cardRect = card.getBoundingClientRect();
-      if (cardRect.top < viewportHeight * 0.88) {
-        setTimeout(() => {
-          card.classList.add('revealed');
-        }, (index % 3) * 120);
+    categoryCards.forEach((card, idx) => {
+      const rect = card.getBoundingClientRect();
+      if (rect.top < viewportHeight * 0.88) {
+        card.style.transitionDelay = `${(idx % 3) * 0.15}s`;
+        card.classList.add('revealed');
       } else {
+        card.style.transitionDelay = '0s';
         card.classList.remove('revealed');
       }
     });
   }
 
   window.addEventListener('scroll', handleCategoriesReveal);
-  handleCategoriesReveal(); // Trigger on load
+  handleCategoriesReveal();
   window.addEventListener('resize', handleCategoriesReveal);
 });
