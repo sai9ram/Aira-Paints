@@ -404,7 +404,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!filterButtons.length || !galleryCards.length) return;
 
   filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    const activateFilter = (e) => {
+      if (e && e.type === 'touchend') e.preventDefault();
       // 1. Update active button state
       filterButtons.forEach(b => {
         b.classList.remove('active');
@@ -424,7 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
           card.classList.add('hidden');
         }
       });
-    });
+    };
+    btn.addEventListener('click', activateFilter);
+    btn.addEventListener('touchend', activateFilter, { passive: false });
   });
 });
 
@@ -478,6 +481,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
     if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    // ── Touch Swipe Support for Mobile ──
+    let swipeTouchStartX = 0;
+    let swipeTouchStartY = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      swipeTouchStartX = e.changedTouches[0].clientX;
+      swipeTouchStartY = e.changedTouches[0].clientY;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      const deltaX = e.changedTouches[0].clientX - swipeTouchStartX;
+      const deltaY = e.changedTouches[0].clientY - swipeTouchStartY;
+      // Only register horizontal swipe (deltaX > deltaY to ignore scroll)
+      if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        if (deltaX < 0) {
+          goToSlide(currentIndex + 1); // swipe left → next
+        } else {
+          goToSlide(currentIndex - 1); // swipe right → prev
+        }
+      }
+    }, { passive: true });
   }
 
   // Video play trigger controller
@@ -541,7 +566,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (priceTabBtns.length && priceCards.length) {
     priceTabBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      const activatePriceTab = (e) => {
+        if (e && e.type === 'touchend') e.preventDefault();
         // Active states for buttons
         priceTabBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
@@ -555,7 +581,9 @@ document.addEventListener('DOMContentLoaded', () => {
             valueField.textContent = `₹${prices[selectedSeries].toLocaleString('en-IN')}`;
           }
         });
-      });
+      };
+      btn.addEventListener('click', activatePriceTab);
+      btn.addEventListener('touchend', activatePriceTab, { passive: false });
     });
   }
 

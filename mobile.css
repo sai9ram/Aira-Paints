@@ -67,12 +67,10 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   backdrop-filter: blur(4px);
-  pointer-events: none; /* CRITICAL: prevents blocking page clicks when hidden */
 }
 
 .mobile-nav-overlay.active {
   opacity: 1;
-  pointer-events: auto; /* Only capture clicks when overlay is actually visible */
 }
 
 .mobile-nav-drawer {
@@ -209,10 +207,9 @@
     display: flex;
   }
 
-  /* Show overlay when menu is open (pointer-events handled in base styles) */
+  /* Show overlay when active */
   .mobile-nav-overlay {
     display: block;
-    pointer-events: none; /* stays non-blocking until .active is added by JS */
   }
 }
 
@@ -244,6 +241,35 @@
     min-height: 44px;
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+  }
+
+  /* Touch-action: manipulation on all interactive elements removes the
+     300ms tap delay and prevents scroll-gesture interception on buttons */
+  button,
+  a,
+  [role="button"],
+  input[type="range"],
+  input[type="radio"],
+  input[type="checkbox"],
+  select,
+  .btn,
+  .palette-item,
+  .filter-chip,
+  .tab-btn,
+  .comp-tab-btn,
+  .grade-btn,
+  .gallery-filter,
+  .filter-btn,
+  .price-tab-btn,
+  .carousel-dot,
+  .hero-dot,
+  .product-dot {
+    touch-action: manipulation;
+  }
+
+  /* Range sliders need pan-x to allow horizontal drag on touch */
+  input[type="range"] {
+    touch-action: pan-x;
   }
 }
 
@@ -469,6 +495,13 @@
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    overflow: visible !important; /* allow sidebar buttons to receive touch events freely */
+  }
+
+  /* Ensure the paint ripple tracker never intercepts touch events on mobile */
+  .paint-ripple-layer {
+    pointer-events: none !important;
+    touch-action: none !important;
   }
 
   .product-hero-container {
@@ -521,6 +554,10 @@
     pointer-events: auto !important;
     position: relative !important;
     z-index: 100 !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: rgba(255,255,255,0.15) !important;
   }
 
   .sidebar-title,

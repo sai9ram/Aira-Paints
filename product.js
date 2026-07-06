@@ -19,7 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const paletteItems = document.querySelectorAll('.palette-item');
 
   paletteItems.forEach((item) => {
-    item.addEventListener('click', () => {
+
+    // ── Named handler (shared by click + touchend) ──
+    const activatePalette = (e) => {
+      // On touchend we prevent the subsequent synthetic click
+      if (e && e.type === 'touchend') e.preventDefault();
+
       // Toggle active states
       paletteItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
@@ -85,7 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (canGlow) {
         canGlow.style.setProperty('--glow-color', glowColor);
       }
-    });
+    };
+
+    // Click — desktop + some mobile browsers
+    item.addEventListener('click', activatePalette);
+
+    // Touchend — ensures mobile touch taps register even when
+    // the browser would otherwise treat the gesture as a scroll start.
+    // e.preventDefault() stops the duplicate synthetic click.
+    item.addEventListener('touchend', activatePalette, { passive: false });
   });
 
   // ── Cursor Ripple Follower Effect ──
@@ -201,7 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const tablePanels = document.querySelectorAll('.comparison-table .table-panel');
 
   tabBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    const activateTab = (e) => {
+      if (e && e.type === 'touchend') e.preventDefault();
       tabBtns.forEach(b => {
         b.classList.remove('active');
         b.setAttribute('aria-selected', 'false');
@@ -217,7 +231,9 @@ document.addEventListener('DOMContentLoaded', () => {
           panel.classList.remove('active');
         }
       });
-    });
+    };
+    btn.addEventListener('click', activateTab);
+    btn.addEventListener('touchend', activateTab, { passive: false });
   });
 
   // ── Timeline Progress Scroll Tracker ──
@@ -316,7 +332,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const chipsContainer = document.getElementById('color-chips-container');
 
   filterChips.forEach((chip) => {
-    chip.addEventListener('click', () => {
+    const activateChip = (e) => {
+      if (e && e.type === 'touchend') e.preventDefault();
       if (chip.classList.contains('active')) return;
 
       filterChips.forEach(c => c.classList.remove('active'));
@@ -358,7 +375,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }, 300);
       }
-    });
+    };
+    chip.addEventListener('click', activateChip);
+    chip.addEventListener('touchend', activateChip, { passive: false });
   });
 
   window.addEventListener('scroll', () => {
