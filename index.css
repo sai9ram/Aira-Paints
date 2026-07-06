@@ -2595,8 +2595,8 @@ nav a:hover::after {
   .product-slide {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    padding: 7rem 5% 4rem;
-    gap: 2rem;
+    padding: 4.5rem 5% 5.5rem;
+    gap: 1.5rem;
     align-content: start;
   }
 
