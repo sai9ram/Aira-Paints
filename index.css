@@ -851,22 +851,24 @@ nav a:hover::after {
 
 @media (max-width: 480px) {
   .hero-slide .product-can-wrap {
-    width: 260px;
-    height: 320px;
+    width: 290px;
+    height: 350px;
+    margin: 0 auto;
   }
   .hero-slide .product-can-img {
-    height: 270px;
+    height: 310px;
   }
   .hero-slide .can-glow {
-    width: 200px;
-    height: 70px;
+    width: 240px;
+    height: 80px;
   }
   .product-slide .product-can-wrap {
-    width: 250px;
-    height: 300px;
+    width: 290px;
+    height: 350px;
+    margin: 0 auto;
   }
   .product-slide .product-can-img {
-    height: 250px;
+    height: 310px;
   }
 }
 
