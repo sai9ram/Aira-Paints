@@ -67,10 +67,12 @@
   opacity: 0;
   transition: opacity 0.3s ease;
   backdrop-filter: blur(4px);
+  pointer-events: none; /* CRITICAL: prevents blocking page clicks when hidden */
 }
 
 .mobile-nav-overlay.active {
   opacity: 1;
+  pointer-events: auto; /* Only capture clicks when overlay is actually visible */
 }
 
 .mobile-nav-drawer {
@@ -207,9 +209,10 @@
     display: flex;
   }
 
-  /* Show overlay when active */
+  /* Show overlay when menu is open (pointer-events handled in base styles) */
   .mobile-nav-overlay {
     display: block;
+    pointer-events: none; /* stays non-blocking until .active is added by JS */
   }
 }
 
