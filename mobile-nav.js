@@ -43,4 +43,10 @@
   drawer.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Close on close button click
+  const closeBtn = document.getElementById('drawer-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
+  }
 })();
