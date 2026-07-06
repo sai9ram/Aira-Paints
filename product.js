@@ -20,11 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   paletteItems.forEach((item) => {
 
-    // ── Named handler (shared by click + touchend) ──
-    const activatePalette = (e) => {
-      // On touchend we prevent the subsequent synthetic click
-      if (e && e.type === 'touchend') e.preventDefault();
-
+    // ── Named handler (shared by click) ──
+    const activatePalette = () => {
       // Toggle active states
       paletteItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
@@ -92,13 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
-    // Click — desktop + some mobile browsers
+    // Click — desktop + mobile browsers
     item.addEventListener('click', activatePalette);
-
-    // Touchend — ensures mobile touch taps register even when
-    // the browser would otherwise treat the gesture as a scroll start.
-    // e.preventDefault() stops the duplicate synthetic click.
-    item.addEventListener('touchend', activatePalette, { passive: false });
   });
 
   // ── Cursor Ripple Follower Effect ──
