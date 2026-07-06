@@ -1060,6 +1060,32 @@ nav a:hover::after {
   border-radius: 50%;
 }
 
+@media (max-width: 768px) {
+  .hero-slide-content {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+    text-align: center !important;
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-slide-info {
+    align-items: center !important;
+  }
+  .hero-slide-ctas {
+    justify-content: center !important;
+  }
+  .hero-slide-visual {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 1rem !important;
+  }
+}
+
 @media (max-width: 960px) {
   .hero-slide-content {
     grid-template-columns: 1fr;
