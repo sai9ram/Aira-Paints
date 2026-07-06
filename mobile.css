@@ -625,6 +625,22 @@
   }
 
   /* Creative Shades color chips → scroll */
+  .color-section-container {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .color-content-side {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+
   .color-collections-filters {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -632,8 +648,9 @@
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 0.5rem !important;
-    padding: 0.5rem 1rem 1.2rem 0 !important;
+    padding: 0.5rem 0.5rem 1.2rem 0.5rem !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .filter-chip {
