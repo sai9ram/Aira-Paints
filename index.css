@@ -2624,7 +2624,7 @@ nav a:hover::after {
   }
 
   .products-sticky-wrap {
-    height: 600vh;
+    height: 300vh;
   }
 }
 
