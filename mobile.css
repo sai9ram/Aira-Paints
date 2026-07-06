@@ -335,6 +335,29 @@
 }
 
 
+/* Pricing Selector Tabs Row Fix */
+@media (max-width: 768px) {
+  .pricing-tabs-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 1rem 1.2rem 1rem !important;
+    margin-left: -1rem !important;
+    margin-right: -1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  .price-tab-btn {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+
 /* ============================================================
    7. INDEX.HTML — FAQ SECTION
    ============================================================ */
