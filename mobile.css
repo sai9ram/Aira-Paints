@@ -560,6 +560,33 @@
   }
 
   /* Product cards 4-col → 1 col */
+  .categories-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+  }
+
+  .card-visual {
+    height: 200px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+  }
+
+  .card-product-img {
+    max-height: 150px !important;
+  }
+
+  .card-content {
+    padding: 1.2rem !important;
+    gap: 1rem !important;
+  }
+
+  .category-card {
+    border-radius: 20px !important;
+  }
+
+  /* Product cards 4-col → 1 col */
   .prod-cards-grid,
   .products-catalog-grid {
     grid-template-columns: 1fr !important;
