@@ -624,6 +624,25 @@
     padding: 0.6rem 1.2rem !important;
   }
 
+  /* Creative Shades color filter chips → single row scroll on mobile */
+  .color-collections-filters {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.5rem !important;
+    padding: 0.5rem 0.5rem 1rem 0.5rem !important;
+    width: 100% !important;
+  }
+
+  .filter-chip {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1.2rem !important;
+  }
+
   /* Application steps → stack */
   .app-steps-row {
     flex-direction: column !important;
