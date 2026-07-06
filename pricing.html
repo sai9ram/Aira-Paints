@@ -9,6 +9,7 @@
     content="Estimate your paint requirements and costs instantly with our interactive calculator, and compare premium packages for your project.">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="pricing.css?v=1.3">
+  <link rel="stylesheet" href="mobile.css">
   <link rel="icon" type="image/png" href="Aira_Favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous">
@@ -36,7 +37,25 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <!-- Mobile Nav Overlay & Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-label="Mobile navigation">
+    <div class="drawer-logo"><img src="Aira Logo.png" alt="Aira Paints"></div>
+    <a href="story.html">Our Story</a>
+    <a href="product.html">Products</a>
+    <a href="pricing.html" class="active">Pricing</a>
+    <a href="contact.html">Contact</a>
+    <div class="drawer-divider"></div>
+    <div class="drawer-cta">
+      <a href="contact.html">Get a Free Quote</a>
+      <a href="tel:+918122366191" class="secondary-cta">Call Us</a>
+    </div>
+  </div>
 
   <!-- ===== MAIN ===== -->
   <main>
@@ -667,6 +686,7 @@
   </footer>
 
   <script src="pricing.js"></script>
+  <script src="mobile-nav.js"></script>
 </body>
 
 </html>
