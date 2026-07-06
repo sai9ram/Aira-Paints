@@ -624,7 +624,7 @@
     padding: 0.6rem 1.2rem !important;
   }
 
-  /* Creative Shades color filter chips → single row scroll on mobile */
+  /* Creative Shades color chips → scroll */
   .color-collections-filters {
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -632,7 +632,7 @@
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 0.5rem !important;
-    padding: 0.5rem 0.5rem 1rem 0.5rem !important;
+    padding: 0.5rem 1rem 1.2rem 0 !important;
     width: 100% !important;
   }
 
@@ -640,7 +640,7 @@
     white-space: nowrap !important;
     flex-shrink: 0 !important;
     font-size: 0.8rem !important;
-    padding: 0.6rem 1.2rem !important;
+    padding: 0.5rem 1.1rem !important;
   }
 
   /* Application steps → stack */
