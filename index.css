@@ -49,7 +49,7 @@ body {
   font-family: var(--font-body);
   background-color: var(--sand);
   color: var(--charcoal);
-  overflow-x: hidden;
+  overflow-x: clip; /* clip prevents horizontal overflow WITHOUT creating a scroll container — keeps position:sticky working */
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

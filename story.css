@@ -6,7 +6,7 @@ body.story-page {
   background-color: var(--sand);
   color: var(--charcoal);
   transition: background-color 1s ease, color 1s ease;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip prevents horizontal overflow WITHOUT creating a scroll container */
 }
 
 body.story-page.dark-theme {
