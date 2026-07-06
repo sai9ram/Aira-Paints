@@ -461,8 +461,11 @@
     padding: 6rem 1rem 4rem 1rem !important;
     min-height: auto !important;
     height: auto !important;
-    display: flex;
+    display: flex !important;
     flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .product-hero-container {
@@ -470,21 +473,26 @@
     padding: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* Hide left & right sidebars on mobile and display elements inside/below stage if needed */
+  /* Hide left & right sidebars on mobile to avoid layout stretch and white space */
   .hero-sidebar-left,
   .hero-sidebar-right {
-    position: static !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
     transform: none !important;
     width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 1rem 0 !important;
+    margin: 0 auto !important;
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     gap: 0.5rem !important;
+    box-sizing: border-box !important;
   }
 
   .sidebar-palette-list,
@@ -698,8 +706,14 @@
    13. GENERAL OVERFLOW / PREVENT HORIZONTAL SCROLL
    ============================================================ */
 @media (max-width: 768px) {
-  body {
-    overflow-x: hidden;
+  html, body {
+    overflow-x: hidden !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  main, section, div, header {
+    max-width: 100% !important;
   }
 
   img {
