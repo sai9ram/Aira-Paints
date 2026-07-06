@@ -518,45 +518,43 @@
     display: none !important;
   }
 
-  /* Resize Central Showcase Stage to fit mobile screen without overflowing */
+  /* Resize Central Showcase Stage — auto height, clip overflow so badges
+     can't spill up and intercept palette-button clicks */
   .central-showcase-stage {
     width: 100% !important;
-    max-width: 290px !important;
-    height: 290px !important;
-    margin: 1rem auto !important;
+    max-width: 260px !important;
+    height: 240px !important;
+    margin: 0.5rem auto !important;
+    overflow: hidden !important;  /* keeps children inside — no upward spill */
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Hide floating splash decorations so nothing leaks outside the stage */
+  .floating-splash {
+    display: none !important;
   }
 
   .rotating-paint-bucket {
-    max-width: 160px !important;
+    max-width: 150px !important;
   }
 
   .can-glow {
-    width: 120px !important;
-    height: 120px !important;
+    width: 100px !important;
+    height: 100px !important;
   }
 
   .hero-gradient-glow {
-    width: 260px !important;
-    height: 260px !important;
+    width: 220px !important;
+    height: 220px !important;
   }
 
-  /* Hide or stack benefit badges on mobile */
+  /* Hide the badges container entirely on mobile — it overflows the stage
+     and blocks palette-button click events, breaking product switching */
+  .showcase-badges-container,
   .benefit-badge {
-    position: static !important;
-    animation: none !important;
-    margin: 0.25rem !important;
-    display: inline-flex !important;
-    font-size: 0.75rem !important;
-    padding: 0.5rem 0.8rem !important;
-  }
-
-  .showcase-badges-container {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    margin-top: 1rem !important;
+    display: none !important;
+    pointer-events: none !important;
   }
 
   /* Product cards 4-col → 1 col */
