@@ -590,16 +590,16 @@
     display: none !important;
   }
 
-  .rotating-paint-bucket {
+  .product-hero-section .rotating-paint-bucket {
     max-width: 150px !important;
   }
 
-  .can-glow {
+  .product-hero-section .can-glow {
     width: 100px !important;
     height: 100px !important;
   }
 
-  .hero-gradient-glow {
+  .product-hero-section .hero-gradient-glow {
     width: 220px !important;
     height: 220px !important;
   }
