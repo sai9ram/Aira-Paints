@@ -525,14 +525,12 @@
     display: none !important;
   }
 
-  /* Resize Central Showcase Stage — auto height, clip overflow so badges
-     can't spill up and intercept palette-button clicks */
+  /* Resize Central Showcase Stage — auto height */
   .central-showcase-stage {
     width: 100% !important;
     max-width: 260px !important;
     height: 240px !important;
     margin: 0.5rem auto !important;
-    overflow: hidden !important;  /* keeps children inside — no upward spill */
     flex-direction: column !important;
     gap: 0 !important;
   }
