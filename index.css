@@ -851,16 +851,16 @@ nav a:hover::after {
 
 @media (max-width: 480px) {
   .hero-slide .product-can-wrap {
-    width: 320px;
-    height: 380px;
+    width: 350px;
+    height: 410px;
     margin: 0 auto;
   }
   .hero-slide .product-can-img {
-    height: 350px;
+    height: 380px;
   }
   .hero-slide .can-glow {
-    width: 270px;
-    height: 90px;
+    width: 300px;
+    height: 100px;
   }
   /* Center the visual on active slides by ensuring there is no horizontal transform */
   .hero-slide .hero-slide-visual {
