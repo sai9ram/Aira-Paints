@@ -1369,14 +1369,6 @@ nav a:hover::after {
    RESPONSIVE
    ============================================ */
 @media (max-width: 900px) {
-  .hero-stage {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    padding: 100px 6% 2rem;
-    gap: 2rem;
-    align-content: center;
-  }
-
   .hero-text h1 {
     font-size: 2.4rem;
     letter-spacing: -1px;

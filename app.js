@@ -1,21 +1,21 @@
 /* ============================================================
    AIRA PAINTS — Hero Scrollytelling Controller
-   Stack + Fade approach: no translateX, no overflow clipping.
-   Scroll progress picks which slide is active → opacity change.
+   Stack + Fade: scroll progress picks which slide is active.
+   Works identically on desktop and mobile.
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── DOM ─────────────────────────────────────── */
-  const heroSection  = document.getElementById('hero');
-  const heroSlides   = document.querySelectorAll('.hero-slide');
-  const heroDots     = document.querySelectorAll('.hero-dot');
-  const header       = document.getElementById('site-header');
-  const scrollHint   = document.getElementById('hero-scroll-hint');
+  const heroSection = document.getElementById('hero');
+  const heroSlides  = document.querySelectorAll('.hero-slide');
+  const heroDots    = document.querySelectorAll('.hero-dot');
+  const header      = document.getElementById('site-header');
+  const scrollHint  = document.getElementById('hero-scroll-hint');
 
-  if (!heroSection) return;
+  if (!heroSection || heroSlides.length === 0) return;
 
-  /* ── Layout cache (use offsetTop, never getBCR) ─ */
+  /* ── Layout cache ─────────────────────────────── */
   let sectionTop      = 0;
   let scrollableRange = 0;
 
@@ -26,44 +26,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
 
-  /* ── Tick ───────────────────────────────────── */
+  /* ── Tick ─────────────────────────────────────── */
   function animate(scrollY) {
-    /* 0 → 1 through the 400 vh scroll range */
-    const progress = clamp(
+    const progress  = clamp(
       scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
       0, 1
     );
-
-    /* Which of the 4 slides should be visible (0–3) */
     const activeIdx = clamp(Math.floor(progress * 4), 0, 3);
 
-    /* Toggle .active — CSS handles the fade + Match & Move */
     heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
     heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
 
-    /* Hide scroll hint once user has scrolled */
     if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
-
-    /* Compact header after first scroll */
-    header.classList.toggle('scrolled', scrollY > 20);
+    if (header)     header.classList.toggle('scrolled', scrollY > 20);
   }
 
-  /* ── rAF-throttled scroll listener ─────────── */
+  /* ── rAF-throttled scroll listener ───────────── */
   let lastScrollY = window.scrollY;
   let ticking     = false;
 
   window.addEventListener('scroll', () => {
     lastScrollY = window.scrollY;
     if (!ticking) {
-      requestAnimationFrame(() => {
-        animate(lastScrollY);
-        ticking = false;
-      });
+      requestAnimationFrame(() => { animate(lastScrollY); ticking = false; });
       ticking = true;
     }
   }, { passive: true });
 
-  /* ── Dot click → scroll to that slide ────────── */
+  /* ── Dot click → scroll to that slide ──────────── */
   heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
       window.scrollTo({
@@ -73,14 +63,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ── Recalculate on resize ───────────────────── */
+  /* ── Recalculate on resize ──────────────────────── */
   window.addEventListener('resize', () => { cacheLayout(); animate(window.scrollY); });
 
-  /* ── Boot ───────────────────────────────────── */
+  /* ── Boot ────────────────────────────────────── */
   cacheLayout();
   animate(window.scrollY);
 
 });
+
+
 
 
 
@@ -127,15 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Stats Counter Animation ── */
   function animateCounter(el, target, duration = 1800) {
-    const start     = performance.now();
-    const startVal  = 0;
+    const start = performance.now();
+    const startVal = 0;
 
     function step(now) {
-      const elapsed  = now - start;
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
       // Ease out cubic
-      const eased    = 1 - Math.pow(1 - progress, 3);
-      const current  = Math.round(startVal + (target - startVal) * eased);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startVal + (target - startVal) * eased);
       el.textContent = current.toLocaleString('en-IN');
       if (progress < 1) requestAnimationFrame(step);
     }
@@ -190,8 +182,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Story Counter + Progress Bar Animation ── */
   function runStoryCounter(el, target, duration = 2000) {
-    const start    = performance.now();
-    const bar      = el.closest('.story-counter-item')?.querySelector('.counter-bar');
+    const start = performance.now();
+    const bar = el.closest('.story-counter-item')?.querySelector('.counter-bar');
 
     // Trigger bar fill
     if (bar) {
@@ -201,10 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function step(now) {
-      const elapsed  = now - start;
+      const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased    = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-      const current  = Math.round(target * eased);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.round(target * eased);
       el.textContent = current.toLocaleString('en-IN');
       if (progress < 1) requestAnimationFrame(step);
     }
@@ -237,13 +229,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const storyVideo = document.getElementById('story-video');
   if (storyVideo) {
     window.addEventListener('scroll', () => {
-      const section   = document.getElementById('story');
+      const section = document.getElementById('story');
       if (!section) return;
-      const rect      = section.getBoundingClientRect();
-      const inView    = rect.top < window.innerHeight && rect.bottom > 0;
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
       if (!inView) return;
-      const pct       = 1 - (rect.bottom / (window.innerHeight + rect.height));
-      const offset    = Math.round(pct * 40); // max 40px parallax
+      const pct = 1 - (rect.bottom / (window.innerHeight + rect.height));
+      const offset = Math.round(pct * 40); // max 40px parallax
       storyVideo.style.transform = `translateY(${offset}px) scale(1.05)`;
     }, { passive: true });
   }
@@ -257,11 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const stickyWrap   = document.getElementById('products-sticky-wrap');
-  const slides       = document.querySelectorAll('.product-slide');
-  const dots         = document.querySelectorAll('.product-dot');
+  const stickyWrap = document.getElementById('products-sticky-wrap');
+  const slides = document.querySelectorAll('.product-slide');
+  const dots = document.querySelectorAll('.product-dot');
   const progressFill = document.getElementById('products-progress-fill');
-  const stage        = document.getElementById('products-stage');
+  const stage = document.getElementById('products-stage');
 
   if (!stickyWrap || !slides.length) return;
 
@@ -290,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         slide.removeAttribute('aria-hidden');
       } else {
         if (i === prev) slide.classList.add('exit');
-        else            slide.classList.remove('exit');
+        else slide.classList.remove('exit');
         slide.classList.remove('active');
         slide.setAttribute('aria-hidden', 'true');
       }
@@ -314,9 +306,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* Calculate active slide from scroll position */
   function updateShowcase() {
-    const rect      = stickyWrap.getBoundingClientRect();
-    const scrolled  = -rect.top; // how far past the top of the wrapper
-    const zoneH     = stickyWrap.offsetHeight / TOTAL; // 100vh per product
+    const rect = stickyWrap.getBoundingClientRect();
+    const scrolled = -rect.top; // how far past the top of the wrapper
+    const zoneH = stickyWrap.offsetHeight / TOTAL; // 100vh per product
 
     if (scrolled < 0) {
       // Above section — show first slide
@@ -334,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Dot click → jump-scroll to product zone */
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      const rect   = stickyWrap.getBoundingClientRect();
-      const zoneH  = stickyWrap.offsetHeight / TOTAL;
+      const rect = stickyWrap.getBoundingClientRect();
+      const zoneH = stickyWrap.offsetHeight / TOTAL;
       const target = window.scrollY + rect.top + zoneH * i + 10;
       window.scrollTo({ top: target, behavior: 'smooth' });
     });
@@ -362,9 +354,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const sustainSection = document.getElementById('sustainability');
-  const sustainImg     = document.querySelector('.sustain-showcase-img');
-  const shape1         = document.getElementById('sustain-shape-1');
-  const shape2         = document.getElementById('sustain-shape-2');
+  const sustainImg = document.querySelector('.sustain-showcase-img');
+  const shape1 = document.getElementById('sustain-shape-1');
+  const shape2 = document.getElementById('sustain-shape-2');
 
   if (!sustainSection) return;
 
@@ -399,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const filterButtons = document.querySelectorAll('.gallery-filters .filter-btn');
-  const galleryCards  = document.querySelectorAll('#gallery-grid .gallery-card');
+  const galleryCards = document.querySelectorAll('#gallery-grid .gallery-card');
 
   if (!filterButtons.length || !galleryCards.length) return;
 
@@ -437,10 +429,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // ── 1. Video Testimonial Carousel ──
-  const track         = document.getElementById('testimonial-carousel');
-  const cards         = document.querySelectorAll('#testimonial-carousel .testimonial-card');
-  const prevBtn       = document.getElementById('carousel-prev');
-  const nextBtn       = document.getElementById('carousel-next');
+  const track = document.getElementById('testimonial-carousel');
+  const cards = document.querySelectorAll('#testimonial-carousel .testimonial-card');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
   const dotsContainer = document.getElementById('carousel-dots');
 
   if (track && cards.length) {
@@ -509,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const testimonialCards = document.querySelectorAll('.testimonial-card');
   testimonialCards.forEach(card => {
     const playBtn = card.querySelector('.play-btn');
-    const video   = card.querySelector('.testimonial-video');
+    const video = card.querySelector('.testimonial-video');
     const mediaWrap = card.querySelector('.card-media-wrap');
 
     if (playBtn && video && mediaWrap) {
@@ -548,9 +540,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ── 2. Before / After Interactive Slider ──
-  const slider      = document.getElementById('ba-range-slider');
+  const slider = document.getElementById('ba-range-slider');
   const beforeState = document.getElementById('before-state');
-  const sliderLine  = document.getElementById('ba-slider-line');
+  const sliderLine = document.getElementById('ba-slider-line');
 
   if (slider && beforeState && sliderLine) {
     slider.addEventListener('input', (e) => {
@@ -562,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 3. Sizing & Pricing Tabs Selector ──
   const priceTabBtns = document.querySelectorAll('.price-tab-btn');
-  const priceCards   = document.querySelectorAll('.price-card');
+  const priceCards = document.querySelectorAll('.price-card');
 
   if (priceTabBtns.length && priceCards.length) {
     priceTabBtns.forEach(btn => {
@@ -593,23 +585,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const calcVolText = document.getElementById('calc-volume-needed');
   const priceEconomyText = document.getElementById('calc-price-economy');
   const pricePremiumText = document.getElementById('calc-price-premium');
-  const priceLuxuryText  = document.getElementById('calc-price-luxury');
+  const priceLuxuryText = document.getElementById('calc-price-luxury');
 
   function calculateCheapestBucketMix(litres, seriesPrices) {
     let remaining = litres;
     let cost = 0;
-    
+
     if (remaining >= 20) {
       const qty20 = Math.floor(remaining / 20);
       cost += qty20 * seriesPrices[20];
       remaining = remaining % 20;
     }
-    
+
     if (remaining > 0) {
       let opt1 = seriesPrices[20]; // 20L option
       let opt2 = 0; // Mix option
       let rem2 = remaining;
-      
+
       if (rem2 >= 10) {
         opt2 += seriesPrices[10];
         rem2 -= 10;
@@ -620,10 +612,10 @@ document.addEventListener('DOMContentLoaded', () => {
         rem2 = rem2 % 4;
       }
       opt2 += rem2 * seriesPrices[1];
-      
+
       let opt3 = remaining <= 10 ? seriesPrices[10] : Infinity;
       let opt4 = remaining <= 4 ? seriesPrices[4] : Infinity;
-      
+
       cost += Math.min(opt1, opt2, opt3, opt4);
     }
     return cost;
@@ -631,20 +623,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateEstimatorStats() {
     if (!carpetInput || !coatsSelect || !calcVolText) return;
-    
+
     const carpetArea = parseFloat(carpetInput.value) || 0;
     const coats = parseInt(coatsSelect.value) || 2;
-    
+
     // Coverage: ~120 sq. ft. per Litre per coat
     const totalLitres = Math.ceil((carpetArea * coats) / 120);
     calcVolText.textContent = `~${totalLitres} Litres`;
-    
+
     const pricesDef = {
       economy: { 20: 4299, 10: 2199, 4: 949, 1: 249 },
       premium: { 20: 6899, 10: 3499, 4: 1499, 1: 399 },
-      luxury:  { 20: 9899, 10: 4999, 4: 2099, 1: 549 }
+      luxury: { 20: 9899, 10: 4999, 4: 2099, 1: 549 }
     };
-    
+
     if (priceEconomyText) {
       const price = calculateCheapestBucketMix(totalLitres, pricesDef.economy);
       priceEconomyText.textContent = `₹${price.toLocaleString('en-IN')}`;
@@ -667,10 +659,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── 5. Dealer Registration Popup Modal Controller ──
-  const openModalBtn  = document.getElementById('open-dealer-modal-btn');
+  const openModalBtn = document.getElementById('open-dealer-modal-btn');
   const closeModalBtn = document.getElementById('close-dealer-modal');
-  const dealerModal   = document.getElementById('dealer-popup-modal');
-  const dealerForm    = document.getElementById('dealer-modal-form');
+  const dealerModal = document.getElementById('dealer-popup-modal');
+  const dealerForm = document.getElementById('dealer-modal-form');
 
   if (openModalBtn && closeModalBtn && dealerModal) {
     const showModal = () => {
