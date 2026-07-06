@@ -318,13 +318,23 @@
     font-size: 0.75rem !important;
   }
 
-  .hero-slider-track {
-    min-height: 100svh;
+  .hero-slide {
+    padding-top: 5rem !important;
+    padding-bottom: 2rem !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  .hero-slide {
-    padding-top: 6rem;
-    padding-bottom: 3rem;
+  .hero-stage {
+    height: 100vh !important;
+    height: 100dvh !important;
+  }
+
+  .hero-section {
+    height: 400vh !important;
   }
 
   /* Hide decorative ghost words on small screens */
