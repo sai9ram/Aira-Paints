@@ -493,15 +493,19 @@
     justify-content: center !important;
     gap: 0.5rem !important;
     box-sizing: border-box !important;
+    z-index: 99 !important;
+    pointer-events: auto !important;
   }
 
   .sidebar-palette-list,
   .sidebar-stats-list {
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     width: 100% !important;
     gap: 0.5rem !important;
+    pointer-events: auto !important;
   }
 
   .palette-item,
@@ -511,6 +515,9 @@
     border-radius: 12px !important;
     flex: 1 1 calc(50% - 0.5rem) !important;
     max-width: 180px !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 100 !important;
   }
 
   .sidebar-title,
