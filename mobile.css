@@ -765,7 +765,7 @@
     width: 100% !important;
   }
 
-  main, section, div, header {
+  main, div, header {
     max-width: 100% !important;
   }
 
