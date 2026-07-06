@@ -242,35 +242,6 @@
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
   }
-
-  /* Touch-action: manipulation on all interactive elements removes the
-     300ms tap delay and prevents scroll-gesture interception on buttons */
-  button,
-  a,
-  [role="button"],
-  input[type="range"],
-  input[type="radio"],
-  input[type="checkbox"],
-  select,
-  .btn,
-  .palette-item,
-  .filter-chip,
-  .tab-btn,
-  .comp-tab-btn,
-  .grade-btn,
-  .gallery-filter,
-  .filter-btn,
-  .price-tab-btn,
-  .carousel-dot,
-  .hero-dot,
-  .product-dot {
-    touch-action: manipulation;
-  }
-
-  /* Range sliders need pan-x to allow horizontal drag on touch */
-  input[type="range"] {
-    touch-action: pan-x;
-  }
 }
 
 
@@ -280,39 +251,26 @@
 @media (max-width: 768px) {
   .hero-slide-content {
     flex-direction: column !important;
-    gap: 1.25rem !important;
-    padding: 0 1.25rem !important;
+    gap: 2rem !important;
+    padding: 0 1.5rem !important;
     text-align: center !important;
     align-items: center !important;
-    justify-content: center !important;
   }
 
   .hero-slide-info {
     order: 1;
     max-width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.8rem !important;
   }
 
   .hero-slide-visual {
     order: 2;
-    width: 160px !important;
-    height: 160px !important;
+    width: 200px !important;
+    height: 200px !important;
     flex-shrink: 0;
-    margin-top: 0.5rem !important;
   }
 
   .hero-slide-title {
-    font-size: clamp(1.8rem, 6.5vw, 2.5rem) !important;
-    margin: 0 !important;
-    line-height: 1.2 !important;
-  }
-
-  .hero-slide-desc {
-    font-size: 0.88rem !important;
-    margin: 0 !important;
-    line-height: 1.5 !important;
+    font-size: clamp(2rem, 7vw, 3rem) !important;
   }
 
   .hero-slide-ctas {
@@ -331,25 +289,13 @@
     font-size: 0.75rem !important;
   }
 
+  .hero-slider-track {
+    min-height: 100svh;
+  }
+
   .hero-slide {
-    padding-top: 7.5rem !important;
-    padding-bottom: 5.5rem !important;
-    height: 100% !important;
-    min-height: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-sizing: border-box !important;
-  }
-
-  .hero-stage {
-    height: 100vh !important;
-    height: 100dvh !important;
-  }
-
-  .hero-section {
-    height: 400vh !important;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
   }
 
   /* Hide decorative ghost words on small screens */
@@ -520,13 +466,6 @@
     align-items: center !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    overflow: visible !important; /* allow sidebar buttons to receive touch events freely */
-  }
-
-  /* Ensure the paint ripple tracker never intercepts touch events on mobile */
-  .paint-ripple-layer {
-    pointer-events: none !important;
-    touch-action: none !important;
   }
 
   .product-hero-container {
@@ -554,13 +493,11 @@
     justify-content: center !important;
     gap: 0.5rem !important;
     box-sizing: border-box !important;
-    z-index: 99 !important;
-    pointer-events: auto !important;
+    z-index: 150 !important;
   }
 
   .sidebar-palette-list,
   .sidebar-stats-list {
-    display: flex !important;
     flex-direction: row !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
@@ -578,11 +515,7 @@
     max-width: 180px !important;
     pointer-events: auto !important;
     position: relative !important;
-    z-index: 100 !important;
-    touch-action: manipulation !important;
-    cursor: pointer !important;
-    user-select: none !important;
-    -webkit-tap-highlight-color: rgba(255,255,255,0.15) !important;
+    z-index: 160 !important;
   }
 
   .sidebar-title,
@@ -590,41 +523,45 @@
     display: none !important;
   }
 
-  /* Resize Central Showcase Stage — auto height */
+  /* Resize Central Showcase Stage to fit mobile screen without overflowing */
   .central-showcase-stage {
     width: 100% !important;
-    max-width: 260px !important;
-    height: 240px !important;
-    margin: 0.5rem auto !important;
-    flex-direction: column !important;
-    gap: 0 !important;
+    max-width: 290px !important;
+    height: 290px !important;
+    margin: 1rem auto !important;
   }
 
-  /* Hide floating splash decorations so nothing leaks outside the stage */
-  .floating-splash {
-    display: none !important;
+  .rotating-paint-bucket {
+    max-width: 160px !important;
   }
 
-  .product-hero-section .rotating-paint-bucket {
-    max-width: 150px !important;
+  .can-glow {
+    width: 120px !important;
+    height: 120px !important;
   }
 
-  .product-hero-section .can-glow {
-    width: 100px !important;
-    height: 100px !important;
+  .hero-gradient-glow {
+    width: 260px !important;
+    height: 260px !important;
   }
 
-  .product-hero-section .hero-gradient-glow {
-    width: 220px !important;
-    height: 220px !important;
-  }
-
-  /* Hide the badges container entirely on mobile — it overflows the stage
-     and blocks palette-button click events, breaking product switching */
-  .showcase-badges-container,
+  /* Hide or stack benefit badges on mobile */
   .benefit-badge {
-    display: none !important;
-    pointer-events: none !important;
+    position: static !important;
+    animation: none !important;
+    margin: 0.25rem !important;
+    display: inline-flex !important;
+    font-size: 0.75rem !important;
+    padding: 0.5rem 0.8rem !important;
+  }
+
+  .showcase-badges-container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
   }
 
   /* Product cards 4-col → 1 col */
@@ -780,7 +717,7 @@
     width: 100% !important;
   }
 
-  main, div, header {
+  main, section, div, header {
     max-width: 100% !important;
   }
 
