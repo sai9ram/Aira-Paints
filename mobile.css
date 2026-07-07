@@ -271,7 +271,210 @@
 }
 
 
-/* 5. INDEX.HTML — HERO: Desktop layout and styles are preserved on mobile without modifications */
+/* ============================================================
+   5. INDEX.HTML — HERO: Mobile App Screen Design (Split side-by-side)
+   ============================================================ */
+@media (max-width: 960px) {
+  /* Side-by-side layout for tablets/medium screens */
+  .hero-slide-content {
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 2rem !important;
+    text-align: left !important;
+    padding-top: 6rem !important;
+    padding-bottom: 2rem !important;
+    display: grid !important;
+  }
+  .hero-slide-info {
+    align-items: flex-start !important;
+  }
+  .hero-slide-ctas {
+    justify-content: flex-start !important;
+  }
+  .hero-slide-ctas .btn,
+  .hero-slide-ctas .btn-primary,
+  .hero-slide-ctas .btn-secondary {
+    min-height: 34px !important;
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-stage {
+    position: sticky !important;
+    top: 74px !important; /* Keeps card beautifully docked below the floating header when scrolling */
+    height: 68vh !important;
+    min-height: 440px !important;
+    max-height: 520px !important;
+    overflow: hidden !important;
+    border-radius: 24px !important;
+    margin: 10px !important;
+    margin-top: 72px !important; /* Space below header */
+    width: calc(100% - 20px) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22) !important;
+  }
+
+  .hero-slide {
+    border-radius: 24px !important;
+    overflow: hidden !important;
+  }
+
+  /* Make slide content a side-by-side layout matching desktop with slightly more room for image */
+  .hero-slide-content {
+    display: grid !important;
+    grid-template-columns: 1.05fr 0.95fr !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    text-align: left !important;
+    padding: 0 1.1rem !important;
+    width: 100% !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    padding-top: 0.5rem !important; /* Extremely compact padding */
+  }
+
+  .hero-slide-info {
+    align-items: flex-start !important;
+    gap: 0.45rem !important;
+    width: 100% !important;
+  }
+
+  .hero-slide-tagline {
+    font-size: 0.55rem !important;
+    letter-spacing: 2px !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    margin: 0 !important;
+  }
+
+  .hero-slide-title {
+    font-size: clamp(1.2rem, 5.8vw, 1.8rem) !important;
+    line-height: 1.12 !important;
+    margin: 0 !important;
+  }
+
+  .hero-slide-desc {
+    font-size: 0.75rem !important;
+    line-height: 1.4 !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .hero-slide-ctas {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+    width: 100% !important;
+    margin-top: 0.3rem !important;
+  }
+
+  .hero-slide-ctas .btn,
+  .hero-slide-ctas .btn-primary,
+  .hero-slide-ctas .btn-secondary {
+    width: 100% !important;
+    min-height: 28px !important;
+    padding: 0.35rem 0.6rem !important;
+    font-size: 0.68rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Right Side: Paint Can Visual - Compact sizes */
+  .hero-slide-visual {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-slide .product-can-wrap {
+    width: 130px !important;
+    height: 190px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .hero-slide .product-can-img {
+    height: 165px !important;
+    width: auto !important;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4)) !important;
+  }
+
+  .hero-slide .can-glow {
+    width: 120px !important;
+    height: 120px !important;
+    filter: blur(20px) !important;
+  }
+
+  /* Decorative background elements styling on mobile */
+  .hero-slide .slide-ghost-word {
+    font-size: clamp(2.8rem, 8vw, 3.8rem) !important;
+    right: 2% !important;
+    bottom: 8% !important;
+    transform: none !important;
+  }
+
+  /* Re-enable and scale down background orbs/rings for premium look */
+  .hero-slide .slide-orb {
+    width: 100px !important;
+    height: 100px !important;
+    filter: blur(35px) !important;
+  }
+
+  .hero-slide .slide-ring {
+    display: block !important;
+    border-width: 1px !important;
+    width: 130px !important;
+    height: 130px !important;
+  }
+
+  /* Compact pagination dots */
+  .hero-pagination {
+    bottom: 1.2rem !important;
+  }
+}
+
+/* Extra small screens adjustments */
+@media (max-width: 380px) {
+  .hero-slide-content {
+    grid-template-columns: 1.2fr 0.8fr !important;
+    padding: 0 0.8rem !important;
+    gap: 0.4rem !important;
+  }
+  .hero-slide-title {
+    font-size: 1.15rem !important;
+  }
+  .hero-slide-desc {
+    font-size: 0.72rem !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hero-slide .product-can-wrap {
+    width: 105px !important;
+    height: 150px !important;
+  }
+  .hero-slide .product-can-img {
+    height: 130px !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .hero-slide .hero-slide-visual {
+    transform: translateX(20px) scale(0.92) !important;
+    opacity: 0 !important;
+  }
+  .hero-slide.active .hero-slide-visual {
+    transform: translateX(0) scale(1) !important;
+    opacity: 1 !important;
+  }
+}
+
 
 
 /* ============================================================
@@ -803,18 +1006,16 @@
     border-radius: 60px !important;
   }
 
+  /* Allow hero and product visuals to scale naturally based on section 5 and 5.5 rules */
   .hero-slide-visual {
-    width: 160px !important;
-    height: 160px !important;
-  }
-
-  .product-can-img {
-    max-height: 160px !important;
+    width: auto !important;
+    height: auto !important;
   }
 
   .btn {
-    font-size: 0.85rem !important;
-    padding: 0.7rem 1.2rem !important;
+    font-size: 0.75rem !important;
+    padding: 0.45rem 0.9rem !important;
+    min-height: 32px !important;
   }
 
   .color-palette-grid,
@@ -826,3 +1027,135 @@
     flex-direction: column !important;
   }
 }
+
+/* ============================================================
+   15. INDEX.HTML — PRODUCT SHOWCASE: Large, appealing product cans on mobile
+   ============================================================ */
+@media (max-width: 768px) {
+  .products-sticky-wrap {
+    height: 580vh !important; /* Keep final slide pinned longer */
+  }
+
+  .products-stage {
+    position: sticky !important;
+    top: 74px !important; /* Keep below floating header on mobile */
+    height: calc(100vh - 74px) !important; /* Fits viewport area below nav bar */
+  }
+
+  .product-slide {
+    padding: 2.2rem 1.25rem 4.5rem !important;
+    gap: 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .product-slide .slide-info {
+    padding-bottom: 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .product-slide .slide-title {
+    font-size: 1.6rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .product-slide .slide-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.5rem !important;
+    max-width: 90% !important;
+  }
+
+  /* Display features in a 2x2 grid to save substantial vertical space and avoid pushing the button off-screen */
+  .product-slide .slide-features {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.4rem 1rem !important;
+    margin: 0.4rem auto 0.8rem !important;
+    padding: 0 !important;
+    list-style: none !important;
+    max-width: 320px !important;
+    text-align: left !important;
+  }
+
+  .product-slide .slide-features li {
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+
+  .product-slide .slide-cta {
+    align-self: center !important;
+    margin-top: 0.2rem !important;
+  }
+
+  .product-slide .slide-visual {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  /* Compact the paint can visual size to fit smaller viewports */
+  .product-slide .product-can-wrap {
+    width: 130px !important;
+    height: 170px !important;
+    margin: 0 auto !important;
+  }
+
+  .product-slide .product-can-img {
+    height: 150px !important;
+    width: auto !important;
+    max-height: none !important;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35)) !important;
+  }
+
+  .product-slide .can-glow {
+    width: 110px !important;
+    height: 110px !important;
+    filter: blur(20px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-slide {
+    padding: 1.8rem 1rem 4rem !important;
+  }
+
+  .product-slide .slide-info {
+    padding-bottom: 1.2rem !important;
+  }
+
+  .product-slide .slide-title {
+    font-size: 1.4rem !important;
+  }
+
+  .product-slide .slide-desc {
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-slide .slide-features li {
+    font-size: 0.72rem !important;
+  }
+
+  .product-slide .product-can-wrap {
+    width: 110px !important;
+    height: 140px !important;
+  }
+
+  .product-slide .product-can-img {
+    height: 125px !important;
+  }
+
+  .product-slide .can-glow {
+    width: 90px !important;
+    height: 90px !important;
+  }
+}
+
