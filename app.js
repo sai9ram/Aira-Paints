@@ -18,16 +18,49 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Layout cache ─────────────────────────────── */
   let sectionTop      = 0;
   let scrollableRange = 0;
+  let isMobile        = window.innerWidth <= 768;
 
   function cacheLayout() {
     sectionTop      = heroSection.offsetTop;
     scrollableRange = heroSection.offsetHeight - window.innerHeight;
+    isMobile        = window.innerWidth <= 768;
   }
 
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
 
+  /* ── Mobile Autoplay Slider ──────────────────── */
+  let mobileActiveIdx = 0;
+  let autoplayTimer   = null;
+
+  function setSlide(idx) {
+    heroSlides.forEach((s, i) => s.classList.toggle('active', i === idx));
+    heroDots.forEach((d, i)   => d.classList.toggle('active', i === idx));
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoplayTimer = setInterval(() => {
+      mobileActiveIdx = (mobileActiveIdx + 1) % heroSlides.length;
+      setSlide(mobileActiveIdx);
+    }, 4000);
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
   /* ── Tick ─────────────────────────────────────── */
   function animate(scrollY) {
+    if (header)     header.classList.toggle('scrolled', scrollY > 20);
+    if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
+
+    if (isMobile) {
+      return;
+    }
+
     const progress  = clamp(
       scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
       0, 1
@@ -36,9 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
     heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
-
-    if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
-    if (header)     header.classList.toggle('scrolled', scrollY > 20);
   }
 
   /* ── rAF-throttled scroll listener ───────────── */
@@ -53,21 +83,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, { passive: true });
 
-  /* ── Dot click → scroll to that slide ──────────── */
+  /* ── Dot click ───────────────────────────── */
   heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      window.scrollTo({
-        top: sectionTop + (i / 3) * scrollableRange,
-        behavior: 'smooth'
-      });
+      if (isMobile) {
+        mobileActiveIdx = i;
+        setSlide(i);
+        startAutoplay();
+      } else {
+        window.scrollTo({
+          top: sectionTop + (i / 3) * scrollableRange,
+          behavior: 'smooth'
+        });
+      }
     });
   });
 
   /* ── Recalculate on resize ──────────────────────── */
-  window.addEventListener('resize', () => { cacheLayout(); animate(window.scrollY); });
+  window.addEventListener('resize', () => {
+    const wasMobile = isMobile;
+    cacheLayout();
+    if (isMobile) {
+      if (!wasMobile) {
+        startAutoplay();
+      }
+    } else {
+      stopAutoplay();
+    }
+    animate(window.scrollY);
+  });
 
   /* ── Boot ────────────────────────────────────── */
   cacheLayout();
+  if (isMobile) {
+    startAutoplay();
+  }
   animate(window.scrollY);
 
 });
@@ -710,21 +760,34 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 6. Animated Splash Screen Controller ──
   const splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    // Phase 1: Fade out logo content slightly before split (2.0s)
+    // Fade out splash overlay directly (10.0s)
     setTimeout(() => {
       splashScreen.classList.add('splash-fade-out');
-    }, 2000);
-
-    // Phase 2: Split panels left/right (2.5s)
-    setTimeout(() => {
-      splashScreen.classList.add('splash-completed');
       document.body.classList.remove('loading');
-    }, 2500);
+    }, 10000);
 
-    // Phase 3: Completely remove element from DOM after transition finishes (3.7s)
+    // Completely remove element from DOM after transition finishes (11.2s)
     setTimeout(() => {
       splashScreen.remove();
-    }, 3700);
+    }, 11200);
+
+    // Auto-trigger the Quick Enquiry Modal 3 seconds after the landing page content is revealed (13.0s total)
+    setTimeout(() => {
+      const modal = document.getElementById('enquiry-popup-modal');
+      if (modal && modal.getAttribute('aria-hidden') === 'true') {
+        modal.removeAttribute('aria-hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }, 13000);
+  } else {
+    // Fallback: If no splash screen (e.g. if disabled or hot-reloading), pop up in 3 seconds directly
+    setTimeout(() => {
+      const modal = document.getElementById('enquiry-popup-modal');
+      if (modal && modal.getAttribute('aria-hidden') === 'true') {
+        modal.removeAttribute('aria-hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }, 3000);
   }
 });
 

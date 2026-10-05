@@ -300,12 +300,17 @@
 }
 
 @media (max-width: 768px) {
+  #hero {
+    height: auto !important;
+  }
+
   .hero-stage {
-    position: sticky !important;
-    top: 74px !important; /* Keeps card beautifully docked below the floating header when scrolling */
-    height: 68vh !important;
-    min-height: 440px !important;
-    max-height: 520px !important;
+    position: relative !important;
+    top: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
     overflow: hidden !important;
     border-radius: 24px !important;
     margin: 10px !important;
@@ -347,14 +352,14 @@
   }
 
   .hero-slide-title {
-    font-size: clamp(1.2rem, 5.8vw, 1.8rem) !important;
-    line-height: 1.12 !important;
+    font-size: clamp(0.95rem, 4.2vw, 1.4rem) !important;
+    line-height: 1.15 !important;
     margin: 0 !important;
   }
 
   .hero-slide-desc {
-    font-size: 0.75rem !important;
-    line-height: 1.4 !important;
+    font-size: clamp(0.58rem, 2.5vw, 0.72rem) !important;
+    line-height: 1.3 !important;
     color: rgba(255, 255, 255, 0.8) !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -362,21 +367,23 @@
 
   .hero-slide-ctas {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 0.4rem !important;
+    flex-direction: row !important;
+    gap: 0.35rem !important;
     width: 100% !important;
-    margin-top: 0.3rem !important;
+    margin-top: 0.2rem !important;
   }
 
   .hero-slide-ctas .btn,
   .hero-slide-ctas .btn-primary,
   .hero-slide-ctas .btn-secondary {
-    width: 100% !important;
-    min-height: 28px !important;
-    padding: 0.35rem 0.6rem !important;
-    font-size: 0.68rem !important;
+    width: auto !important;
+    flex: 1 !important;
+    min-height: 22px !important;
+    padding: 0.25rem 0.4rem !important;
+    font-size: clamp(0.5rem, 1.8vw, 0.62rem) !important;
     text-align: center !important;
     justify-content: center !important;
+    white-space: nowrap !important;
   }
 
   /* Right Side: Paint Can Visual - Compact sizes */
@@ -389,8 +396,8 @@
   }
 
   .hero-slide .product-can-wrap {
-    width: 130px !important;
-    height: 190px !important;
+    width: 90px !important;
+    height: 125px !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
@@ -398,15 +405,15 @@
   }
 
   .hero-slide .product-can-img {
-    height: 165px !important;
+    height: 105px !important;
     width: auto !important;
-    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4)) !important;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4)) !important;
   }
 
   .hero-slide .can-glow {
-    width: 120px !important;
-    height: 120px !important;
-    filter: blur(20px) !important;
+    width: 80px !important;
+    height: 80px !important;
+    filter: blur(15px) !important;
   }
 
   /* Decorative background elements styling on mobile */
@@ -440,26 +447,26 @@
 /* Extra small screens adjustments */
 @media (max-width: 380px) {
   .hero-slide-content {
-    grid-template-columns: 1.2fr 0.8fr !important;
-    padding: 0 0.8rem !important;
-    gap: 0.4rem !important;
+    grid-template-columns: 1.25fr 0.75fr !important;
+    padding: 0 0.6rem !important;
+    gap: 0.3rem !important;
   }
   .hero-slide-title {
-    font-size: 1.15rem !important;
+    font-size: 0.9rem !important;
   }
   .hero-slide-desc {
-    font-size: 0.72rem !important;
+    font-size: 0.55rem !important;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
   .hero-slide .product-can-wrap {
-    width: 105px !important;
-    height: 150px !important;
+    width: 75px !important;
+    height: 110px !important;
   }
   .hero-slide .product-can-img {
-    height: 130px !important;
+    height: 90px !important;
   }
 }
 
@@ -1159,3 +1166,90 @@
   }
 }
 
+/* ============================================================
+   MOBILE BOTTOM NAVIGATION (APP-LIKE)
+   ============================================================ */
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* Hide the top hamburger button and any extra links on mobile top header */
+  .nav-hamburger,
+  #nav-hamburger,
+  .mobile-nav-overlay,
+  .mobile-nav-drawer {
+    display: none !important;
+  }
+
+  /* Center the logo in the top nav bar on mobile */
+  header, #site-header {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  
+  header .logo, #site-header .logo {
+    margin: 0 auto !important;
+    width: 110px !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  /* Bottom Nav Container */
+  .mobile-bottom-nav {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 60px !important;
+    background: rgba(245, 250, 248, 0.96) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(15, 77, 58, 0.08) !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    z-index: 9999 !important;
+    box-shadow: 0 -4px 20px rgba(15, 77, 58, 0.05) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important; /* support iPhone notch bottom space */
+    box-sizing: content-box !important;
+  }
+
+  .mobile-bottom-nav .nav-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: rgba(15, 77, 58, 0.55) !important;
+    text-decoration: none !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    gap: 3px !important;
+    width: 20% !important;
+    height: 100% !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+  }
+
+  .mobile-bottom-nav .nav-item i {
+    font-size: 1.1rem !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  /* Active state */
+  .mobile-bottom-nav .nav-item.active {
+    color: var(--forest, #0F4D3A) !important;
+  }
+  
+  .mobile-bottom-nav .nav-item.active i {
+    transform: scale(1.08) !important;
+  }
+
+  /* Shift standard content padding bottom slightly to avoid content hidden behind bottom nav */
+  body {
+    padding-bottom: 70px !important;
+  }
+}

@@ -372,6 +372,104 @@ document.addEventListener('DOMContentLoaded', () => {
     chip.addEventListener('touchend', activateChip, { passive: false });
   });
 
+  // ── 1L Eco Final Series Studio Controller ──
+  const ecoVariantBtns = document.querySelectorAll('.eco-variant-btn');
+  const ecoAngleBtns = document.querySelectorAll('.angle-btn');
+  const ecoStudioImg = document.getElementById('eco-studio-img');
+  const ecoStageGlow = document.getElementById('eco-stage-glow');
+  const studioProductName = document.getElementById('studio-product-name');
+  const studioProductDesc = document.getElementById('studio-product-desc');
+  const studioSpecFinish = document.getElementById('studio-spec-finish');
+  const studioSpecVoc = document.getElementById('studio-spec-voc');
+  const studioSpecDrying = document.getElementById('studio-spec-drying');
+
+  let activeVariant = 'green';
+  let activeAngle = 'front';
+
+  const ecoImageMap = {
+    green: {
+      front: 'images/products/1l-eco-green-front.png',
+      side: 'images/products/1l-eco-green-side.png',
+      back: 'images/products/1l-eco-green-back.png',
+      '360': 'images/products/1l-eco-green-360.png'
+    },
+    darkblue: {
+      front: 'images/products/1l-eco-darkblue-front.png',
+      side: 'images/products/1l-eco-darkblue-side.png',
+      back: 'images/products/1l-eco-darkblue-back.png',
+      '360': 'images/products/1l-eco-darkblue-360.png'
+    },
+    violetprimer: {
+      front: 'images/products/1l-eco-violetprimer-front.png',
+      side: 'images/products/1l-eco-violetprimer-side.png',
+      back: 'images/products/1l-eco-violetprimer-back.png',
+      '360': 'images/products/1l-eco-violetprimer-360.png'
+    },
+    skyblue: {
+      front: 'images/products/1l-eco-skyblue-front.png',
+      side: 'images/products/1l-eco-skyblue-side.png',
+      back: 'images/products/1l-eco-skyblue-back.png',
+      '360': 'images/products/1l-eco-skyblue-360.png'
+    },
+    grape: {
+      front: 'images/products/1l-eco-grape-front.png',
+      side: 'images/products/1l-eco-grape-side.png',
+      back: 'images/products/1l-eco-grape-back.png',
+      '360': 'images/products/1l-eco-grape-360.png'
+    }
+  };
+
+  function updateStudioDisplay() {
+    if (!ecoStudioImg) return;
+    const newPath = ecoImageMap[activeVariant]?.[activeAngle] || ecoImageMap.green.front;
+    
+    ecoStudioImg.style.transform = 'scale(0.88) rotate(-4deg)';
+    ecoStudioImg.style.opacity = '0.3';
+    ecoStudioImg.style.filter = 'blur(8px)';
+
+    setTimeout(() => {
+      ecoStudioImg.src = newPath;
+      ecoStudioImg.style.transform = 'scale(1) rotate(0deg)';
+      ecoStudioImg.style.opacity = '1';
+      ecoStudioImg.style.filter = 'drop-shadow(0 20px 35px rgba(0,0,0,0.4))';
+    }, 250);
+  }
+
+  ecoVariantBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      ecoVariantBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      activeVariant = btn.getAttribute('data-variant');
+      const name = btn.getAttribute('data-name');
+      const desc = btn.getAttribute('data-desc');
+      const finish = btn.getAttribute('data-finish');
+      const voc = btn.getAttribute('data-voc');
+      const drying = btn.getAttribute('data-drying');
+      const color = btn.getAttribute('data-color');
+
+      if (studioProductName) studioProductName.textContent = name;
+      if (studioProductDesc) studioProductDesc.textContent = desc;
+      if (studioSpecFinish) studioSpecFinish.textContent = finish;
+      if (studioSpecVoc) studioSpecVoc.innerHTML = voc;
+      if (studioSpecDrying) studioSpecDrying.textContent = drying;
+      if (ecoStageGlow) {
+        ecoStageGlow.style.background = `radial-gradient(circle, ${color}55 0%, rgba(0,0,0,0) 70%)`;
+      }
+
+      updateStudioDisplay();
+    });
+  });
+
+  ecoAngleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      ecoAngleBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeAngle = btn.getAttribute('data-angle');
+      updateStudioDisplay();
+    });
+  });
+
   window.addEventListener('scroll', () => {
     handleCategoriesReveal();
     handleStandoutReveal();

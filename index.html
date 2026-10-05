@@ -20,15 +20,10 @@
 
   <!-- ===== SPLASH SCREEN ===== -->
   <div id="splash-screen" class="splash-overlay">
-    <div class="splash-panel splash-panel-left"></div>
-    <div class="splash-panel splash-panel-right"></div>
-    <div class="splash-content">
-      <div class="splash-paint-glow"></div>
-      <div class="splash-logo-container">
-        <img src="Aira Logo.png" alt="Aira Paints Logo" class="splash-logo">
-      </div>
-      <span class="splash-brand-name">AIRA PAINTS</span>
-      <span class="splash-subtitle">Premium Eco-Friendly Coatings</span>
+    <div class="splash-content full-screen-splash-video">
+      <video class="splash-video-media" autoplay muted playsinline preload="auto">
+        <source src="Aira Original Logo Animation Video (online-video-cutter.com).mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 
@@ -114,7 +109,7 @@
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AirainteriorPaints.png" class="product-can-img" alt="Aira Interior Paints Can">
+                  <img src="images/products/1l-eco-green-front.png" class="product-can-img" alt="Aira Interior Paints Eco Green Can">
                   <div class="can-glow" style="--glow-color:rgba(110,198,176,0.5)"></div>
                 </div>
               </div>
@@ -147,7 +142,7 @@
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraWeatherShield.png" class="product-can-img" alt="Aira Weather Shield Can">
+                  <img src="images/products/1l-eco-darkblue-front.png" class="product-can-img" alt="Aira Weather Shield Dark Blue Can">
                   <div class="can-glow" style="--glow-color:rgba(232,122,69,0.5)"></div>
                 </div>
               </div>
@@ -180,7 +175,7 @@
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraProPrimers.png" class="product-can-img" alt="Aira Pro Primers Can">
+                  <img src="images/products/1l-eco-violetprimer-front.png" class="product-can-img" alt="Aira Violet Pro Primer Can">
                   <div class="can-glow" style="--glow-color:rgba(160,140,200,0.5)"></div>
                 </div>
               </div>
@@ -213,7 +208,7 @@
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraDampProtect.png" class="product-can-img" alt="Aira Damp Protect Can">
+                  <img src="images/products/1l-eco-skyblue-front.png" class="product-can-img" alt="Aira Sky Blue Damp Protect Can">
                   <div class="can-glow" style="--glow-color:rgba(93,173,226,0.5)"></div>
                 </div>
               </div>
@@ -230,11 +225,7 @@
           <span class="hero-dot" data-slide="3"></span>
         </div>
 
-        <!-- Scroll hint -->
-        <div class="hero-scroll-hint" id="hero-scroll-hint">
-          <span>Scroll to explore</span>
-          <div class="hint-arrow">-</div>
-        </div>
+
 
       </div><!-- /hero-stage -->
 
@@ -535,7 +526,7 @@
             <div class="product-slide active" data-slide="0" id="slide-0" role="tabpanel" aria-label="Interior Paints">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AirainteriorPaints.png" class="product-can-img" alt="Aira Interior Paints Can">
+                  <img src="images/products/1l-eco-green-front.png" class="product-can-img" alt="Aira Interior Paints 1L Eco Green Can">
                   <!-- Ambient glow behind can -->
                   <div class="can-glow" style="--glow-color: rgba(110,198,176,0.3)"></div>
                 </div>
@@ -566,7 +557,7 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraWeatherShield.png" class="product-can-img" alt="Aira Weather Shield Can">
+                  <img src="images/products/1l-eco-darkblue-front.png" class="product-can-img" alt="Aira Weather Shield 1L Eco Dark Blue Can">
                   <div class="can-glow" style="--glow-color: rgba(232,122,69,0.3)"></div>
                 </div>
               </div>
@@ -596,7 +587,7 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraProPrimers.png" class="product-can-img" alt="Aira Pro Primers Can">
+                  <img src="images/products/1l-eco-violetprimer-front.png" class="product-can-img" alt="Aira Violet 1L Eco Primer Can">
                   <div class="can-glow" style="--glow-color: rgba(160,140,200,0.3)"></div>
                 </div>
               </div>
@@ -626,7 +617,7 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="AiraDampProtect.png" class="product-can-img" alt="Aira Damp Protect Can">
+                  <img src="images/products/1l-eco-skyblue-front.png" class="product-can-img" alt="Aira Sky Blue 1L Eco Damp Protect Can">
                   <div class="can-glow" style="--glow-color: rgba(74,159,212,0.3)"></div>
                 </div>
               </div>
@@ -2139,61 +2130,31 @@
     </div>
   </div>
 
-  <!-- Dealer Registration Modal -->
-  <div id="dealer-popup-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
-    <div class="modal-card">
-      <button class="modal-close-btn" id="close-dealer-modal" aria-label="Close modal">&times;</button>
-      
-      <div class="modal-header">
-        <h3 id="modal-title">Dealer Registration & Partnership Agreement</h3>
-        <p>Review the agreement terms and complete your merchant registration</p>
-      </div>
 
-      <!-- Agreement Scrollable Area -->
-      <div class="modal-agreement-box">
-        <h4>Aira Paints Authorized Dealer Agreement</h4>
-        <p><strong>1. Scope of Exclusivity:</strong> The dealer is authorized to promote and sell Aira Paints products (Economy, Premium, and Luxury series) within their designated city territory.</p>
-        <p><strong>2. Suggested Merchant Margins:</strong> Margin models are set dynamically to support growth: Economy Series (18% - 22%), Premium Series (22% - 25%), and Luxury Series (25% - 30%).</p>
-        <p><strong>3. Marketing & Support:</strong> Aira Paints agrees to supply retail branding, display racks, and product catalogs. The dealer agrees to allocate display space in-store.</p>
-        <p><strong>4. Environmental Quality Policy:</strong> The dealer agrees to represent and advertise Aira Paints as a premium, low-VOC, eco-friendly product line.</p>
-      </div>
 
-      <!-- Form inside Modal -->
-      <form class="modal-request-form" id="dealer-modal-form">
-        <div class="modal-form-grid">
-          <div class="form-group">
-            <label for="modal-dealer-name">Full Name</label>
-            <input type="text" id="modal-dealer-name" required placeholder="e.g. Ramesh Kumar">
-          </div>
-          <div class="form-group">
-            <label for="modal-dealer-business">Business Name</label>
-            <input type="text" id="modal-dealer-business" required placeholder="e.g. Kumar Paints & Hardware">
-          </div>
-          <div class="form-group">
-            <label for="modal-dealer-phone">Phone Number</label>
-            <input type="tel" id="modal-dealer-phone" required placeholder="e.g. +91 98765 43210">
-          </div>
-          <div class="form-group">
-            <label for="modal-dealer-city">Location (City & District)</label>
-            <input type="text" id="modal-dealer-city" required placeholder="e.g. Mumbai, Maharashtra">
-          </div>
-        </div>
-
-        <div class="form-agreement-checkbox">
-          <input type="checkbox" id="modal-agree-checkbox" required>
-          <label for="modal-agree-checkbox">I read, understand, and agree to the partnership agreement terms.</label>
-        </div>
-
-        <button type="submit" class="btn btn-primary submit-partner-btn">
-          <span>Sign & Submit Application</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </button>
-      </form>
-    </div>
-  </div>
+  <!-- ===== MOBILE BOTTOM NAVIGATION ===== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile bottom navigation">
+    <a href="index.html" class="nav-item active">
+      <i class="fa-solid fa-house"></i>
+      <span>Home</span>
+    </a>
+    <a href="story.html" class="nav-item">
+      <i class="fa-solid fa-users"></i>
+      <span>Story</span>
+    </a>
+    <a href="product.html" class="nav-item">
+      <i class="fa-solid fa-paint-roller"></i>
+      <span>Products</span>
+    </a>
+    <a href="pricing.html" class="nav-item">
+      <i class="fa-solid fa-calculator"></i>
+      <span>Estimator</span>
+    </a>
+    <a href="contact.html" class="nav-item">
+      <i class="fa-solid fa-phone"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
 
   <script src="app.js"></script>
   <script src="mobile-nav.js"></script>
