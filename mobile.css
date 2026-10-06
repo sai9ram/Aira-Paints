@@ -658,56 +658,66 @@
     box-sizing: border-box !important;
   }
 
+  /* ── Mobile Hero: Reflow layout so image sits between pills & specs ── */
   .product-hero-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 2rem !important;
+    gap: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
+  /* Make copy a flex column so we can interleave the visual via order */
   .product-hero-copy {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
+    display: contents !important; /* let children participate in parent flex */
   }
 
+  /* Order: 1 – Badge pill */
   .hero-badge-pill {
+    order: 1 !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
     max-width: 100% !important;
     font-size: 0.78rem !important;
+    margin-bottom: 0.75rem !important;
+    width: 100% !important;
   }
 
+  /* Order: 2 – Main headline */
   .hero-headline {
+    order: 2 !important;
     font-size: 2.1rem !important;
     text-align: center !important;
     width: 100% !important;
     line-height: 1.2 !important;
+    margin-bottom: 0.6rem !important;
   }
 
+  /* Order: 3 – Subtext description */
   .hero-subtext {
+    order: 3 !important;
     font-size: 0.95rem !important;
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1rem !important;
     max-width: 100% !important;
+    width: 100% !important;
   }
 
+  /* Order: 4 – Pill category switcher (Interior / Exterior / etc.) */
   .product-switcher-wrap {
+    order: 4 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: 1.2rem !important;
   }
 
   .switcher-label {
@@ -728,7 +738,57 @@
     padding: 0.45rem 0.85rem !important;
   }
 
+  /* Order: 5 – Product image visual (placed BELOW the pill tabs) */
+  .product-hero-visual {
+    order: 5 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .visual-stage-card {
+    height: 360px !important;
+    max-width: 360px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .can-display-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Large product image on mobile */
+  .hero-can-render {
+    max-width: 280px !important;
+    width: 280px !important;
+    height: auto !important;
+  }
+
+  .stage-backdrop-glow {
+    width: 260px !important;
+    height: 260px !important;
+  }
+
+  .stage-radial-ring {
+    width: 310px !important;
+    height: 310px !important;
+  }
+
+  .floating-proof-badge {
+    display: none !important;
+  }
+
+  /* Order: 6 – Specs row (Coverage / Key Property / VOC) */
   .hero-specs-row {
+    order: 6 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -738,7 +798,7 @@
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
-    margin-bottom: 1.8rem !important;
+    margin-bottom: 1.5rem !important;
   }
 
   .spec-card {
@@ -754,7 +814,9 @@
     padding-bottom: 0.5rem !important;
   }
 
+  /* Order: 7 – CTA buttons */
   .hero-cta-group {
+    order: 7 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -769,65 +831,6 @@
     align-items: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
-  }
-
-  .product-hero-visual {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
-
-  .visual-stage-card {
-    height: 440px !important;
-    max-width: 440px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-  }
-
-  .can-display-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  .hero-can-render {
-    max-width: 310px !important;
-    width: 85% !important;
-    height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
-  }
-
-  .can-floor-shadow {
-    width: 250px !important;
-    margin: -10px auto 0 auto !important;
-  }
-
-  .stage-backdrop-glow {
-    width: 340px !important;
-    height: 340px !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-  }
-
-  .stage-radial-ring {
-    width: 390px !important;
-    height: 390px !important;
-    left: 50% !important;
-    top: 50% !important;
-    margin-left: -195px !important;
-    margin-top: -195px !important;
   }
 
   .floating-proof-badge {
