@@ -2171,7 +2171,7 @@ nav a:hover::after {
 
 /* - Sticky container: 400vh gives 4 products - 100vh each - */
 .products-sticky-wrap {
-  height: 400vh;
+  height: 500vh;
   position: relative;
 }
 

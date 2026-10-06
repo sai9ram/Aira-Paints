@@ -307,14 +307,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!stickyWrap || !slides.length) return;
 
-  const TOTAL = slides.length; // 4
+  const TOTAL = slides.length; // 5
 
   /* Background colours per product (match can-color) */
   const stageBgs = [
     '#eef6f3', /* Interior — light emerald tint */
-    '#f5faf8', /* Exterior — clean white-green tint */
+    '#f2f6fa', /* Exterior — clean dark blue tint */
     '#f0f7f4', /* Primers  — soft emerald-white tint */
     '#eaf2ee', /* Water    — pale emerald tint */
+    '#f7edf4', /* Luxury   — soft satin grape tint */
   ];
 
   let currentIndex = -1; // start invalid to force first paint
