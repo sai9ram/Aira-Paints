@@ -249,17 +249,71 @@
     line-height: 1.15 !important;
   }
 
-  /* New product hero title — override global h1 !important */
-  .ph-title {
-    font-size: clamp(1.9rem, 6vw, 2.6rem) !important;
-    line-height: 1.15 !important;
+  /* Product hero layout constraints & typography — prevent mobile overflow */
+  .ph-hero {
+    padding: 6.5rem 1rem 3.5rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
   }
-
-  /* Product hero formulation pills — single line on mobile */
+  .ph-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    gap: 1.5rem 0 !important;
+  }
+  .ph-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+  .ph-badge {
+    max-width: 100% !important;
+    font-size: 0.76rem !important;
+    padding: 0.38rem 0.85rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+  }
+  .ph-title {
+    font-size: clamp(1.65rem, 5.2vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .ph-desc {
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 1.5rem !important;
+  }
   .ph-tabs {
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
     overflow: hidden !important;
+  }
+  .ph-tabs-label {
+    text-align: center !important;
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 0.6rem !important;
   }
   .ph-tabs-row,
   .product-pills-row {
@@ -270,10 +324,12 @@
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
     justify-content: flex-start !important;
-    padding: 4px 2px 10px !important;
+    padding: 4px 6px 10px !important;
     gap: 0.45rem !important;
     width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
   }
   .ph-tabs-row::-webkit-scrollbar,
   .product-pills-row::-webkit-scrollbar {
@@ -285,6 +341,12 @@
     white-space: nowrap !important;
     font-size: 0.8rem !important;
     padding: 0.42rem 0.75rem !important;
+  }
+  .ph-visual {
+    min-height: 280px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
   }
 
   h2 {
