@@ -407,9 +407,9 @@
   .hero-stage {
     position: relative !important;
     top: 0 !important;
-    aspect-ratio: 16 / 9 !important;
-    height: auto !important;
-    min-height: auto !important;
+    aspect-ratio: auto !important;
+    height: 290px !important;
+    min-height: 290px !important;
     max-height: none !important;
     overflow: hidden !important;
     border-radius: 24px !important;
@@ -427,7 +427,7 @@
   /* Make slide content a side-by-side layout matching desktop with slightly more room for image */
   .hero-slide-content {
     display: grid !important;
-    grid-template-columns: 1.05fr 0.95fr !important;
+    grid-template-columns: 1fr 1fr !important;
     align-items: center !important;
     gap: 0.6rem !important;
     text-align: left !important;
@@ -486,7 +486,7 @@
     white-space: nowrap !important;
   }
 
-  /* Right Side: Paint Can Visual - Compact sizes */
+  /* Right Side: Paint Can Visual - Prominent image size */
   .hero-slide-visual {
     width: 100% !important;
     display: flex !important;
@@ -496,8 +496,9 @@
   }
 
   .hero-slide .product-can-wrap {
-    width: 90px !important;
-    height: 125px !important;
+    width: 150px !important;
+    height: 220px !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
     align-items: center !important;
@@ -505,15 +506,18 @@
   }
 
   .hero-slide .product-can-img {
-    height: 105px !important;
+    height: 195px !important;
+    max-height: 195px !important;
     width: auto !important;
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4)) !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.45)) !important;
   }
 
   .hero-slide .can-glow {
-    width: 80px !important;
-    height: 80px !important;
-    filter: blur(15px) !important;
+    width: 150px !important;
+    height: 150px !important;
+    filter: blur(25px) !important;
   }
 
   /* Decorative background elements styling on mobile */
@@ -546,27 +550,32 @@
 
 /* Extra small screens adjustments */
 @media (max-width: 380px) {
+  .hero-stage {
+    height: 270px !important;
+    min-height: 270px !important;
+  }
   .hero-slide-content {
-    grid-template-columns: 1.25fr 0.75fr !important;
-    padding: 0 0.6rem !important;
-    gap: 0.3rem !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    padding: 0 0.8rem !important;
+    gap: 0.4rem !important;
   }
   .hero-slide-title {
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important;
   }
   .hero-slide-desc {
-    font-size: 0.55rem !important;
+    font-size: 0.58rem !important;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
   .hero-slide .product-can-wrap {
-    width: 75px !important;
-    height: 110px !important;
+    width: 130px !important;
+    height: 180px !important;
   }
   .hero-slide .product-can-img {
-    height: 90px !important;
+    height: 165px !important;
+    max-height: 165px !important;
   }
 }
 
