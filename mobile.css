@@ -715,23 +715,23 @@
   }
 
   .visual-stage-card {
-    height: 320px !important;
-    max-width: 320px !important;
+    height: 380px !important;
+    max-width: 380px !important;
     margin: 0 auto !important;
   }
 
   .hero-can-render {
-    max-width: 180px !important;
+    max-width: 230px !important;
   }
 
   .stage-backdrop-glow {
-    width: 240px !important;
-    height: 240px !important;
+    width: 280px !important;
+    height: 280px !important;
   }
 
   .stage-radial-ring {
-    width: 290px !important;
-    height: 290px !important;
+    width: 330px !important;
+    height: 330px !important;
   }
 
   .floating-proof-badge {
