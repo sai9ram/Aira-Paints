@@ -658,26 +658,28 @@
     box-sizing: border-box !important;
   }
 
-  /* ── Mobile Hero: Reflow layout so image sits between pills & specs ── */
+  /* ── Mobile Hero: Layout (image is moved by JS below pill tabs) ── */
   .product-hero-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 0 !important;
+    gap: 1.5rem !important;
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Make copy a flex column so we can interleave the visual via order */
   .product-hero-copy {
-    display: contents !important; /* let children participate in parent flex */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    gap: 0 !important;
   }
 
-  /* Order: 1 – Badge pill */
   .hero-badge-pill {
-    order: 1 !important;
     margin-left: auto !important;
     margin-right: auto !important;
     text-align: center !important;
@@ -687,9 +689,7 @@
     width: 100% !important;
   }
 
-  /* Order: 2 – Main headline */
   .hero-headline {
-    order: 2 !important;
     font-size: 2.1rem !important;
     text-align: center !important;
     width: 100% !important;
@@ -697,9 +697,7 @@
     margin-bottom: 0.6rem !important;
   }
 
-  /* Order: 3 – Subtext description */
   .hero-subtext {
-    order: 3 !important;
     font-size: 0.95rem !important;
     text-align: center !important;
     margin-left: auto !important;
@@ -709,15 +707,13 @@
     width: 100% !important;
   }
 
-  /* Order: 4 – Pill category switcher (Interior / Exterior / etc.) */
   .product-switcher-wrap {
-    order: 4 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
     width: 100% !important;
-    margin-bottom: 1.2rem !important;
+    margin-bottom: 0 !important;
   }
 
   .switcher-label {
@@ -738,13 +734,13 @@
     padding: 0.45rem 0.85rem !important;
   }
 
-  /* Order: 5 – Product image visual (placed BELOW the pill tabs) */
+  /* Product image visual — JS moves this right after pills on mobile */
   .product-hero-visual {
-    order: 5 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
+    margin-top: 1.2rem !important;
     margin-bottom: 1.2rem !important;
   }
 
@@ -782,13 +778,7 @@
     height: 310px !important;
   }
 
-  .floating-proof-badge {
-    display: none !important;
-  }
-
-  /* Order: 6 – Specs row (Coverage / Key Property / VOC) */
   .hero-specs-row {
-    order: 6 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -814,9 +804,7 @@
     padding-bottom: 0.5rem !important;
   }
 
-  /* Order: 7 – CTA buttons */
   .hero-cta-group {
-    order: 7 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;

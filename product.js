@@ -111,6 +111,32 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
 
+  // ── Mobile Hero: Move product image below pill tabs ──
+  // On mobile, physically re-insert the visual after the pill switcher
+  const heroContainer   = document.querySelector('.product-hero-container');
+  const heroCopy        = document.querySelector('.product-hero-copy');
+  const heroVisual      = document.querySelector('.product-hero-visual');
+  const switcherWrap    = document.querySelector('.product-switcher-wrap');
+
+  let visualMoved = false;
+
+  function reorderMobileHeroVisual() {
+    if (!heroContainer || !heroCopy || !heroVisual || !switcherWrap) return;
+
+    if (window.innerWidth <= 768 && !visualMoved) {
+      // Move visual right after the pill switcher, inside hero-copy
+      switcherWrap.insertAdjacentElement('afterend', heroVisual);
+      visualMoved = true;
+    } else if (window.innerWidth > 768 && visualMoved) {
+      // Restore visual back as last child of hero-container (desktop layout)
+      heroContainer.appendChild(heroVisual);
+      visualMoved = false;
+    }
+  }
+
+  reorderMobileHeroVisual();
+  window.addEventListener('resize', reorderMobileHeroVisual);
+
     // Click — desktop + mobile browsers
     item.addEventListener('click', activatePalette);
   });
