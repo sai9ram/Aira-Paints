@@ -61,133 +61,163 @@
   <!-- ===== MAIN ===== -->
   <main>
 
-    <!-- SECTION 01 – HERO SHOWCASE (REDESIGNED CENTRAL STAGE MODEL) -->
+    <!-- SECTION 01 – HERO SHOWCASE (CLEAN LUXURY SPLIT SHOWCASE) -->
     <section id="product-hero" class="product-hero-section">
-      <!-- Cursor interaction paint ripple element -->
-      <div id="paint-ripple-tracker" class="paint-ripple-layer"></div>
-
-      <!-- Left Sidebar: Palette Switcher -->
-      <aside class="hero-sidebar-left" aria-label="Product line selector">
-        <div class="sidebar-title">Categories</div>
-        <div class="sidebar-palette-list">
-          <button class="palette-item active" data-color="#0F4D3A" data-image="images/products/Green Emulsion Front View1.png"
-            data-glow="rgba(110,198,176,0.4)" data-title="Eco Green Emulsion" data-cov="350 sq.ft/gal"
-            data-res="Breathable & Anti-Bacterial">
-            <span class="palette-dot" style="background-color: #0F4D3A;"></span>
-            <span class="palette-label">Eco Green</span>
-          </button>
-          <button class="palette-item" data-color="#0B2E59" data-image="images/products/Dark Blue front View1.png"
-            data-glow="rgba(58,134,255,0.4)" data-title="Royal Dark Blue" data-cov="280 sq.ft/gal"
-            data-res="100% Weather Shield">
-            <span class="palette-dot" style="background-color: #0B2E59;"></span>
-            <span class="palette-label">Dark Blue</span>
-          </button>
-          <button class="palette-item" data-color="#4A3F6B" data-image="images/products/Voilate Emulsion Front view.png"
-            data-glow="rgba(141,123,209,0.4)" data-title="Pro Violet Primer" data-cov="400 sq.ft/gal"
-            data-res="Deep Binding Foundation">
-            <span class="palette-dot" style="background-color: #4A3F6B;"></span>
-            <span class="palette-label">Violet Primer</span>
-          </button>
-          <button class="palette-item" data-color="#1D709A" data-image="images/products/Sky Blue Front View1.png"
-            data-glow="rgba(110,198,220,0.4)" data-title="Sky Blue Damp Protect" data-cov="320 sq.ft/gal"
-            data-res="Hydro-Lock Waterproofing">
-            <span class="palette-dot" style="background-color: #1D709A;"></span>
-            <span class="palette-label">Sky Blue</span>
-          </button>
-          <button class="palette-item" data-color="#5C2B4E" data-image="images/products/Premire Front View1.png"
-            data-glow="rgba(186,85,211,0.4)" data-title="Grape Velvet Emulsion" data-cov="340 sq.ft/gal"
-            data-res="Rich Satin Luxury Finish">
-            <span class="palette-dot" style="background-color: #5C2B4E;"></span>
-            <span class="palette-label">Grape Velvet</span>
-          </button>
-        </div>
-      </aside>
-
-      <!-- Main Showcase Container -->
-      <div class="product-hero-container">
-
-        <!-- Central stage with rotating bucket and floating labels -->
-        <div class="central-showcase-stage">
-          <!-- Background Glow Spot -->
-          <div class="hero-gradient-glow" id="hero-glow-bg"></div>
-
-          <!-- Rotating Can Frame -->
-          <div class="bucket-showcase-wrap" id="stage-bucket-wrap">
-            <img src="images/products/Green Emulsion Front View1.png" alt="Aira 1L Eco Emulsion Paint Can" class="rotating-paint-bucket"
-              id="hero-bucket-img">
-            <div class="can-glow" id="hero-can-glow" style="--glow-color:rgba(110,198,176,0.4)"></div>
-          </div>
-
-          <!-- Floating Splash Dots -->
-          <div class="floating-splash splash-1" aria-hidden="true"></div>
-          <div class="floating-splash splash-2" aria-hidden="true"></div>
-          <div class="floating-splash splash-3" aria-hidden="true"></div>
-
-          <!-- Floating Interactive Benefit Badges -->
-          <div class="showcase-badges-container">
-            <div class="benefit-badge badge-top-left" style="--angle: 0deg;">
-              <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
-              <span>Eco-Friendly</span>
-            </div>
-            <div class="benefit-badge badge-top-right" style="--angle: 90deg;">
-              <div class="badge-icon"><i class="fa-solid fa-shield-halved"></i></div>
-              <span>Long-Lasting</span>
-            </div>
-            <div class="benefit-badge badge-bottom-left" style="--angle: 180deg;">
-              <div class="badge-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-              <span>Flawless Finish</span>
-            </div>
-            <div class="benefit-badge badge-bottom-right" style="--angle: 270deg;">
-              <div class="badge-icon"><i class="fa-solid fa-droplet-slash"></i></div>
-              <span>Low VOC</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Central Titles & Description (Overlaid cleanly at the top-mid) -->
-        <div class="central-hero-content">
-          <span class="hero-eyebrow">PREMIUM PAINT SOLUTIONS</span>
-          <h1 class="hero-title" id="stage-product-title">Interior Emulsion</h1>
-          <p class="hero-desc">
-            Paint solutions engineered using advanced technology to deliver exceptional beauty, coverage, and
-            long-lasting protection.
-          </p>
-        </div>
-
-        <!-- Floating Glassmorphism Action Bar -->
-        <div class="hero-floating-actions-bar">
-          <a href="#categories" class="btn btn-primary">
-            <span>Explore Categories</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a href="aira-brochure.pdf" target="_blank" class="btn btn-secondary cta-catalogue">Request Product
-            Catalogue</a>
-        </div>
-
+      <!-- Background Ambient Glows -->
+      <div class="hero-ambient-mesh" aria-hidden="true">
+        <div class="mesh-glow glow-1" id="hero-glow-1"></div>
+        <div class="mesh-glow glow-2" id="hero-glow-2"></div>
       </div>
 
-      <!-- Right Sidebar: Quick Stats -->
-      <aside class="hero-sidebar-right" aria-label="Product performance metrics">
-        <div class="sidebar-title">Metrics</div>
-        <div class="sidebar-stats-list">
-          <div class="stat-sidebar-item">
-            <span class="stat-sidebar-label">Coverage</span>
-            <span class="stat-sidebar-value" id="stat-val-coverage">350 sq.ft/gal</span>
+      <div class="product-hero-container">
+        
+        <!-- Left Column: Story, Selector, Specs & CTAs -->
+        <div class="product-hero-copy">
+          <div class="hero-badge-pill">
+            <span class="badge-dot"></span>
+            <span>Aira Paint Studio &bull; 100% Eco-Certified</span>
           </div>
-          <div class="stat-sidebar-item">
-            <span class="stat-sidebar-label">Features</span>
-            <span class="stat-sidebar-value" id="stat-val-features">High Breathability</span>
-          </div>
-          <div class="stat-sidebar-item">
-            <span class="stat-sidebar-label">VOC Level</span>
-            <span class="stat-sidebar-value">&lt; 5 g/L</span>
-          </div>
-        </div>
-      </aside>
 
+          <h1 class="hero-headline">
+            Engineered For Living. <br>
+            <span class="headline-gradient" id="stage-product-title">Eco Green Emulsion</span>
+          </h1>
+
+          <p class="hero-subtext" id="stage-product-desc">
+            Premium eco-friendly interior emulsion formulated with plant-derived binders. Breathable, anti-bacterial, and effortlessly washable with zero harsh chemicals.
+          </p>
+
+          <!-- Interactive Product Pill Selector -->
+          <div class="product-switcher-wrap" aria-label="Choose Paint Category">
+            <span class="switcher-label">Select Formulation:</span>
+            <div class="product-pills-row">
+              <button class="palette-item active" 
+                data-color="#0F4D3A" 
+                data-image="images/products/Green Emulsion Front View1.png"
+                data-glow="rgba(110, 198, 176, 0.45)" 
+                data-title="Eco Green Emulsion" 
+                data-desc="Premium eco-friendly interior emulsion formulated with plant-derived binders. Breathable, anti-bacterial, and effortlessly washable."
+                data-cov="350 sq.ft / Gal"
+                data-res="Breathable & Anti-Bacterial"
+                data-finish="Velvety Matt">
+                <span class="palette-dot" style="background-color: #0F4D3A;"></span>
+                <span class="palette-label">Interior</span>
+              </button>
+
+              <button class="palette-item" 
+                data-color="#0B2E59" 
+                data-image="images/products/Dark Blue front View1.png"
+                data-glow="rgba(58, 134, 255, 0.45)" 
+                data-title="Royal Dark Blue Shield" 
+                data-desc="Heavy-duty exterior weather protection designed to resist monsoons, harsh UV rays, and persistent fungal growth."
+                data-cov="280 sq.ft / Gal"
+                data-res="100% Weather Shield"
+                data-finish="Satin Sheen">
+                <span class="palette-dot" style="background-color: #0B2E59;"></span>
+                <span class="palette-label">Exterior</span>
+              </button>
+
+              <button class="palette-item" 
+                data-color="#4A3F6B" 
+                data-image="images/products/Voilate Emulsion Front view.png"
+                data-glow="rgba(141, 123, 209, 0.45)" 
+                data-title="Pro Violet Primer" 
+                data-desc="Deep-penetrating binding foundation that guarantees optimum topcoat adhesion and long-lasting substrate sealing."
+                data-cov="400 sq.ft / Gal"
+                data-res="Deep Binding Foundation"
+                data-finish="Ultra Grip">
+                <span class="palette-dot" style="background-color: #4A3F6B;"></span>
+                <span class="palette-label">Primer</span>
+              </button>
+
+              <button class="palette-item" 
+                data-color="#1D709A" 
+                data-image="images/products/Sky Blue Front View1.png"
+                data-glow="rgba(110, 198, 220, 0.45)" 
+                data-title="Sky Blue Damp Protect" 
+                data-desc="Hydro-lock elastomeric waterproofing membrane preventing dampness, efflorescence, and water ingress."
+                data-cov="320 sq.ft / Gal"
+                data-res="Hydro-Lock Waterproofing"
+                data-finish="Elastomeric">
+                <span class="palette-dot" style="background-color: #1D709A;"></span>
+                <span class="palette-label">Waterproof</span>
+              </button>
+
+              <button class="palette-item" 
+                data-color="#5C2B4E" 
+                data-image="images/products/Premire Front View1.png"
+                data-glow="rgba(186, 85, 211, 0.45)" 
+                data-title="Grape Velvet Premier" 
+                data-desc="Ultra-luxurious satin emulsion crafted for discerning interiors with radiant depth of color and superior scuff resistance."
+                data-cov="340 sq.ft / Gal"
+                data-res="Rich Satin Luxury Finish"
+                data-finish="Silk Satin">
+                <span class="palette-dot" style="background-color: #5C2B4E;"></span>
+                <span class="palette-label">Premier</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="hero-specs-row">
+            <div class="spec-card">
+              <span class="spec-label">Coverage</span>
+              <span class="spec-val" id="stat-val-coverage">350 sq.ft / Gal</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-label">Key Property</span>
+              <span class="spec-val" id="stat-val-features">Breathable & Anti-Bacterial</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-label">VOC Level</span>
+              <span class="spec-val">&lt; 5 g/L (Ultra-Low)</span>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#categories" class="btn btn-primary">
+              <span>Explore Collection</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="pricing.html" class="btn btn-secondary">
+              <span>Calculate Cost</span>
+            </a>
+          </div>
+
+        </div><!-- /product-hero-copy -->
+
+        <!-- Right Column: Spotlight Stage with Product Can & Glow -->
+        <div class="product-hero-visual">
+          <div class="visual-stage-card">
+            <!-- Stage Glow Backdrops -->
+            <div class="stage-backdrop-glow" id="hero-can-glow" style="--glow-color: rgba(110, 198, 176, 0.45)"></div>
+            <div class="stage-radial-ring"></div>
+            
+            <!-- Can Presentation -->
+            <div class="can-display-wrap">
+              <img src="images/products/Green Emulsion Front View1.png" 
+                   alt="Aira Eco Emulsion Paint Can" 
+                   class="hero-can-render" 
+                   id="hero-bucket-img">
+              <div class="can-floor-shadow"></div>
+            </div>
+
+            <!-- Floating Micro Feature Pills -->
+            <div class="floating-proof-badge badge-top">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>10-Yr Warranty Certified</span>
+            </div>
+            <div class="floating-proof-badge badge-bottom">
+              <i class="fa-solid fa-leaf"></i>
+              <span>Zero Toxic Solvents</span>
+            </div>
+          </div>
+        </div><!-- /product-hero-visual -->
+
+      </div><!-- /product-hero-container -->
     </section>
 
     <!-- SECTION 02 – PRODUCT CATEGORIES -->

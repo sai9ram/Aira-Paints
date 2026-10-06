@@ -650,107 +650,92 @@
     gap: 2rem !important;
   }
 
-  /* Product Hero / Central Showcase Stage fixes */
+  /* Product Hero / Clean Redesigned Split Showcase */
   .product-hero-section {
-    padding: 6rem 1rem 4rem 1rem !important;
+    padding: 6.5rem 1.25rem 3.5rem 1.25rem !important;
     min-height: auto !important;
     height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
   }
 
   .product-hero-container {
-    gap: 2rem !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* Hide left & right sidebars on mobile to avoid layout stretch and white space */
-  .hero-sidebar-left,
-  .hero-sidebar-right {
-    position: relative !important;
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    transform: none !important;
-    width: 100% !important;
-    padding: 1rem 0 !important;
-    margin: 0 auto !important;
     display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    box-sizing: border-box !important;
-  }
-
-  .sidebar-palette-list,
-  .sidebar-stats-list {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
     width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .product-hero-copy {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .hero-headline {
+    font-size: 2.1rem !important;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .product-pills-row {
+    justify-content: center !important;
     gap: 0.5rem !important;
   }
 
-  .palette-item,
-  .stat-sidebar-item {
-    padding: 0.6rem 0.8rem !important;
-    font-size: 0.75rem !important;
-    border-radius: 12px !important;
-    flex: 1 1 calc(50% - 0.5rem) !important;
+  .palette-item {
+    font-size: 0.8rem !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+
+  .hero-specs-row {
+    flex-direction: column !important;
+    gap: 0.6rem !important;
+    padding: 1rem !important;
+    max-width: 100% !important;
+  }
+
+  .spec-card:not(:last-child) {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-right: 0 !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .hero-cta-group .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .visual-stage-card {
+    height: 320px !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-can-render {
     max-width: 180px !important;
   }
 
-  .sidebar-title,
-  .sidebar-header-right {
-    display: none !important;
+  .stage-backdrop-glow {
+    width: 240px !important;
+    height: 240px !important;
   }
 
-  /* Resize Central Showcase Stage to fit mobile screen without overflowing */
-  .central-showcase-stage {
-    width: 100% !important;
-    max-width: 290px !important;
+  .stage-radial-ring {
+    width: 290px !important;
     height: 290px !important;
-    margin: 1rem auto !important;
   }
 
-  .rotating-paint-bucket {
-    max-width: 160px !important;
-  }
-
-  .can-glow {
-    width: 120px !important;
-    height: 120px !important;
-  }
-
-  .hero-gradient-glow {
-    width: 260px !important;
-    height: 260px !important;
-  }
-
-  /* Hide or stack benefit badges on mobile */
-  .benefit-badge {
-    position: static !important;
-    animation: none !important;
-    margin: 0.25rem !important;
-    display: inline-flex !important;
-    font-size: 0.75rem !important;
-    padding: 0.5rem 0.8rem !important;
-  }
-
-  .showcase-badges-container {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-    margin-top: 1rem !important;
+  .floating-proof-badge {
+    display: none !important;
   }
 
   /* Product cards 4-col → 1 col */
