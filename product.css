@@ -284,6 +284,11 @@
   width: 100%;
 }
 
+/* Mobile-only duplicate — hidden on desktop/tablet */
+.product-hero-visual-mobile {
+  display: none;
+}
+
 .visual-stage-card {
   position: relative;
   width: 100%;

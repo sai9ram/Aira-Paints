@@ -650,7 +650,7 @@
     gap: 2rem !important;
   }
 
-  /* Product Hero / Clean Redesigned Split Showcase (Mobile Only Alignment Fixes) */
+  /* Product Hero – Mobile Alignment */
   .product-hero-section {
     padding: 6.5rem 1.25rem 3.5rem 1.25rem !important;
     min-height: auto !important;
@@ -658,12 +658,12 @@
     box-sizing: border-box !important;
   }
 
-  /* ── Mobile Hero: Layout (image is moved by JS below pill tabs) ── */
+  /* Stack copy column full-width, image comes from inside */
   .product-hero-container {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 1.5rem !important;
+    gap: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     padding: 0 !important;
@@ -679,6 +679,36 @@
     gap: 0 !important;
   }
 
+  /* HIDE the original right-column visual on mobile */
+  .product-hero-visual {
+    display: none !important;
+  }
+
+  /* SHOW the mobile-only duplicate image (placed naturally below pills in HTML) */
+  .product-hero-visual-mobile {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 1rem 0 1.5rem 0 !important;
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
+  }
+
+  .product-hero-visual-mobile .can-display-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .product-hero-visual-mobile .hero-can-render {
+    width: 260px !important;
+    max-width: 260px !important;
+    height: auto !important;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5)) !important;
+    transition: opacity 0.25s ease, transform 0.25s ease !important;
+  }
+
+  /* Badge */
   .hero-badge-pill {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -689,6 +719,7 @@
     width: 100% !important;
   }
 
+  /* Headline */
   .hero-headline {
     font-size: 2.1rem !important;
     text-align: center !important;
@@ -697,6 +728,7 @@
     margin-bottom: 0.6rem !important;
   }
 
+  /* Subtext */
   .hero-subtext {
     font-size: 0.95rem !important;
     text-align: center !important;
@@ -707,6 +739,7 @@
     width: 100% !important;
   }
 
+  /* Pill category switcher */
   .product-switcher-wrap {
     display: flex !important;
     flex-direction: column !important;
@@ -734,50 +767,7 @@
     padding: 0.45rem 0.85rem !important;
   }
 
-  /* Product image visual — JS moves this right after pills on mobile */
-  .product-hero-visual {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin-top: 1.2rem !important;
-    margin-bottom: 1.2rem !important;
-  }
-
-  .visual-stage-card {
-    height: 360px !important;
-    max-width: 360px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .can-display-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  /* Large product image on mobile */
-  .hero-can-render {
-    max-width: 280px !important;
-    width: 280px !important;
-    height: auto !important;
-  }
-
-  .stage-backdrop-glow {
-    width: 260px !important;
-    height: 260px !important;
-  }
-
-  .stage-radial-ring {
-    width: 310px !important;
-    height: 310px !important;
-  }
-
+  /* Specs row */
   .hero-specs-row {
     display: flex !important;
     flex-direction: column !important;
@@ -804,6 +794,7 @@
     padding-bottom: 0.5rem !important;
   }
 
+  /* CTA buttons */
   .hero-cta-group {
     display: flex !important;
     flex-direction: column !important;

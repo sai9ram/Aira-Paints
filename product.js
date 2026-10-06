@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const statCoverage = document.getElementById('stat-val-coverage');
   const statFeatures = document.getElementById('stat-val-features');
   const paletteItems = document.querySelectorAll('.palette-item');
+  const bucketImgMobile = document.getElementById('hero-bucket-img-mobile');
 
   // Gradient generator for background mood
   const getHeroGradient = (hex) => {
@@ -106,36 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 250);
       }
 
+      // Sync mobile-only duplicate image
+      if (bucketImgMobile) {
+        bucketImgMobile.style.opacity = '0';
+        bucketImgMobile.style.transform = 'scale(0.92)';
+        setTimeout(() => {
+          bucketImgMobile.src = imgPath;
+          bucketImgMobile.style.opacity = '1';
+          bucketImgMobile.style.transform = 'scale(1)';
+        }, 250);
+      }
+
       if (canGlow) {
         canGlow.style.setProperty('--glow-color', glowColor);
       }
     };
-
-  // ── Mobile Hero: Move product image below pill tabs ──
-  // On mobile, physically re-insert the visual after the pill switcher
-  const heroContainer   = document.querySelector('.product-hero-container');
-  const heroCopy        = document.querySelector('.product-hero-copy');
-  const heroVisual      = document.querySelector('.product-hero-visual');
-  const switcherWrap    = document.querySelector('.product-switcher-wrap');
-
-  let visualMoved = false;
-
-  function reorderMobileHeroVisual() {
-    if (!heroContainer || !heroCopy || !heroVisual || !switcherWrap) return;
-
-    if (window.innerWidth <= 768 && !visualMoved) {
-      // Move visual right after the pill switcher, inside hero-copy
-      switcherWrap.insertAdjacentElement('afterend', heroVisual);
-      visualMoved = true;
-    } else if (window.innerWidth > 768 && visualMoved) {
-      // Restore visual back as last child of hero-container (desktop layout)
-      heroContainer.appendChild(heroVisual);
-      visualMoved = false;
-    }
-  }
-
-  reorderMobileHeroVisual();
-  window.addEventListener('resize', reorderMobileHeroVisual);
 
     // Click — desktop + mobile browsers
     item.addEventListener('click', activatePalette);
