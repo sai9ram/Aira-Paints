@@ -388,34 +388,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const ecoImageMap = {
     green: {
-      front: 'images/products/1l-eco-green-front.png',
-      side: 'images/products/1l-eco-green-side.png',
-      back: 'images/products/1l-eco-green-back.png',
-      '360': 'images/products/1l-eco-green-360.png'
+      front: 'images/products/Green Emulsion Front View1.png',
+      side: 'images/products/Green Emulsion Front View1.png',
+      back: 'images/products/Green Emulsion Front View1.png',
+      '360': 'images/products/Green Emulsion Front View1.png'
     },
     darkblue: {
-      front: 'images/products/1l-eco-darkblue-front.png',
-      side: 'images/products/1l-eco-darkblue-side.png',
-      back: 'images/products/1l-eco-darkblue-back.png',
-      '360': 'images/products/1l-eco-darkblue-360.png'
+      front: 'images/products/Dark Blue front View1.png',
+      side: 'images/products/Dark Blue front View1.png',
+      back: 'images/products/Dark Blue front View1.png',
+      '360': 'images/products/Dark Blue front View1.png'
     },
     violetprimer: {
-      front: 'images/products/1l-eco-violetprimer-front.png',
-      side: 'images/products/1l-eco-violetprimer-side.png',
-      back: 'images/products/1l-eco-violetprimer-back.png',
-      '360': 'images/products/1l-eco-violetprimer-360.png'
+      front: 'images/products/Voilate Emulsion Front view.png',
+      side: 'images/products/Voilate Emulsion Front view.png',
+      back: 'images/products/Voilate Emulsion Front view.png',
+      '360': 'images/products/Voilate Emulsion Front view.png'
     },
     skyblue: {
-      front: 'images/products/1l-eco-skyblue-front.png',
-      side: 'images/products/1l-eco-skyblue-side.png',
-      back: 'images/products/1l-eco-skyblue-back.png',
-      '360': 'images/products/1l-eco-skyblue-360.png'
+      front: 'images/products/Sky Blue Front View1.png',
+      side: 'images/products/Sky Blue Front View1.png',
+      back: 'images/products/Sky Blue Front View1.png',
+      '360': 'images/products/Sky Blue Front View1.png'
     },
     grape: {
-      front: 'images/products/1l-eco-grape-front.png',
-      side: 'images/products/1l-eco-grape-side.png',
-      back: 'images/products/1l-eco-grape-back.png',
-      '360': 'images/products/1l-eco-grape-360.png'
+      front: 'images/products/Premire Front View1.png',
+      side: 'images/products/Premire Front View1.png',
+      back: 'images/products/Premire Front View1.png',
+      '360': 'images/products/Premire Front View1.png'
     }
   };
 
