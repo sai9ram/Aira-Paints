@@ -347,7 +347,7 @@ nav a:hover::after {
    shown/hidden with opacity only.
    ============================================ */
 .hero-section {
-  height: 400vh;          /* 4 - 100vh scrollable distance */
+  height: 500vh;          /* 4 - 100vh scrollable distance */
   position: relative;
   z-index: 1;
 }

@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
       0, 1
     );
-    const activeIdx = clamp(Math.floor(progress * 4), 0, 3);
+    const activeIdx = clamp(Math.floor(progress * 5), 0, 4);
 
     heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
     heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoplay();
       } else {
         window.scrollTo({
-          top: sectionTop + (i / 3) * scrollableRange,
+          top: sectionTop + (i / 4) * scrollableRange,
           behavior: 'smooth'
         });
       }
