@@ -407,6 +407,34 @@
   .ph-grid { gap: 1.5rem 0; }
   .ph-title { font-size: 2rem; }
   .ph-desc { font-size: 0.95rem; }
+  .ph-tabs {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .ph-tabs-row,
+  .product-pills-row {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    justify-content: flex-start !important;
+    padding: 4px 2px 10px !important;
+    gap: 0.45rem !important;
+    width: 100%;
+  }
+  .ph-tabs-row::-webkit-scrollbar,
+  .product-pills-row::-webkit-scrollbar {
+    display: none;
+  }
+  .ph-tabs-row .palette-item,
+  .product-pills-row .palette-item {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.8rem !important;
+    padding: 0.42rem 0.75rem !important;
+  }
   .ph-visual { min-height: 300px; }
   .ph-img { max-width: 240px; }
   .ph-img-glow { width: 260px; height: 260px; }
