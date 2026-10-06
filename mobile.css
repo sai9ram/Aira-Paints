@@ -249,6 +249,12 @@
     line-height: 1.15 !important;
   }
 
+  /* New product hero title — override global h1 !important */
+  .ph-title {
+    font-size: clamp(1.9rem, 6vw, 2.6rem) !important;
+    line-height: 1.15 !important;
+  }
+
   h2 {
     font-size: clamp(1.6rem, 5vw, 2.2rem) !important;
     line-height: 1.2 !important;
@@ -526,7 +532,7 @@
   }
 
   /* Section padding — exclude hero & special sections */
-  section:not(.hero-section):not(.product-hero-section):not(.story-hero-section) {
+  section:not(.hero-section):not(.product-hero-section):not(.story-hero-section):not(.ph-hero) {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
