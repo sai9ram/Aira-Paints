@@ -638,183 +638,18 @@
   }
 }
 
-
 /* ============================================================
    9. PRODUCT PAGE
    ============================================================ */
 @media (max-width: 768px) {
-  /* Product hero split → stack */
+  /* Product hero grid split → stack (legacy classes safety net) */
   .product-hero-grid,
   .product-intro-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
 
-  /* Product Hero – Mobile Alignment */
-  .product-hero-section {
-    padding: 6.5rem 1.25rem 3.5rem 1.25rem !important;
-    min-height: auto !important;
-    height: auto !important;
-    box-sizing: border-box !important;
-  }
 
-  /* Stack copy column full-width, image comes from inside */
-  .product-hero-container {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-
-  .product-hero-copy {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    gap: 0 !important;
-  }
-
-  /* HIDE the original right-column visual on mobile */
-  .product-hero-visual {
-    display: none !important;
-  }
-
-  /* SHOW the mobile-only duplicate image (placed naturally below pills in HTML) */
-  .product-hero-visual-mobile {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 1rem 0 1.5rem 0 !important;
-    transition: opacity 0.25s ease, transform 0.25s ease !important;
-  }
-
-  .product-hero-visual-mobile .can-display-wrap {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .product-hero-visual-mobile .hero-can-render {
-    width: 260px !important;
-    max-width: 260px !important;
-    height: auto !important;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5)) !important;
-    transition: opacity 0.25s ease, transform 0.25s ease !important;
-  }
-
-  /* Badge */
-  .hero-badge-pill {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    text-align: center !important;
-    max-width: 100% !important;
-    font-size: 0.78rem !important;
-    margin-bottom: 0.75rem !important;
-    width: 100% !important;
-  }
-
-  /* Headline */
-  .hero-headline {
-    font-size: 2.1rem !important;
-    text-align: center !important;
-    width: 100% !important;
-    line-height: 1.2 !important;
-    margin-bottom: 0.6rem !important;
-  }
-
-  /* Subtext */
-  .hero-subtext {
-    font-size: 0.95rem !important;
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    margin-bottom: 1rem !important;
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-
-  /* Pill category switcher */
-  .product-switcher-wrap {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-    margin-bottom: 0 !important;
-  }
-
-  .switcher-label {
-    text-align: center !important;
-  }
-
-  .product-pills-row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    width: 100% !important;
-  }
-
-  .palette-item {
-    font-size: 0.8rem !important;
-    padding: 0.45rem 0.85rem !important;
-  }
-
-  /* Specs row */
-  .hero-specs-row {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 0.6rem !important;
-    padding: 1rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    margin-bottom: 1.5rem !important;
-  }
-
-  .spec-card {
-    align-items: center !important;
-    text-align: center !important;
-    width: 100% !important;
-  }
-
-  .spec-card:not(:last-child) {
-    border-right: none !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    padding-right: 0 !important;
-    padding-bottom: 0.5rem !important;
-  }
-
-  /* CTA buttons */
-  .hero-cta-group {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    gap: 0.75rem !important;
-  }
-
-  .hero-cta-group .btn {
-    width: 100% !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-  }
-
-  .floating-proof-badge {
-    display: none !important;
-  }
 
   /* Product cards 4-col → 1 col */
   .categories-grid {
