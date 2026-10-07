@@ -760,8 +760,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── 6. Animated Splash Screen Controller ──
   const splashScreen = document.getElementById('splash-screen');
-  if (splashScreen) {
-    // Fade out splash overlay directly (3.0s)
+  const isMobile = window.innerWidth <= 768;
+
+  if (splashScreen && !isMobile) {
+    // Fade out splash overlay directly on desktop (3.0s)
     setTimeout(() => {
       splashScreen.classList.add('splash-fade-out');
       document.body.classList.remove('loading');
@@ -781,7 +783,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 6000);
   } else {
-    // Fallback: If no splash screen (e.g. if disabled or hot-reloading), pop up in 3 seconds directly
+    // Mobile view or if no splash screen: remove splash immediately
+    if (splashScreen) {
+      splashScreen.remove();
+    }
+    document.body.classList.remove('loading');
+
+    // Pop up Quick Enquiry modal in 3 seconds directly
     setTimeout(() => {
       const modal = document.getElementById('enquiry-popup-modal');
       if (modal && modal.getAttribute('aria-hidden') === 'true') {

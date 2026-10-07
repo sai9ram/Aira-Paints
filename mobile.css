@@ -244,27 +244,32 @@
    4. GLOBAL TYPOGRAPHY — FLUID SCALE
    ============================================================ */
 @media (max-width: 768px) {
-  /* Splash screen overlay - white background to seamlessly match video on mobile */
+  /* Splash screen removed in mobile view */
+  #splash-screen,
   .splash-overlay {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
   }
 
-  .splash-content,
-  .splash-content.full-screen-splash-video {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
+  /* Ensure body and page content remain visible and scrollable in mobile view */
+  body.loading {
+    overflow: visible !important;
+    overflow-x: clip !important;
   }
 
-  .splash-video-media {
-    /* Show FULL logo without cropping on mobile */
-    width: 100% !important;
-    height: 100% !important;
-    min-width: unset !important;
-    max-width: 100% !important;
-    object-fit: contain !important;
-    background-color: #ffffff !important;
-    background: #ffffff !important;
+  body.loading main,
+  body.loading #bg-canvas {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  body.loading #site-header {
+    opacity: 1 !important;
+    transform: translateX(-50%) translateY(0) !important;
+    visibility: visible !important;
   }
 
   h1 {
