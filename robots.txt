@@ -17,6 +17,8 @@ User-agent: DuckDuckBot
 User-agent: YandexBot
 User-agent: Slurp
 Allow: /
+Allow: /sitemap.xml
+Allow: /robots.txt
 Allow: /images/
 Allow: /index.html
 Allow: /product.html
@@ -37,6 +39,8 @@ Allow: /*.pdf$
 # ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
+Allow: /robots.txt
 Allow: /index.html
 Allow: /product.html
 Allow: /story.html
