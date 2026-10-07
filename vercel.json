@@ -56,6 +56,31 @@
           "value": "*"
         },
         {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
+        },
+        {
           "key": "Cache-Control",
           "value": "public, max-age=3600, s-maxage=86400, stale-while-revalidate"
         }

@@ -5,6 +5,9 @@
 #  Security Contact: https://www.airapaints.com/.well-known/security.txt
 # ==============================================================================
 
+Sitemap: https://www.airapaints.com/sitemap.xml
+Sitemap: https://www.airapaints.com/sitemap.txt
+
 # ------------------------------------------------------------------------------
 # 1. ALLOWED SEARCH ENGINE CRAWLERS
 # ------------------------------------------------------------------------------
@@ -18,6 +21,7 @@ User-agent: YandexBot
 User-agent: Slurp
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap.txt
 Allow: /robots.txt
 Allow: /images/
 Allow: /index.html
@@ -40,6 +44,7 @@ Allow: /*.pdf$
 User-agent: *
 Allow: /
 Allow: /sitemap.xml
+Allow: /sitemap.txt
 Allow: /robots.txt
 Allow: /index.html
 Allow: /product.html
@@ -125,4 +130,3 @@ Disallow: /
 # 4. XML SITEMAP LOCATIONS
 # ------------------------------------------------------------------------------
 Sitemap: https://www.airapaints.com/sitemap.xml
-Sitemap: https://aira-paints.vercel.app/sitemap.xml
