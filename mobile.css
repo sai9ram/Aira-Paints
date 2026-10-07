@@ -244,6 +244,23 @@
    4. GLOBAL TYPOGRAPHY — FLUID SCALE
    ============================================================ */
 @media (max-width: 768px) {
+  /* Splash screen overlay - white background to seamlessly match video on mobile */
+  .splash-overlay {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+
+  .splash-content,
+  .splash-content.full-screen-splash-video {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+
+  .splash-video-media {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+
   h1 {
     font-size: clamp(1.9rem, 6vw, 2.8rem) !important;
     line-height: 1.15 !important;

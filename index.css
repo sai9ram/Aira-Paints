@@ -6952,6 +6952,23 @@ body.loading #bg-canvas {
   display: block !important;
 }
 
+/* Mobile Splash Screen - White background to match white splash video */
+@media (max-width: 768px) {
+  .splash-overlay {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  .splash-content,
+  .splash-content.full-screen-splash-video {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+  .splash-video-media {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+}
+
 /* ============================================================
    QUICK ENQUIRY POPUP FORM
    ============================================================ */
