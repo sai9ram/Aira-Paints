@@ -429,23 +429,22 @@
 
 @media (max-width: 768px) {
   #hero {
-    height: 500vh !important;
-    position: relative !important;
+    height: auto !important;
   }
 
   .hero-stage {
-    position: sticky !important;
-    top: 72px !important;
+    position: relative !important;
+    top: 0 !important;
     aspect-ratio: auto !important;
-    height: 40vh !important;
-    min-height: 240px !important;
-    max-height: 340px !important;
+    height: 290px !important;
+    min-height: 290px !important;
+    max-height: none !important;
     overflow: hidden !important;
     border-radius: 24px !important;
     margin: 10px !important;
+    margin-top: 72px !important;
     width: calc(100% - 20px) !important;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22) !important;
-    z-index: 10 !important;
   }
 
   .hero-slide {
@@ -464,7 +463,7 @@
     width: 100% !important;
     height: 100% !important;
     box-sizing: border-box !important;
-    padding-top: 1.5rem !important;
+    padding-top: 0.5rem !important;
   }
 
   .hero-slide-info {
@@ -474,21 +473,21 @@
   }
 
   .hero-slide-tagline {
-    font-size: 0.62rem !important;
+    font-size: 0.55rem !important;
     letter-spacing: 2px !important;
     color: rgba(255, 255, 255, 0.75) !important;
     margin: 0 !important;
   }
 
   .hero-slide-title {
-    font-size: clamp(1.1rem, 4.8vw, 1.7rem) !important;
+    font-size: clamp(0.95rem, 4.2vw, 1.4rem) !important;
     line-height: 1.15 !important;
     margin: 0 !important;
   }
 
   .hero-slide-desc {
-    font-size: clamp(0.72rem, 2.8vw, 0.88rem) !important;
-    line-height: 1.45 !important;
+    font-size: clamp(0.58rem, 2.5vw, 0.72rem) !important;
+    line-height: 1.3 !important;
     color: rgba(255, 255, 255, 0.8) !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -507,9 +506,9 @@
   .hero-slide-ctas .btn-secondary {
     width: auto !important;
     flex: 1 !important;
-    min-height: 32px !important;
-    padding: 0.45rem 0.6rem !important;
-    font-size: clamp(0.62rem, 2.2vw, 0.75rem) !important;
+    min-height: 22px !important;
+    padding: 0.25rem 0.4rem !important;
+    font-size: clamp(0.5rem, 1.8vw, 0.62rem) !important;
     text-align: center !important;
     justify-content: center !important;
     white-space: nowrap !important;
@@ -525,8 +524,8 @@
   }
 
   .hero-slide .product-can-wrap {
-    width: 130px !important;
-    height: 180px !important;
+    width: 150px !important;
+    height: 220px !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
@@ -535,8 +534,8 @@
   }
 
   .hero-slide .product-can-img {
-    height: 160px !important;
-    max-height: 160px !important;
+    height: 195px !important;
+    max-height: 195px !important;
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
@@ -573,16 +572,58 @@
 
   /* Compact pagination dots */
   .hero-pagination {
-    bottom: 1.2rem !important;
+    bottom: 0.75rem !important;
+  }
+
+  /* ── Mobile Carousel Arrow Buttons ── */
+  .hero-arrow {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    color: #fff !important;
+    font-size: 0.72rem !important;
+    cursor: pointer !important;
+    z-index: 20 !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    transition: background 0.2s ease, transform 0.15s ease, opacity 0.2s ease !important;
+    outline: none !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25) !important;
+    padding: 0 !important;
+  }
+
+  .hero-arrow:active {
+    transform: translateY(-50%) scale(0.9) !important;
+    background: rgba(255, 255, 255, 0.32) !important;
+  }
+
+  .hero-arrow--disabled {
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+  }
+
+  .hero-arrow-prev {
+    left: 10px !important;
+  }
+
+  .hero-arrow-next {
+    right: 10px !important;
   }
 }
 
 /* Extra small screens adjustments */
 @media (max-width: 380px) {
   .hero-stage {
-    height: 38vh !important;
-    min-height: 220px !important;
-    max-height: 300px !important;
+    height: 270px !important;
+    min-height: 270px !important;
   }
   .hero-slide-content {
     grid-template-columns: 1.1fr 0.9fr !important;

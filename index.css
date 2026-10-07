@@ -646,6 +646,11 @@ nav a:hover::after {
   50%       { transform: translateY(6px); }
 }
 
+/* Carousel arrow buttons — hidden on desktop, shown by mobile.css */
+.hero-arrow {
+  display: none;
+}
+
 /* - Ensure slide content sits above bg layer - */
 .hero-slide-content {
   position: relative;
