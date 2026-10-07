@@ -436,8 +436,8 @@
     position: relative !important;
     top: 0 !important;
     aspect-ratio: auto !important;
-    height: 290px !important;
-    min-height: 290px !important;
+    height: 360px !important;
+    min-height: 360px !important;
     max-height: none !important;
     overflow: hidden !important;
     border-radius: 24px !important;
@@ -524,8 +524,8 @@
   }
 
   .hero-slide .product-can-wrap {
-    width: 150px !important;
-    height: 220px !important;
+    width: 170px !important;
+    height: 270px !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
@@ -534,8 +534,8 @@
   }
 
   .hero-slide .product-can-img {
-    height: 195px !important;
-    max-height: 195px !important;
+    height: 270px !important;
+    max-height: 270px !important;
     width: auto !important;
     max-width: 100% !important;
     object-fit: contain !important;
@@ -622,8 +622,8 @@
 /* Extra small screens adjustments */
 @media (max-width: 380px) {
   .hero-stage {
-    height: 270px !important;
-    min-height: 270px !important;
+    height: 320px !important;
+    min-height: 320px !important;
   }
   .hero-slide-content {
     grid-template-columns: 1.1fr 0.9fr !important;
@@ -641,12 +641,12 @@
     overflow: hidden;
   }
   .hero-slide .product-can-wrap {
-    width: 130px !important;
-    height: 180px !important;
+    width: 150px !important;
+    height: 240px !important;
   }
   .hero-slide .product-can-img {
-    height: 165px !important;
-    max-height: 165px !important;
+    height: 230px !important;
+    max-height: 230px !important;
   }
 }
 
