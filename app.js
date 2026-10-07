@@ -1,7 +1,7 @@
 /* ============================================================
    AIRA PAINTS — Hero Scrollytelling Controller
    Stack + Fade: scroll progress picks which slide is active.
-   Works identically on desktop and mobile.
+   Works identically on desktop and mobile (scroll-driven).
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,48 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Layout cache ─────────────────────────────── */
   let sectionTop      = 0;
   let scrollableRange = 0;
-  let isMobile        = window.innerWidth <= 768;
 
   function cacheLayout() {
     sectionTop      = heroSection.offsetTop;
     scrollableRange = heroSection.offsetHeight - window.innerHeight;
-    isMobile        = window.innerWidth <= 768;
   }
 
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
-
-  /* ── Mobile Autoplay Slider ──────────────────── */
-  let mobileActiveIdx = 0;
-  let autoplayTimer   = null;
-
-  function setSlide(idx) {
-    heroSlides.forEach((s, i) => s.classList.toggle('active', i === idx));
-    heroDots.forEach((d, i)   => d.classList.toggle('active', i === idx));
-  }
-
-  function startAutoplay() {
-    stopAutoplay();
-    autoplayTimer = setInterval(() => {
-      mobileActiveIdx = (mobileActiveIdx + 1) % heroSlides.length;
-      setSlide(mobileActiveIdx);
-    }, 4000);
-  }
-
-  function stopAutoplay() {
-    if (autoplayTimer) {
-      clearInterval(autoplayTimer);
-      autoplayTimer = null;
-    }
-  }
 
   /* ── Tick ─────────────────────────────────────── */
   function animate(scrollY) {
     if (header)     header.classList.toggle('scrolled', scrollY > 20);
     if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
-
-    if (isMobile) {
-      return;
-    }
 
     const progress  = clamp(
       scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
@@ -86,38 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Dot click ───────────────────────────── */
   heroDots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      if (isMobile) {
-        mobileActiveIdx = i;
-        setSlide(i);
-        startAutoplay();
-      } else {
-        window.scrollTo({
-          top: sectionTop + (i / 4) * scrollableRange,
-          behavior: 'smooth'
-        });
-      }
+      window.scrollTo({
+        top: sectionTop + (i / 4) * scrollableRange,
+        behavior: 'smooth'
+      });
     });
   });
 
   /* ── Recalculate on resize ──────────────────────── */
   window.addEventListener('resize', () => {
-    const wasMobile = isMobile;
     cacheLayout();
-    if (isMobile) {
-      if (!wasMobile) {
-        startAutoplay();
-      }
-    } else {
-      stopAutoplay();
-    }
     animate(window.scrollY);
   });
 
   /* ── Boot ────────────────────────────────────── */
   cacheLayout();
-  if (isMobile) {
-    startAutoplay();
-  }
   animate(window.scrollY);
 
 });
