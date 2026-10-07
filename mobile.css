@@ -257,6 +257,12 @@
   }
 
   .splash-video-media {
+    /* Show FULL logo without cropping on mobile */
+    width: 100% !important;
+    height: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
     background-color: #ffffff !important;
     background: #ffffff !important;
   }

@@ -6965,7 +6965,7 @@ body.loading #bg-canvas {
   min-width: 100vw !important;
 }
 
-/* Mobile Splash Screen - White background to match white splash video */
+/* Mobile Splash Screen - Full logo visible, white background */
 @media (max-width: 768px) {
   .splash-overlay {
     background-color: #ffffff !important;
@@ -6977,6 +6977,12 @@ body.loading #bg-canvas {
     background: #ffffff !important;
   }
   .splash-video-media {
+    /* Show the FULL video without any cropping on mobile */
+    width: 100% !important;
+    height: 100% !important;
+    min-width: unset !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
     background-color: #ffffff !important;
     background: #ffffff !important;
   }
