@@ -9,8 +9,8 @@
     content="Transforming Spaces. Inspiring Lives. Aira Paints offers premium eco-friendly, Low VOC paints crafted for modern Indian interiors and exteriors. Superior coverage. Made in India.">
   <meta name="keywords"
     content="premium paints, eco-friendly paints, Low VOC paint, Indian paints, interior paints, Pan-India paints, Aira Paints">
-  <link rel="stylesheet" href="index.css?v=2.9">
-  <link rel="stylesheet" href="mobile.css?v=2.9">
+  <link rel="stylesheet" href="index.css?v=3.0">
+  <link rel="stylesheet" href="mobile.css?v=3.0">
   <link rel="icon" type="image/png" href="Aira_Favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     crossorigin="anonymous">
@@ -106,8 +106,8 @@
                 <p class="hero-slide-desc">Premium Eco-Friendly emulsion designed for rich, breathable interior walls.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
-                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get Consultation</a>
+                  <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
@@ -139,8 +139,8 @@
                 <p class="hero-slide-desc">Extreme weather protection against rain, heat, and algae for outdoor walls.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
-                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="exterior">Get Consultation</a>
+                  <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
@@ -172,8 +172,8 @@
                 <p class="hero-slide-desc">The ultimate foundation for high-adhesion, smooth, and long-lasting finishes.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
-                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="primer">Get Consultation</a>
+                  <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
@@ -205,8 +205,8 @@
                 <p class="hero-slide-desc">Elite waterproofing technology protecting roofs and walls from moisture
                   damage.</p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
-                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="waterproofing">Get Consultation</a>
+                  <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
@@ -236,8 +236,8 @@
                 <h1 class="hero-slide-title">Aira Premier<br>Emulsion</h1>
                 <p class="hero-slide-desc">Rich satin luxury finish with superior washability and deep, radiant tones.</p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary">Get Consultation</a>
-                  <a href="#products" class="btn btn-secondary">Explore Products</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get Consultation</a>
+                  <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
@@ -538,6 +538,14 @@
           <span class="eyebrow-line" aria-hidden="true"></span>
         </span>
         <h2 class="section-title">Engineered For<br><em>Every Surface</em></h2>
+        <div style="margin-top: 1rem;">
+          <a href="product.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>Explore All Product Collections</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Sticky Showcase Wrapper (scroll container) -->
@@ -579,7 +587,7 @@
                   <li><span class="feat-icon" aria-hidden="true"></span> Easy Washability</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Low Odour</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -609,7 +617,7 @@
                   <li><span class="feat-icon" aria-hidden="true"></span> Crack Resistance</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> UV Protection</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="exterior">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -639,7 +647,7 @@
                   <li><span class="feat-icon" aria-hidden="true"></span> Enhanced Durability</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Rust Inhibitor Formula</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="primer">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -669,7 +677,7 @@
                   <li><span class="feat-icon" aria-hidden="true"></span> Long-Term Protection</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Flexible Membrane System</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="waterproofing">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -698,7 +706,7 @@
                   <li><span class="feat-icon" aria-hidden="true"></span> Superior Spreading Rate</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Vibrant Deep Tones</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -904,13 +912,16 @@
                 </li>
               </ul>
 
-              <div class="comp-card-footer">
-                <a href="#consultation" class="btn btn-primary comp-cta">
+              <div class="comp-card-footer" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="#consultation" class="btn btn-primary comp-cta trigger-enquiry">
                   <span>Experience The Difference</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
+                </a>
+                <a href="story.html" class="btn btn-secondary comp-cta">
+                  <span>Read Our Story</span>
                 </a>
               </div>
             </div>
@@ -959,7 +970,7 @@
               <li><i class="fa-solid fa-check"></i> 1 Coat coverage</li>
               <li><i class="fa-solid fa-check"></i> Recyclable Pack</li>
             </ul>
-            <a href="#consultation" class="price-card-btn">Get Quote</a>
+            <a href="#consultation" class="price-card-btn trigger-enquiry" data-category="interior">Get Quote</a>
           </div>
 
           <!-- Size Card: 4 LTR -->
@@ -973,7 +984,7 @@
               <li><i class="fa-solid fa-check"></i> Mid-size convenience</li>
               <li><i class="fa-solid fa-check"></i> Airtight seal lock</li>
             </ul>
-            <a href="#consultation" class="price-card-btn">Get Quote</a>
+            <a href="#consultation" class="price-card-btn trigger-enquiry" data-category="interior">Get Quote</a>
           </div>
 
           <!-- Size Card: 10 LTR -->
@@ -987,7 +998,7 @@
               <li><i class="fa-solid fa-check"></i> Best Value size</li>
               <li><i class="fa-solid fa-check"></i> Easy-carry bucket</li>
             </ul>
-            <a href="#consultation" class="price-card-btn">Get Quote</a>
+            <a href="#consultation" class="price-card-btn trigger-enquiry" data-category="interior">Get Quote</a>
           </div>
 
           <!-- Size Card: 20 LTR -->
@@ -1001,7 +1012,7 @@
               <li><i class="fa-solid fa-check"></i> Bulk pricing savings</li>
               <li><i class="fa-solid fa-check"></i> High capacity pack</li>
             </ul>
-            <a href="#consultation" class="price-card-btn">Get Quote</a>
+            <a href="#consultation" class="price-card-btn trigger-enquiry" data-category="interior">Get Quote</a>
           </div>
 
         </div>
@@ -1058,6 +1069,15 @@
               </div>
             </div>
           </div>
+        </div>
+
+        <div class="pricing-catalog-cta-wrap" style="text-align: center; margin-top: 2.5rem;">
+          <a href="pricing.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>Explore Complete Pricing Plans &amp; Custom Estimator</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
         </div>
 
       </div>
@@ -1670,8 +1690,7 @@
 
             <!-- Buttons -->
             <div class="banner-ctas">
-              <button class="btn btn-primary"
-                onclick="alert('Thank you! Our design consultant will call you shortly to book your consultation.');">
+              <button class="btn btn-primary trigger-enquiry" type="button">
                 <span>Get Free Consultation</span>
               </button>
 
@@ -1787,6 +1806,16 @@
             </svg>
             <span>24h Response</span>
           </div>
+        </div>
+
+        <div style="margin-top: 1.8rem;">
+          <a href="contact.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+            <span>Visit Contact &amp; Experience Center</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </div>
       </div>
 
@@ -2045,10 +2074,10 @@
         <nav class="footer-col" aria-label="Company links">
           <h4 class="footer-col-heading">Company</h4>
           <ul class="footer-links">
-            <li><a href="#story">About Brand</a></li>
-            <li><a href="#dealer">Careers</a></li>
-            <li><a href="#story">News</a></li>
-            <li><a href="#story">Blogs</a></li>
+            <li><a href="story.html">About Brand</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="story.html#story-vision">News</a></li>
+            <li><a href="story.html#story-journey">Blogs</a></li>
           </ul>
         </nav>
 
@@ -2056,11 +2085,11 @@
         <nav class="footer-col" aria-label="Product links">
           <h4 class="footer-col-heading">Products</h4>
           <ul class="footer-links">
-            <li><a href="#products">Interior Paints</a></li>
-            <li><a href="#products">Exterior Paints</a></li>
-            <li><a href="#products">Primers</a></li>
-            <li><a href="#products">Waterproofing</a></li>
-            <li><a href="#products">Wood Finishes</a></li>
+            <li><a href="product.html">Interior Paints</a></li>
+            <li><a href="product.html">Exterior Paints</a></li>
+            <li><a href="product.html">Primers</a></li>
+            <li><a href="product.html">Waterproofing</a></li>
+            <li><a href="product.html">Wood Finishes</a></li>
           </ul>
         </nav>
 
@@ -2068,11 +2097,11 @@
         <nav class="footer-col" aria-label="Resource links">
           <h4 class="footer-col-heading">Resources</h4>
           <ul class="footer-links">
-            <li><a href="#inspiration">Colour Guide</a></li>
-            <li><a href="#why-us">Paint Calculator</a></li>
-            <li><a href="#why-us">FAQs</a></li>
-            <li><a href="#products">Technical Datasheets</a></li>
-            <li><a href="#story">Warranty Info</a></li>
+            <li><a href="product.html#color-collection">Colour Guide</a></li>
+            <li><a href="pricing.html">Paint Calculator</a></li>
+            <li><a href="contact.html">FAQs</a></li>
+            <li><a href="product.html#standout">Technical Datasheets</a></li>
+            <li><a href="story.html#story-values">Warranty Info</a></li>
           </ul>
         </nav>
 
@@ -2222,7 +2251,7 @@
   </nav>
 
   <script src="app.js"></script>
-  <script src="mobile-nav.js"></script>
+  <script src="mobile-nav.js?v=2.0"></script>
 </body>
 
 </html>

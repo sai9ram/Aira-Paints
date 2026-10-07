@@ -99,19 +99,51 @@
     const text = target.textContent.trim().toLowerCase();
     const href = target.getAttribute('href');
     
-    // Exclude header menus and bottom navigation links
-    const isNavigation = target.closest('.mobile-bottom-nav') || target.closest('#site-header nav') || target.closest('#mobile-nav-drawer');
+    // Do NOT hijack navigation links to actual HTML pages, phone calls, mailto, or external links
+    if (href && (
+      href.includes('.html') ||
+      href.startsWith('tel:') ||
+      href.startsWith('mailto:') ||
+      href.startsWith('http://') ||
+      href.startsWith('https://')
+    )) {
+      if (!target.classList.contains('trigger-enquiry') && !target.classList.contains('trigger-dealer')) {
+        return;
+      }
+    }
     
-    const isEnquiryCTA = !isNavigation && (
+    // Exclude general header menus and bottom navigation links
+    const isNavigation = target.closest('.mobile-bottom-nav') || target.closest('#site-header nav') || target.closest('#mobile-nav-drawer');
+    if (isNavigation && !target.classList.contains('trigger-enquiry')) {
+      return;
+    }
+    
+    const isEnquiryCTA = 
       target.classList.contains('trigger-enquiry') ||
-      text.includes('quote') ||
-      text.includes('enquiry') ||
-      text.includes('consult') ||
-      (href && href.includes('contact.html') && !href.startsWith('#'))
-    );
+      target.getAttribute('data-modal') === 'enquiry' ||
+      href === '#enquiry-popup-modal' ||
+      href === '#consultation-modal' ||
+      (!isNavigation && (
+        text === 'get consultation' ||
+        text === 'get free consultation' ||
+        text === 'get a quote' ||
+        text === 'get quote' ||
+        text === 'send enquiry' ||
+        text === 'quick enquiry'
+      ));
       
     if (isEnquiryCTA) {
       e.preventDefault();
+      
+      // Auto pre-select category in dropdown if specified
+      const category = target.getAttribute('data-category');
+      if (category) {
+        const typeSelect = document.getElementById('enquiry-type');
+        if (typeSelect) {
+          typeSelect.value = category;
+        }
+      }
+      
       const modal = document.getElementById('enquiry-popup-modal');
       if (modal) {
         modal.removeAttribute('aria-hidden');
