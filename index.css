@@ -6739,13 +6739,18 @@ body.loading #bg-canvas {
 }
 /* Full screen splash video styles */
 .splash-content.full-screen-splash-video {
-  position: relative !important;
-  width: 100% !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   max-width: 100vw !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
+  max-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
   z-index: 2 !important;
-  border-color: var(--forest);
+  background: #000 !important;
 }
 
 .form-agreement-checkbox {
@@ -6934,22 +6939,30 @@ body.loading #bg-canvas {
 }
 /* Full screen splash video styles */
 .splash-content.full-screen-splash-video {
-  position: relative !important;
-  width: 100% !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
   max-width: 100vw !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  z-index: 2 !important;
+  max-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   overflow: hidden !important;
-  display: block !important;
+  z-index: 2 !important;
+  background: #000 !important;
   transform: none !important;
 }
 
 .splash-video-media {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
+  /* 9:16 portrait video - fill height, crop sides if needed, never letterbox */
+  height: 100vh !important;
+  width: auto !important;
+  max-width: none !important;
+  object-fit: cover !important;
   display: block !important;
+  /* For wider screens: fill width instead so no side gaps */
+  min-width: 100vw !important;
 }
 
 /* Mobile Splash Screen - White background to match white splash video */

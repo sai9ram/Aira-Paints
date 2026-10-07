@@ -761,25 +761,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── 6. Animated Splash Screen Controller ──
   const splashScreen = document.getElementById('splash-screen');
   if (splashScreen) {
-    // Fade out splash overlay directly (10.0s)
+    // Fade out splash overlay directly (3.0s)
     setTimeout(() => {
       splashScreen.classList.add('splash-fade-out');
       document.body.classList.remove('loading');
-    }, 10000);
+    }, 3000);
 
-    // Completely remove element from DOM after transition finishes (11.2s)
+    // Completely remove element from DOM after transition finishes (4.2s)
     setTimeout(() => {
       splashScreen.remove();
-    }, 11200);
+    }, 4200);
 
-    // Auto-trigger the Quick Enquiry Modal 3 seconds after the landing page content is revealed (13.0s total)
+    // Auto-trigger the Quick Enquiry Modal 3 seconds after the landing page content is revealed (6.0s total)
     setTimeout(() => {
       const modal = document.getElementById('enquiry-popup-modal');
       if (modal && modal.getAttribute('aria-hidden') === 'true') {
         modal.removeAttribute('aria-hidden');
         document.body.style.overflow = 'hidden';
       }
-    }, 13000);
+    }, 6000);
   } else {
     // Fallback: If no splash screen (e.g. if disabled or hot-reloading), pop up in 3 seconds directly
     setTimeout(() => {
