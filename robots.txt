@@ -1,5 +1,124 @@
-# https://www.robotstxt.org/robotstxt.html
+# ==============================================================================
+#  AIRA PAINTS — Enterprise Search Engine & Security Directives (robots.txt)
+#  Standard: RFC 9309 (Robots Exclusion Protocol)
+#  Website: https://www.airapaints.com
+#  Security Contact: https://www.airapaints.com/.well-known/security.txt
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. ALLOWED SEARCH ENGINE CRAWLERS
+# ------------------------------------------------------------------------------
+User-agent: Googlebot
+User-agent: Googlebot-Image
+User-agent: Googlebot-Mobile
+User-agent: Bingbot
+User-agent: Applebot
+User-agent: DuckDuckBot
+User-agent: YandexBot
+User-agent: Slurp
+Allow: /
+Allow: /images/
+Allow: /index.html
+Allow: /product.html
+Allow: /story.html
+Allow: /pricing.html
+Allow: /contact.html
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+Allow: /*.svg$
+Allow: /*.pdf$
+
+# ------------------------------------------------------------------------------
+# 2. GENERAL BOT DIRECTIVES & SENSITIVE PATH RESTRICTIONS
+# ------------------------------------------------------------------------------
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /product.html
+Allow: /story.html
+Allow: /pricing.html
+Allow: /contact.html
+Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
 
+# Security: Disallow hidden system directories and metadata
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.vercel/
+Disallow: /.vscode/
+Disallow: /.env*
+Disallow: /.well-known/*
+Allow: /.well-known/security.txt
+
+# Security: Disallow source documentation & project metadata
+Disallow: /DESIGN.md
+Disallow: /*.md$
+Disallow: /*.json$
+Disallow: /*.yml$
+Disallow: /*.yaml$
+Disallow: /*.lock$
+
+# Security: Disallow logs, backups, and temporary dumps
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.old$
+Disallow: /*.sql$
+Disallow: /*.tar$
+Disallow: /*.zip$
+Disallow: /*.gz$
+Disallow: /scratch/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /backup/
+
+# Security: Disallow common CMS / exploit probe paths
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /login/
+Disallow: /api/
+Disallow: /cgi-bin/
+
+# Crawl budget optimization: prevent crawling dynamic query combinations
+Disallow: /*?*query=
+Disallow: /*?*search=
+Disallow: /*?*filter=
+Disallow: /*?*session=
+
+# ------------------------------------------------------------------------------
+# 3. BLOCK KNOWN AGGRESSIVE / MALICIOUS SCRAPERS & VULNERABILITY SCANNERS
+# ------------------------------------------------------------------------------
+User-agent: SemrushBot
+User-agent: SemrushBot-SA
+User-agent: AhrefsBot
+User-agent: MJ12bot
+User-agent: PetalBot
+User-agent: BLEXBot
+User-agent: DataForSeoBot
+User-agent: DotBot
+User-agent: SerpstatBot
+User-agent: Rogerbot
+User-agent: MegaIndex
+User-agent: SeekportBot
+User-agent: ZoominfoBot
+User-agent: trendictionbot
+Crawl-delay: 10
+Disallow: /
+
+User-agent: Jorgee
+User-agent: ZmEu
+User-agent: Morfeus
+User-agent: masscan
+Disallow: /
+
+# ------------------------------------------------------------------------------
+# 4. XML SITEMAP LOCATIONS
+# ------------------------------------------------------------------------------
 Sitemap: https://www.airapaints.com/sitemap.xml
+Sitemap: https://aira-paints.vercel.app/sitemap.xml

@@ -1,144 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="
-    http://www.sitemaps.org/schemas/sitemap/0.9
-    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
-  <!-- ============================================
+  <!-- ====================================================================
        AIRA PAINTS — XML Sitemap
-       Brand: Aira Paints
-       Location: Tirupati, Andhra Pradesh, India
-       Generated: 2026-06-23
-       ============================================ -->
+       Official Website: https://www.airapaints.com
+       HQ: Tirupati, Andhra Pradesh, India
+       Last Updated: 2026-10-07
+       ==================================================================== -->
 
-  <!-- ── MAIN PAGE (Canonical Home) ── -->
+  <!-- ── 01. HOME / MAIN PAGE (Canonical) ── -->
   <url>
     <loc>https://www.airapaints.com/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.airapaints.com/Aira%20Logo.png</image:loc>
+      <image:title>Aira Paints Official Brand Logo</image:title>
+      <image:caption>Aira Paints - Premium Eco-Friendly Low VOC Indian Paints</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Green%20Emulsion%20Front%20View1.png</image:loc>
+      <image:title>Aira Interior Eco Green Paint Emulsion</image:title>
+      <image:caption>Rich, breathable eco-friendly interior wall emulsion paint</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Dark%20Blue%20front%20View1.png</image:loc>
+      <image:title>Aira Weather Shield Exterior Paint</image:title>
+      <image:caption>Extreme exterior weather protection emulsion</image:caption>
+    </image:image>
   </url>
 
-  <!-- ── SECTION 01: Hero / Home ── -->
+  <!-- ── 02. PRODUCT CATALOGUE ── -->
   <url>
-    <loc>https://www.airapaints.com/#hero</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://www.airapaints.com/product.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Green%20Emulsion%20Front%20View1.png</image:loc>
+      <image:title>Aira Interior Eco Emulsion Product</image:title>
+      <image:caption>Interior washable anti-bacterial emulsion paint</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Dark%20Blue%20front%20View1.png</image:loc>
+      <image:title>Aira Weather Shield Exterior Product</image:title>
+      <image:caption>UV resistant anti-fungal exterior wall paint</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Voilate%20Emulsion%20Front%20view.png</image:loc>
+      <image:title>Aira Pro Primers Finish</image:title>
+      <image:caption>High adhesion primer coat</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Sky%20Blue%20Front%20View1.png</image:loc>
+      <image:title>Aira Damp Protect Waterproofing</image:title>
+      <image:caption>Advanced elastomeric waterproofing barrier</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.airapaints.com/images/products/Premire%20Front%20View1.png</image:loc>
+      <image:title>Aira Premier Luxury Velvet Emulsion</image:title>
+      <image:caption>Luxury satin velvet interior wall paint</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ── 03. OUR STORY & HERITAGE ── -->
+  <url>
+    <loc>https://www.airapaints.com/story.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.airapaints.com/Aira%20Corporate%20Headquarters.jpeg</image:loc>
+      <image:title>Aira Paints Corporate Headquarters, Tirupati</image:title>
+      <image:caption>Aira Paints manufacturing &amp; research hub in Andhra Pradesh</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ── 04. PRICING & PAINT ESTIMATOR CALCULATOR ── -->
+  <url>
+    <loc>https://www.airapaints.com/pricing.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ── 05. CONTACT & DEALERSHIP ENQUIRIES ── -->
+  <url>
+    <loc>https://www.airapaints.com/contact.html</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- ── 06. CLEAN URL EXTENSIONS (Vercel Clean URLs) ── -->
+  <url>
+    <loc>https://www.airapaints.com/product</loc>
+    <lastmod>2026-10-07</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ── SECTION 02: Why Modern Homes Choose Us (Features) ── -->
   <url>
-    <loc>https://www.airapaints.com/#why-us</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://www.airapaints.com/story</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- ── SECTION 03: Tirupati Story ── -->
   <url>
-    <loc>https://www.airapaints.com/#story</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 04: Product Showcase ── -->
-  <url>
-    <loc>https://www.airapaints.com/#products</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://www.airapaints.com/pricing</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
 
-  <!-- ── SECTION 04a: Interior Paints (Product Sub-category) ── -->
   <url>
-    <loc>https://www.airapaints.com/#products</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 05: Competitor Comparison ── -->
-  <url>
-    <loc>https://www.airapaints.com/#compare</loc>
-    <lastmod>2026-06-23</lastmod>
+    <loc>https://www.airapaints.com/contact</loc>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ── SECTION 06: Colour Inspiration Studio ── -->
-  <url>
-    <loc>https://www.airapaints.com/#inspiration</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 07: Sustainability Storytelling ── -->
-  <url>
-    <loc>https://www.airapaints.com/#sustainability</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ── SECTION 08: Project Gallery ── -->
-  <url>
-    <loc>https://www.airapaints.com/#gallery</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 09: Customer Success Stories ── -->
-  <url>
-    <loc>https://www.airapaints.com/#testimonials</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- ── SECTION 10: Dealer Network ── -->
-  <url>
-    <loc>https://www.airapaints.com/#dealer</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 11: Free Consultation CTA ── -->
-  <url>
-    <loc>https://www.airapaints.com/#consultation</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- ── SECTION 12: Contact + Footer ── -->
-  <url>
-    <loc>https://www.airapaints.com/#contact</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- ── Legal Pages ── -->
-  <url>
-    <loc>https://www.airapaints.com/privacy-policy</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <url>
-    <loc>https://www.airapaints.com/terms-of-service</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.85</priority>
   </url>
 
 </urlset>
