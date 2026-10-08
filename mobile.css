@@ -840,15 +840,15 @@
   }
 
   .card-visual {
-    height: 270px !important;
+    height: 340px !important;
     padding: 1.2rem !important;
     border-top-left-radius: 20px !important;
     border-top-right-radius: 20px !important;
   }
 
   .card-product-img {
-    max-height: 230px !important;
-    max-width: 88% !important;
+    max-height: 300px !important;
+    max-width: 95% !important;
     width: auto !important;
     object-fit: contain !important;
   }
