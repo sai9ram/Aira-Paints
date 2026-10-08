@@ -411,9 +411,12 @@
     padding-top: 6rem !important;
     padding-bottom: 2rem !important;
     display: grid !important;
+    align-items: stretch !important;
+    height: 100% !important;
   }
   .hero-slide-info {
     align-items: flex-start !important;
+    justify-content: center !important;
   }
   .hero-slide-ctas {
     justify-content: flex-start !important;
@@ -456,7 +459,7 @@
   .hero-slide-content {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 0.6rem !important;
     text-align: left !important;
     padding: 0 1.1rem !important;
@@ -468,6 +471,7 @@
 
   .hero-slide-info {
     align-items: flex-start !important;
+    justify-content: center !important;
     gap: 0.45rem !important;
     width: 100% !important;
   }
@@ -517,6 +521,7 @@
   /* Right Side: Paint Can Visual - Prominent image size */
   .hero-slide-visual {
     width: 100% !important;
+    height: 100% !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -524,8 +529,8 @@
   }
 
   .hero-slide .product-can-wrap {
-    width: 170px !important;
-    height: 270px !important;
+    width: 100% !important;
+    height: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     display: flex !important;
@@ -534,17 +539,17 @@
   }
 
   .hero-slide .product-can-img {
-    height: 270px !important;
-    max-height: 270px !important;
-    width: auto !important;
+    height: 100% !important;
+    max-height: none !important;
+    width: 100% !important;
     max-width: 100% !important;
     object-fit: contain !important;
     filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.45)) !important;
   }
 
   .hero-slide .can-glow {
-    width: 150px !important;
-    height: 150px !important;
+    width: 180px !important;
+    height: 180px !important;
     filter: blur(25px) !important;
   }
 
@@ -629,6 +634,8 @@
     grid-template-columns: 1.1fr 0.9fr !important;
     padding: 0 0.8rem !important;
     gap: 0.4rem !important;
+    align-items: stretch !important;
+    height: 100% !important;
   }
   .hero-slide-title {
     font-size: 0.95rem !important;
@@ -641,12 +648,14 @@
     overflow: hidden;
   }
   .hero-slide .product-can-wrap {
-    width: 150px !important;
-    height: 240px !important;
+    width: 100% !important;
+    height: 100% !important;
   }
   .hero-slide .product-can-img {
-    height: 230px !important;
-    max-height: 230px !important;
+    height: 100% !important;
+    max-height: none !important;
+    width: 100% !important;
+    object-fit: contain !important;
   }
 }
 
