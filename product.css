@@ -1145,7 +1145,7 @@
 }
 
 .card-visual {
-  height: 430px;
+  height: 340px;
   background: #f0f3f1;
   display: flex;
   align-items: center;
@@ -1158,9 +1158,10 @@
 }
 
 .card-product-img {
-  max-height: 370px;
-  width: auto;
-  max-width: 95%;
+  height: 500px;
+  width: 100%;
+  max-height: none;
+  max-width: 100%;
   object-fit: contain;
   z-index: 2;
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;
