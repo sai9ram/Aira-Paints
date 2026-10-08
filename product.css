@@ -1151,11 +1151,10 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
   border-top-left-radius: 27px;
   border-top-right-radius: 27px;
   transform-style: preserve-3d;
-  padding: 0;
+  padding: 1.5rem;
 }
 
 .card-product-img {
