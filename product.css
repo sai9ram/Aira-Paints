@@ -1151,14 +1151,15 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
   border-top-left-radius: 27px;
   border-top-right-radius: 27px;
   transform-style: preserve-3d;
-  padding: 1.5rem;
+  padding: 0;
 }
 
 .card-product-img {
-  height: 500px;
+  height: 1000px;
   width: 100%;
   max-height: none;
   max-width: 100%;
