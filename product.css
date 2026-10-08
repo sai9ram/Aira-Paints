@@ -1158,10 +1158,9 @@
 }
 
 .card-product-img {
-  height: 1000px;
-  width: 100%;
-  max-height: none;
-  max-width: 100%;
+  max-height: 290px;
+  width: auto;
+  max-width: 90%;
   object-fit: contain;
   z-index: 2;
   transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), filter 0.6s ease;

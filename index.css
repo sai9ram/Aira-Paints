@@ -811,15 +811,18 @@ nav a:hover::after {
   filter: drop-shadow(0 45px 65px rgba(0, 0, 0, 0.55));
 }
 
-/* --- Our Products Section - Large & Prominent Cans --- */
+/* --- Our Products Section - Full-Height Cans (top = text, bottom = CTA) --- */
 .product-slide .product-can-wrap {
-  width: 480px;
-  height: 560px;
+  width: 100%;
+  height: 100%;
   transition: all 0.5s var(--ease-smooth);
 }
 
 .product-slide .product-can-img {
-  height: 480px;
+  height: 100%;
+  width: 100%;
+  max-height: none;
+  object-fit: contain;
   filter: drop-shadow(0 35px 55px rgba(0, 0, 0, 0.4));
   animation: canFloat 5s ease-in-out infinite;
 }
@@ -846,11 +849,14 @@ nav a:hover::after {
     height: 360px;
   }
   .product-slide .product-can-wrap {
-    width: 340px;
-    height: 400px;
+    width: 100%;
+    height: 100%;
   }
   .product-slide .product-can-img {
-    height: 340px;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    object-fit: contain;
   }
 }
 
@@ -875,12 +881,15 @@ nav a:hover::after {
     transform: translateY(0) scale(1) !important;
   }
   .product-slide .product-can-wrap {
-    width: 290px;
-    height: 350px;
+    width: 100%;
+    height: 320px;
     margin: 0 auto;
   }
   .product-slide .product-can-img {
-    height: 310px;
+    height: 100%;
+    width: 100%;
+    max-height: none;
+    object-fit: contain;
   }
 }
 
@@ -2244,7 +2253,7 @@ nav a:hover::after {
   inset: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: stretch;
   padding: 0 7% 0 8%;
   gap: 4rem;
   opacity: 0;
@@ -2270,7 +2279,7 @@ nav a:hover::after {
 .slide-visual {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   height: 100%;
 }
 
@@ -2279,6 +2288,8 @@ nav a:hover::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 /* Ambient glow */
@@ -2497,6 +2508,7 @@ nav a:hover::after {
 .slide-info {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1.4rem;
   max-width: 520px;
 }
