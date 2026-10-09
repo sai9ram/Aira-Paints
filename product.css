@@ -1809,12 +1809,22 @@
   transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.step-badge i {
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform 0.4s ease;
+}
+
 .timeline-step.active .step-badge {
   border-color: var(--forest);
   background: var(--forest);
   color: var(--white);
   box-shadow: 0 6px 18px rgba(15, 77, 58, 0.25);
   transform: scale(1.1);
+}
+
+.timeline-step.active .step-badge i {
+  transform: scale(1.05);
 }
 
 .step-content {
