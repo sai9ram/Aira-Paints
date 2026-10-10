@@ -644,9 +644,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const carpetInput = document.getElementById('carpet-area-input');
   const coatsSelect = document.getElementById('coating-coats-select');
   const calcVolText = document.getElementById('calc-volume-needed');
-  const priceEconomyText = document.getElementById('calc-price-economy');
   const pricePremiumText = document.getElementById('calc-price-premium');
-  const priceLuxuryText = document.getElementById('calc-price-luxury');
+  const priceEssentialText = document.getElementById('calc-price-essential');
 
   function calculateCheapestBucketMix(litres, seriesPrices) {
     let remaining = litres;
@@ -693,22 +692,17 @@ document.addEventListener('DOMContentLoaded', () => {
     calcVolText.textContent = `~${totalLitres} Litres`;
 
     const pricesDef = {
-      economy: { 20: 4299, 10: 2199, 4: 949, 1: 249 },
       premium: { 20: 6899, 10: 3499, 4: 1499, 1: 399 },
-      luxury: { 20: 9899, 10: 4999, 4: 2099, 1: 549 }
+      essential: { 20: 4299, 10: 2199, 4: 949, 1: 249 }
     };
 
-    if (priceEconomyText) {
-      const price = calculateCheapestBucketMix(totalLitres, pricesDef.economy);
-      priceEconomyText.textContent = `₹${price.toLocaleString('en-IN')}`;
-    }
     if (pricePremiumText) {
       const price = calculateCheapestBucketMix(totalLitres, pricesDef.premium);
       pricePremiumText.textContent = `₹${price.toLocaleString('en-IN')}`;
     }
-    if (priceLuxuryText) {
-      const price = calculateCheapestBucketMix(totalLitres, pricesDef.luxury);
-      priceLuxuryText.textContent = `₹${price.toLocaleString('en-IN')}`;
+    if (priceEssentialText) {
+      const price = calculateCheapestBucketMix(totalLitres, pricesDef.essential);
+      priceEssentialText.textContent = `₹${price.toLocaleString('en-IN')}`;
     }
   }
 
