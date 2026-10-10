@@ -68,10 +68,11 @@
           <div class="enquiry-form-group">
             <label for="enquiry-type">Paint Requirement</label>
             <select id="enquiry-type" class="enquiry-form-control">
-              <option value="Interior serene finish">Interior serene finish</option>
-              <option value="Exterior WeatherShield">Exterior WeatherShield</option>
-              <option value="Damp Protect Waterproofing">Damp Protect Waterproofing</option>
-              <option value="Primers & Undercoats">Primers & Undercoats</option>
+              <option value="Premium Interior Emulsion">Premium Interior Emulsion</option>
+              <option value="Premium Exterior Emulsion">Premium Exterior Emulsion</option>
+              <option value="Aira Eco Primer">Aira Eco Primer</option>
+              <option value="Essential Exterior Emulsion">Essential Exterior Emulsion</option>
+              <option value="Essential Interior Emulsion">Essential Interior Emulsion</option>
               <option value="General Query">Not Sure / Other</option>
             </select>
           </div>
@@ -140,7 +141,19 @@
       if (category) {
         const typeSelect = document.getElementById('enquiry-type');
         if (typeSelect) {
-          typeSelect.value = category;
+          const catMap = {
+            'interior': 'Premium Interior Emulsion',
+            'exterior': 'Premium Exterior Emulsion',
+            'primer': 'Aira Eco Primer',
+            'waterproofing': 'Essential Exterior Emulsion',
+            'luxury': 'Essential Interior Emulsion',
+            'essential-interior': 'Essential Interior Emulsion'
+          };
+          if (catMap[category]) {
+            typeSelect.value = catMap[category];
+          } else if (Array.from(typeSelect.options).some(o => o.value === category)) {
+            typeSelect.value = category;
+          }
         }
       }
       

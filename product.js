@@ -23,15 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // Gradient generator for background mood
   const getHeroGradient = (hex) => {
     switch (hex) {
-      case '#0F4D3A': // Eco Green
+      case '#0F4D3A': // Premium Interior Emulsion
         return 'radial-gradient(circle at 75% 45%, #155e47 0%, #0c3d2e 60%, #07261c 100%)';
-      case '#0B2E59': // Dark Blue
+      case '#0B2E59': // Premium Exterior Emulsion
         return 'radial-gradient(circle at 75% 45%, #144985 0%, #0a294f 60%, #05162b 100%)';
-      case '#4A3F6B': // Violet Primer
+      case '#4A3F6B': // Aira Eco Primer
         return 'radial-gradient(circle at 75% 45%, #62538c 0%, #3e3359 60%, #1e192c 100%)';
-      case '#1D709A': // Sky Blue
+      case '#1D709A': // Essential Exterior Emulsion
         return 'radial-gradient(circle at 75% 45%, #258ec2 0%, #14597b 60%, #092a3b 100%)';
-      case '#5C2B4E': // Premier Velvet
+      case '#5C2B4E': // Essential Interior Emulsion
         return 'radial-gradient(circle at 75% 45%, #80396b 0%, #4a203e 60%, #240d1e 100%)';
       default:
         return 'radial-gradient(circle at 75% 45%, #155e47 0%, #0c3d2e 60%, #07261c 100%)';
