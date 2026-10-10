@@ -24,21 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let activePrice = 420; // Default Premium price per Can (3.6L)
   let activeCoverage = 350; // Default coverage in sq.ft per Can
 
-  // Grade Buttons Switcher
-  gradeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      gradeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      activePrice = parseFloat(btn.getAttribute('data-price'));
-      calculateRequirements();
-    });
-  });
-
   // Category Selector Dropdown listener
   if (paintCategorySelect) {
     paintCategorySelect.addEventListener('change', () => {
       const selectedOption = paintCategorySelect.options[paintCategorySelect.selectedIndex];
       activeCoverage = parseFloat(selectedOption.getAttribute('data-coverage'));
+      if (selectedOption.hasAttribute('data-price')) {
+        activePrice = parseFloat(selectedOption.getAttribute('data-price'));
+      }
       if (detailCoverage) {
         detailCoverage.textContent = `${activeCoverage} sq.ft/can`;
       }
