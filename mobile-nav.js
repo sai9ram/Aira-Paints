@@ -181,7 +181,7 @@
           <p><strong>1. Scope of Exclusivity:</strong> The dealer is authorized to promote and sell Aira Paints products (Economy, Premium, and Luxury series) within their designated city territory.</p>
           <p><strong>2. Suggested Merchant Margins:</strong> Margin models are set dynamically to support growth: Economy Series (18% - 22%), Premium Series (22% - 25%), and Luxury Series (25% - 30%).</p>
           <p><strong>3. Marketing & Support:</strong> Aira Paints agrees to supply retail branding, display racks, and product catalogs. The dealer agrees to allocate display space in-store.</p>
-          <p><strong>4. Environmental Quality Policy:</strong> The dealer agrees to represent and advertise Aira Paints as a premium, low-VOC, eco-friendly product line.</p>
+          <p><strong>4. Environmental Quality Policy:</strong> The dealer agrees to represent and advertise Aira Paints as a premium, ultra-low-VOC, eco-friendly product line.</p>
         </div>
 
         <form class="modal-request-form" id="dealer-modal-form">
