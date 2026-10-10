@@ -1295,7 +1295,14 @@ body.story-page.dark-theme .card-content p {
 .video-overlay-dark {
   position: absolute;
   inset: 0;
-  background: rgba(15, 77, 58, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 34, 26, 0.82) 0%,
+    rgba(8, 42, 32, 0.88) 50%,
+    rgba(5, 26, 20, 0.94) 100%
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   z-index: 2;
 }
 
@@ -1330,26 +1337,29 @@ body.story-page.dark-theme .card-content p {
   letter-spacing: 2px;
   color: #6ec6b0;
   text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .vision-title {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   font-weight: 700;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1.15;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
 }
 
 .vision-desc, .vision-desc-secondary {
   font-family: var(--font-body);
   font-size: clamp(1.05rem, 2vw, 1.2rem);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.75;
+  color: #ffffff;
   max-width: 800px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .vision-desc-secondary {
-  opacity: 0.7;
+  opacity: 0.95;
   font-size: 1.05rem;
   margin-top: 0.5rem;
 }
