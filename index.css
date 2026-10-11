@@ -7466,6 +7466,26 @@ body.loading #bg-canvas {
   }
 }
 
+@media (max-width: 768px) {
+  .cp-tags {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    padding: 4px 4px 10px 4px;
+    margin-bottom: 1.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .cp-tags::-webkit-scrollbar {
+    display: none;
+  }
+  .cp-tag {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+}
+
 @media (max-width: 600px) {
   .cp-swatches-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -7489,4 +7509,5 @@ body.loading #bg-canvas {
     width: 100%;
   }
 }
+
 

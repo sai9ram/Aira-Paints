@@ -871,6 +871,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       tag.classList.add('active');
       tag.setAttribute('aria-selected','true');
+      tag.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       
       const fam = tag.dataset.family;
       currentFamily = fam;
