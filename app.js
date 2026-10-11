@@ -698,34 +698,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const splashScreen = document.getElementById('splash-screen');
   const isMobile = window.innerWidth <= 768;
 
-  if (splashScreen && !isMobile) {
-    // Fade out splash overlay directly on desktop (3.0s)
-    setTimeout(() => {
+  if (splashScreen) {
+    const activeVideo = isMobile
+      ? (document.getElementById('splash-video-mobile') || splashScreen.querySelector('video'))
+      : (document.getElementById('splash-video-desktop') || splashScreen.querySelector('video'));
+
+    let dismissed = false;
+    const dismissSplash = () => {
+      if (dismissed) return;
+      dismissed = true;
       splashScreen.classList.add('splash-fade-out');
       document.body.classList.remove('loading');
-    }, 3000);
 
-    // Completely remove element from DOM after transition finishes (4.2s)
-    setTimeout(() => {
-      splashScreen.remove();
-    }, 4200);
+      // Completely remove element from DOM after transition finishes
+      setTimeout(() => {
+        splashScreen.remove();
+      }, 1200);
 
-    // Auto-trigger the Quick Enquiry Modal 3 seconds after the landing page content is revealed (6.0s total)
-    setTimeout(() => {
-      const modal = document.getElementById('enquiry-popup-modal');
-      if (modal && modal.getAttribute('aria-hidden') === 'true') {
-        modal.removeAttribute('aria-hidden');
-        document.body.style.overflow = 'hidden';
-      }
-    }, 6000);
-  } else {
-    // Mobile view or if no splash screen: remove splash immediately
-    if (splashScreen) {
-      splashScreen.remove();
+      // Auto-trigger Quick Enquiry modal 3 seconds after page is revealed
+      setTimeout(() => {
+        const modal = document.getElementById('enquiry-popup-modal');
+        if (modal && modal.getAttribute('aria-hidden') === 'true') {
+          modal.removeAttribute('aria-hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      }, 3000);
+    };
+
+    // Auto-dismiss timeout (desktop: 3.0s, mobile: 4.2s or when video ends)
+    const timeoutDuration = isMobile ? 4200 : 3000;
+    const timer = setTimeout(dismissSplash, timeoutDuration);
+
+    if (activeVideo) {
+      activeVideo.addEventListener('ended', () => {
+        clearTimeout(timer);
+        dismissSplash();
+      });
+      activeVideo.play().catch(() => {});
     }
+  } else {
     document.body.classList.remove('loading');
-
-    // Pop up Quick Enquiry modal in 3 seconds directly
     setTimeout(() => {
       const modal = document.getElementById('enquiry-popup-modal');
       if (modal && modal.getAttribute('aria-hidden') === 'true') {
