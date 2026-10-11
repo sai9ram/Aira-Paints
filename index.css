@@ -342,24 +342,25 @@ nav a:hover::after {
 }
 
 /* ============================================
-   HERO SECTION - SCROLLYTELLING (STACK + FADE)
-   No clipping needed - slides are stacked &
-   shown/hidden with opacity only.
+/* ============================================
+   HERO SECTION - CAROUSEL (STACK + FADE)
+   Manual navigation via arrows & pagination dots.
    ============================================ */
 .hero-section {
-  height: 500vh;          /* 4 - 100vh scrollable distance */
+  height: 100vh;
+  min-height: 650px;
   position: relative;
   z-index: 1;
 }
 
-/* Sticky viewport that stays fixed while we scroll */
+/* Viewport for hero stage */
 .hero-stage {
-  position: sticky;
+  position: relative;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   z-index: 10;
-  /* NO overflow, NO clip-path - not needed */
+  overflow: hidden;
 }
 
 /* Track is just a full-size container; slides stack inside it */
@@ -637,9 +638,54 @@ nav a:hover::after {
   50%       { transform: translateY(6px); }
 }
 
-/* Carousel arrow buttons — hidden on desktop, shown by mobile.css */
+/* Carousel arrow buttons */
 .hero-arrow {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  font-size: 1.15rem;
+  cursor: pointer;
+  z-index: 30;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s var(--ease-smooth), opacity 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  padding: 0;
+}
+
+.hero-arrow:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.65);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.hero-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.hero-arrow--disabled {
+  opacity: 0.25;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hero-arrow-prev {
+  left: clamp(1rem, 2.5vw, 2.5rem);
+}
+
+.hero-arrow-next {
+  right: clamp(1rem, 2.5vw, 2.5rem);
 }
 
 /* - Ensure slide content sits above bg layer - */

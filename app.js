@@ -1,133 +1,65 @@
 /* ============================================================
    AIRA PAINTS — Hero Controller
-   Desktop: scroll-driven (sticky scrollytelling)
-   Mobile:  manual carousel via ← → arrow buttons & dot clicks
+   All viewports: manual carousel via ← → arrow buttons & dot clicks
+   Scroll no longer changes slides.
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ── DOM ─────────────────────────────────────── */
-  const heroSection  = document.getElementById('hero');
-  const heroSlides   = document.querySelectorAll('.hero-slide');
-  const heroDots     = document.querySelectorAll('.hero-dot');
-  const header       = document.getElementById('site-header');
-  const scrollHint   = document.getElementById('hero-scroll-hint');
-  const prevBtn      = document.getElementById('hero-arrow-prev');
-  const nextBtn      = document.getElementById('hero-arrow-next');
+  const heroSection = document.getElementById('hero');
+  const heroSlides  = document.querySelectorAll('.hero-slide');
+  const heroDots    = document.querySelectorAll('.hero-dot');
+  const header      = document.getElementById('site-header');
+  const prevBtn     = document.getElementById('hero-arrow-prev');
+  const nextBtn     = document.getElementById('hero-arrow-next');
 
   if (!heroSection || heroSlides.length === 0) return;
 
   const totalSlides = heroSlides.length;
 
-  /* ── Layout cache ─────────────────────────────── */
-  let sectionTop      = 0;
-  let scrollableRange = 0;
-  let isMobile        = window.innerWidth <= 768;
-
-  function cacheLayout() {
-    sectionTop      = heroSection.offsetTop;
-    scrollableRange = heroSection.offsetHeight - window.innerHeight;
-    isMobile        = window.innerWidth <= 768;
-  }
-
   const clamp = (v, lo, hi) => Math.min(Math.max(v, lo), hi);
 
-  /* ── Mobile Manual Carousel ──────────────────── */
-  let mobileActiveIdx = 0;
+  /* ── Unified Carousel State ──────────────────── */
+  let activeIdx = 0;
 
-  function setMobileSlide(idx) {
-    mobileActiveIdx = clamp(idx, 0, totalSlides - 1);
-    heroSlides.forEach((s, i) => s.classList.toggle('active', i === mobileActiveIdx));
-    heroDots.forEach((d, i)   => d.classList.toggle('active', i === mobileActiveIdx));
-    /* Grey-out prev/next at ends */
-    if (prevBtn) prevBtn.classList.toggle('hero-arrow--disabled', mobileActiveIdx === 0);
-    if (nextBtn) nextBtn.classList.toggle('hero-arrow--disabled', mobileActiveIdx === totalSlides - 1);
-  }
-
-  /* ── Desktop Scroll-driven Tick ──────────────── */
-  function animate(scrollY) {
-    if (header)     header.classList.toggle('scrolled', scrollY > 20);
-    if (scrollHint) scrollHint.classList.toggle('hidden', scrollY > sectionTop + 80);
-
-    if (isMobile) return; /* mobile handled by arrows */
-
-    const progress  = clamp(
-      scrollableRange > 0 ? (scrollY - sectionTop) / scrollableRange : 0,
-      0, 1
-    );
-    const activeIdx = clamp(Math.floor(progress * totalSlides), 0, totalSlides - 1);
-
+  function goToSlide(idx) {
+    activeIdx = clamp(idx, 0, totalSlides - 1);
     heroSlides.forEach((s, i) => s.classList.toggle('active', i === activeIdx));
     heroDots.forEach((d, i)   => d.classList.toggle('active', i === activeIdx));
+    /* Dim arrows at ends */
+    if (prevBtn) prevBtn.classList.toggle('hero-arrow--disabled', activeIdx === 0);
+    if (nextBtn) nextBtn.classList.toggle('hero-arrow--disabled', activeIdx === totalSlides - 1);
   }
 
-  /* ── rAF-throttled scroll listener ───────────── */
-  let lastScrollY = window.scrollY;
-  let ticking     = false;
-
+  /* ── Scroll listener (header only — no slide change) ── */
   window.addEventListener('scroll', () => {
-    lastScrollY = window.scrollY;
-    if (!ticking) {
-      requestAnimationFrame(() => { animate(lastScrollY); ticking = false; });
-      ticking = true;
-    }
+    if (header) header.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 
-  /* ── Arrow buttons (mobile only) ─────────────── */
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      if (isMobile) setMobileSlide(mobileActiveIdx - 1);
-    });
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      if (isMobile) setMobileSlide(mobileActiveIdx + 1);
-    });
-  }
+  /* ── Arrow buttons ────────────────────────────── */
+  if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(activeIdx - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(activeIdx + 1));
 
   /* ── Dot clicks ──────────────────────────────── */
   heroDots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      if (isMobile) {
-        setMobileSlide(i);
-      } else {
-        window.scrollTo({
-          top: sectionTop + (i / (totalSlides - 1)) * scrollableRange,
-          behavior: 'smooth'
-        });
-      }
-    });
+    dot.addEventListener('click', () => goToSlide(i));
   });
 
-  /* ── Touch swipe support (mobile) ────────────── */
+  /* ── Touch / swipe support ───────────────────── */
   let touchStartX = 0;
-  heroSection.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  heroSection.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+  }, { passive: true });
   heroSection.addEventListener('touchend', e => {
-    if (!isMobile) return;
     const dx = e.changedTouches[0].clientX - touchStartX;
     if (Math.abs(dx) > 40) {
-      dx < 0 ? setMobileSlide(mobileActiveIdx + 1) : setMobileSlide(mobileActiveIdx - 1);
+      dx < 0 ? goToSlide(activeIdx + 1) : goToSlide(activeIdx - 1);
     }
   }, { passive: true });
 
-  /* ── Recalculate on resize ──────────────────── */
-  window.addEventListener('resize', () => {
-    const wasMobile = isMobile;
-    cacheLayout();
-    if (!wasMobile && isMobile) {
-      /* switched to mobile — reset to slide 0 */
-      setMobileSlide(0);
-    }
-    animate(window.scrollY);
-  });
-
   /* ── Boot ────────────────────────────────────── */
-  cacheLayout();
-  if (isMobile) {
-    setMobileSlide(0);
-  } else {
-    animate(window.scrollY);
-  }
+  goToSlide(0);
 
 });
 
