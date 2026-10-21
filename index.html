@@ -25,29 +25,23 @@
   <!-- ===== SPLASH SCREEN ===== -->
   <div id="splash-screen" class="splash-overlay">
     <div class="splash-content full-screen-splash-video">
-      <!-- Desktop / tablet splash video -->
-      <video id="splash-video-desktop" class="splash-video-media splash-video-desktop" autoplay muted playsinline preload="auto">
+      <video class="splash-video-media" autoplay muted playsinline preload="auto">
+        <!-- Desktop / tablet splash video -->
         <source src="Aira Original Logo Animation Video (online-video-cutter.com).mp4" type="video/mp4">
-      </video>
-      <!-- Mobile splash video -->
-      <video id="splash-video-mobile" class="splash-video-media splash-video-mobile" autoplay muted playsinline preload="auto">
-        <source src="Mobile Splash screen .mp4" type="video/mp4">
       </video>
     </div>
   </div>
   <script>
-    (function () {
-      var isMobile = window.innerWidth <= 768;
-      var deskVid = document.getElementById('splash-video-desktop');
-      var mobVid = document.getElementById('splash-video-mobile');
-      if (isMobile) {
-        if (deskVid) { deskVid.pause(); deskVid.remove(); }
-        if (mobVid) { mobVid.play().catch(function () {}); }
-      } else {
-        if (mobVid) { mobVid.pause(); mobVid.remove(); }
-        if (deskVid) { deskVid.play().catch(function () {}); }
+    /* Immediately remove splash screen and restore body on mobile view */
+    if (window.innerWidth <= 768) {
+      document.body.classList.remove('loading');
+      var splashEl = document.getElementById('splash-screen');
+      if (splashEl) {
+        var splashVid = splashEl.querySelector('video');
+        if (splashVid) splashVid.pause();
+        splashEl.remove();
       }
-    })();
+    }
   </script>
 
   <!-- ===== BACKGROUND CANVAS ===== -->
@@ -123,16 +117,19 @@
               <div class="hero-slide-info">
                 <span class="hero-slide-tagline">All India Edition- Est. 2026</span>
                 <h1 class="hero-slide-title">Premium Interior<br>Emulsion</h1>
-                <p class="hero-slide-desc">Create beautiful, comfortable interiors with a smooth finish, rich colours, and a low-odour formula. Made with natural ingredients for a fresh and pleasant home.
+                <p class="hero-slide-desc">Create beautiful, comfortable interiors with a smooth finish, rich colours,
+                  and a low-odour formula. Made with natural ingredients for a fresh and pleasant home.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get Consultation</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get
+                    Consultation</a>
                   <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Green Emulsion Front View1.png?v=4.0" class="product-can-img" alt="Aira Premium Interior Emulsion Can">
+                  <img src="images/products/Green Emulsion Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Premium Interior Emulsion Can">
                   <div class="can-glow" style="--glow-color:rgba(110,198,176,0.5)"></div>
                 </div>
               </div>
@@ -156,16 +153,19 @@
               <div class="hero-slide-info">
                 <span class="hero-slide-tagline">All India Edition- Est. 2026</span>
                 <h1 class="hero-slide-title">Premium Exterior<br>Emulsion</h1>
-                <p class="hero-slide-desc">Made to protect your walls from sunlight, rain, dust, and changing weather. A durable exterior paint that keeps your home looking fresh for longer.
+                <p class="hero-slide-desc">Made to protect your walls from sunlight, rain, dust, and changing weather. A
+                  durable exterior paint that keeps your home looking fresh for longer.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="exterior">Get Consultation</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="exterior">Get
+                    Consultation</a>
                   <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Dark Blue front View1.png?v=4.0" class="product-can-img" alt="Aira Premium Exterior Emulsion Can">
+                  <img src="images/products/Dark Blue front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Premium Exterior Emulsion Can">
                   <div class="can-glow" style="--glow-color:rgba(58,134,255,0.5)"></div>
                 </div>
               </div>
@@ -189,16 +189,19 @@
               <div class="hero-slide-info">
                 <span class="hero-slide-tagline">All India Edition- Est. 2026</span>
                 <h1 class="hero-slide-title">Aira Eco<br>Primer</h1>
-                <p class="hero-slide-desc">A strong base for your walls that helps the paint stick better and last longer. It creates a smooth surface and prepares your walls for a beautiful finish.
+                <p class="hero-slide-desc">A strong base for your walls that helps the paint stick better and last
+                  longer. It creates a smooth surface and prepares your walls for a beautiful finish.
                 </p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="primer">Get Consultation</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="primer">Get
+                    Consultation</a>
                   <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Voilate Emulsion Front view.png?v=4.0" class="product-can-img" alt="Aira Eco Primer Can">
+                  <img src="images/products/Voilate Emulsion Front view.png?v=4.0" class="product-can-img"
+                    alt="Aira Eco Primer Can">
                   <div class="can-glow" style="--glow-color:rgba(160,140,200,0.5)"></div>
                 </div>
               </div>
@@ -222,15 +225,18 @@
               <div class="hero-slide-info">
                 <span class="hero-slide-tagline">All India Edition- Est. 2026</span>
                 <h1 class="hero-slide-title">Essential Exterior<br>Emulsion</h1>
-                <p class="hero-slide-desc">Reliable protection for exterior walls against moisture, dampness, and everyday weather. A practical choice for keeping your home protected.</p>
+                <p class="hero-slide-desc">Reliable protection for exterior walls against moisture, dampness, and
+                  everyday weather. A practical choice for keeping your home protected.</p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="waterproofing">Get Consultation</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="waterproofing">Get
+                    Consultation</a>
                   <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Sky Blue Front View1.png?v=4.0" class="product-can-img" alt="Aira Essential Exterior Emulsion Can">
+                  <img src="images/products/Sky Blue Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Essential Exterior Emulsion Can">
                   <div class="can-glow" style="--glow-color:rgba(93,173,226,0.5)"></div>
                 </div>
               </div>
@@ -253,15 +259,18 @@
               <div class="hero-slide-info">
                 <span class="hero-slide-tagline">All India Edition- Est. 2026</span>
                 <h1 class="hero-slide-title">Essential Interior<br>Emulsion</h1>
-                <p class="hero-slide-desc">Create beautiful feature walls and bedrooms with rich, deep colours and a smooth, elegant finish to your space.</p>
+                <p class="hero-slide-desc">Create beautiful feature walls and bedrooms with rich, deep colours and a
+                  smooth, elegant finish to your space.</p>
                 <div class="hero-slide-ctas">
-                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get Consultation</a>
+                  <a href="#consultation" class="btn btn-primary trigger-enquiry" data-category="interior">Get
+                    Consultation</a>
                   <a href="product.html" class="btn btn-secondary">Explore Products</a>
                 </div>
               </div>
               <div class="hero-slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Premire Front View1.png?v=4.0" class="product-can-img" alt="Aira Essential Interior Emulsion Can">
+                  <img src="images/products/Premire Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Essential Interior Emulsion Can">
                   <div class="can-glow" style="--glow-color:rgba(186,85,211,0.5)"></div>
                 </div>
               </div>
@@ -279,7 +288,7 @@
           <span class="hero-dot" data-slide="4"></span>
         </div>
 
-        <!-- Carousel arrows -->
+        <!-- Mobile-only carousel arrows -->
         <button class="hero-arrow hero-arrow-prev" id="hero-arrow-prev" aria-label="Previous slide">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
@@ -487,7 +496,12 @@
           </h2>
 
           <div class="story-body">
-            <p>From modern homes to commercial landmarks, our paints bring lasting durability, refined elegance, and eco-friendly protection across all Indian regions.</p>
+            <p>From family homes and apartments to villas, commercial complexes, educational institutions, and
+              hospitality projects - our paints bring durability, elegance, and protection to every structure.
+            </p>
+            <p>As India continues to grow as one of the world's fastest developing nations, we remain committed
+              to delivering premium-quality painting solutions that match modern architectural needs across all Indian
+              regions.</p>
           </div>
 
           <!-- Project Type Tags -->
@@ -499,47 +513,6 @@
             <span class="story-tag">Institutions</span>
           </div>
         </div>
-
-        <!-- Right: Animated Counters -->
-        <div class="story-counters reveal-fade" data-delay="250" aria-label="Our achievements">
-
-          <div class="story-counter-item">
-            <div class="counter-value-wrap">
-              <span class="story-counter-num" data-target="5000">0</span>
-              <span class="counter-suffix">+</span>
-            </div>
-            <div class="counter-bar" aria-hidden="true"></div>
-            <span class="counter-label">Happy Customers</span>
-          </div>
-
-          <div class="story-counter-item">
-            <div class="counter-value-wrap">
-              <span class="story-counter-num" data-target="250">0</span>
-              <span class="counter-suffix">+</span>
-            </div>
-            <div class="counter-bar" aria-hidden="true"></div>
-            <span class="counter-label">Projects Completed</span>
-          </div>
-
-          <div class="story-counter-item">
-            <div class="counter-value-wrap">
-              <span class="story-counter-num" data-target="100">0</span>
-              <span class="counter-suffix">+</span>
-            </div>
-            <div class="counter-bar" aria-hidden="true"></div>
-            <span class="counter-label">Dealer Network</span>
-          </div>
-
-          <div class="story-counter-item">
-            <div class="counter-value-wrap">
-              <span class="story-counter-num" data-target="20">0</span>
-              <span class="counter-suffix">+</span>
-            </div>
-            <div class="counter-bar" aria-hidden="true"></div>
-            <span class="counter-label">Years Industry Experience</span>
-          </div>
-
-        </div><!-- /story-counters -->
 
       </div><!-- /story-content -->
 
@@ -564,8 +537,9 @@
         <div style="margin-top: 1rem;">
           <a href="product.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
             <span>Explore All Product Collections</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
@@ -593,7 +567,8 @@
             <div class="product-slide active" data-slide="0" id="slide-0" role="tabpanel" aria-label="Interior Paints">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Green Emulsion Front View1.png?v=4.0" class="product-can-img" alt="Aira Premium Interior Emulsion Can">
+                  <img src="images/products/Green Emulsion Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Premium Interior Emulsion Can">
                   <!-- Ambient glow behind can -->
                   <div class="can-glow" style="--glow-color: rgba(110,198,176,0.3)"></div>
                 </div>
@@ -602,14 +577,16 @@
               <div class="slide-info">
                 <span class="slide-index">01 / 05</span>
                 <h3 class="slide-title">Premium Interior Emulsion</h3>
-                <p class="slide-desc">Create beautiful, comfortable interiors with a smooth finish, rich colours, and a low-odour formula. Made with natural ingredients for a fresh and pleasant home.</p>
+                <p class="slide-desc">Create beautiful, comfortable interiors with a smooth finish, rich colours, and a
+                  low-odour formula. Made with natural ingredients for a fresh and pleasant home.</p>
                 <ul class="slide-features" aria-label="Interior Paint features">
                   <li><span class="feat-icon" aria-hidden="true"></span> Rich Color Retention</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Smooth Finish</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Easy Washability</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Low Odour</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a
+                  Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -623,7 +600,8 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Dark Blue front View1.png?v=4.0" class="product-can-img" alt="Aira Premium Exterior Emulsion Can">
+                  <img src="images/products/Dark Blue front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Premium Exterior Emulsion Can">
                   <div class="can-glow" style="--glow-color: rgba(58,134,255,0.3)"></div>
                 </div>
               </div>
@@ -631,14 +609,16 @@
               <div class="slide-info">
                 <span class="slide-index">02 / 05</span>
                 <h3 class="slide-title">Premium Exterior Emulsion</h3>
-                <p class="slide-desc">Made to protect your walls from sunlight, rain, dust, and changing weather. A durable exterior paint that keeps your home looking fresh for longer.</p>
+                <p class="slide-desc">Made to protect your walls from sunlight, rain, dust, and changing weather. A
+                  durable exterior paint that keeps your home looking fresh for longer.</p>
                 <ul class="slide-features" aria-label="Exterior Paint features">
                   <li><span class="feat-icon" aria-hidden="true"></span> Weather Shield Technology</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Anti-Fungal Protection</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Crack Resistance</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> UV Protection</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="exterior">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="exterior">Get a
+                  Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -652,7 +632,8 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Voilate Emulsion Front view.png?v=4.0" class="product-can-img" alt="Aira Eco Primer Can">
+                  <img src="images/products/Voilate Emulsion Front view.png?v=4.0" class="product-can-img"
+                    alt="Aira Eco Primer Can">
                   <div class="can-glow" style="--glow-color: rgba(160,140,200,0.3)"></div>
                 </div>
               </div>
@@ -660,14 +641,16 @@
               <div class="slide-info">
                 <span class="slide-index">03 / 05</span>
                 <h3 class="slide-title">Aira Eco Primer</h3>
-                <p class="slide-desc">A strong base for your walls that helps the paint stick better and last longer. It creates a smooth surface and prepares your walls for a beautiful finish.</p>
+                <p class="slide-desc">A strong base for your walls that helps the paint stick better and last longer. It
+                  creates a smooth surface and prepares your walls for a beautiful finish.</p>
                 <ul class="slide-features" aria-label="Primer features">
                   <li><span class="feat-icon" aria-hidden="true"></span> Better Adhesion</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Improved Coverage</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Enhanced Durability</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Rust Inhibitor Formula</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="primer">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="primer">Get a
+                  Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -681,7 +664,8 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Sky Blue Front View1.png?v=4.0" class="product-can-img" alt="Aira Essential Exterior Emulsion Can">
+                  <img src="images/products/Sky Blue Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Essential Exterior Emulsion Can">
                   <div class="can-glow" style="--glow-color: rgba(74,159,212,0.3)"></div>
                 </div>
               </div>
@@ -689,14 +673,16 @@
               <div class="slide-info">
                 <span class="slide-index">04 / 05</span>
                 <h3 class="slide-title">Essential Exterior Emulsion</h3>
-                <p class="slide-desc">Reliable protection for exterior walls against moisture, dampness, and everyday weather. A practical choice for keeping your home protected.</p>
+                <p class="slide-desc">Reliable protection for exterior walls against moisture, dampness, and everyday
+                  weather. A practical choice for keeping your home protected.</p>
                 <ul class="slide-features" aria-label="Waterproofing features">
                   <li><span class="feat-icon" aria-hidden="true"></span> Leak Prevention</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Dampness Control</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Long-Term Protection</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Flexible Membrane System</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="waterproofing">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry"
+                  data-category="waterproofing">Get a Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -710,7 +696,8 @@
               aria-hidden="true">
               <div class="slide-visual">
                 <div class="product-can-wrap">
-                  <img src="images/products/Premire Front View1.png?v=4.0" class="product-can-img" alt="Aira Essential Interior Emulsion Can">
+                  <img src="images/products/Premire Front View1.png?v=4.0" class="product-can-img"
+                    alt="Aira Essential Interior Emulsion Can">
                   <div class="can-glow" style="--glow-color: rgba(186,85,211,0.3)"></div>
                 </div>
               </div>
@@ -718,14 +705,16 @@
               <div class="slide-info">
                 <span class="slide-index">05 / 05</span>
                 <h3 class="slide-title">Essential Interior Emulsion</h3>
-                <p class="slide-desc">Create beautiful feature walls and bedrooms with rich, deep colours and a smooth, elegant finish to your space.</p>
+                <p class="slide-desc">Create beautiful feature walls and bedrooms with rich, deep colours and a smooth,
+                  elegant finish to your space.</p>
                 <ul class="slide-features" aria-label="Luxury Emulsion features">
                   <li><span class="feat-icon" aria-hidden="true"></span> Rich Satin Sheen</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Stain & Scuff Resistant</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Superior Spreading Rate</li>
                   <li><span class="feat-icon" aria-hidden="true"></span> Vibrant Deep Tones</li>
                 </ul>
-                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a Quote
+                <a href="#consultation" class="slide-cta btn btn-primary trigger-enquiry" data-category="interior">Get a
+                  Quote
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -746,74 +735,6 @@
       </div><!-- /products-sticky-wrap -->
 
     </section><!-- /products -->
-
-
-    <!-- - -->
-    <!-- -  SECTION 04b - CREATIVE SHADES COLOUR PALETTE   - -->
-    <!-- - -->
-    <section id="colour-palette" class="colour-palette-section" aria-label="Creative Shades Colour Palette">
-      <div class="cp-container">
-
-        <!-- LEFT: Swatch Panel -->
-        <div class="cp-left">
-          <div class="cp-back-bar">
-            <button class="cp-back-btn" id="cp-back-btn" aria-label="Back to colour families">
-              <i class="fa-solid fa-chevron-left"></i> Back to Colours
-            </button>
-          </div>
-
-          <!-- Palette name + hex (shown when a swatch card is active) -->
-          <div class="cp-palette-title-wrap" id="cp-palette-title-wrap">
-            <p class="cp-palette-name" id="cp-palette-name">Sand Silk</p>
-            <p class="cp-palette-hex"  id="cp-palette-hex">#E3DEC3</p>
-          </div>
-
-          <!-- Shade grid -->
-          <div class="cp-swatches-grid" id="cp-swatches-grid" role="list" aria-label="Colour shades"></div>
-        </div>
-
-        <!-- RIGHT: Info + Category Tabs -->
-        <div class="cp-right">
-          <span class="cp-eyebrow">Creative Shades</span>
-          <h2 class="cp-title">Bring Your Vision to Life with<br><em>Stunning Colours</em></h2>
-          <p class="cp-desc">Explore a wide range of carefully curated shades inspired by nature, modern architecture, and contemporary lifestyles. Whether you're creating warm interiors or striking exteriors, find the perfect colour to match your vision.</p>
-
-          <!-- Category filter chips -->
-          <div class="cp-tags" id="cp-tags" role="tablist" aria-label="Colour families">
-            <button class="cp-tag active" data-family="modern-neutrals"    role="tab" aria-selected="true">Modern Neutrals</button>
-            <button class="cp-tag"        data-family="earthy-greens"      role="tab" aria-selected="false">Earthy Greens</button>
-            <button class="cp-tag"        data-family="elegant-whites"     role="tab" aria-selected="false">Elegant Whites</button>
-            <button class="cp-tag"        data-family="royal-blues"        role="tab" aria-selected="false">Royal Blues</button>
-            <button class="cp-tag"        data-family="luxury-golds"       role="tab" aria-selected="false">Luxury Golds</button>
-            <button class="cp-tag"        data-family="contemporary-greys" role="tab" aria-selected="false">Contemporary Greys</button>
-            <button class="cp-tag"        data-family="warm-terracotta"    role="tab" aria-selected="false">Warm Terracotta</button>
-            <button class="cp-tag"        data-family="classic-pastels"    role="tab" aria-selected="false">Classic Pastels</button>
-            <button class="cp-tag"        data-family="deep-navys"         role="tab" aria-selected="false">Deep Navys</button>
-            <button class="cp-tag"        data-family="soft-pinks"         role="tab" aria-selected="false">Soft Pinks</button>
-          </div>
-
-          <!-- CTAs -->
-          <div class="cp-ctas">
-            <a href="contact.html" class="cp-cta-primary">
-              <i class="fa-solid fa-file-arrow-down"></i>
-              Download Colour Catalogue
-            </a>
-            <a href="contact.html" class="cp-cta-secondary">
-              <i class="fa-regular fa-message"></i>
-              Get Free Colour Consultation
-            </a>
-          </div>
-
-          <!-- Quote -->
-          <blockquote class="cp-quote">
-            <i class="fa-solid fa-quote-left cp-quote-icon"></i>
-            Choosing the perfect paint is more than selecting a colour—it's about creating spaces that inspire, protect, and last for years. Let our premium paint solutions help you transform every wall into a masterpiece.
-          </blockquote>
-        </div>
-
-      </div>
-    </section><!-- /colour-palette -->
-
 
     <!-- - -->
     <!-- -  SECTION 05 - COMPETITOR COMPARISON        - -->
@@ -946,7 +867,8 @@
                   </div>
                   <div class="comp-item-text">
                     <h4>Pan-India Regional Support</h4>
-                    <p>On-the-ground support directly based across all Indian regions to handle your queries immediately.</p>
+                    <p>On-the-ground support directly based across all Indian regions to handle your queries
+                      immediately.</p>
                   </div>
                 </li>
                 <li class="comp-item">
@@ -1023,7 +945,7 @@
     <!-- - -->
     <section id="pricing" class="pricing-section" aria-label="Aira Product Pricing">
       <div class="pricing-container">
-        
+
         <div class="pricing-header reveal-up">
           <span class="section-eyebrow">
             <span class="eyebrow-line" aria-hidden="true"></span>
@@ -1037,20 +959,20 @@
         </div>
 
         <!-- Series Selector Tabs -->
-        <!-- Series Selector Tabs -->
         <div class="pricing-tabs-bar">
-          <button class="price-tab-btn active" data-series="premium">Premium Series</button>
-          <button class="price-tab-btn" data-series="essential">Essential Series</button>
+          <button class="price-tab-btn active" data-series="economy">Economy Series</button>
+          <button class="price-tab-btn" data-series="premium">Premium Series</button>
+          <button class="price-tab-btn" data-series="luxury">Luxury Series</button>
         </div>
 
         <!-- Sizing & Pricing Cards Grid -->
         <div class="pricing-grid" id="pricing-grid">
-          
+
           <!-- Size Card: 1 LTR -->
-          <div class="price-card" data-base-prices='{"premium": 399, "essential": 249}'>
+          <div class="price-card" data-base-prices='{"economy": 249, "premium": 399, "luxury": 549}'>
             <div class="price-card-glow"></div>
             <div class="size-badge">1 LTR</div>
-            <h3 class="price-value" id="price-val-1">₹399</h3>
+            <h3 class="price-value" id="price-val-1">₹249</h3>
             <p class="size-desc">Perfect for quick touchups, accents, or small window borders.</p>
             <ul class="size-specs">
               <li><i class="fa-solid fa-check"></i> Covers ~120 sq. ft.</li>
@@ -1061,10 +983,10 @@
           </div>
 
           <!-- Size Card: 4 LTR -->
-          <div class="price-card" data-base-prices='{"premium": 1499, "essential": 949}'>
+          <div class="price-card" data-base-prices='{"economy": 949, "premium": 1499, "luxury": 2099}'>
             <div class="price-card-glow"></div>
             <div class="size-badge">4 LTR</div>
-            <h3 class="price-value" id="price-val-4">₹1,499</h3>
+            <h3 class="price-value" id="price-val-4">₹949</h3>
             <p class="size-desc">Ideal for small rooms, single accent walls, or balconies.</p>
             <ul class="size-specs">
               <li><i class="fa-solid fa-check"></i> Covers ~480 sq. ft.</li>
@@ -1075,10 +997,10 @@
           </div>
 
           <!-- Size Card: 10 LTR -->
-          <div class="price-card highlight" data-base-prices='{"premium": 3499, "essential": 2199}'>
+          <div class="price-card highlight" data-base-prices='{"economy": 2199, "premium": 3499, "luxury": 4999}'>
             <div class="price-card-glow"></div>
             <div class="size-badge">10 LTR</div>
-            <h3 class="price-value" id="price-val-10">₹3,499</h3>
+            <h3 class="price-value" id="price-val-10">₹2,199</h3>
             <p class="size-desc">Recommended for standard master suites or high-traffic halls.</p>
             <ul class="size-specs">
               <li><i class="fa-solid fa-check"></i> Covers ~1200 sq. ft.</li>
@@ -1089,10 +1011,10 @@
           </div>
 
           <!-- Size Card: 20 LTR -->
-          <div class="price-card" data-base-prices='{"premium": 6899, "essential": 4299}'>
+          <div class="price-card" data-base-prices='{"economy": 4299, "premium": 6899, "luxury": 9899}'>
             <div class="price-card-glow"></div>
             <div class="size-badge">20 LTR</div>
-            <h3 class="price-value" id="price-val-20">₹6,899</h3>
+            <h3 class="price-value" id="price-val-20">₹4,299</h3>
             <p class="size-desc">Perfect for full-house painting or major commercial properties.</p>
             <ul class="size-specs">
               <li><i class="fa-solid fa-check"></i> Covers ~2400 sq. ft.</li>
@@ -1139,15 +1061,19 @@
                 <span class="stat-label">ESTIMATED PAINT REQUIRED</span>
                 <strong class="stat-value" id="calc-volume-needed">~16 Litres</strong>
               </div>
-              
+
               <div class="result-price-breakdown">
+                <div class="breakdown-row">
+                  <span>Economy Series:</span>
+                  <strong id="calc-price-economy">₹4,299</strong>
+                </div>
                 <div class="breakdown-row">
                   <span>Premium Series:</span>
                   <strong id="calc-price-premium">₹6,899</strong>
                 </div>
                 <div class="breakdown-row">
-                  <span>Essential Series:</span>
-                  <strong id="calc-price-essential">₹4,299</strong>
+                  <span>Luxury Series:</span>
+                  <strong id="calc-price-luxury">₹9,899</strong>
                 </div>
               </div>
             </div>
@@ -1157,8 +1083,9 @@
         <div class="pricing-catalog-cta-wrap" style="text-align: center; margin-top: 2.5rem;">
           <a href="pricing.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 8px;">
             <span>Explore Complete Pricing Plans &amp; Custom Estimator</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>
@@ -1182,7 +1109,8 @@
 
         <!-- Left: Sustainability Illustration -->
         <div class="sustain-visual" id="sustain-visual">
-          <img src="Green InnovationSecimage.png" class="sustain-showcase-img" alt="Aira Green Innovation & Sustainability">
+          <img src="Green InnovationSecimage.png" class="sustain-showcase-img"
+            alt="Aira Green Innovation & Sustainability">
         </div>
 
 
@@ -1215,7 +1143,7 @@
                 </svg>
               </div>
               <div class="sustain-card-text">
-                <h3>Low VOC</h3>
+                <h3>Ultra Low VOC</h3>
                 <p>Formulated to reduce volatile organic compounds for cleaner breathability.</p>
               </div>
             </div>
@@ -1397,7 +1325,8 @@
           <div class="showcase-content-wrap">
             <span class="showcase-badge">Pan-India Logistics Hub</span>
             <h3>Direct Supplies &<br>Fast Fulfillment</h3>
-            <p>We supply our dealers directly from our main manufacturing hubs, ensuring 24-48 hour fulfillment times all around Indian regions.</p>
+            <p>We supply our dealers directly from our main manufacturing hubs, ensuring 24-48 hour fulfillment times
+              all around Indian regions.</p>
             <div class="showcase-stats">
               <div class="showcase-stat-item">
                 <strong>48h</strong>
@@ -1558,7 +1487,8 @@
         <div style="margin-top: 1.8rem;">
           <a href="contact.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
             <span>Visit Contact &amp; Experience Center</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -1580,9 +1510,10 @@
           </div>
           <div class="contact-card-body">
             <span class="contact-card-label">India Head Office</span>
-            <p class="contact-card-value">F block, Raghunatha Resorts,<br>Thanapalli cross, Tirupati, Andhra Pradesh - 517503</p>
-            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer"
-              class="contact-card-link">
+            <p class="contact-card-value">F block, Raghunatha Resorts,<br>Thanapalli cross, Tirupati, Andhra Pradesh -
+              517503</p>
+            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503"
+              target="_blank" rel="noopener noreferrer" class="contact-card-link">
               View on Maps
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1771,7 +1702,7 @@
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
-              Ultra Low VOC Formula
+              Low VOC
             </div>
             <div class="footer-cert-item">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
@@ -1866,7 +1797,8 @@
               </div>
               <div>
                 <span class="footer-contact-label">India Head Office</span>
-                <span class="footer-contact-val">F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh - 517503</span>
+                <span class="footer-contact-val">F block, Raghunatha Resorts, Thanapalli cross, Tirupati, Andhra Pradesh
+                  - 517503</span>
               </div>
             </li>
             <li class="footer-contact-item">
@@ -1900,8 +1832,8 @@
 
           <!-- Quick action buttons -->
           <div class="footer-quick-actions">
-            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503" target="_blank" rel="noopener noreferrer"
-              class="footer-action-btn" id="btn-google-maps">
+            <a href="https://maps.google.com/?q=F+block,Raghunatha+Resorts,Thanapalli+cross,Tirupati,Andhra+Pradesh-517503"
+              target="_blank" rel="noopener noreferrer" class="footer-action-btn" id="btn-google-maps">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -1963,7 +1895,13 @@
 
   </footer>
 
-
+  <!-- ===== SCROLL HINT ===== -->
+  <div class="scroll-hint" id="scroll-hint" aria-label="Scroll to explore">
+    <span>Scroll</span>
+    <div class="scroll-mouse" aria-hidden="true">
+      <div class="scroll-wheel"></div>
+    </div>
+  </div>
 
 
 
