@@ -465,18 +465,24 @@
         <div class="story-overlay-vignette"></div>
       </div>
 
-      <!-- Floating Location Pill -->
-      <div class="story-location reveal-fade" data-delay="0">
-        <span class="location-dot" aria-hidden="true"></span>
-        <span>Proudly Made in India</span>
-        <span class="location-sep" aria-hidden="true"></span>
-        <span>Est. 2026</span>
+      <!-- Top Story Floating Bar: Location & Certification Badges -->
+      <div class="story-top-bar reveal-fade" data-delay="0">
+        <div class="story-location-badge">
+          <span class="location-dot" aria-hidden="true"></span>
+          <span>Proudly Made in India</span>
+          <span class="location-sep" aria-hidden="true"></span>
+          <span>Est. 2026</span>
+        </div>
+        <div class="story-sub-badge">
+          <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+          <span>Eco-Engineered Formulations</span>
+        </div>
       </div>
 
       <!-- Main Content Block -->
       <div class="story-content">
 
-        <!-- Left: Heading + Body -->
+        <!-- Left: Heading + Body + Scope Tags + Actions -->
         <div class="story-text reveal-fade" data-delay="100">
           <span class="story-eyebrow">
             <span class="story-eyebrow-icon" aria-hidden="true">
@@ -486,7 +492,7 @@
                 <path d="M12 8v4l3 3" />
               </svg>
             </span>
-            Our Story
+            The Aira Journey
           </span>
 
           <h2 class="story-title">
@@ -496,23 +502,97 @@
           </h2>
 
           <div class="story-body">
-            <p>From family homes and apartments to villas, commercial complexes, educational institutions, and
-              hospitality projects - our paints bring durability, elegance, and protection to every structure.
+            <p>
+              Born in Tirupati with an unwavering commitment to architectural quality, Aira Paints blends advanced polymer chemistry with mineral pigments tuned specifically for India's diverse, demanding climates.
             </p>
-            <p>As India continues to grow as one of the world's fastest developing nations, we remain committed
-              to delivering premium-quality painting solutions that match modern architectural needs across all Indian
-              regions.</p>
+            <p>
+              From tropical coastal humidity to blistering dry heat and intense monsoons, our coatings safeguard every wall with rich color retention, crack-resistant elasticity, and ultra-low VOC purity.
+            </p>
           </div>
 
           <!-- Project Type Tags -->
           <div class="story-tags" aria-label="Project types we serve">
-            <span class="story-tag">Modern Homes</span>
-            <span class="story-tag">Luxury Villas</span>
-            <span class="story-tag">Commercial Buildings</span>
-            <span class="story-tag">Apartments</span>
-            <span class="story-tag">Institutions</span>
+            <span class="story-tag"><i class="fa-solid fa-house"></i> Modern Homes</span>
+            <span class="story-tag"><i class="fa-solid fa-tree-city"></i> Luxury Villas</span>
+            <span class="story-tag"><i class="fa-solid fa-building"></i> Commercial Hubs</span>
+            <span class="story-tag"><i class="fa-solid fa-hotel"></i> Hospitality</span>
+            <span class="story-tag"><i class="fa-solid fa-graduation-cap"></i> Institutions</span>
+          </div>
+
+          <!-- Action buttons -->
+          <div class="story-actions">
+            <a href="story.html" class="btn btn-primary story-btn-main">
+              <span>Read Our Full Story</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#products" class="story-link-secondary">
+              <span>View Product Series</span>
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
           </div>
         </div>
+
+        <!-- Right: Modern Bento Visual Showcase & Performance Pillars -->
+        <div class="story-showcase-panel reveal-fade" data-delay="200">
+          
+          <!-- Visual Anchor Card with Landmark Project -->
+          <div class="story-visual-card">
+            <div class="story-visual-img-wrap">
+              <img src="Grand Tirupati Regency.jpeg" alt="Grand Tirupati Regency architectural application showcase" class="story-showcase-photo" loading="lazy">
+              <div class="story-visual-overlay"></div>
+            </div>
+            
+            <div class="story-visual-badge-top">
+              <span class="badge-dot-live"></span>
+              <span>Architectural Landmark</span>
+            </div>
+
+            <div class="story-visual-caption">
+              <span class="caption-kicker">SHOWCASE PROJECT</span>
+              <h4 class="caption-title">Grand Tirupati Regency</h4>
+              <p class="caption-meta">Exterior Weather-Shield &amp; Satin Interior Finishes</p>
+            </div>
+          </div>
+
+          <!-- 3-Pillar Micro Cards -->
+          <div class="story-pillars-grid">
+            
+            <div class="story-pillar-card">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="pillar-content">
+                <h5 class="pillar-title">Extreme Climate Shield</h5>
+                <p class="pillar-desc">UV &amp; dampness resistant formula that prevents peeling and micro-fissures.</p>
+              </div>
+            </div>
+
+            <div class="story-pillar-card">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="pillar-content">
+                <h5 class="pillar-title">Ultra-Low VOC Purity</h5>
+                <p class="pillar-desc">Zero harmful fumes, certified child &amp; pet safe for healthier living spaces.</p>
+              </div>
+            </div>
+
+            <div class="story-pillar-card">
+              <div class="pillar-icon-box">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="pillar-content">
+                <h5 class="pillar-title">Superior Coverage Mileage</h5>
+                <p class="pillar-desc">High spread rate delivers richer color saturation in fewer coats.</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div><!-- /story-showcase-panel -->
 
       </div><!-- /story-content -->
 
