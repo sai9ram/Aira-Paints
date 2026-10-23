@@ -708,7 +708,7 @@
 
 /* SECTION 04 — DEALER / RETAILER MARGINS */
 .dealer-margins-section {
-  padding: 8rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(180deg, #f5f8f6 0%, #ffffff 100%);
   position: relative;
   z-index: 10;
@@ -720,7 +720,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
 }
 
 .margins-header {
