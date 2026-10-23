@@ -1624,33 +1624,33 @@ nav a:hover::after {
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.75rem;
 }
 
 .card-number {
   font-family: var(--font-accent);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
   color: var(--terracotta);
-  opacity: 0.6;
+  opacity: 0.75;
 }
 
 .feature-card h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
+  font-family: var(--font-accent);
+  font-size: clamp(1.3rem, 1.6vw, 1.55rem);
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.02em;
   color: var(--forest);
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .feature-card p {
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: clamp(1rem, 1.1vw, 1.08rem);
   color: var(--charcoal);
-  opacity: 0.65;
-  line-height: 1.7;
+  opacity: 0.8;
+  line-height: 1.65;
 }
 
 /* ---- Reveal Animations (IntersectionObserver driven) ---- */
