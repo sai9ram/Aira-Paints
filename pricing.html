@@ -12,7 +12,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="pricing.css?v=1.3">
+  <link rel="stylesheet" href="pricing.css?v=2.0">
   <link rel="stylesheet" href="mobile.css">
   <link rel="icon" type="image/png" href="Aira_Favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -85,8 +85,8 @@
           <!-- Right: Floating Product Image Showcase -->
           <div class="pricing-hero-header-right">
             <div class="pricing-image-showcase">
-              <div class="pricing-spotlight-glow"></div>
-              <img src="images/products/Green Emulsion Front View1.png" alt="Aira Premium Interior Emulsion Paint Can"
+              <div class="pricing-spotlight-glow" id="pricing-spotlight-glow"></div>
+              <img id="pricing-hero-img" src="images/products/Green Emulsion Front View1.png" alt="Aira Premium Interior Emulsion Paint Can"
                 class="pricing-hero-showcase-img">
               <div class="pricing-showcase-reflection"></div>
             </div>
@@ -107,11 +107,11 @@
               <div class="input-group">
                 <label for="paint-category">Paint Category</label>
                 <select id="paint-category" class="custom-select">
-                  <option value="interior" data-coverage="350" data-price="420">Premium Interior Emulsion (350 sq.ft/gal)</option>
-                  <option value="exterior" data-coverage="280" data-price="460">Premium Exterior Emulsion (280 sq.ft/gal)</option>
-                  <option value="primer" data-coverage="400" data-price="320">Aira Eco Primer (400 sq.ft/gal)</option>
-                  <option value="waterproofing" data-coverage="320" data-price="400">Essential Exterior Emulsion (320 sq.ft/gal)</option>
-                  <option value="essential-interior" data-coverage="340" data-price="380">Essential Interior Emulsion (340 sq.ft/gal)</option>
+                  <option value="interior" data-coverage="350" data-price="420" data-image="images/products/Green Emulsion Front View1.png" data-alt="Aira Premium Interior Emulsion Paint Can">Premium Interior Emulsion (350 sq.ft/gal)</option>
+                  <option value="exterior" data-coverage="280" data-price="460" data-image="images/products/Dark Blue front View1.png" data-alt="Aira Premium Exterior Emulsion Paint Can">Premium Exterior Emulsion (280 sq.ft/gal)</option>
+                  <option value="primer" data-coverage="400" data-price="320" data-image="images/products/Voilate Emulsion Front view.png" data-alt="Aira Eco Primer Paint Can">Aira Eco Primer (400 sq.ft/gal)</option>
+                  <option value="waterproofing" data-coverage="320" data-price="400" data-image="images/products/Sky Blue Front View1.png" data-alt="Aira Essential Exterior Emulsion Paint Can">Essential Exterior Emulsion (320 sq.ft/gal)</option>
+                  <option value="essential-interior" data-coverage="340" data-price="380" data-image="images/products/Premire Front View1.png" data-alt="Aira Essential Interior Emulsion Paint Can">Essential Interior Emulsion (340 sq.ft/gal)</option>
                 </select>
               </div>
 
@@ -512,7 +512,7 @@
     </a>
   </nav>
 
-  <script src="pricing.js"></script>
+  <script src="pricing.js?v=2.0"></script>
   <script src="mobile-nav.js?v=2.0"></script>
 </body>
 

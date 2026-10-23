@@ -15,6 +15,71 @@ document.addEventListener('DOMContentLoaded', () => {
   const wallAreaInput = document.getElementById('wall-area');
   const sliderAreaVal = document.getElementById('slider-area-val');
 
+  // Hero showcase image elements
+  const heroImg = document.getElementById('pricing-hero-img') || document.querySelector('.pricing-hero-showcase-img');
+  const spotlightGlow = document.getElementById('pricing-spotlight-glow') || document.querySelector('.pricing-spotlight-glow');
+
+  // Product visuals mapping
+  const categoryVisuals = {
+    'interior': {
+      image: 'images/products/Green Emulsion Front View1.png',
+      alt: 'Aira Premium Interior Emulsion Paint Can',
+      glow: 'radial-gradient(circle, rgba(110, 198, 176, 0.35) 0%, rgba(255,255,255,0) 70%)',
+      shadow: '0 20px 35px rgba(15, 77, 58, 0.22)'
+    },
+    'exterior': {
+      image: 'images/products/Dark Blue front View1.png',
+      alt: 'Aira Premium Exterior Emulsion Paint Can',
+      glow: 'radial-gradient(circle, rgba(58, 134, 255, 0.35) 0%, rgba(255,255,255,0) 70%)',
+      shadow: '0 20px 35px rgba(11, 46, 89, 0.25)'
+    },
+    'primer': {
+      image: 'images/products/Voilate Emulsion Front view.png',
+      alt: 'Aira Eco Primer Paint Can',
+      glow: 'radial-gradient(circle, rgba(141, 123, 209, 0.35) 0%, rgba(255,255,255,0) 70%)',
+      shadow: '0 20px 35px rgba(74, 63, 107, 0.25)'
+    },
+    'waterproofing': {
+      image: 'images/products/Sky Blue Front View1.png',
+      alt: 'Aira Essential Exterior Emulsion Paint Can',
+      glow: 'radial-gradient(circle, rgba(110, 198, 220, 0.35) 0%, rgba(255,255,255,0) 70%)',
+      shadow: '0 20px 35px rgba(29, 112, 154, 0.25)'
+    },
+    'essential-interior': {
+      image: 'images/products/Premire Front View1.png',
+      alt: 'Aira Essential Interior Emulsion Paint Can',
+      glow: 'radial-gradient(circle, rgba(186, 85, 211, 0.35) 0%, rgba(255,255,255,0) 70%)',
+      shadow: '0 20px 35px rgba(92, 43, 78, 0.25)'
+    }
+  };
+
+  // Preload product images for instant zero-lag switching
+  Object.values(categoryVisuals).forEach(item => {
+    const preload = new Image();
+    preload.src = item.image;
+  });
+
+  function updateHeroImage(categoryKey) {
+    if (!heroImg) return;
+    const visual = categoryVisuals[categoryKey];
+    if (!visual) return;
+
+    // Smooth transition: scale down slightly & fade
+    heroImg.style.opacity = '0';
+    heroImg.style.transform = 'translateY(8px) scale(0.95)';
+
+    setTimeout(() => {
+      heroImg.src = visual.image;
+      heroImg.alt = visual.alt;
+      heroImg.style.filter = `drop-shadow(${visual.shadow})`;
+      if (spotlightGlow) {
+        spotlightGlow.style.background = visual.glow;
+      }
+      heroImg.style.opacity = '1';
+      heroImg.style.transform = 'translateY(0) scale(1)';
+    }, 200);
+  }
+
   // Outputs elements
   const outLiters = document.getElementById('out-liters');
   const outCost = document.getElementById('out-cost');
@@ -35,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (detailCoverage) {
         detailCoverage.textContent = `${activeCoverage} sq.ft/can`;
       }
+      updateHeroImage(paintCategorySelect.value);
       calculateRequirements();
     });
   }
