@@ -725,11 +725,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 3000);
     };
 
-    // Auto-dismiss timeout (desktop: 3.0s, mobile: 4.2s or when video ends)
-    const timeoutDuration = isMobile ? 4200 : 3000;
-    const timer = setTimeout(dismissSplash, timeoutDuration);
+    // Auto-dismiss timeout (dynamically adapts to video duration or ends on video completion)
+    let timer = setTimeout(dismissSplash, isMobile ? 4200 : 5000);
 
     if (activeVideo) {
+      activeVideo.addEventListener('loadedmetadata', () => {
+        if (activeVideo.duration && !isNaN(activeVideo.duration)) {
+          clearTimeout(timer);
+          timer = setTimeout(dismissSplash, Math.ceil(activeVideo.duration * 1000) + 400);
+        }
+      });
       activeVideo.addEventListener('ended', () => {
         clearTimeout(timer);
         dismissSplash();
