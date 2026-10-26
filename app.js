@@ -702,6 +702,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeVideo = isMobile
       ? (document.getElementById('splash-video-mobile') || splashScreen.querySelector('video'))
       : (document.getElementById('splash-video-desktop') || splashScreen.querySelector('video'));
+    const inactiveVideo = isMobile
+      ? document.getElementById('splash-video-desktop')
+      : document.getElementById('splash-video-mobile');
+
+    if (inactiveVideo) {
+      try {
+        inactiveVideo.pause();
+      } catch (e) {}
+    }
 
     let dismissed = false;
     const dismissSplash = () => {

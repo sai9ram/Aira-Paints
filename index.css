@@ -7177,6 +7177,10 @@ body.loading #bg-canvas {
   min-width: 100vw !important;
 }
 
+.splash-video-mobile {
+  display: none !important;
+}
+
 /* Mobile splash screen active styles */
 @media (max-width: 768px) {
   .splash-video-desktop {

@@ -13,7 +13,7 @@
   <link rel="canonical" href="https://www.airapaints.com/">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <link rel="stylesheet" href="index.css?v=4.1">
+  <link rel="stylesheet" href="index.css?v=4.2">
   <link rel="stylesheet" href="mobile.css?v=4.0">
   <link rel="icon" type="image/png" href="Aira_Favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -25,24 +25,16 @@
   <!-- ===== SPLASH SCREEN ===== -->
   <div id="splash-screen" class="splash-overlay">
     <div class="splash-content full-screen-splash-video">
-      <video id="splash-video-desktop" class="splash-video-media" autoplay muted playsinline preload="auto">
-        <!-- Desktop / tablet splash video -->
+      <!-- Desktop / tablet splash video -->
+      <video id="splash-video-desktop" class="splash-video-media splash-video-desktop" autoplay muted playsinline preload="auto">
         <source src="Aira Original Logo Animation Video (online-video-cutter.com).mp4?v=2.0" type="video/mp4">
+      </video>
+      <!-- Mobile splash video -->
+      <video id="splash-video-mobile" class="splash-video-media splash-video-mobile" autoplay muted playsinline preload="auto">
+        <source src="Mobile Splash Screen.mp4?v=1.0" type="video/mp4">
       </video>
     </div>
   </div>
-  <script>
-    /* Immediately remove splash screen and restore body on mobile view */
-    if (window.innerWidth <= 768) {
-      document.body.classList.remove('loading');
-      var splashEl = document.getElementById('splash-screen');
-      if (splashEl) {
-        var splashVid = splashEl.querySelector('video');
-        if (splashVid) splashVid.pause();
-        splashEl.remove();
-      }
-    }
-  </script>
 
   <!-- ===== BACKGROUND CANVAS ===== -->
   <div class="bg-canvas" id="bg-canvas" aria-hidden="true">
@@ -1796,7 +1788,7 @@
     </a>
   </nav>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2.2"></script>
   <script src="mobile-nav.js?v=2.0"></script>
 </body>
 
