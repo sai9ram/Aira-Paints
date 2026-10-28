@@ -417,8 +417,89 @@
 }
 
 @media (max-width: 768px) {
-  #hero {
+  #hero,
+  .hero-section {
     height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Section Spacing Overrides for Mobile to Eliminate White Gaps */
+  .why-section {
+    padding-top: 1.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .why-section .section-header {
+    margin-bottom: 2rem !important;
+  }
+
+  .story-section {
+    min-height: auto !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .story-top-bar {
+    padding: 2.5rem 5% 1rem !important;
+  }
+
+  .story-content {
+    padding: 1rem 5% 2.5rem !important;
+    gap: 2rem !important;
+  }
+
+  .comparison-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .comparison-header {
+    margin-bottom: 1.75rem !important;
+  }
+
+  .pricing-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .pricing-header {
+    margin-bottom: 1.75rem !important;
+  }
+
+  .sustainability-section {
+    min-height: auto !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .sustain-container {
+    gap: 1.5rem !important;
+  }
+
+  .dealer-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .consultation-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  .consultation-banner {
+    padding: 2.5rem 1.25rem !important;
+  }
+
+  .contact-strip {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem !important;
   }
 
   .hero-stage {
